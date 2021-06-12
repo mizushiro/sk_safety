@@ -2532,7 +2532,7 @@ if (!Object.keys){
 		modalWidth: false,
 		modalHeight: false,
 		innerScroll: false,
-		mg: 10,
+		mg: 20,
 		callback:false,
 		closeCallback:false,
 		endfocus:false,
@@ -2662,15 +2662,19 @@ if (!Object.keys){
 					break;
 			}
 
-			if (innerScroll) {
+			if (!mobileFull) {
 				headerH = $modalHeader.length ? $modalHeader.outerHeight() : 0;
 				footerH = $modalFooter.length ? $modalFooter.outerHeight() : 0;
-
+				console.log('h', !h);
 				if (!h) {
+					var win_h = $(win).outerHeight();
+					console.log(win_h);
+					var max_h = win_h - (headerH + footerH + (mg * 2));
+
 					$modalBody
 						.addClass('is-scrollable')
 						.css({
-							'max-height' : 'calc(100vh - '+ (headerH + footerH + (mg * 2)) +'px)',
+							'max-height' : max_h + 'px',
 							'overflow-y' : 'auto',
 							'height' : '100%'
 						});
@@ -4444,31 +4448,50 @@ if (!Object.keys){
 		}
 	});
 	function createUiInputClear(){
-		var $inp = $('.ui-inpcancel');
+		var $inp = $('.inp-base');
 
 		$inp.each(function(i){
 			var $this = $(this);
-			var $cancel = $this.next('.ui-inpcancel-btn');
+			var $wrap = $this.parent();
+			var $clear = $wrap.find('.ui-clear');
 
-			$this.val() === '' ?
-				$cancel.remove():
-				$cancel.length === 0 ?
-				$this.after('<button type="button" class="ui-inpcancel-btn" data-id="'+ $this.attr('id') +'"><span>clear</span></button>') : '';
+			if ($this.val() === '' || $this.prop('readonly') || $this.prop('disabled')) {
+				$clear.remove();
+			} else { 
+				if ($clear.length === 0) {
+					$wrap.append(make($this.attr('id')));
+				} 
+			}
 
-			$inp.eq(i).off('keyup.inpcancel').on('keyup.inpcancel', function(){
+			$inp.eq(i).off('keyup.clear focus.clear').on('keyup.clear focus.clear', function(){
 				var _$this = $(this);
+				var _$wrap = $this.parent();
+				
+				if (_$this.prop('readonly') || _$this.prop('disabled')) {
+					return false;
+				}
 
 				if (_$this.val() === '') {
-					_$this.next('.ui-inpcancel-btn').remove();
+					_$this.next('.ui-clear').remove();
 				} else {
-					!!$('.ui-inpcancel-btn[data-id="'+ _$this.attr('id') +'"]').length ? '' :
-					_$this.after('<button type="button" class="ui-inpcancel-btn" data-id="'+ _$this.attr('id') +'"><span>clear</span></button>');
+					if (!$('.ui-clear[data-id="'+ _$this.attr('id') +'"]').length) {
+						_$wrap.append( make(_$this.attr('id')) );
+					} 
 				}
+			}).off('blur.clear').on('blur.clear', function(){
+				var $clear =  $(this).parent().find('.ui-clear');
+				setTimeout(function(){
+					$clear.remove();
+				},100)
 			});
 		});
 
+		function make(v){
+			return '<button type="button" class="ui-clear btn-clear" data-id="'+ v +'"><span class="a11y-hidden">내용지우기</span></button>';
+		}
+
 		//event
-		$(doc).off('click.inpcancel').on('click.inpcancel', '.ui-inpcancel-btn', function(){
+		$(doc).off('click.clear').on('click.clear', '.ui-clear', function(){
 			$('#' + $(this).data('id')).val('').focus();
 			$(this).remove();
 		});

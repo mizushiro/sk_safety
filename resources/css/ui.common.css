@@ -13,9 +13,9 @@ html {
 
 body {
     font-family: 'Noto Sans KR', sans-serif;
-    color: #565656;
-    font-size: 1.3rem;
-    line-height: 1.5;
+    color: #333;
+    font-size: 1.4rem;
+    line-height: 1.3;
     letter-spacing: -0.035em;
     word-break: keep-all;
     -webkit-font-smoothing: antialiased;
@@ -163,7 +163,7 @@ caption {
     margin: -1px 0 0;
 }
 
-.a11y,
+.a11y-hidden,
 legend,
 .hidden,
 .hide {
@@ -199,96 +199,20 @@ caption * {
     display: inline-block !important
 }
 
-
-/* plugins - ui tab */
-.ui-tab {
+input {
+    -webkit-appearance: none; 
+    -webkit-border-radius: 0;
+}
+select {
     position: relative;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    -webkit-appearance: none; 
+    -webkit-border-radius: 0;
 }
 
-.ui-tab.type-scroll .ui-tab-btns {
-    overflow: auto;
+select::-ms-expand {
+    display: none;
 }
-
-.ui-tab.type-scroll .ui-tab-btns .btn-wrap {
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 0;
-}
-
-.ui-tab.type-scroll .ui-tab-btns .btn-wrap .ui-tab-btn {
-    flex: 1;
-    min-width: 100px
-}
-
-.ui-tab-btns {
-    position: relative;
-    overflow: hidden;
-    z-index: 1
-}
-
-.ui-tab-btn {
-    box-sizing: border-box;
-    float: left;
-    position: relative;
-    z-index: 0
-}
-
-.ui-tab-btn.selected {
-    z-index: 2;
-}
-
-.ui-tab-pnls {
-    box-sizing: border-box;
-    position: relative;
-    width: 100%;
-}
-
-.ui-tab-pnl {
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-}
-
-.ui-tab-pnl,
-.ui-tab-pnl[aria-hidden='true'] {
-    visibility: hidden;
-    position: absolute;
-    opacity: 0;
-    display: none
-}
-
-.ui-tab-pnl.selected,
-.ui-tab-pnl[aria-hidden='false'] {
-    visibility: visible;
-    position: relative;
-    opacity: 1;
-    z-index: 1;
-    display: block
-}
-
-/* button */
-select {position:relative; ppearance:none; -moz-appearance:none; -webkit-appearance:none; cursor:pointer; background: url(../img/common/arrow-select.png) no-repeat  right 10px top 50% / 10px;}
-select::-ms-expand {display:none;}
-
-.btn-area {
-	width:100%;
-	position:relative;
-	margin:32px 0;
-	display: flex;
-}
-select,
-.btn-base{
-	display: block;
-	flex:1;
-	width:100%;
-	min-height:40px;
-	padding:9px 20px 7px;
-	border:1px solid #cbcbcb;
-	text-align: center;
-    font-size:13px;
-    font-weight:700;
-}
-
-
-/* select */
-
