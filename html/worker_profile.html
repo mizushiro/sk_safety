@@ -162,7 +162,7 @@
                     </div>
 
                     <div class="btn-area mgt-l">
-                        <button type="button" class="btn-base large primary">
+                        <button type="button" class="btn-base large primary" id="a1">
                             <span>확인</span>
                         </button>
                     </div>
@@ -182,22 +182,27 @@
                
                 //기본 실행
                 $plugins.common.init();
-                $('.ui-modal-btn').off('click.modal').on('click.modal', function(e){
-                    var $btn = $(this);
-                    
+                
+                $('#a1').on('click', function(){
                     $plugins.uiModalOpen({ 
-                        id: $btn.attr('data-id'), 
-                        src: $btn.attr('data-src') === undefined ? false : $btn.attr('data-src'), 
-                        ps: $btn.attr('data-ps') === undefined ? 'center' : $btn.attr('data-ps'), 
-                      
+                        id: 'modal_agree', 
+                        src: '../modal/modal_agree.html', 
+                        ps: 'bottom', 
                         closeCallback: function(v) { 
                             console.log('close callback', v); 
                         },
                         callback: function(v) { 
                             console.log('callback', v); 
+
+                            $plugins.uiAccordion({ 
+                                id: 'exeAcco1', 
+                                current: null, 
+                                autoclose: true, 
+                                callback: function(v){console.log(v)} 
+                            });
                         }
                     });
-                })
+                });
             });
         })(jQuery, window, document);
     </script>

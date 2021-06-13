@@ -4,12 +4,23 @@
 	
 	$plugins.common = {
 		init: function(){
+			var _this = this;
 			//hover event
 			$(document).on("touchstart", function(){ });
 
 			//최소높이 설정
 			$(win).on('resize', $plugins.common.pageMinHeight);
 			this.pageMinHeight();
+
+			$(win).off('scroll.win').on('scroll.win', function(){
+				_this.sTop = $(this).scrollTop();
+				
+				if (_this.sTop > 10) {
+					$('html').addClass('not-top');
+				} else {
+					$('html').removeClass('not-top');
+				}
+			});
 
 			if ($('.base-header').length) {
 				$plugins.uiAjax({ 
@@ -29,7 +40,6 @@
 			}	
 
 			$plugins.uiInputClear();
-			
 
 		},
 		pageMinHeight: function(){

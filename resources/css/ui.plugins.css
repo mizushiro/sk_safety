@@ -32,30 +32,6 @@
 .ui-loading.orbit .ui-loading-wrap:after {animation-name:orbitLeftAni; animation-duration:1.5s; animation-iteration-count:infinite; animation-timing-function:ease-in-out; animation-direction: reverse;}
 .ui-loading.orbit .ui-loading-wrap:before {animation-name:orbitRightAni; animation-duration:1.5s; animation-iteration-count:infinite; animation-timing-function:ease-in-out; animation-direction: reverse;}
 
-
-/* ui-acco : base */
-.ui-acco {position:relative;}
-.ui-acco-wrap {position:relative;}
-.ui-acco-tit {position:relative;}
-.ui-acco-btn {cursor:pointer; position:relative; z-index:1;}
-a.ui-acco-btn {display:inline-block; text-decoration:none;}
-.ui-acco-pnl {position:relative;}
-.ui-acco-tit-wrap {position:relative; display:inline-block; z-index:2;}
-.ui-acco-tit-wrap + .ui-acco-btn {position:absolute; color:transparent; overflow:hidden; font-size:xx-small; line-height: 0;}
-/* ui-acco : netvie UI style */
-.ui-acco {margin:0;}
-.ui-acco-wrap {width:100%; padding:0; margin:0;}
-.ui-acco-tit {width:100%; height:100%; margin:-1px 0 0; border-bottom:1px solid #ccc; border-top:1px solid #ccc; padding:0; background:#fff;}
-.ui-acco-tit-wrap {width:auto; text-decoration:none; color:#000;}
-.ui-acco-btn {top:0; right:0; width:100%; height:100%; padding:10px 40px 10px 10px; letter-spacing:0; text-align:left; color:#000; font-size:14px;}
-.ui-acco-btn:after {content:"keyboard_arrow_down"; font-family: 'Material Icons'; display:block; position:absolute; right:10px; top:50%; margin-top:-10px; width:18px; height:20px; float:right; overflow:hidden; color:#000; font-size:20px; line-height: 1;}
-.ui-acco-btn.selected:after {content:"keyboard_arrow_up";}
-a.ui-acco-btn {text-decoration: underline; color:blue}
-a.ui-acco-btn .ui-acco-arrow {transform: rotate(-90deg);}
-a.ui-acco-btn:after {content:"keyboard_arrow_right";}
-.ui-acco-pnl {background:#f9f9f9; margin:0; padding:20px;}
-.ui-acco-tit-wrap {padding:10px;text-decoration:none; color:#000;}
-
 /**/
 .ui-draggable{position:relative; width:100%;}
 .ui-draggable-item{position:absolute; z-index: 1;}
