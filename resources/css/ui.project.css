@@ -75,12 +75,15 @@
 	background: url(../img/icon_back.svg) no-repeat 50% 50% / 2rem;
 }
 
-.section-wrap {
-	padding: 0;
-	width: 100%;
+.type-worker .section-wrap {
 	border-top-left-radius: 3rem;
 	border-top-right-radius: 3rem;
 	background: #fff;
+	padding-top:0.5rem;
+}
+.section-wrap {
+	padding: 0;
+	width: 100%;
 	display: inline-block;
 }
 
@@ -162,12 +165,25 @@
 	font-weight: 700;
 	margin-bottom: 2.8rem;
 }
-
+.tit-sec .tit,
 .tit-sec {
 	font-size: 1.8rem;
 	font-weight: 700;
 	color: #333;
 	margin-bottom: 1.8rem;
+	display: flex;
+	justify-content: space-between;
+}
+.tit-sec .tit{
+	margin-bottom:1rem;
+}
+.tit-sec.type-line{
+	width:100%;
+	position:relative;
+	border-bottom:2px solid #333;
+}
+.tit-sec .tit-util{
+
 }
 
 .tit-cont {
@@ -179,6 +195,9 @@
 }
 
 /* input text */
+button.inp-select{
+	text-align: left;
+}
 .inp-select,
 .inp-base {
 	border: 0;
@@ -187,7 +206,7 @@
 	height: 4rem;
 	font-size: 1.5rem;
 	color: #333;
-	padding: 0 0.2rem;
+	padding: 0;
 }
 
 .inp-select:disabled,
@@ -429,6 +448,9 @@
 
 
 /* button */
+.section-item .btn-area{
+	padding:0;
+}
 .btn-area {
 	position: relative;
 	width: 100%;
@@ -436,6 +458,7 @@
 	font-size: 0;
 	display: flex;
 	justify-content: space-between;
+	padding:2rem;
 }
 
 .btn-area.stick .btn-base {
@@ -536,7 +559,15 @@
 	border-radius: 50%;
 	background: #999999 url(../img/icon_close_w.svg) no-repeat 50% 50% / 0.8rem;
 }
-
+.btn-add{
+	position: relative;
+	top:-0.5rem;
+	display: block;
+	width:3rem;
+	height:3rem;
+	border:1px solid #ddd;
+	background:url(../img/icon_add.svg) no-repeat 50% 50% / 1.4rem;
+ }
 
 /* in label style */
 .form-dl {
@@ -544,7 +575,6 @@
 	width: 100%;
 	margin-top: 2.3rem;
 }
-
 .form-dt {
 	width: 100%;
 	font-size: 1.3rem;
@@ -552,24 +582,17 @@
 	font-weight: 500;
 	color: #666;
 }
-
 .form-dd {
 	width: 100%;
 	position: relative;
 }
-
 .form-dd+.form-dd {
 	margin-top: 0.7rem;
 }
-
 .form-item {
 	position: relative;
 	width: 100%;
 	display: flex;
-}
-
-.form-item .btn-base {
-	margin-left: 1.4rem;
 }
 
 .form-helper {
@@ -577,7 +600,7 @@
 	width: 100%;
 	margin-top: 0.3rem;
 }
-
+/* 가로형 */
 .form-dl.type-b {
 	margin-top: 1rem;
 }
@@ -595,8 +618,26 @@
 .form-dl.type-b .inp-base {
 	padding-left: 8rem;
 }
+/* 열 */
+.col2-c{
+	display: flex;
+	align-items: flex-start;
 
-
+}
+.col2-c .col-item:first-child{
+	min-width:55%;
+	max-width:55%;
+}
+.col2-c .col-item + .col-item{
+	margin-left:1.4rem;
+}
+.col2-c .col-item{
+	position:relative;
+	flex:1 auto;
+}
+.col-item .btn-base{
+	width:100%;
+}
 /* TEXT helper */
 .txt-info {
 	display: block;
@@ -1117,14 +1158,12 @@ a.ui-acco-btn:after {
 .simple-login {
 	padding-bottom: 6rem;
 }
-
 .simple-login .tit {
 	text-align: center;
 	width: 100%;
 	position: relative;
 	margin-bottom: 1.6rem;
 }
-
 .simple-login .tit span {
 	display: inline-block;
 	padding: 0 1rem;
@@ -1135,7 +1174,6 @@ a.ui-acco-btn:after {
 	position: relative;
 	z-index: 1;
 }
-
 .simple-login .tit::after {
 	content: "";
 	display: block;
@@ -1146,16 +1184,13 @@ a.ui-acco-btn:after {
 	top: 50%;
 	left: 0;
 }
-
 .simple-login-area {
 	width: 100;
 	text-align: center;
 }
-
 .simple-login-area button+button {
 	margin-left: 1.3rem;
 }
-
 .simple-login-area button {
 	display: inline-block;
 	width: 3.8rem;
@@ -1163,19 +1198,57 @@ a.ui-acco-btn:after {
 	border-radius: 50%;
 	background-color: #F1F1F1;
 }
-
 .simple-login-area .sim-n {
 	background: #1EC800 url(../img/icon_naver.svg) no-repeat 50% 50% / 1.8rem;
 }
-
 .simple-login-area .sim-c {
 	background: #FFF200 url(../img/icon_kakao.svg) no-repeat 50% 50% / 2.4rem;
 }
-
 .simple-login-area .sim-f {
 	background: #3C5A99 url(../img/icon_facebook.svg) no-repeat 50% 50% / 1.1rem;
 }
-
 .simple-login-area .sim-g {
 	background: #F1F1F1 url(../img/icon_google.svg) no-repeat 50% 50% / 2.1rem;
 }
+
+.person-info {
+	position:relative;
+	width:100%;
+	padding:2.5rem;
+	text-align: center;
+}
+.person-info .photo{
+	display:inline-block;
+	width:10rem;
+	height:10rem;
+	border-radius: 50%;
+	background-color:#EEE;
+	box-shadow:0 3px 6px rgba(0,0,0,0.1);
+}
+.person-info .name{
+	font-size:2rem;
+	color:#fff;
+	font-weight:700;
+	width:100%; 
+	text-align:center;
+	display:inline-block;
+	margin-top:0.5rem;
+}
+.person-info .btn-photo{
+	position:absolute; 
+	top:9rem;
+	left:50%;
+	width:3.6rem;
+	height:3.6rem;
+	border-radius: 50%;
+	margin-left:2rem;
+	background:#333 url(../img/icon_photo_w.svg) no-repeat 50% 50% / 1.8rem;
+}
+.tit-util .btn-photo{
+	position: relative;
+    top: -0.5rem;
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid #ddd;
+    background: url(../img/icon_photo.svg) no-repeat 50% 50% / 1.4rem;

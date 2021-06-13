@@ -4455,13 +4455,13 @@ if (!Object.keys){
 			var $wrap = $this.parent();
 			var $clear = $wrap.find('.ui-clear');
 
-			if ($this.val() === '' || $this.prop('readonly') || $this.prop('disabled')) {
-				$clear.remove();
-			} else { 
-				if ($clear.length === 0) {
-					$wrap.append(make($this.attr('id')));
-				} 
-			}
+			// if ($this.val() === '' || $this.prop('readonly') || $this.prop('disabled')) {
+			// 	$clear.remove();
+			// } else { 
+			// 	if ($clear.length === 0) {
+			// 		$wrap.append(make($this.attr('id')));
+			// 	} 
+			// }
 
 			$inp.eq(i).off('keyup.clear focus.clear').on('keyup.clear focus.clear', function(){
 				var _$this = $(this);

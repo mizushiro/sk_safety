@@ -37,7 +37,8 @@
 <body>
     <div class="base-wrap">
         <header class="base-header" 
-        data-pageid="1" 
+        data-id="1" 
+        data-type="normal" 
         data-title="근로자 프로필 가입하기"
         ></header>
         <!-- content -->
@@ -127,11 +128,16 @@
                                 <label class="form-tit" for="프로필_인증번호">인증번호</label>
                             </div>
                             <div class="form-dd">
-                                <div class="form-item">
-                                    <input type="tel" id="프로필_인증번호" class="inp-base" value="" placeholder="인증번호 자동입력">
-                                    <button type="button" class="btn-base line">
-                                        <span>인증</span>
-                                    </button>
+                                <div class="form-item col2-c">
+                                    <div class="col-item">
+                                        <input type="tel" id="프로필_인증번호" class="inp-base" value="" placeholder="인증번호 자동입력">
+                                    </div>
+                                    <div class="col-item">
+                                        <button type="button" class="btn-base line">
+                                            <span>인증</span>
+                                        </button>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -157,17 +163,14 @@
                                 </div>
                             </div>
                         </div>
-
-                        
-                    </div>
-
-                    <div class="btn-area mgt-l">
-                        <button type="button" class="btn-base large primary" id="a1">
-                            <span>확인</span>
-                        </button>
                     </div>
                 </section>
 
+                <div class="btn-area mgt-l">
+                    <button type="button" class="btn-base large primary" id="a1">
+                        <span>확인</span>
+                    </button>
+                </div>
                 
             </div>
         </main>
