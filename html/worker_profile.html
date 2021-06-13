@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index, follow" />
+
+    <meta name="subject" content="SK건설 안전관리 시스템">
+    <meta name="author" content="SK건설">
+    <meta name="title" content="SK건설 세이프티" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="SK건설, SK, SK ecoplant, safety platform, 안전, 관리, 건축" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SK건설 세이프티" />
+    <meta property="og:url" content="http://www.skecoplant.com/" />
+    
+    <title>근로자 프로필 가입하기 | SK건설 세이프티</title>
+
+    <link rel="alternate" hreflang="ko" href="http://www.skecoplant.com/" />
+    <link rel="canonical" href="http://www.skecoplant.com/" />
+    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <link rel="apple-touch-icon" href="../resources/img/common/ico_app.png" >
+
+	<link rel="stylesheet" href="../resources/css/ui.base.css">
+	<script src="../resources/js/lib/jquery-3.2.1.min.js"></script>
+	<script src="../resources/js/ui.global.js"></script>
+	<script src="../resources/js/ui.common.js"></script>
+
+    <style>
+    </style>
+</head>
+<body>
+    <div class="base-wrap">
+        <header class="base-header" 
+        data-pageid="1" 
+        data-title="근로자 프로필 가입하기"
+        ></header>
+        <!-- content -->
+        <main class="base-body ui-minheight">
+            <h2 class="a11y-hidden">
+                근로자 프로필
+            </h2>
+
+            <div class="section-wrap">
+                <section class="section-item mgt-n">
+                    <h3 class="tit-sec a11y-hidden">로그인</h3>
+                    <div class="form-wrap">
+
+                        <div class="form-dl mgt-n">
+                            <div class="form-dt">
+                                <label class="form-tit" for="프로필_이름">이름</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <input type="text" id="프로필_이름" class="inp-base" value="" placeholder="이름입력">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <div class="form-tit">국적</div>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item align-v">
+                                    <div class="inp-radio round">
+                                        <input type="radio" id="내국인" name="프로필_국적" checked>
+                                        <label for="내국인">내국인</label>
+                                    </div>
+                                    <div class="inp-radio round">
+                                        <input type="radio" id="외국인" name="프로필_국적">
+                                        <label for="외국인">외국인</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="프로필_생년월일">생년월일</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <input type="tel" id="프로필_생년월일" class="inp-base" value="" placeholder="생년월일6자리">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <div class="form-tit">성별</div>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item align-v">
+                                    <div class="inp-radio round">
+                                        <input type="radio" id="남자" name="프로필_성별" checked>
+                                        <label for="남자">남자</label>
+                                    </div>
+                                    <div class="inp-radio round">
+                                        <input type="radio" id="여자" name="프로필_성별">
+                                        <label for="여자">여자</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="프로필_휴대폰번호">휴대폰번호</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <select class="inp-select" id="프로필_휴대폰번호" title="통신사선택">
+                                        <option>통신사선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="프로필_인증번호">인증번호</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <input type="tel" id="프로필_인증번호" class="inp-base" value="" placeholder="인증번호 자동입력">
+                                    <button type="button" class="btn-base line">
+                                        <span>인증</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="프로필_비밀번호">비밀번호</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <input type="password" id="프로필_비밀번호" class="inp-base" value="" placeholder="비밀번호 4자리를 입력하세요">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="프로필_비밀번호확인">비밀번호 확인</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <input type="password" id="프로필_비밀번호확인" class="inp-base" value="" placeholder="비밀번호 4자리를 입력하세요">
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                    <div class="btn-area mgt-l">
+                        <button type="button" class="btn-base large primary">
+                            <span>확인</span>
+                        </button>
+                    </div>
+                </section>
+
+                
+            </div>
+        </main>
+        <!-- //content -->
+
+        <footer class="base-footer"></footer>
+    </div>
+
+    <script> 
+        ;(function($, win, doc, undefined) {
+            $(doc).ready(function() {
+               
+                //기본 실행
+                $plugins.common.init();
+                $('.ui-modal-btn').off('click.modal').on('click.modal', function(e){
+                    var $btn = $(this);
+                    
+                    $plugins.uiModalOpen({ 
+                        id: $btn.attr('data-id'), 
+                        src: $btn.attr('data-src') === undefined ? false : $btn.attr('data-src'), 
+                        ps: $btn.attr('data-ps') === undefined ? 'center' : $btn.attr('data-ps'), 
+                      
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
+                    });
+                })
+            });
+        })(jQuery, window, document);
+    </script>
+    
+</body>
+</html>
