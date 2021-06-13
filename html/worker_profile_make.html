@@ -294,7 +294,7 @@
                     <button type="button" class="btn-base large line" id="a1">
                         <span>미리보기</span>
                     </button>
-                    <button type="button" class="btn-base large primary" id="a1">
+                    <button type="button" class="btn-base large primary">
                         <span>내 이력 등록</span>
                     </button>
                 </div>
@@ -314,26 +314,6 @@
                 //기본 실행
                 $plugins.common.init();
                 
-                $('#a1').on('click', function(){
-                    $plugins.uiModalOpen({ 
-                        id: 'modal_agree', 
-                        src: '../modal/modal_agree.html', 
-                        ps: 'bottom', 
-                        closeCallback: function(v) { 
-                            console.log('close callback', v); 
-                        },
-                        callback: function(v) { 
-                            console.log('callback', v); 
-
-                            $plugins.uiAccordion({ 
-                                id: 'exeAcco1', 
-                                current: null, 
-                                autoclose: true, 
-                                callback: function(v){console.log(v)} 
-                            });
-                        }
-                    });
-                });
             });
         })(jQuery, window, document);
     </script>
