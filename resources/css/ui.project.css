@@ -77,10 +77,12 @@
 }
 .type-normal .btn-contalk,
 .type-normal .util,
-.type-normal .page-title .sum-box,
+.type-normal .page-title .sum-box{
+	display: none !important;
+}
 .type-contalk .btn-contalk,
 .base-header-wrap .page-title .sum-box{
-	display: none !important;
+	display: none;
 }
 .btn-contalk .sum-box{
 	display:inline-block;
@@ -104,7 +106,7 @@
 	font-size:1.0rem;
 	font-weight:500;
 	text-align: center;
-	padding:0.1rem 0.2rem 0;
+	padding:0.1rem 0.5rem 0;
 }
 .base-header-wrap .btn-back {
 	position: absolute;
