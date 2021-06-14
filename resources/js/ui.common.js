@@ -4,18 +4,17 @@
 	
 	$plugins.common = {
 		init: function(){
-			var _this = this;
 			//hover event
 			$(document).on("touchstart", function(){ });
 
 			//최소높이 설정
-			$(win).on('resize', $plugins.common.pageMinHeight);
-			this.pageMinHeight();
+			$(win).on('resize', $plugins.common.contentHeight);
+			this.contentHeight();
 
 			$(win).off('scroll.win').on('scroll.win', function(){
-				_this.sTop = $(this).scrollTop();
+				$plugins.common.sTop = $(this).scrollTop();
 				
-				if (_this.sTop > 10) {
+				if ($plugins.common.sTop > 10) {
 					$('html').addClass('not-top');
 				} else {
 					$('html').removeClass('not-top');
@@ -42,17 +41,63 @@
 			$plugins.uiInputClear();
 
 		},
-		pageMinHeight: function(){
-			var hh =  $('.base-header').length ? $('.base-header').outerHeight() : 0;
-			var th =  $('.tit-page').length ? $('.tit-page').outerHeight() : 0;
-			var min_h = $(win).outerHeight() - hh - th;
+		contentHeight: function(){
+			var $sp =  $('.ui-sp');
+			var $target = $('.ui-height');
 
-			$('.ui-minheight').css('min-height',min_h + 'px');
+			var hh =  $('.base-header').length ? $('.base-header').outerHeight() : 0;
+			var h = $(win).outerHeight() - hh;
+			var add = 0;
+
+			var type = $target.data('type');
+
+			if (!!$sp.length) {
+				for (var i = 0; i < $sp.length; i++) {
+					add = $sp.eq(i).outerHeight() + add;
+				}
+			}
+
+			$target.css({
+				'max-height': '100%',
+				'min-height': 0
+			});
+
+			if (type === undefined || type === 'min') {
+				$target.css('min-height', h - add + 'px');
+			} else if (type === 'max') {
+				$target.css('max-height', h - add + 'px');
+			} else {
+				$target.css({
+					'max-height': h - add + 'px',
+					'min-height': h - add + 'px'
+				});
+			}
 		},
 		header: function(){
+			var _this = this;
 			var tit  = $('.base-header').data('title');
+			var type  = $('.base-header').data('type');
 			
-			$('.base-header-wrap .page-title').html(tit);
+			console.log(type);
+			switch (type) {
+				case 'none':
+					console.log(type);
+					$('html').addClass('type-none');
+					$('.base-header-wrap').remove();
+					break;
+				case 'normal':
+					console.log(type);
+					$('html').addClass('type-normal');
+					$('.base-header-wrap .page-title .text').html(tit);
+					break;
+				case 'contalk':
+					console.log(type);
+					$('html').addClass('type-contalk');
+					$('.base-header-wrap .page-title .text').html('Con-Talk');
+
+					break;
+			} 
+			
 		},
 		navOpen: function(v){
 			
