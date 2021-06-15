@@ -1388,8 +1388,11 @@ a.ui-acco-btn:after {
 	min-height:4rem;
 	max-height:4rem;
 	border-radius:50%;
-	background-color:#ccc;
+	background:rgba(11, 149, 144, 0.4) url(../img/icon_person.svg) no-repeat 50% 50% / 2.0rem;
 	flex:0 auto;
+}
+.talk-item.me .photo{
+	background:rgba(11, 149, 144, 0.4) url(../img/icon_talk_w.svg) no-repeat 50% 50% / 1.7rem;
 }
 .talk-item .item{
 	margin:0 1.2rem;
