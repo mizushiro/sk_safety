@@ -1560,7 +1560,7 @@ a.ui-acco-btn:after {
 	background: url(../img/icon_photo.svg) no-repeat 50% 50% / 1.8rem;
 	opacity: 0.7;
 }
-.type-pts .inp-base{
+.type-pts .inp-wrap{
 	flex:1 auto;
 }
 .type-pts .btn-search{
