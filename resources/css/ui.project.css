@@ -1582,6 +1582,7 @@ a.ui-acco-btn:after {
 	width:100%;
 	height:6.5rem;
 	background:#fff;
+	z-index: 1000;
 }
 .nav-gnb::after{
 	content:"";
