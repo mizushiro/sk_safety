@@ -597,7 +597,8 @@ button.inp-select{
 	width: 4rem;
 	height: 4rem;
 	right: 0;
-	top: 0;
+	top: 50%;
+	margin-top:-2rem;
 }
 .btn-clear::before {
 	content: "";
