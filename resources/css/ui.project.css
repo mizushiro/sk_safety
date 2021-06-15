@@ -583,6 +583,11 @@ button.inp-select{
 	background: #626262;
 	border-color: #626262;
 }
+.btn-base.round-s{
+	height:2.8rem;
+	border-radius: 1.4rem;
+	font-size:1.3rem;
+}
 
 /* ui inputclear */
 .btn-clear {
@@ -1327,12 +1332,12 @@ a.ui-acco-btn:after {
 }
 .tit-util .btn-photo{
 	position: relative;
-    top: -0.5rem;
-    display: block;
-    width: 3rem;
-    height: 3rem;
-    border: 1px solid #ddd;
-    background: url(../img/icon_photo.svg) no-repeat 50% 50% / 1.4rem;
+	top: -0.5rem;
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	border: 1px solid #ddd;
+	background: url(../img/icon_photo.svg) no-repeat 50% 50% / 1.4rem;
 }
 
 /* con-talk */
@@ -1471,6 +1476,102 @@ a.ui-acco-btn:after {
 	font-weight:500;
 	padding:0.5rem 1.7rem;
 	height:3rem;
+	display: flex;
+	justify-content: space-between;
+}
+.talk-noti a{
+	display:block;
+	font-size:1.2rem;
+	color:#fff;
+	font-weight:700;
+	padding-top:0.3rem;
+}
+.talk-noti .noti{
+	padding-left:2rem;
+	background:url(../img/icon_talk_w.svg) no-repeat 0 50% / 1.3rem;
+}
+.talk-noti .sos{
+	padding-right:1rem;
+	position:relative;
+}
+.talk-noti .sos::after{
+	content:"";
+	position: absolute;
+	top:50%;
+	right:0;
+	margin-top:-0.2rem;
+	display: block;
+	width: 0;
+  height: 0;
+  border-left:0.4rem solid #fff;
+  border-top: 0.3rem solid transparent;
+  border-bottom:  0.3rem solid transparent;
+}
+
+.talk-search{
+	width:100%;
+	position:relative;
+}
+.talk-search::after{
+	content:"";
+	display:block; 
+	width:calc(100% + 2rem);
+	position:absolute;
+	top:0;
+	left:-1rem;
+	height:100%;
+	box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+.talk-search-wrap{
+	position: relative;
+	z-index:1;
+	width:100%;
+	display: flex;
+	justify-content: space-between;
+	padding:0.9rem 2rem;
+}
+.talk-search-wrap.type-pts{
+	padding:0.9rem 0.5rem 1.3rem 2rem;
+}
+.talk-search-wrap + .talk-search-wrap{
+	border-top:1px solid #F5F5F5;
+}
+.talk-search-wrap > .group{
+	flex:0 auto;
+}
+.talk-search-wrap > .group .btn-base + .btn-base{
+	margin-left:0.7rem;
+}
+.talk-search .inp-base {
+	border:1px solid #ddd;
+	padding:0 1rem 0 4.5rem;
+	height: 4.5rem;
+}
+.type-pts {
+	display: flex;
+}
+.type-pts .btn-photo{
+	position:absolute;
+	top:0;
+	left:0;
+	width:4.5rem;
+	height:4.5rem;
+	background: url(../img/icon_photo.svg) no-repeat 50% 50% / 1.8rem;
+	opacity: 0.7;
+}
+.type-pts .inp-base{
+	flex:1 auto;
+}
+.type-pts .btn-search{
+	flex:0;
+	min-width:4rem;
+	max-width:4rem;
+	height:4.5rem;
+}
+.btn-search {
+	width:3rem;
+	height:3rem;
+	background: url(../img/icon_search.svg) no-repeat 50% 50% / 1.8rem;
 }
 
 .nav-gnb{
@@ -1510,9 +1611,21 @@ a.ui-acco-btn:after {
 	display: block;
 	width:2.2rem;
 	height:2.2rem;
-	background:#ccc;
+	background:url(../img/nav_1.svg) no-repeat 50% 50% / 1.4rem;
 	margin:0 auto 0.3rem;
 	opacity: 0.5;
+}
+.nav-btn.n1::before{
+	background:url(../img/nav_1.svg) no-repeat 50% 50% / 1.4rem;
+}
+.nav-btn.n2::before{
+	background:url(../img/nav_2.svg) no-repeat 50% 50% / 2.1rem;
+}
+.nav-btn.n3::before{
+	background:url(../img/nav_3.svg) no-repeat 50% 50% / 1.8rem;
+}
+.nav-btn.n4::before{
+	background:url(../img/nav_4.svg) no-repeat 50% 50% / 2.0rem;
 }
 .nav-btn span{
 	display:block;
