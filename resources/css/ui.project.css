@@ -1562,6 +1562,7 @@ a.ui-acco-btn:after {
 }
 .type-pts .inp-wrap{
 	flex:1 auto;
+	position:relative;
 }
 .type-pts .btn-search{
 	flex:0;
