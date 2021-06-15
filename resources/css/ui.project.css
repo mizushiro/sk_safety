@@ -1414,6 +1414,54 @@ a.ui-acco-btn:after {
 }
 .talk-item .talk{
 	word-break: break-all;
+	font-weight:500;
+	font-size:1.5rem;
+}
+.talk-item .talk em{
+	color:#2584B4;
+	
+}
+.talk-item .btns{
+	width:100%;
+	display:flex;
+	justify-content: space-between;
+	margin-top:1.2rem;
+	border-radius: 0.4rem;
+	overflow: hidden;
+}
+.talk-item .btns button{
+	flex:1 auto;
+	background:#fff;
+	font-size:1.3rem;
+	height:4rem;
+}
+.talk-item .btns button + button{
+	border-left:1px solid #F5F5F5;
+}
+.talk-item .view{
+	width:100%;
+	text-align: right;
+	margin-top:1.6rem;
+}
+.talk-item .view button{
+	font-size:1.2rem;
+	color:#777;
+	font-weight:500;
+	padding-right:2rem;
+	position: relative;
+	height: 2rem;
+	
+}
+.talk-item .view button::after{
+	content:"";
+	display:block;
+	position: absolute;
+	top:0.1rem;
+	right:0;
+	width:2rem;
+	height:2rem;
+	background:url(../img/icon_down.svg) no-repeat 50% 50% / 1.1rem;
+	opacity:0.5;
 }
 .talk-noti{
 	width: 100%;
