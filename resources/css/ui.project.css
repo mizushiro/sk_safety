@@ -1,6 +1,7 @@
 /* layout */
 .base-wrap {
 	width: 100%;
+	overflow: hidden;
 }
 
 .base-body {
