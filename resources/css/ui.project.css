@@ -1562,7 +1562,9 @@ a.ui-acco-btn:after {
 .type-pts {
 	display: flex;
 }
-.type-pts .btn-photo{
+.type-pts .inp-wrap::after{
+	content:"";
+	display: block;
 	position:absolute;
 	top:0;
 	left:0;
