@@ -50,9 +50,25 @@
                         <div class="inp-wrap">
                             <input type="text" class="inp-base" value="" placeholder="내용을 입력하세요.">
                         </div>
-                        <button type="button" class="btn-filter" id="searchClose">
+                        <button type="button" class="btn-filter ui-drop" id="uiFilterDrop">
                             <span class="a11y-hidden">설정</span>
                         </button>
+                        <section class="ui-drop-pnl" data-id="uiFilterDrop">
+                            <div class="ui-drop-box talk-filter">
+                                <button type="button" class="filter-item">
+                                    <span>전체대화</span>
+                                </button>
+                                <button type="button" class="filter-item">
+                                    <span>미수신</span>
+                                </button>
+                                <button type="button" class="filter-item">
+                                    <span>답변수신</span>
+                                </button>
+                            </div>
+                            <button type="button" class="ui-drop-close">
+                                <span class="hide">닫기</span>
+                            </button>
+                        </section>
                     </div>
                 </div>
             </div>
@@ -162,7 +178,20 @@
             </div>
             <!-- //talk area -->
 
-            
+            <div class="ui-sp talk-search">
+                <div class="talk-search-wrap">
+                    <div class="group">
+                        <button type="button" class="btn-base round-s">
+                            <span>점검일지만들기</span>
+                        </button>
+                    </div>
+                    <div class="group">
+                        <button type="button" class="btn-base primary round-s">
+                            <span>편집</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </main>
         <!-- //content -->
 
@@ -205,6 +234,17 @@
                 });
 
                 $plugins.common.dragDel();
+
+                $plugins.uiDropdown({ 
+                    id:'uiFilterDrop',
+                    ps: 'BR',
+                    hold: true,
+                    dropSpace: $('body'),
+                    dropSrc: false,
+                    dropOffset: false,
+                    openback:function() { console.log('open callback'); },
+                    closeback:function() { console.log('close callback'); } 
+                });
             });
         })(jQuery, window, document);
     </script>

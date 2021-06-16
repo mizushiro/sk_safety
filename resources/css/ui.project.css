@@ -1777,9 +1777,25 @@ a.ui-acco-btn:after {
 	background: url(../img/icon_time.svg) no-repeat 0 50% / 1.2rem;
 }
 
-
-
-
+.talk-search.type-c{
+	z-index:3;
+}
+.talk-filter{
+	width:9rem;
+	padding:0;
+	border:1px solid #DDD;
+}
+.filter-item{
+	width:100%;
+	font-size:1.4rem;
+	padding:0.5rem 1.6rem 0.5rem ;
+}
+.filter-item + .filter-item{
+	border-top:1px solid #F5F5F5;
+}
+.talk-filter{
+	border-radius:0.4rem;
+}
 .nav-gnb{
 	position:fixed;
 	bottom:0;

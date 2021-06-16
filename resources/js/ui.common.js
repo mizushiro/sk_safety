@@ -55,25 +55,31 @@
 			$item.off('touchmove.d').on('touchmove.d', function(e){
 				state = true;
 				var m = e.originalEvent.touches[0].pageX;
+				var $this = $(this);
+				var $wrap = $this.find('.item-wrap');
+
 				if (Math.abs(s - m) > j) {
 					if ($(this).hasClass('open')) {
 						n = maxMove + j - (m - s);
-						n = n > maxMove ? maxMove : n < 0 ? 0 : n;
-						console.log(n);
-						$(this).find('.item-wrap').css('transform','translateX(-'+ n +'px)');
 					} else {
 						n = (s - m - j) / 2;
-						n = n > maxMove ? maxMove : n < 0 ? 0 : n;
- 						$(this).find('.item-wrap').css('transform','translateX(-'+ n +'px)');
 					}
+					
+					n = n > maxMove ? maxMove : n < 0 ? 0 : n;
+					$wrap.css('transform','translateX(-'+ n +'px)');
 				}
 			});
 			$item.off('touchend.d').on('touchend.d', function(e){
+				var $this = $(this);
+				var $wrap = $this.find('.item-wrap');
+				
 				if (state) {
 					if (n < 25) {
-						$(this).removeClass('open').find('.item-wrap').css('transform','translateX(0)');
+						$this.removeClass('open');
+						$wrap.css('transform','translateX(0)');
 					} else {
-						$(this).addClass('open').find('.item-wrap').css('transform','translateX(-'+ maxMove +'px)');
+						$this.addClass('open');
+						$wrap.css('transform','translateX(-'+ maxMove +'px)');
 					}
 					s = 0;
 					n = 0;

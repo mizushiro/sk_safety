@@ -58,7 +58,6 @@
 .ui-drop-pnl.on {display:block;}
 .ui-drop-box {background:#fff;}
 /* ui-drop : netvie UI style */
-.ui-drop-box {border:1px solid #222; padding:10px; }
 .ui-drop-pnl .btn-close {position:absolute; top:6px; right:6px;}
 .ui-drop-pnl .btn-close:before,
 .ui-drop-pnl .btn-close:after {background:#222;}
