@@ -1709,11 +1709,13 @@ a.ui-acco-btn:after {
 	position:absolute;
 	top:0;
 	right:0;
-	width:10rem;
-	padding-left:5rem;
+	width:5rem;
 	height:100%;
-	background:red;
+	background:#888;
+	box-shadow: inset 5px 0 3px rgb(0, 0, 0, 0.2);
 	color:#fff;
+	border-top-right-radius:0.4rem;
+	border-bottom-right-radius:0.4rem;
 }
 .talk-list .item-wrap{
 	position:relative;
