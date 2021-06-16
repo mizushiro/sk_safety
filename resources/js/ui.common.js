@@ -53,7 +53,9 @@
 
 			if (!!$sp.length) {
 				for (var i = 0; i < $sp.length; i++) {
-					add = $sp.eq(i).outerHeight() + add;
+					if ($sp.eq(i).is(':visible')){
+						add = $sp.eq(i).outerHeight() + add;
+					}
 				}
 			}
 

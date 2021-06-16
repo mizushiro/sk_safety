@@ -1520,7 +1520,13 @@ a.ui-acco-btn:after {
 	border-top: 0.3rem solid transparent;
 	border-bottom:  0.3rem solid transparent;
 }
-
+.talk-search-open .talk-search.type-a,
+.talk-search.type-b{
+	display:none;
+}
+.talk-search-open .talk-search.type-b{
+	display: block;
+}
 .talk-search{
 	width:100%;
 	position:relative;
@@ -1535,6 +1541,17 @@ a.ui-acco-btn:after {
 	height:100%;
 	box-shadow: 0 0 6px rgba(0,0,0,0.1);
 }
+.talk-latest-wrap{
+	position: relative;
+	z-index:1;
+	width:100%;
+	padding:0.9rem 2rem;
+}
+.talk-latest-wrap .tit{
+	width:100%;
+	font-size:1.5rem;
+	margin-bottom:0.4rem;
+}
 .talk-search-wrap{
 	position: relative;
 	z-index:1;
@@ -1543,9 +1560,11 @@ a.ui-acco-btn:after {
 	justify-content: space-between;
 	padding:0.9rem 2rem;
 }
+.talk-search-wrap.type-ts,
 .talk-search-wrap.type-pts{
 	padding:0.9rem 0.5rem 1.3rem 2rem;
 }
+.talk-latest-wrap + .talk-search-wrap,
 .talk-search-wrap + .talk-search-wrap{
 	border-top:1px solid #F5F5F5;
 }
@@ -1563,7 +1582,6 @@ a.ui-acco-btn:after {
 .type-pts {
 	display: flex;
 }
-
 .type-pts .btn-photo{
 	position:absolute;
 	top:0;
@@ -1590,6 +1608,74 @@ a.ui-acco-btn:after {
 	background: url(../img/icon_search.svg) no-repeat 50% 50% / 1.8rem;
 }
 
+.type-ts .inp-wrap{
+	flex:1 auto;
+	position:relative;
+}
+.type-ts .btn-search{
+	flex:0;
+	min-width:4rem;
+	max-width:4rem;
+	height:4.5rem;
+}
+.type-ts .inp-wrap::before{
+	content:"";
+	display: block;
+	position:absolute;
+	top:0;
+	left:0;
+	width:4.5rem;
+	height:4.5rem;
+	background: url(../img/icon_search.svg) no-repeat 50% 50% / 1.8rem;
+	opacity: 0.7;
+	z-index:2;
+}
+.type-ts .btn-close{
+	flex:0;
+	min-width:4rem;
+	max-width:4rem;
+	height:4.5rem;
+}
+.btn-close {
+	width:3rem;
+	height:3rem;
+	background: url(../img/icon_pop_close.svg) no-repeat 50% 50% / 1.5rem;
+}
+.latest-list{
+	width:100%;
+	overflow-x:auto;
+}
+
+.latest-list-wrap{
+	display:flex;
+}
+.latest-list li{
+	display:block; 
+	flex:0 auto;
+	position:relative;
+	height: auto;
+
+}
+.latest-list li + li{
+	margin-left:0.5rem;
+}
+.latest-list .word{
+	display:block;
+	padding:0.2rem 2.4rem 0.3rem 1rem;
+	font-size:1.2rem;
+	border:1px solid #ccc;
+	border-radius: 1rem;
+}
+.latest-list .btn-del{
+	position:absolute;
+	top:50%;
+	margin-top:-0.7rem;
+	right:0.5rem;
+	width:1.4rem;
+	height:1.4rem;
+	border-radius:50%;
+	background:#888 url(../img/icon_close_w.svg) no-repeat 50% 50% / 0.8rem;
+}
 .nav-gnb{
 	position:fixed;
 	bottom:0;
