@@ -41,6 +41,36 @@
 			$plugins.uiInputClear();
 
 		},
+		dragDel: function(){
+			var $item = $('.ui-drag > .item');
+			var s = 0;
+			var n = 0;
+			$item.on('touchstart', function(e){
+				s = e.originalEvent.touches[0].pageX;
+			});
+			$item.on('touchmove', function(e){
+				if ($(this).hasClass('open')) {
+					n = 50 - (e.originalEvent.touches[0].pageX - s);
+					n = n > 50 ? 50 : n < 0 ? 0 : n;
+					$(this).find('.item-wrap').css('transform','translateX(-'+ n +'px)');
+				} else {
+					if ( s - e.originalEvent.touches[0].pageX > 10) {
+						n = s - e.originalEvent.touches[0].pageX;
+						n = n > 50 ? 50 : n < 0 ? 0 : n;
+						$(this).find('.item-wrap').css('transform','translateX(-'+ n +'px)');
+					} 
+				}
+			});
+			$item.on('touchend', function(e){
+				if (n < 25) {
+					$(this).removeClass('open').find('.item-wrap').css('transform','translateX(0)');
+				} else {
+					$(this).addClass('open').find('.item-wrap').css('transform','translateX(-50px)');
+				}
+				s = 0;
+				n = 0;
+			});
+		},
 		contentHeight: function(){
 			var $sp =  $('.ui-sp');
 			var $target = $('.ui-height');

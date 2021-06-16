@@ -1596,6 +1596,7 @@ a.ui-acco-btn:after {
 	flex:1 auto;
 	position:relative;
 }
+.type-ts .btn-filter,
 .type-pts .btn-search{
 	flex:0;
 	min-width:4rem;
@@ -1606,6 +1607,11 @@ a.ui-acco-btn:after {
 	width:3rem;
 	height:3rem;
 	background: url(../img/icon_search.svg) no-repeat 50% 50% / 1.8rem;
+}
+.btn-filter {
+	width:3rem;
+	height:3rem;
+	background: url(../img/icon_filter_b.svg) no-repeat 50% 50% / 1.8rem;
 }
 
 .type-ts .inp-wrap{
@@ -1676,6 +1682,102 @@ a.ui-acco-btn:after {
 	border-radius:50%;
 	background:#888 url(../img/icon_close_w.svg) no-repeat 50% 50% / 0.8rem;
 }
+
+.talk-list{
+	width:100%;
+}
+.talk-list .item{
+	width:100%;
+	position: relative;
+	margin:1rem 0;
+	display: block;
+}
+.talk-list .item + .item{
+	margin-top:3rem;
+}
+.talk-list .item + .item::before{
+	content: "";
+	display: block;
+	position: absolute;
+	top:-1.5rem;
+	left:0;
+	width:100%;
+	height: 1px;
+	background-color: #EEEEEE;
+}
+.talk-list .item-del{
+	position:absolute;
+	top:0;
+	right:0;
+	width:10rem;
+	padding-left:5rem;
+	height:100%;
+	background:red;
+	color:#fff;
+}
+.talk-list .item-wrap{
+	position:relative;
+	z-index:1;
+	width:100%;
+	background:#F7F7F7;
+	height:100%;
+	display: flex;
+	align-items: center;
+}
+.talk-list .photo{
+	flex:0 8rem;
+	width:8rem;
+	height:8rem;
+	overflow: hidden;
+	border-radius: .4rem;
+	margin-right:1rem;
+}
+.talk-list .photo img{
+	width:100%; 
+	height:100%;
+}
+.talk-list .info{
+	flex:1 auto;
+	padding:.8rem 0;
+	max-width:calc(100% - 14.5rem);
+}
+.talk-list .date{
+	flex:0 5rem;
+	margin-left:0.5rem;
+	font-size:1.2rem;
+	color:#777;
+}
+.talk-list .tit{
+	font-size:1.6rem;
+	font-weight: 700;
+	color:#333;
+	width:100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.talk-list .opt{
+	font-size:1.6rem;
+	font-weight: 500;
+	color:#333;
+}
+.talk-list .opt em{
+	color:#2584B4
+}
+.talk-list .state{
+	margin-top:0.5rem;
+	font-size:1.2rem;
+	color:#777;
+}
+.talk-list .time{
+	display:inline-block;
+	padding-left:1.4rem;
+	background: url(../img/icon_time.svg) no-repeat 0 50% / 1.2rem;
+}
+
+
+
+
 .nav-gnb{
 	position:fixed;
 	bottom:0;
