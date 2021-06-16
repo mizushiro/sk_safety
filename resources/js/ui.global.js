@@ -2248,7 +2248,7 @@ if (!Object.keys){
 			}
 
 			$btn.attr('aria-expanded', true);
-			$pnl.attr('aria-hidden', false).attr('tabindex', 0).addClass('on');
+			$pnl.attr('aria-hidden', false).addClass('on');
 
 			//focus hold or sense
 			hold ?	

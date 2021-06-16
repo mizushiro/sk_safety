@@ -53,15 +53,30 @@
                         <button type="button" class="btn-filter ui-drop" id="uiFilterDrop">
                             <span class="a11y-hidden">설정</span>
                         </button>
-                        <section class="ui-drop-pnl" data-id="uiFilterDrop">
-                            <div class="ui-drop-box talk-filter">
-                                <button type="button" class="filter-item">
+                        <section class="ui-drop-pnl talk-filter" data-id="uiFilterDrop">
+                            <div class="ui-drop-box">
+                                <button type="button" class="filter-item" onclick="
+                                    alert('전체대화'); 
+                                    $plugins.uiDropdownToggle({ 
+                                        id:'uiFilterDrop',
+                                        state: 'close' 
+                                    });">
                                     <span>전체대화</span>
                                 </button>
-                                <button type="button" class="filter-item">
+                                <button type="button" class="filter-item" onclick="
+                                    alert('미수신'); 
+                                    $plugins.uiDropdownToggle({ 
+                                        id:'uiFilterDrop',
+                                        state: 'close' 
+                                    });">
                                     <span>미수신</span>
                                 </button>
-                                <button type="button" class="filter-item">
+                                <button type="button" class="filter-item" onclick="
+                                    alert('답변수신'); 
+                                    $plugins.uiDropdownToggle({ 
+                                        id:'uiFilterDrop',
+                                        state: 'close' 
+                                    });">
                                     <span>답변수신</span>
                                 </button>
                             </div>

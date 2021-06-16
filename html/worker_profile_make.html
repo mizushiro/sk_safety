@@ -61,12 +61,12 @@
                         <div class="form-dl mgt-n col2-c">
                             <div class="col-item">
                                 <div class="form-dt">
-                                    <div class="form-tit">공종</div>
+                                    <div class="form-tit">직종</div>
                                 </div>
                                 <div class="form-dd">
                                     <div class="form-item">
                                         <button type="button" class="inp-select">
-                                            <span>형틀목공</span>
+                                            <span>선택</span>
                                         </button>
                                     </div>
                                 </div>
@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="form-dd">
                                     <div class="form-item">
-                                        <input type="tel" id="form_5" class="inp-base" value="" placeholder="000-0000-0000">
+                                        <input type="text" id="form_5" class="inp-base" value="" placeholder="000-0000-0000">
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +145,16 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="form_6b">비상연락전화번호</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <input type="tel" id="form_6b" class="inp-base" value="" placeholder="">
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-dl">
                             <div class="form-dt">
                                 <label class="form-tit" for="form_7">주소</label>
@@ -159,6 +168,76 @@
                     </div>
                 </section>
                 <!-- //기본정보 -->
+
+                <!-- 기초안전교육이수 -->
+                <hr class="hr-sec">
+                <section class="section-item mgt-n">
+                    <div class="tit-sec type-line">
+                        <h3 class="tit">기초안전교육이수</h3>
+                        <div class="tit-util">
+                            <button type="button" class="btn-photo">
+                                <span class="a11y-hidden">추가하기</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <ul class="list-imgfile">
+                        <li class="list-imgfile-item">
+                            <button type="button" class="img">
+                                <img src="" alt="">
+                            </button>
+                            <div class="group">
+                                <div class="name">001.jpg</div>
+                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
+                            </div>
+                        </li>
+                        <li class="list-imgfile-item">
+                            <button type="button" class="img">
+                                <img src="" alt="">
+                            </button>
+                            <div class="group">
+                                <div class="name">002.jpg</div>
+                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <!-- //기초안전교육이수 -->
+
+                <!-- 전자서명 -->
+                <hr class="hr-sec">
+                <section class="section-item mgt-n">
+                    <div class="tit-sec type-line">
+                        <h3 class="tit">전자서명</h3>
+                        <div class="tit-util">
+                            <button type="button" class="btn-draw">
+                                <span class="a11y-hidden">서명하기</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <ul class="list-imgfile">
+                        <li class="list-imgfile-item">
+                            <button type="button" class="img">
+                                <img src="" alt="">
+                            </button>
+                            <div class="group">
+                                <div class="name">001.jpg</div>
+                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
+                            </div>
+                        </li>
+                        <li class="list-imgfile-item">
+                            <button type="button" class="img">
+                                <img src="" alt="">
+                            </button>
+                            <div class="group">
+                                <div class="name">002.jpg</div>
+                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <!-- //전자서명 -->
 
                 <!-- 경력 -->
                 <hr class="hr-sec">
@@ -184,6 +263,17 @@
                             </div>
                         </div>
 
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="form2_2">건설사</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <input type="text" id="form2_2" class="inp-base" value="SK 건설" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-dl col2-c">
                             <div class="col-item">
                                 <div class="form-dt">
@@ -198,11 +288,16 @@
 
                             <div class="col-item">
                                 <div class="form-dt">
-                                    <label for="form2_3" class="form-tit">건설사</label>
+                                    <label for="form2_3" class="form-tit">직종</label>
                                 </div>
                                 <div class="form-dd">
                                     <div class="form-item">
-                                        <input type="text" id="form2_3" class="inp-base" value="SK건설 ㅣ 형틀" placeholder="">
+                                        <select class="inp-select" id="form2_3" title="직종선택">
+                                            <option>직종선택</option>
+                                            <option>형틀</option>
+                                            
+                                        </select>
+                                        <!-- <input type="text" id="form2_3" class="inp-base" value="형틀" placeholder=""> -->
                                     </div>
                                 </div>
                             </div>
