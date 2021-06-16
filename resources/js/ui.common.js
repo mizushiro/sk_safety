@@ -47,35 +47,38 @@
 			var n = 0;
 			var maxMove = 50;
 			var j = 50; 
+			var state = false;
 
-			$item.on('touchstart', function(e){
+			$item.off('touchstart.d').on('touchstart.d', function(e){
 				s = e.originalEvent.touches[0].pageX;
 			});
-			$item.on('touchmove', function(e){
+			$item.off('touchmove.d').on('touchmove.d', function(e){
+				state = true;
 				var m = e.originalEvent.touches[0].pageX;
 				if (Math.abs(s - m) > j) {
 					if ($(this).hasClass('open')) {
-						n = maxMove - (m - s);
+						n = maxMove + j - (m - s);
 						n = n > maxMove ? maxMove : n < 0 ? 0 : n;
 						console.log(n);
 						$(this).find('.item-wrap').css('transform','translateX(-'+ n +'px)');
 					} else {
 						n = (s - m - j) / 2;
 						n = n > maxMove ? maxMove : n < 0 ? 0 : n;
-						console.log(n);
-						$(this).find('.item-wrap').css('transform','translateX(-'+ n +'px)');
+ 						$(this).find('.item-wrap').css('transform','translateX(-'+ n +'px)');
 					}
 				}
-				
 			});
-			$item.on('touchend', function(e){
-				if (n < 25) {
-					$(this).removeClass('open').find('.item-wrap').css('transform','translateX(0)');
-				} else {
-					$(this).addClass('open').find('.item-wrap').css('transform','translateX(-'+ maxMove +'px)');
+			$item.off('touchend.d').on('touchend.d', function(e){
+				if (state) {
+					if (n < 25) {
+						$(this).removeClass('open').find('.item-wrap').css('transform','translateX(0)');
+					} else {
+						$(this).addClass('open').find('.item-wrap').css('transform','translateX(-'+ maxMove +'px)');
+					}
+					s = 0;
+					n = 0;
+					state=false;
 				}
-				s = 0;
-				n = 0;
 			});
 		},
 		contentHeight: function(){
