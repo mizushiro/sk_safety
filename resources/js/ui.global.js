@@ -2599,13 +2599,13 @@ if (!Object.keys){
 		function makeSystemModal(){
 			var htmlSystem = '';
 			
-			htmlSystem += '<div class="ui-modal type-system '+ sClass +'" id="uiSystemModal">';
+			htmlSystem += '<div class="ui-modal '+ sClass +'" id="uiSystemModal">';
 			htmlSystem += '<div class="ui-modal-wrap">';
 			htmlSystem += '<div class="ui-modal-body">';
 			htmlSystem += sMessage;
 			htmlSystem += '</div>';
 			htmlSystem += '<div class="ui-modal-footer">';
-			htmlSystem += '<div class="btn-wrap">';
+			htmlSystem += '<div class="btn-area stick">';
 
 			if (type === 'confirm') {
 				htmlSystem += '<button type="button" class="btn-base ui-modal-cancel"><span>'+ sBtnCancelTxt +'</span></button>';
@@ -2777,7 +2777,7 @@ if (!Object.keys){
 		var endfocus = opt.endfocus;
 		var closeCallback = opt.closeCallback === undefined ? $modal.data('closecallback') === undefined ? false : $modal.data('closecallback') : opt.closeCallback;
 		var $modalWrap = $modal.find('> .ui-modal-wrap');
-		
+
 		$modalWrap.off('transitionend.modal');
 		$modal.removeClass('open').addClass('close');
 		$modal.removeClass('fix-header');

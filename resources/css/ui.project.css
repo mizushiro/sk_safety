@@ -506,6 +506,7 @@ button.inp-select{
 .section-item .btn-area{
 	padding:0;
 }
+.btn-wrap,
 .btn-area {
 	position: relative;
 	width: 100%;
@@ -550,7 +551,7 @@ button.inp-select{
 	font-size: 1.7rem;
 	padding: 0.2rem 2rem 0;
 }
-
+.btn-base.ui-modal-confirm,
 .btn-base.primary {
 	background-color: #008F84;
 	border-color: #008F84;
@@ -576,7 +577,7 @@ button.inp-select{
 	background: #F5F5F5;
 	border-color: #626262;
 }
-
+.btn-base.ui-modal-confirm:active,
 .btn-base.primary:active {
 	background: #017168;
 	border-color: #017168;
@@ -938,9 +939,8 @@ button.inp-select{
 
 
 .type-system .ui-modal-wrap {
-	width: 250px;
+	width: 100%;
 	text-align: center;
-	font-size: 14px;
 }
 
 .type-system .ui-modal-wrap strong {
@@ -979,7 +979,13 @@ button.inp-select{
 	height: 3rem;
 	background: url(../img/icon_pop_close.svg) no-repeat 50% 50% / 1.5rem;
 }
-
+.type-system .ui-modal-body{
+	padding:3.5rem 1rem;
+	font-size:1.5rem
+}
+.type-system .ui-modal-body em{
+	color:#008F84;
+}
 .ui-modal-body {
 	position: relative;
 	margin-top: 0;
@@ -992,12 +998,12 @@ button.inp-select{
 	margin-top: 0;
 	padding: 0;
 }
-
+.ui-modal-footer .btn-wrap,
 .ui-modal-footer .btn-area {
 	margin: 0;
 	padding:0;
 }
-
+.ui-modal-footer .btn-wrap .btn-base,
 .ui-modal-footer .btn-area .btn-base {
 	height: 5.5rem;
 	font-size: 1.7rem;
@@ -1044,11 +1050,11 @@ button.inp-select{
 	overflow: hidden;
 	padding: 0 2rem 2rem;
 }
-
+.ps-bottom .ui-modal-footer .btn-wrap,
 .ps-bottom .ui-modal-footer .btn-area {
 	margin: 0;
 }
-
+.ps-bottom .ui-modal-footer .btn-wrap .btn-base,
 .ps-bottom .ui-modal-footer .btn-area .btn-base {
 	height: 5rem;
 }
