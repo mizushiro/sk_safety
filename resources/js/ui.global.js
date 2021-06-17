@@ -2662,9 +2662,10 @@ if (!Object.keys){
 					break;
 			}
 
+			headerH = $modalHeader.length ? $modalHeader.outerHeight() : 0;
+			footerH = $modalFooter.length ? $modalFooter.outerHeight() : 0;
+
 			if (!mobileFull) {
-				headerH = $modalHeader.length ? $modalHeader.outerHeight() : 0;
-				footerH = $modalFooter.length ? $modalFooter.outerHeight() : 0;
 				console.log('h', !h);
 				if (!h) {
 					var win_h = $(win).outerHeight();
@@ -2749,6 +2750,13 @@ if (!Object.keys){
 				var $this = $(this); 
 				$this.closest('.ui-modal').data('active', $this);
 			});
+
+			$modalWrap.on('transitionend.modal', function(){
+				if (!!mobileFull) {
+					$modal.addClass('fix-header');
+					$modalBody.css('padding-top', headerH + 'px');
+				}
+			});
 		}
 	}
 	win[global].uiModalClose.option = {
@@ -2762,14 +2770,17 @@ if (!Object.keys){
 		});
 	}
 	function createUiModalClose(v) {
-		var opt = $.extend(true, {}, win[global].uiModalClose.option, v),
-			id = opt.id,
-			remove = opt.remove,
-			$modal = $('#' + id),
-			endfocus = opt.endfocus,
-			closeCallback = opt.closeCallback === undefined ? $modal.data('closecallback') === undefined ? false : $modal.data('closecallback') : opt.closeCallback;
-
+		var opt = $.extend(true, {}, win[global].uiModalClose.option, v);
+		var id = opt.id;
+		var remove = opt.remove;
+		var $modal = $('#' + id);
+		var endfocus = opt.endfocus;
+		var closeCallback = opt.closeCallback === undefined ? $modal.data('closecallback') === undefined ? false : $modal.data('closecallback') : opt.closeCallback;
+		var $modalWrap = $modal.find('> .ui-modal-wrap');
+		
+		$modalWrap.off('transitionend.modal');
 		$modal.removeClass('open').addClass('close');
+		$modal.removeClass('fix-header');
 
 		var timer;
 		var $modalPrev = $('.ui-modal.open.n' + ($('.ui-modal.open').length - 1));

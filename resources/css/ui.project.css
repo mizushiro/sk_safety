@@ -230,15 +230,15 @@
 	justify-content: space-between;
 }
 .tit-sec .tit{
-	margin-bottom:1rem;
+	margin-bottom:0;
 }
 .tit-sec.type-line{
 	width:100%;
 	position:relative;
 	border-bottom:2px solid #333;
 }
-.tit-sec .tit-util{
-
+.tit-sec.type-line .tit{
+	margin-bottom:1rem;
 }
 
 .tit-cont {
@@ -820,6 +820,7 @@ button.inp-select{
 }
 
 .ui-modal-wrap {
+	width: 100%;
 	opacity: 0;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 	position: relative;
@@ -948,7 +949,10 @@ button.inp-select{
 
 
 
-
+.fix-header .ui-modal-header{
+	position: fixed;
+	z-index: 3;
+}
 .ui-modal-header {
 	position: relative;
 	top: 0;
@@ -991,6 +995,7 @@ button.inp-select{
 
 .ui-modal-footer .btn-area {
 	margin: 0;
+	padding:0;
 }
 
 .ui-modal-footer .btn-area .btn-base {
@@ -2004,7 +2009,166 @@ a.ui-acco-btn:after {
 	background: url(../img/icon_draw.svg) no-repeat 50% 50% / 1.6rem;
 }
 
+.togglebtn-wrap{
+	position:relative;
+	width:100%;
+}
+.togglebtn-wrap .btn-base{
+	background:#F7F7F7;
+	border:0;
+	height:4rem;
+	border-radius:1rem;
+	margin-bottom:1rem;
+	margin-right:1rem;
+}
 
+/* ui tab : base */
+.ui-tab.type-full{
+	width:calc(100% + 4rem);
+	margin-left:-2rem;
+	margin-top:0;
+}
+.ui-tab {
+	position: relative;
+	margin: 10px 0
+}
 
+.ui-tab.type-scroll .ui-tab-btns {
+	overflow: auto;
+}
 
+.ui-tab.type-scroll .ui-tab-btns .btn-wrap {
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 0;
+}
 
+.ui-tab.type-scroll .ui-tab-btns .btn-wrap .ui-tab-btn {
+	flex: 1;
+	min-width: 100px
+}
+
+.ui-tab-btns {
+	position: relative;
+	overflow: hidden;
+	z-index: 1
+}
+
+.ui-tab-btns:after {
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	clear: both;
+	width: 100%;
+	height: 1px;
+	background: #EEE;
+}
+
+.ui-tab-btn {
+	box-sizing: border-box;
+	float: left;
+	position: relative;
+	z-index: 0
+}
+
+.ui-tab-btn:hover span,
+.ui-tab-btn:focus span {
+	border-bottom: 1px solid #666;
+}
+
+.ui-tab-btn.selected {
+	z-index: 2;
+}
+
+.ui-tab-btn.selected:hover span,
+.ui-tab-btn.selected:focus span {
+	border-bottom: 1px solid #fff;
+}
+
+.ui-tab-pnls {
+	box-sizing: border-box;
+	position: relative;
+	width: 100%;
+}
+
+.ui-tab-pnl {
+	box-sizing: border-box;
+	top: 0;
+	left: 0;
+}
+
+.ui-tab-pnl,
+.ui-tab-pnl[aria-hidden='true'] {
+	visibility: hidden;
+	position: absolute;
+	opacity: 0;
+	display: none
+}
+
+.ui-tab-pnl.selected,
+.ui-tab-pnl[aria-hidden='false'] {
+	visibility: visible;
+	position: relative;
+	opacity: 1;
+	z-index: 1;
+	display: block
+}
+
+/* ui-tab :base style */
+.btn-wrap {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.ui-tab-btn {
+	padding: 1.5rem;
+	font-size: 1.6rem;
+	color: #999;
+	font-weight: 700;
+}
+.ui-tab-btn + .ui-tab-btn{
+	margin-left:1rem;
+}
+.ui-tab-btn.selected {
+	color: #008F84;
+	border-bottom: 0.2rem solid #008F84ff;
+}
+
+.ui-tab-pnl {
+	width: 100%;
+	top: 0;
+	left: 0;
+	padding:2rem;
+	background: #fff;
+	border-top: 0
+}
+
+/* ui-tab : eff */
+.ui-tab.eff-fade>.ui-tab-pnls>.ui-tab-pnl {
+	animation-name: fadeIn;
+	animation-duration: .2s;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+}
+
+.ui-tab.eff-fade>.ui-tab-pnls>.ui-tab-pnl[aria-hidden="false"] {
+	animation-name: fadeIn;
+	animation-duration: .2s;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+}
+.digitalsign-img img{
+	background:#F7F7F7 ;
+	width:100%;
+	min-height:calc(100vw - 7rem);
+}
+.digitalsign-img img{
+	width:100%;
+	height:100%;
+}

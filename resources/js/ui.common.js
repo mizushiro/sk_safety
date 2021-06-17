@@ -40,6 +40,44 @@
 
 			$plugins.uiInputClear();
 
+			//event
+			//직종
+			$('.modal-typework').on('click', function(){
+				$plugins.uiModalOpen({ 
+					id: 'modal_typework', 
+					mobileFull:true,
+					src: '../modal/modal_typeWork.html', 
+					ps: 'center', 
+					closeCallback: function(v) { 
+							console.log('close callback', v); 
+					},
+					callback: function(v) { 
+							console.log('callback', v); 
+							$plugins.uiTab({ 
+								id:'exeWorkTab', 
+								current:0, 
+								callback:function(v){
+									console.log(111111);
+								} 
+							});
+					}
+				});
+			});
+			//전자서명
+			$('.btn-draw').on('click', function(){
+				$plugins.uiModalOpen({ 
+					id: 'modal_digitalsign', 
+					src: '../modal/modal_digitalSign.html', 
+					ps: 'center', 
+					closeCallback: function(v) { 
+							console.log('close callback', v); 
+					},
+					callback: function(v) { 
+							console.log('callback', v); 
+					}
+				});
+			});
+
 		},
 		dragDel: function(){
 			var $item = $('.ui-drag > .item');
@@ -95,31 +133,43 @@
 			var h = $(win).outerHeight() - hh;
 			var add = 0;
 
-			var type = $target.data('type');
+			$target.each(function(){
+				var $this = $(this);
+				var type = $this.data('type');
 
-			if (!!$sp.length) {
-				for (var i = 0; i < $sp.length; i++) {
-					if ($sp.eq(i).is(':visible')){
-						add = $sp.eq(i).outerHeight() + add;
+				if (!!$this.closest('.ui-modal').length) {
+					h = $(win).outerHeight();
+				}
+			
+				if (!!$sp.length) {
+					for (var i = 0; i < $sp.length; i++) {
+						if ($sp.eq(i).is(':visible')){
+							add = $sp.eq(i).outerHeight() + add;
+						}
 					}
 				}
-			}
 
-			$target.css({
-				'max-height': '100%',
-				'min-height': 0
+				console.log(add, hh, h);
+
+				$this.css({
+					'max-height': '100%',
+					'min-height': 0
+				});
+
+				if (type === undefined || type === 'min') {
+					$this.css('min-height', h - add + 'px');
+				} else if (type === 'max') {
+					$this.css('max-height', h - add + 'px');
+				} else {
+					$this.css({
+						'max-height': h - add + 'px',
+						'min-height': h - add + 'px',
+						'overflow-y' : 'auto'
+					});
+				}
 			});
 
-			if (type === undefined || type === 'min') {
-				$target.css('min-height', h - add + 'px');
-			} else if (type === 'max') {
-				$target.css('max-height', h - add + 'px');
-			} else {
-				$target.css({
-					'max-height': h - add + 'px',
-					'min-height': h - add + 'px'
-				});
-			}
+			
 		},
 		header: function(){
 			var _this = this;
