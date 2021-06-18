@@ -281,6 +281,14 @@ button.inp-select {
 	color: #333;
 	padding: 0;
 }
+/* .inp-base[type="date"] {
+	padding-right:3rem;
+	background:url(../img/calendar-range.svg) no-repeat 100% 50% / 1.4rem;
+} */
+input[type="date"]::-webkit-clear-button, 
+input[type="date"]::-webkit-inner-spin-button { 
+	display: none; 
+ } 
 
 .inp-select:disabled,
 .inp-base:disabled {
@@ -289,7 +297,7 @@ button.inp-select {
 }
 
 .inp-base:read-only {
-	background-color: #F5F5F5;
+	background-color: #fff;
 	color: #333;
 }
 
@@ -523,7 +531,7 @@ button.inp-select {
 
 /* button */
 .section-item .btn-area {
-	padding: 0;
+	padding: 2rem 0 0;
 }
 
 .btn-wrap,
@@ -708,6 +716,8 @@ button.inp-select {
 	margin-bottom: 0.7rem;
 	font-weight: 500;
 	color: #666;
+	display: flex;
+	justify-content: space-between;
 }
 
 .form-dd {
@@ -2366,3 +2376,37 @@ a.ui-acco-btn:after {
 	font-weight:500;
 	border-bottom: 1px solid #008F84;
 }
+
+.flag {
+	display: inline-block;
+	height:2.0rem;
+	text-align: center;
+	border:1px solid #ccc;
+	border-radius:0.4rem;
+	padding:0.1rem 0.6rem 0;
+	font-size:1.2rem;
+}
+.flag.modify{
+	color:#E7565F;
+	border-color:#E7565F;
+}
+
+.data-no{
+	width:100%;
+	padding:2.0rem 2rem 3.0rem;
+	text-align: center;
+	font-size:1.4rem;
+	color:#999;
+}
+.data-no::before{
+	content:"";
+	display: block;
+	margin:0 auto 1rem;
+	width:5rem;
+	height:5rem;
+	border-radius:50%;
+	background:#F7F7F7 url(../img/note-off-outline.svg) no-repeat 50% 50% / 2.5rem;
+}
+
+
+
