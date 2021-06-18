@@ -598,7 +598,7 @@ input[type="date"]::after {
 	font-weight: 500;
 	color: #333;
 	border: 1px solid #ddd;
-	padding: 0.2rem 1.9rem 0;
+	padding: 0.2rem 1rem 0;
 }
 
 .btn-base.small {
