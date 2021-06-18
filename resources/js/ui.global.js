@@ -4498,7 +4498,7 @@ if (!Object.keys){
 				if (_$this.val() === '') {
 					_$this.next('.ui-clear').remove();
 				} else {
-					if (!$('.ui-clear[data-id="'+ _$this.attr('id') +'"]').length) {
+					if (!$('.ui-clear[data-id="'+ _$this.attr('id') +'"]').length || _$this.attr('type') === 'date') {
 						_$wrap.append( make(_$this.attr('id')) );
 					} 
 				}
