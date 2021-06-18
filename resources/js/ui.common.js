@@ -19,6 +19,7 @@
 				} else {
 					$('html').removeClass('not-top');
 				}
+				$plugins.common.pageTop($plugins.common.sTop);
 			});
 
 			if ($('.base-header').length) {
@@ -40,8 +41,17 @@
 
 			$plugins.uiInputClear();
 			$plugins.uiTooltip();
-
+			$('body').append('<button type="button" class="btn-top ui-top"><span class="a11y-hidden">상단으로 이동</span></button>');
+			
+			
 			//event
+			$('.ui-top').on('click', function(){
+				$plugins.uiScroll({ 
+					value: 0,
+					speed: 300,
+					target: 'html, body' 
+				});
+			});
 			//직종
 			$('.modal-typework').on('click', function(){
 				$plugins.uiModalOpen({ 
@@ -78,6 +88,18 @@
 					}
 				});
 			});
+
+		},
+		pageTop: function(v){
+			console.log(v);
+			var current = v;
+
+			if (v > 50) {
+				$('html').addClass('is-FAB');
+
+			} else {
+				$('html').removeClass('is-FAB');
+			}
 
 		},
 		dragDel: function(){
