@@ -292,11 +292,21 @@ input[type="date"]::-webkit-inner-spin-button {
 	color: rgba(0, 0, 0, 0);
 	opacity: 1;
 	display: block;
-	background: url(../img/calendar-range.svg) no-repeat 50% 50% / 1.4rem;
+	background: none;
 	width: 2rem;
 	border-width: thin;
 }
-
+input[type="date"]::after{
+	content: "";
+	display: block;
+	width:2rem;
+	height:2rem;
+	background: url(../img/calendar-range.svg) no-repeat 50% 50% / 1.4rem;
+	position: absolute;
+	top:50%;
+	right:0;
+	margin-top:-1rem;
+}
 .inp-select:disabled,
 .inp-base:disabled {
 	background-color: #F5F5F5;
