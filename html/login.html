@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -95,6 +95,8 @@
                         <div class="inp-check">
                             <input type="checkbox" id="자동로그인">
                             <label for="자동로그인">자동 로그인</label>
+                            <button type="button" aria-describedby="tt" class="ui-tooltip-btn" data-class="tip-test0">tooltip</button> 
+
                         </div>
                     </div>
                 </section>
@@ -133,6 +135,15 @@
             </div>
         </main>
         <!-- //content -->
+    </div>
+
+    <!-- tooltip -->
+    <div class="ui-tooltip" id="tt" role="tooltip" aria-hidden="true">
+        <button class="ui-tooltip-close" type="button"><span class="a11y-hidden">툴팁닫기</span></button>
+        <dl>
+            <dt>자동로그인 설정</dt>
+            <dd>자동로그인을 설정하시면 로그인 절차없이 Safety Platfrom을 이용하실 수 있습니다.</dd>
+        </dl>
     </div>
 
     <script> 

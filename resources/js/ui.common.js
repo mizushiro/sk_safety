@@ -39,6 +39,7 @@
 			}	
 
 			$plugins.uiInputClear();
+			$plugins.uiTooltip();
 
 			//event
 			//직종

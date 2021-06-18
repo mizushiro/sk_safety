@@ -402,7 +402,7 @@ button.inp-select{
 }
 
 .inp-check label {
-	display: block;
+	display: inline-block;
 	position: relative;
 	padding-left: 3rem;
 	font-size: 1.3rem;
@@ -410,6 +410,7 @@ button.inp-select{
 	padding: 0.6rem 0 0.4rem 3rem;
 	color: #777;
 	font-weight: 500;
+	vertical-align: middle;
 }
 
 .inp-check label::before {

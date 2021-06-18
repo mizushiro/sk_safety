@@ -161,10 +161,11 @@ body.ui-print-ing .ui-print {display:flex; width:100%; height:100%; justify-cont
 
 
 /* ui tooltip:z-index 200 ~ 299 */
-.ui-tooltip {display:none; position:absolute; z-index:200; font-size:11px; border:1px solid #555; padding:10px; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.3)}
+.ui-tooltip {display:none; width:calc(100% - 4rem); margin:0 2.0rem; position:absolute; z-index:200; font-size:1.2rem; border:1px solid #555; padding:1.5rem; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.3); border-radius:0.4rem; color: #666;;} 
+.ui-tooltip dt{display: block; font-weight: 500; color:#333333; margin-bottom: 0.5rem;}
 .ui-tooltip-btn {cursor:help;}
-button.ui-tooltip-btn {position:relative; width:14px; height:14px; border-radius:7px; border:1px solid #222; background:#fff; color:transparent; overflow:hidden; font-size:xx-small;}
-button.ui-tooltip-btn:after {content:"?"; position:absolute; top:-1px; left:0; display:block; width:100%; height:100%; font-size:10px; color:#222; font-weight:700}
+button.ui-tooltip-btn {position:relative; width:2rem; height:2rem; display: inline-block; vertical-align: middle; margin:0 0.5rem; top:0.1rem}
+button.ui-tooltip-btn::after{content:"?"; display: block; width:1.8rem; height:1.8rem; border-radius: 50%; border:2px solid #ccc; background:#fff; color:#ccc; text-align: center; line-height: 1.5rem; margin:0.1rem auto; font-size:1.2rem; font-weight:700; box-sizing: border-box;}
 .ui-tooltip.ps-ct .ui-tooltip-arrow,
 .ui-tooltip.ps-cb .ui-tooltip-arrow,
 .ui-tooltip.ps-lt .ui-tooltip-arrow,
@@ -177,7 +178,7 @@ button.ui-tooltip-btn:after {content:"?"; position:absolute; top:-1px; left:0; d
 .ui-tooltip.ps-cb .ui-tooltip-arrow {left:50%; top:-6px; transform:rotate(-45deg); margin-left:-5px}
 .ui-tooltip.ps-lb .ui-tooltip-arrow {left:0; top:-6px; transform:rotate(-45deg); margin-left:10px}
 .ui-tooltip.ps-rb .ui-tooltip-arrow {right:0; top:-6px; transform:rotate(-45deg); margin-right:10px}
-
+.ui-tooltip-close{position: absolute; top:0.7rem; right:0.7rem; width:2rem; height:2rem; background: url(../img/icon_close.svg) no-repeat 50% 50% / 1.2rem; opacity:0.6;}
 
 /* ui date picker */
 .open-datepicker .base-header{z-index:1}

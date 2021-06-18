@@ -3310,18 +3310,18 @@ if (!Object.keys){
 		ps: false
 	};
 	function createUiTooltip(opt){
-		var opt = opt === undefined ? {} : opt,
-			opt = $.extend(true, {}, win[global].uiTooltip.option, opt);
+		var opt = opt === undefined ? {} : opt;
 
-		var $btn = $('.ui-tooltip-btn'),
-			$tip = opt.id ? typeof opt.id === 'string' ? $('#' + opt.id) : opt.id : false,
-			visible = opt.visible,
-			id = opt.id ? $tip.attr('id') : '',
-			
-			sp = 10,
-			ps = opt.ps,
-			timer,
-			class_ps = 'ps-ct ps-cb ps-lt ps-lb ps-rt ps-rb';
+		opt = $.extend(true, {}, win[global].uiTooltip.option, opt);
+
+		var $btn = $('.ui-tooltip-btn');
+		var $tip = opt.id ? typeof opt.id === 'string' ? $('#' + opt.id) : opt.id : false;
+		var visible = opt.visible;
+		var id = opt.id ? $tip.attr('id') : '';
+		var sp = 4;
+		var ps = opt.ps;
+		var timer;
+		var class_ps = 'ps-ct ps-cb ps-lt ps-lb ps-rt ps-rb';
 
 		if (visible !== null) {
 			visible ? tooltipSet(id) : tooltipHide();
@@ -3333,24 +3333,25 @@ if (!Object.keys){
 		// 	tooltipSet($(this).attr('aria-describedby'));
 		// });
 
-		$btn
-		.off('mouseover.ui focus.ui').on('mouseover.ui focus.ui', function(e){
-			e.preventDefault();
-			tooltipSet(this);
-		})
-		.off('mouseleave.ui ').on('mouseleave.ui', function(){
-			tooltipHideDelay();
+		// $btn.off('mouseover.ui focus.ui').on('mouseover.ui focus.ui', function(e){
+		// 	e.preventDefault();
+		// 	tooltipSet(this);
+		// }).off('mouseleave.ui ').on('mouseleave.ui', function(){
+		// 	tooltipHideDelay();
 
-			$('.ui-tooltip').on('mouseover.ui', function(){
-				clearTimeout(timer);
-			}).on('mouseleave.ui', function(e){
-				tooltipHideDelay();
-			});
+		// 	$('.ui-tooltip').on('mouseover.ui', function(){
+		// 		clearTimeout(timer);
+		// 	}).on('mouseleave.ui', function(e){
+		// 		tooltipHideDelay();
+		// 	});
+		// });
+
+		$('.ui-tooltip-close').off('click.uitooltip').on('click.uitooltip', function(){
+			$btn.data('view', false);
+			tooltipHide();
 		});
 
-		$btn
-		.off('touchstart.uitooltip').on('touchstart.uitooltip', function(e){
-			e.preventDefault();
+		$btn.off('touchstart.uitooltip').on('touchstart.uitooltip', function(){
 			var $this = $(this);
 
 			if (!$this.data('view')){
@@ -3361,6 +3362,15 @@ if (!Object.keys){
 				$this.data('view', false);
 				tooltipHide();
 			}
+			
+			setTimeout(function(){
+				$(doc).on('click.bdd', function(){
+					$btn.data('view', false);
+					tooltipHide();
+					console.log(22222);
+				});
+			},100);
+			
 
 			// $(doc).off('click.bdd').on('click.bdd', function(e){
 			// 	//dropdown 영역 외에 클릭 시 판단
@@ -3389,7 +3399,7 @@ if (!Object.keys){
 			var sl = $doc.scrollLeft();
 			
 			if (!!src && !$('#' + id).length) {
-				$('body').append('<div class="ui-tooltip" id="'+ id +'" role="tooltip" aria-hidden="true"><div class="ui-tooltip-arrow"></div>')
+				$('body').append('<div class="ui-tooltip" id="'+ id +'" role="tooltip" aria-hidden="true"><button class="ui-tooltip-close" type="button"><span class="a11y-hidden">툴팁닫기</span></button><div class="ui-tooltip-arrow"></div>')
 
 				$plugins.uiAjax({
 					id: $('#' + id),
@@ -3409,6 +3419,7 @@ if (!Object.keys){
 			}
 		}
 		function tooltipHide() {
+			$(doc).off('click.bdd');
 			$('.ui-tooltip').removeAttr('style').attr('aria-hidden', true).removeClass(class_ps);
 		}
 		function tooltipHideDelay(){
@@ -3416,12 +3427,14 @@ if (!Object.keys){
 		}
 
 		function tooltipShow(off_t, off_l, w, h, bw, bh, st, sl, id) {
-			var $id = $('#' + id),
-				pst = (bh / 2 > (off_t - st) + (h / 2)) ? true : false,
-				psl = (bw / 2 > (off_l - sl) + (w / 2)) ? true : false,
-				tw = $id.outerWidth(),
-				th = $id.outerHeight(),
-				ps_l, ps_r, cursorCls = 'ps-';
+			var $id = $('#' + id);
+			var pst = (bh / 2 > (off_t - st) + (h / 2)) ? true : false;
+			var psl = (bw / 2 > (off_l - sl) + (w / 2)) ? true : false;
+			var tw = $id.outerWidth();
+			var th = $id.outerHeight();
+			var ps_l; 
+			var ps_r; 
+			var cursorCls = 'ps-';
 				
 			if (psl) {
 				if (off_l - sl > tw / 2) {
@@ -3458,12 +3471,12 @@ if (!Object.keys){
 			if (!!$id.closest('.type-fixed-bottom').length) {
 				off_t = off_t - $('ui-modal-tit').outerHeight();
 			}
-
+			console.log(sp);
 			$id.addClass(cursorCls).attr('aria-hidden', false).css({ 
 				display:'block'
 			}).css({
 				top : pst ? off_t + h + sp : off_t - th - sp,
-				left : psl ? ps_l : ps_r
+				left : 0
 			});
 		}
 	}
