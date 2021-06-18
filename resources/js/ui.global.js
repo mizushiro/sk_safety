@@ -4491,7 +4491,7 @@ if (!Object.keys){
 				var _$this = $(this);
 				var _$wrap = $this.parent();
 				
-				if (_$this.prop('readonly') || _$this.prop('disabled')) {
+				if (_$this.prop('readonly') || _$this.prop('disabled') || _$this.attr('type') === 'date') {
 					return false;
 				}
 
