@@ -281,11 +281,14 @@ button.inp-select {
 	color: #333;
 	padding: 0;
 }
-/* .inp-base[type="date"] {
+.inp-base[type="date"] {
 	padding-right:3rem;
 	background:url(../img/calendar-range.svg) no-repeat 100% 50% / 1.4rem;
-} */
-
+}
+/* input[type="date"]::-webkit-clear-button, 
+input[type="date"]::-webkit-inner-spin-button { 
+	display: none; 
+ }  */
 
 .inp-select:disabled,
 .inp-base:disabled {
