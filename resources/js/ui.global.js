@@ -216,7 +216,6 @@ if (!Object.keys){
 		deviceSizeClassName(width);
 		var sizeCls = 's' + sizeMode;
 		
-		$()
 		$('html').addClass(sizeCls).addClass(colClass);
 		win.addEventListener('resize', function() {
 			clearTimeout(timer);			
@@ -391,12 +390,6 @@ if (!Object.keys){
 
 	})();
 
-
-	/* **************************************************************************************************** */
-	/* **************************************************************************************************** */
-	/* **************************************************************************************************** */
-	/* **************************************************************************************************** */
-
 	/* ------------------------
 	 * [base] selector type
 	 * date : 2020-06-09
@@ -494,185 +487,121 @@ if (!Object.keys){
 		}
 	}
 
-
-	/* ------------------------
-	 * [base] console guide
-	 * date : 
-	------------------------ */
-	win[global] = win[global].uiNameSpace(namespace, {
-		uiConsoleGuide: function (opt) {
-			return createUiConsoleGuide(opt);
-		}
-	});
-	function createUiConsoleGuide(opt) {
-		if (!win[global].browser.ie) {
-			console.log('');
-			for (var i = 0; i < opt.length; i++) {
-				(i === 0) ? console.log("%c" + opt[i], "background:#333; color:#ffe400; font-size:12px"): console.log(opt[i]);
-			}
-			console.log('');
-		}
-	}
-
-
-	/* --------------------------------------------------------------------------------------------------------
-	 * [base] valueCheck
-	 * date : 
-	------------------------ */
-	win[global] = win[global].uiNameSpace(namespace, {
-		uiValueCheck: function(opt) {
-			return createUivalueCheck(opt)
-		}
-	});
-	win[global].uiValueCheck.option = {
-		first: false
-	}
-	function createUivalueCheck(opt){
-		var opt = $.extend(true, {}, win[global].uiValueCheck.option, opt),
-			type = opt.type,
-			target = opt.target,
-			first = opt.first,
-			msg = opt.message,
-			callback = opt.callback,
-			error,
-			err;
-
-		if (first && target.val().length === 0) {
-			return false;
-		}
-
-		var	regex,
-			reg_id = /^[a-z0-9][a-z0-9_\-]{4,19}$/,
-			reg_pw = /^[A-Za-z0-9`\-=\\\[\];',\./~!@#\$%\^&\*\(\)_\+|\{\}:"<>\?]{8,16}$/,
-			reg_phone = /^((01[1|6|7|8|9])[1-9][0-9]{6,7})$|(010[1-9][0-9]{7})$/,
-			reg_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-			reg_email_id = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^()[\]\\.,;:\s@\"]+)*)|(\".+\"))$/,
-			reg_email_address = /^((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i,
-			reg_kr = /^[가-힣]{2,}$/,
-			reg_en = /^[a-zA-Z]{2,}$/,
-			reg_tel = /^[0-9\*]+$/,
-			reg_number = /^[0-9]+$/;
-
-		target.val().length === 0 ? err = false : '';
-		!err && !!target.attr('required') ? err = true : '';
-
-		switch(type){
-			case 'test': 
-				valueCheck(reg_kr, target, 'error message', err);
-				break;
-
-			case 'id': 
-				target.val().length > 0 ? msg ='5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.' : '';
-				valueCheck(reg_id, target, msg, err);
-				break;
-
-			case 'pw': 
-				(target.val().length < 8 && target.val().length > 0) || target.val().length > 16 ? msg = '8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.' : '';
-				valueCheck(reg_pw, target, msg, err);
-				break;
-
-			case 'email':  
-				valueCheck(reg_email, target, msg, err);
-				break;
-
-			case 'email_id':  
-				valueCheck(reg_email_id, target, '정확한 이메일 아이디를 입력해주세요.', err);
-				break;
-
-			case 'email_address': 
-				valueCheck(reg_email_address, target, '정확한 이메일 주소를 입력해주세요.', err);
-				break;
-
-
-			case 'number': 
-				valueCheck(reg_number, target, '숫자로만 입력하세요', err);
-				break;
-
-			case 'phone': 
-				var str = target.val();
-				target.val(str.replace(/\-/g,''));
-				
-				valueCheck(reg_tel, target, msg, err, 'tel');
-				//phoneFomatter(target.val(),0);
-				break;
-
-			case 'kr': 
-				valueCheck(reg_kr, target, '한글로만 2자 이상 입력하세요.', err);
-				break;
-			case 'en': 
-				valueCheck(reg_en, target, '한글로만 2자 이상 입력하세요.', err);
-				break;
-		}
-		
-		function phoneFomatter(num, type){
-			var formatNum = '';
-			
-			if (num.length === 11) {
-				if (type === 0) {
-					formatNum = num.replace(/(\d{3})(\d{4})(\d{4})/, '$1-****-$3');
-				} else {
-					formatNum = num.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
-				}
-			} else if (num.length === 8) {
-				formatNum = num.replace(/(\d{4})(\d{4})/, '$1-$2');
-			} else {
-				if (num.indexOf('02') === 0) {
-					if (type === 0) {
-						if (num.length === 9) {
-							formatNum = num.replace(/(\d{2})(\d{3})(\d{4})/, '$1-****-$3');
-						} else {
-							formatNum = num.replace(/(\d{2})(\d{4})(\d{4})/, '$1-****-$3');
-						}
-					} else {
-						if (num.length === 9) {
-							formatNum = num.replace(/(\d{2})(\d{3})(\d{4})/, '$1-$2-$3');
-						} else {
-							formatNum = num.replace(/(\d{2})(\d{4})(\d{4})/, '$1-$2-$3');
-						}
-					}
-				} else {
-					if (type === 0) {
-						formatNum = num.replace(/(\d{3})(\d{3})(\d{4})/, '$1-***-$3');
-						
-					} else {
-						formatNum = num.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
-					}
-				}
-			}
-			return target.val(formatNum);
-		}
-
-		function valueCheck(reg, target, msg, err, type){
-			if (reg.test(target.val())) {
-				error = false;
-			} else {
-				error = true;
-			}
-
-			if (err !== undefined) {
-				error = err;
-			}
-
-			win[global].uiError({ 
-				selector:target, 
-				error: error, 
-				message: msg 
-			});
-			
-			type === 'tel' ? phoneFomatter(target.val()) : '';
-
-			callback ? callback() : '';
-			// target.value = '';
-			// target.focus();
-		}
-		
-	}
-
-
 	/* ------------------------
 	 * [base] Ajax
 	 * date : 2020-06-09
 	------------------------ */
+	win[global].ajax = {
+		options : {
+			page: true,
+			add: false,
+			prepend: false,
+			effect: false,
+			loading:false,
+			callback: false,
+			errorCallback: false,
+			type: 'GET',
+			cache: false,
+			async: true,
+			contType: 'application/x-www-form-urlencoded',
+			dataType: 'html'
+		},
+		init : function(opt){
+			if (opt === undefined) {
+				return false;
+			}
+			var xhr = new XMLHttpRequest();	
+			var opt = opt === undefined ? {} : opt;
+			opt = $.extend(true, {}, this.options, opt);
+			
+			var $id = typeof opt.id === 'string' ? $('#' + opt.id) : typeof opt.id === 'object' ? opt.id : $('body');
+			var loading = opt.loading;
+			var effect = opt.effect;
+			var callback = opt.callback === undefined ? false : opt.callback;
+			var errorCallback = opt.errorCallback === undefined ? false : opt.errorCallback;
+	
+			if (loading) {
+				win[global].uiLoading({
+					visible: true
+				});
+			}
+	
+			if (effect) {
+				$id.removeClass('changeover action');
+				$id.addClass('changeover');
+			}
+
+			xhr.open(opt.type, opt.url);
+			xhr.setRequestHeader(opt.mimeType, opt.contType);
+			xhr.send();
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState !== XMLHttpRequest.DONE) {
+					return;
+				}
+
+				if (xhr.status === 200) {
+					if (loading) {
+						win[global].uiLoading({
+							visible: false
+						});
+					}
+	
+					if (opt.page) {
+						opt.add ? opt.prepend ? $id.prepend(xhr.responseText) : $id.append(xhr.responseText) : $id.html(xhr.responseText);
+						callback && callback();
+						effect && $id.addClass('action');
+					} else {
+						callback && callback(xhr.responseText);
+					}
+
+				} else {
+					if (loading) {
+						win[global].uiLoading({
+							visible: false
+						});
+					}
+					errorCallback ? errorCallback() : '';
+				}
+			};
+	
+			// $.ajax({
+			// 	type: opt.type,
+			// 	url: opt.url,
+			// 	cache: opt.cache,
+			// 	async: opt.async,  
+			// 	headers: {
+			// 		"cache-control": "no-cache",
+			// 		"pragma": "no-cache"
+			// 	},
+			// 	error: function (request, status, err) {
+			// 		if (loading) {
+			// 			win[global].uiLoading({
+			// 				visible: false
+			// 			});
+			// 		}
+			// 		errorCallback ? errorCallback() : '';
+			// 	},
+			// 	success: function (v) {
+			// 		if (loading) {
+			// 			win[global].uiLoading({
+			// 				visible: false
+			// 			});
+			// 		}
+	
+			// 		if (opt.page) {
+			// 			opt.add ? opt.prepend ? $id.prepend(v) : $id.append(v) : $id.html(v);
+			// 			callback && callback();
+			// 			effect && $id.addClass('action');
+			// 		} else {
+			// 			callback && callback(v);
+			// 		}
+			// 	},
+			// 	complete: function(){
+			// 	}
+			// });
+		}
+	}
+
 	win[global] = win[global].uiNameSpace(namespace, {
 		uiAjax: function (opt) {
 			return createUiAjax(opt);
@@ -756,88 +685,82 @@ if (!Object.keys){
 		});
 	}
 
+	/**
+	* Create a scroll move
+	*/
+	win[global].scroll = {
+		options : {
+			value: 0,
+			speed: 0,
+			callback: false,
+			ps: 'top',
+			addLeft: false,
+			focus: false,
+			target: 'html, body'
+		},
+		move : function(opt){
+			if (opt === undefined) {
+				return false;
+			}
 
-	/* ------------------------
-	 * [base] scroll move
-	 * date : 
-	------------------------ */
-	win[global] = win[global].uiNameSpace(namespace, {
-		uiScroll: function (opt) {
-			return createUiScroll(opt);
-		}
-	});
-	win[global].uiScroll.option = {
-		value: 0,
-		speed: 0,
-		callback: false,
-		ps: 'top',
-		addLeft: false,
-		focus: false,
-		target: 'html, body'
-	};
-	function createUiScroll(opt){
-		if (opt === undefined) {
-			return false;
-		}
-
-		var opt = $.extend(true, {}, win[global].uiScroll.option, opt),
-			psVal = opt.value,
-			s = opt.speed,
-			c = opt.callback,
-			p = opt.ps,
-			addLeft = opt.addLeft,
-			overlap = false,
-			f = typeof opt.focus === 'string' ? $('#' + opt.focus) : opt.focus,
-			$target = typeof opt.target === 'string' ? $(opt.target) : opt.target;
-		
-		if (p === 'top') {
-			$target.stop().animate({ 
-					scrollTop : psVal 
-				}, { 
-					duration: s,
-					step: function(now) { 
-					!!c && now !== 0 ? c({ scrolltop:Math.ceil(now), complete:false }) : '';
-				},
-				complete: function(){
-					if (overlap) {
+			var opt = $.extend(true, {}, this.options, opt);
+			var psVal = opt.value;
+			var s = opt.speed;
+			var c = opt.callback;
+			var p = opt.ps;
+			var addLeft = opt.addLeft;
+			var overlap = false;
+			var f = typeof opt.focus === 'string' ? $('#' + opt.focus) : opt.focus;
+			var $target = typeof opt.target === 'string' ? $(opt.target) : opt.target;
+			
+			if (p === 'top') {
+				$target.stop().animate({ 
+						scrollTop : psVal 
+					}, { 
+						duration: s,
+						step: function(now) { 
+						!!c && now !== 0 ? c({ scrolltop:Math.ceil(now), complete:false }) : '';
+					},
+					complete: function(){
+						if (overlap) {
+							!!c ? c({ focus:f, complete:true }) : '';
+							!!f ? f.attr('tabindex', 0).focus() : '';
+						} else {
+							overlap = true;
+						}
+					}
+				});
+			} else if (p === 'left') {
+				$target.stop().animate({ 
+						scrollLeft : psVal
+					}, { 
+						duration: s,
+						step: function(now) { 
+							!!c && now !== 0 ? c({ scrollleft:Math.ceil(now), complete:false }) : '';
+					},
+					complete: function(){
 						!!c ? c({ focus:f, complete:true }) : '';
 						!!f ? f.attr('tabindex', 0).focus() : '';
-					} else {
-						overlap = true;
 					}
-				}
-			});
-		} else if (p === 'left') {
-			$target.stop().animate({ 
-					scrollLeft : psVal
+				});
+			} else if (p === 'center') {
+				var w = $target.outerWidth();
+	
+				$target.stop().animate({ 
+					scrollLeft : psVal - (w / 2) + addLeft
 				}, { 
 					duration: s,
 					step: function(now) { 
 						!!c && now !== 0 ? c({ scrollleft:Math.ceil(now), complete:false }) : '';
-				},
-				complete: function(){
-					!!c ? c({ focus:f, complete:true }) : '';
-					!!f ? f.attr('tabindex', 0).focus() : '';
-				}
-			});
-		} else if (p === 'center') {
-			var w = $target.outerWidth();
-
-			$target.stop().animate({ 
-				scrollLeft : psVal - (w / 2) + addLeft
-			}, { 
-				duration: s,
-				step: function(now) { 
-					!!c && now !== 0 ? c({ scrollleft:Math.ceil(now), complete:false }) : '';
-				},
-				complete: function(){
-					!!c ? c({ focus:f, complete:true }) : '';
-					!!f ? f.attr('tabindex', 0).focus() : '';
-				}
-			});
+					},
+					complete: function(){
+						!!c ? c({ focus:f, complete:true }) : '';
+						!!f ? f.attr('tabindex', 0).focus() : '';
+					}
+				});
+			}
 		}
 	}
-
 
 	/* ------------------------
 	 * [base] URL parameter
@@ -1166,30 +1089,6 @@ if (!Object.keys){
 				$(doc).off('mousemove.bar mouseup.bar touchmove.bar');
 			});
 		}
-	}
-
-
-	/* ------------------------
-	 * [base] scroll or not
-	 * date : 
-	------------------------ */
-	win[global] = win[global].uiNameSpace(namespace, {
-		uiHasScrollBarY: function (opt) {
-			return createuiHasScrollBarY(opt);
-		},
-		uiHasScrollBarX: function (opt) {
-			return createUiHasScrollBarX(opt);
-		}
-	});
-	function createuiHasScrollBarY(opt) {
-		var $this = opt.selector;
-
-		return ($this.prop('scrollHeight') == 0 && $this.prop('clientHeight') == 0) || ($this.prop('scrollHeight') > $this.prop('clientHeight'));
-	}
-	function createUiHasScrollBarX(opt) {
-		var $this = opt.selector;
-
-		return ($this.prop('scrollWidth') == 0 && $this.prop('clientWidth') == 0) || ($this.prop('scrollWidth') > $this.prop('clientWidth'));
 	}
 
 
@@ -2574,7 +2473,7 @@ if (!Object.keys){
 
 		if (type === 'normal') {
 			if (!!src && !$('#' + opt.id).length) {
-				$plugins.uiAjax({
+				$plugins.ajax.init({
 					id: wrap,
 					url: src,
 					add: true,
@@ -2582,6 +2481,15 @@ if (!Object.keys){
 						act();
 					}
 				});
+
+				// $plugins.uiAjax({
+				// 	id: wrap,
+				// 	url: src,
+				// 	add: true,
+				// 	callback: function(){
+				// 		act();
+				// 	}
+				// });
 			} else {
 				act();
 			}
@@ -2796,7 +2704,7 @@ if (!Object.keys){
 
 		$modalPrev.addClass('current');
 		
-		win[global].uiScroll({
+		win[global].scroll.move({
 			value: Number($modal.data('scrolltop'))
 		});
 		
@@ -3132,7 +3040,7 @@ if (!Object.keys){
 		callback ? callback(opt) : '';
 		$btn.data('psl', ps_l).data('len', len);
 
-		win[global].uiScroll({ 
+		win[global].scroll.move({ 
 			value: ps_l[current], 
 			target: $btns,
 			speed: 0, 
@@ -3229,7 +3137,7 @@ if (!Object.keys){
 			$target = $btns.find('> .ui-scrollbar-item');
 		}
 
-		win[global].uiScroll({ 
+		win[global].scroll.move({ 
 			value: ps_l[current], 
 			addLeft : $btn.outerWidth(),
 			target: $target, 
@@ -3401,7 +3309,7 @@ if (!Object.keys){
 			if (!!src && !$('#' + id).length) {
 				$('body').append('<div class="ui-tooltip" id="'+ id +'" role="tooltip" aria-hidden="true"><button class="ui-tooltip-close" type="button"><span class="a11y-hidden">툴팁닫기</span></button><div class="ui-tooltip-arrow"></div>')
 
-				$plugins.uiAjax({
+				$plugins.ajax.init({
 					id: $('#' + id),
 					url: src,
 					add: true,
@@ -3409,6 +3317,14 @@ if (!Object.keys){
 						act();
 					}
 				});
+				// $plugins.uiAjax({
+				// 	id: $('#' + id),
+				// 	url: src,
+				// 	add: true,
+				// 	callback: function(){
+				// 		act();
+				// 	}
+				// });
 			} else {
 				act();
 			}
@@ -4889,7 +4805,7 @@ if (!Object.keys){
 			}
 		}
 		function optScroll($wrap, n_top, wrap_h, key) {
-			win[global].uiScroll({ 
+			win[global].scroll.move({ 
 				value: Number(n_top), 
 				target: customscroll ? $wrap.find('> .ui-scrollbar-item') : $wrap, 
 				speed: 0, 
@@ -4935,14 +4851,14 @@ if (!Object.keys){
 				win[global].uiScrollBar({
 					id : _$wrap
 				});
-				win[global].uiScroll({ 
+				win[global].scroll.move({ 
 					value: Number(opt_h * _$uisel.find(':checked').index()), 
 					target: _$wrap.find('> .ui-scrollbar-item'), 
 					speed: 0, 
 					ps: 'top' 
 				});
 			} else {
-				win[global].uiScroll({ 
+				win[global].scroll.move({ 
 					value: Number(opt_h * _$uisel.find(':checked').index()), 
 					target: _$wrap, 
 					speed: 0, 
