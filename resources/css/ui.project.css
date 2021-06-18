@@ -248,6 +248,16 @@
 	margin-bottom: 0;
 }
 
+.tit-sec .tit .desc {
+	font-size:1.5rem;
+	color:#999;
+	vertical-align: text-bottom;
+	display: inline-block;
+	line-height: 1;
+	position: relative;
+	top:0.5rem;
+}
+
 .tit-sec.type-line {
 	width: 100%;
 	position: relative;
@@ -291,10 +301,13 @@ input[type="date"]::-webkit-inner-spin-button {
  input[type="date"]::-webkit-calendar-picker-indicator {
 	color: rgba(0, 0, 0, 0);
 	opacity: 1;
-	display: block;
+	position: absolute;
+	top:50%; 
+	right:0;
+	margin-top:-1rem;
 	background: none;
-	width: 2rem;
 	border-width: thin;
+	z-index:1;
 }
 input[type="date"]::after{
 	content: "";
@@ -788,19 +801,32 @@ input[type="date"]::after{
 	align-items: flex-start;
 
 }
-
 .col2-c .col-item:first-child {
 	min-width: 60%;
 	max-width: 60%;
 }
-
 .col2-c .col-item+.col-item {
 	margin-left: 1.4rem;
 }
-
 .col2-c .col-item {
 	position: relative;
 	flex: 1 auto;
+}
+
+.col2-b {
+	display: flex;
+	align-items: flex-start;
+
+}
+.col2-b .col-item:first-child {
+
+}
+.col2-b .col-item+.col-item {
+	margin-left: 1.4rem;
+}
+.col2-b .col-item {
+	position: relative;
+	flex: 1 50%;
 }
 
 .col-item .btn-base {

@@ -330,35 +330,38 @@
                         </div>
 
                         <div class="form-dl mgt-n">
-                            <div class="form-dt">
-                                <label class="form-tit" for="form3_1">교육명</label>
-                            </div>
                             <div class="form-dd">
-                                <div class="form-item">
-                                    <input type="text" id="form3_1" class="inp-base" value="고덕그라시움 신규 채용 교육" placeholder="">
+                                <div class="form-item align-v">
+                                    <div class="inp-radio round">
+                                        <input type="radio" id="hckup1" name="hckup" checked>
+                                        <label for="hckup1">일반검진</label>
+                                    </div>
+                                    <div class="inp-radio round">
+                                        <input type="radio" id="hckup2" name="hckup">
+                                        <label for="hckup2">특수검진</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="form-dl col2-c">
+                        <div class="form-dl col2-b">
                             <div class="col-item">
                                 <div class="form-dt">
-                                    <label class="form-tit" for="form3_2">교육일자</label>
+                                    <label for="form3_3" class="form-tit">병원</label>
                                 </div>
                                 <div class="form-dd">
                                     <div class="form-item">
-                                        <input type="date" id="form3_2" class="inp-base" value="2021-06-01" placeholder="">
+                                        <input type="text" id="form3_3" class="inp-base" value="일산병원" placeholder="">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-item">
                                 <div class="form-dt">
-                                    <label for="form3_3" class="form-tit">주관</label>
+                                    <label class="form-tit" for="form3_2">검진일자</label>
                                 </div>
                                 <div class="form-dd">
                                     <div class="form-item">
-                                        <input type="text" id="form3_3" class="inp-base" value="나소장" placeholder="">
+                                        <input type="date" id="form3_2" class="inp-base" value="2021-06-01" placeholder="">
                                     </div>
                                 </div>
                             </div>
@@ -371,7 +374,9 @@
                 <hr class="hr-sec">
                 <section class="section-item mgt-n">
                     <div class="tit-sec type-line">
-                        <h3 class="tit">교육이력</h3>
+                        <h3 class="tit">교육이력
+                            <sub class="desc">(선택)</sub>
+                        </h3>
                         <div class="tit-util">
                             <button type="button" class="btn-add">
                                 <span class="a11y-hidden">추가하기</span>
@@ -395,18 +400,7 @@
                             </div>
                         </div>
 
-                        <div class="form-dl col2-c">
-                            <div class="col-item">
-                                <div class="form-dt">
-                                    <label class="form-tit" for="form3_2">교육일자</label>
-                                </div>
-                                <div class="form-dd">
-                                    <div class="form-item">
-                                        <input type="date" id="form3_2" class="inp-base" value="2021-06-01" placeholder="">
-                                    </div>
-                                </div>
-                            </div>
-
+                        <div class="form-dl col2-b">
                             <div class="col-item">
                                 <div class="form-dt">
                                     <label for="form3_3" class="form-tit">주관</label>
@@ -417,10 +411,21 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="col-item">
+                                <div class="form-dt">
+                                    <label class="form-tit" for="form3_2">교육일자</label>
+                                </div>
+                                <div class="form-dd">
+                                    <div class="form-item">
+                                        <input type="date" id="form3_2" class="inp-base" value="2021-06-01" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
-                <!-- //검진이력 -->
+                <!-- //교육이력 -->
 
                 <!-- 면허(자격증)등록 -->
                 <hr class="hr-sec">
