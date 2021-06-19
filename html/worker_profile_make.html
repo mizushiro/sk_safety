@@ -58,6 +58,7 @@
                         <h3 class="tit">기본정보</h3>
                     </div>
                     <div class="form-wrap">
+                        <!-- 직종&경력 -->
                         <div class="form-dl mgt-n col2-c">
                             <div class="col-item">
                                 <div class="form-dt">
@@ -90,7 +91,9 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- //직종&경력 -->
 
+                        <!-- 생년월일 -->
                         <div class="form-dl">
                             <div class="form-dt">
                                 <label class="form-tit" for="form_3">생년월일</label>
@@ -101,7 +104,9 @@
                                 </div>
                             </div>
                         </div>
+                         <!-- //생년월일 -->
 
+                        <!-- 휴대폰번호 -->
                         <div class="form-dl">
                             <div class="form-dt">
                                 <label class="form-tit" for="form_4">휴대폰번호</label>
@@ -119,7 +124,9 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- //휴대폰번호 -->
 
+                        <!-- 비상연락처 -->
                         <div class="form-dl col2-c">
                             <div class="col-item">
                                 <div class="form-dt">
@@ -165,6 +172,8 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- //비상연락처 -->
+
                     </div>
                 </section>
                 <!-- //기본정보 -->
@@ -175,8 +184,15 @@
                     <div class="tit-sec type-line">
                         <h3 class="tit">기초안전교육이수</h3>
                         <div class="tit-util">
-                            <button type="button" class="btn-photo">
-                                <span class="a11y-hidden">추가하기</span>
+                            <button type="button" class="btn-photo" onclick="
+                            $plugins.uiModalOpen({ 
+                                id: 'modal_photo', 
+                                src: '../modal/modal_photo.html', 
+                                full:true,
+                                ps: 'center'
+                            });
+                            ">
+                                <span class="a11y-hidden">촬영</span>
                             </button>
                         </div>
                     </div>
@@ -188,15 +204,6 @@
                             </button>
                             <div class="group">
                                 <div class="name">001.jpg</div>
-                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
-                            </div>
-                        </li>
-                        <li class="list-imgfile-item">
-                            <button type="button" class="img">
-                                <img src="" alt="">
-                            </button>
-                            <div class="group">
-                                <div class="name">002.jpg</div>
                                 <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
                             </div>
                         </li>
@@ -210,7 +217,13 @@
                     <div class="tit-sec type-line">
                         <h3 class="tit">전자서명</h3>
                         <div class="tit-util">
-                            <button type="button" class="btn-draw">
+                            <button type="button" class="btn-draw" onclick="
+                            $plugins.uiModalOpen({ 
+                                id: 'modal_digitalsign', 
+                                src: '../modal/modal_digitalsign.html', 
+                                ps: 'center'
+                            });
+                            ">
                                 <span class="a11y-hidden">서명하기</span>
                             </button>
                         </div>
@@ -223,15 +236,6 @@
                             </button>
                             <div class="group">
                                 <div class="name">001.jpg</div>
-                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
-                            </div>
-                        </li>
-                        <li class="list-imgfile-item">
-                            <button type="button" class="img">
-                                <img src="" alt="">
-                            </button>
-                            <div class="group">
-                                <div class="name">002.jpg</div>
                                 <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
                             </div>
                         </li>

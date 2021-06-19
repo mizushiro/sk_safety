@@ -1,0 +1,31 @@
+<section class="ui-modal" id="modal_photo">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit a11y-hidden">사진촬영</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_photo', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+
+            <div class="digitalsign-img">
+                <img src="" alt="">
+            </div>
+
+            
+        </div>
+        <div class="ui-modal-footer">
+            <div class="btn-area">
+                <button type="button" class="btn-base primary">
+                    <span>저장</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+

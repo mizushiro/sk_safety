@@ -70,21 +70,21 @@
 			$('.modal-typework').on('click', function(){
 				$plugins.uiModalOpen({ 
 					id: 'modal_typework', 
-					mobileFull:true,
+					full:true,
 					src: '../modal/modal_typeWork.html', 
 					ps: 'center', 
 					closeCallback: function(v) { 
-							console.log('close callback', v); 
+						console.log('close callback', v); 
 					},
 					callback: function(v) { 
-							console.log('callback', v); 
-							$plugins.uiTab({ 
-								id:'exeWorkTab', 
-								current:0, 
-								callback:function(v){
-									console.log(111111);
-								} 
-							});
+						console.log('callback', v); 
+						$plugins.uiTab({ 
+							id:'exeWorkTab', 
+							current:0, 
+							callback:function(v){
+								console.log(111111);
+							} 
+						});
 					}
 				});
 			});
@@ -102,6 +102,10 @@
 					}
 				});
 			});
+
+			
+
+
 
 		},
 		pageTop: function(v){

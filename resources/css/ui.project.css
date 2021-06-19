@@ -215,7 +215,7 @@
 	height: 1rem;
 	background: #EEE;
 	border: 0;
-	margin: 2rem 0;
+	margin: 1.5rem 0 1rem;
 }
 
 .hr-cont {
@@ -599,6 +599,7 @@ input[type="date"]::after {
 	color: #333;
 	border: 1px solid #ddd;
 	padding: 0.2rem 1rem 0;
+	background-color: #fff;
 }
 
 .btn-base.small {
@@ -937,7 +938,6 @@ input[type="date"]::after {
 	align-items: center;
 }
 
-
 .ui-modal.ps-center {
 	justify-content: center;
 	align-items: center;
@@ -1041,7 +1041,6 @@ input[type="date"]::after {
 	animation-fill-mode: forwards;
 }
 
-
 .type-system .ui-modal-wrap {
 	width: 100%;
 	text-align: center;
@@ -1051,11 +1050,13 @@ input[type="date"]::after {
 	font-weight: 900;
 }
 
-
-
 .fix-header .ui-modal-header {
 	position: fixed;
 	z-index: 3;
+}
+
+.type-full .ui-modal-header {
+	border-bottom: 0;
 }
 
 .ui-modal-header {
@@ -1176,6 +1177,24 @@ input[type="date"]::after {
 }
 
 /* full */
+.ui-modal.type-full.fix-header .ui-modal-footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.ui-modal.type-full .ui-modal-footer {
+	border-radius: 0;
+	bottom: -8rem;
+	transition: bottom 0.2s ease-out;
+}
+
+.ui-modal.type-full .ui-modal-body {
+	padding-top: 6.5rem;
+	padding-bottom: 7.5rem;
+}
+
 .ui-modal.type-full.ps-center {
 	justify-content: center;
 	align-items: flex-start;
@@ -1487,6 +1506,39 @@ a.ui-acco-btn:after {
 	border-radius: 50%;
 	margin-left: 2rem;
 	background: #333 url(../img/icon_photo_w.svg) no-repeat 50% 50% / 1.8rem;
+}
+
+.person-info .box {
+	height: 3.8rem;
+	border-radius: 1.9rem;
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+	font-size: 1.6rem;
+	font-weight: 500;
+	padding: 0.9rem 1.8rem 0;
+	display: inline-block;
+	margin-top: 1rem;
+
+}
+
+.person-info .box span {
+	display: inline-block;
+	position: relative;
+}
+
+.person-info .box>span+span {
+	padding-left: 1rem;
+}
+
+.person-info .box>*::before {
+	content: "";
+	display: block;
+	width: 1px;
+	height: 1rem;
+	background: #C7C7C7;
+	position: absolute;
+	top: 0.5rem;
+	left: 0.3rem;
 }
 
 .tit-util .btn-photo {
@@ -2239,6 +2291,10 @@ a.ui-acco-btn:after {
 	opacity: 0.8;
 }
 
+.tit-util .btn-base {
+	top: -0.5rem;
+}
+
 .tit-util .btn-draw {
 	position: relative;
 	top: -0.5rem;
@@ -2468,19 +2524,176 @@ a.ui-acco-btn:after {
 	height: 4.5rem;
 	border: 1px solid #ddd;
 	border-radius: 50%;
-	background:#fff url(../img/icon_top.svg) no-repeat 50% 50% / 1.1rem;
+	background: #fff url(../img/icon_top.svg) no-repeat 50% 50% / 1.1rem;
 	opacity: 0;
 	transition: all .2s ease-out;
 	z-index: 900;
 }
+
 .btn-top:active {
-	border-color:#fff;
-	box-shadow: 0 0 0.5rem rgba(0,0,0,0.2);
+	border-color: #fff;
+	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
 }
+
 .is-FAB .btn-top {
 	opacity: 1;
-	bottom:2rem;
+	bottom: 2rem;
 }
-.is-FAB .base-body{
-	border-bottom:7rem solid #fff;
+
+.is-FAB .base-body {
+	border-bottom: 7rem solid #fff;
 }
+
+.banner-top {
+	position: relative;
+	width: 100%;
+	height: 5.5rem;
+	background: #ccc;
+}
+
+.banner-top a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.banner-top img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.icon-safe::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 1rem;
+	margin-top: -1rem;
+	width: 2rem;
+	height: 2rem;
+	background: url(../img/icon_safety_g.svg) no-repeat 50% 50% / 1rem;
+}
+
+.icon-sign::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 1rem;
+	margin-top: -1rem;
+	width: 2rem;
+	height: 2rem;
+	background: url(../img/icon_pencil_g.svg) no-repeat 50% 50% / 1rem;
+}
+
+.btn-base[class*="icon-"] {
+	padding-left: 3rem;
+	position: relative;
+}
+
+.tit-sec .btns {
+	position: relative;
+	top: -0.3rem;
+}
+
+.tbl-base {
+	margin: 0;
+	width: 100%;
+	position: relative;
+}
+
+.tbl-base table {
+	width: 100%;
+	border-bottom: 1px solid #EEE;
+}
+
+.tbl-base table>thead th {
+	background: #fff;
+	border-bottom: 1px solid #F5F5F5;
+	color: #000;
+	padding: 1.2rem 0;
+	font-weight: 500;
+	font-size: 1.5rem;
+}
+
+.tbl-base table>tbody>tr>th,
+.tbl-base table>tbody>tr>td {
+	border-bottom: 1px solid #F5F5F5;
+	padding: 1.2rem 1rem;
+	font-weight: 300;
+	font-size: 1.5rem;
+	word-break: break-all;
+	background: #fff;
+	text-align: left;
+	color: #333;
+	font-weight: 500;
+}
+
+.tbl-base table>tbody>tr:first-child>th,
+.tbl-base table>tbody>tr:first-child>td {
+	border-top: 0;
+}
+
+.tbl-base table>thead>tr>th:first-child,
+.tbl-base table>tbody>tr>th:first-child,
+.tbl-base table>tbody>tr>td:first-child {
+	border-left: 0;
+}
+
+.tbl-base table>tbody>tr>th {
+	background: #fff;
+	color: #777;
+	font-weight: 500;
+	font-size: 1.5rem;
+}
+
+.tbl-base tbody+tbody,
+.tbl-base tbody.line-t {
+	border-top: 1px solid #c5c5c5;
+}
+
+.list-safe {
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.list-safe li {
+	flex: 1 33.33%;
+	font-size: 1.6rem;
+	color: #333;
+	text-align: center;
+	font-weight: 500;
+}
+
+.list-safe li::before {
+	content: "";
+	display: block;
+	width: 5.4rem;
+	height: 5.4rem;
+	border-radius: 50%;
+	background-color: #F5F4F4;
+	margin: 0 auto 0.5rem;
+}
+
+.list-safe em {
+	color: #E7565F;
+	font-weight: 700;
+}
+
+.list-safe li+li {
+	border-left: 1px solid #F5F5F5;
+}
+
+.list-safe .n1::before{
+	background:#F5F4F4 url(../img/icon_sunny.svg) no-repeat 50% 50% / 2.7rem;
+}
+.list-safe .n2::before{
+	background:#F5F4F4 url(../img/icon_trophy.svg) no-repeat 50% 50% / 2.7rem;
+}
+.list-safe .n3::before{
+	background:#F5F4F4 url(../img/icon_comment_check.svg) no-repeat 50% 50% / 2.7rem;
+}
+

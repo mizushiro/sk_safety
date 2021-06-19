@@ -44,6 +44,9 @@
         <!-- content -->
         <main class="base-body">
             <div class="coding-list">
+
+                <a href="./guide.html">Guide</a>
+
                 <h2>공통</h2>
                 <a href="../html/splash.html">splash</a>
                 <a href="../html/login.html">로그인</a>
@@ -51,6 +54,7 @@
                 <h2>근로자</h2>
                 <a href="../html/worker_profile.html">근로자 프로필 가입하기</a>
                 <a href="../html/worker_profile_make.html">내이력 작성하기</a>
+                <a href="../html/worker_profile_view.html">내 이력 보기</a>
 
                 <h2>con-talk</h2>
                 <a href="../html/contalk.html">con-talk</a>
@@ -80,6 +84,7 @@
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 
                     id: 'modal_digitalsign', 
+                    full:true,
                     src: '../modal/modal_digitalSign.html', 
                     ps: 'center', 
                     closeCallback: function(v) { 
@@ -92,8 +97,35 @@
 
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 
+                    id: 'modal_license', 
+                    src: '../modal/modal_license.html', 
+                    ps: 'center', 
+                    closeCallback: function(v) { 
+                        console.log('close callback', v); 
+                    },
+                    callback: function(v) { 
+                        console.log('callback', v); 
+                    }
+                });">면허(자격증) 등록</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                    id: 'modal_cbse', 
+                    full:true,
+                    src: '../modal/modal_cbse.html', 
+                    ps: 'center', 
+                    closeCallback: function(v) { 
+                        console.log('close callback', v); 
+                    },
+                    callback: function(v) { 
+                        console.log('callback', v); 
+                    }
+                });">기초안전교육 이수증</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
                     id: 'modal_typework', 
-                    mobileFull:true,
+                    full:true,
                     src: '../modal/modal_typeWork.html', 
                     ps: 'center', 
                     closeCallback: function(v) { 
@@ -110,6 +142,9 @@
                         });
                     }
                 });">직종선택</button>
+
+               
+
 
                 <button type="button" id="test1" onclick="
                 $plugins.uiModalOpen({ 

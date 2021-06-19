@@ -2424,7 +2424,7 @@ if (!Object.keys){
 	win[global].uiModalOpen.option = {
 		type: 'normal',
 		wrap: false,
-		mobileFull: false,
+		full: false,
 		ps: 'center',
 		src: false,
 		remove: false,
@@ -2450,7 +2450,7 @@ if (!Object.keys){
 			type = opt.type,
 			id = opt.id,
 			src = opt.src,
-			mobileFull = opt.mobileFull,
+			full = opt.full,
 			ps = opt.ps,
 			mg = opt.mg,
 			remove = opt.remove,
@@ -2551,7 +2551,7 @@ if (!Object.keys){
 				.data('active', endfocus)
 				.data('closecallback', closeCallback);
 
-			if (mobileFull && !$plugins.breakpoint) {
+			if (full && !$plugins.breakpoint) {
 				$modal.addClass('type-full');
 				mg = 0;
 			} 
@@ -2573,32 +2573,43 @@ if (!Object.keys){
 			headerH = $modalHeader.length ? $modalHeader.outerHeight() : 0;
 			footerH = $modalFooter.length ? $modalFooter.outerHeight() : 0;
 
-			if (!mobileFull) {
-				console.log('h', !h);
+			if (!full) {
+				//lyaer modal
 				if (!h) {
 					var win_h = $(win).outerHeight();
-					console.log(win_h);
 					var max_h = win_h - (headerH + footerH + (mg * 2));
 
 					$modalBody
-						.addClass('is-scrollable')
-						.css({
-							'max-height' : max_h + 'px',
-							'overflow-y' : 'auto',
-							'height' : '100%'
-						});
+					.addClass('is-scrollable')
+					.css({
+						'max-height' : max_h + 'px',
+						'overflow-y' : 'auto',
+						'height' : '100%'
+					});
 				} else {
 					$modalBody
-						.addClass('is-scrollable')
-						.css({
-							'overflow-y' : 'auto',
-							'height' : h + 'px'
-						});
+					.addClass('is-scrollable')
+					.css({
+						'overflow-y' : 'auto',
+						'height' : h + 'px'
+					});
 				}
-				
 			} else {
+				//full modal
 				!!w && $modalWrap.css('width', w);
-				!!h && $modalBody.css({ 'height': h + 'px', 'overflow-y' : 'auto' });
+				if (!!h) {
+					$modalBody.css({ 
+						'height': h + 'px', 
+						'overflow-y' : 'auto' 
+					});
+				} else {
+					$modalBody.css({ 
+						'min-height': $(window).outerHeight() + 'px', 
+						'overflow-y' : 'auto' ,
+						'padding-top': (headerH + 10)  + 'px',
+						'padding-bottom': '75px'
+					});
+				}
 			}
 			
 			clearTimeout(timer);
@@ -2660,9 +2671,12 @@ if (!Object.keys){
 			});
 
 			$modalWrap.on('transitionend.modal', function(){
-				if (!!mobileFull) {
+				if (!!full) {
 					$modal.addClass('fix-header');
-					$modalBody.css('padding-top', headerH + 'px');
+					$modalBody.css({
+						'padding-top': (headerH + 10)  + 'px',
+
+					});
 				}
 			});
 		}
