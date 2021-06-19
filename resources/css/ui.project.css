@@ -81,6 +81,12 @@
 	position: relative
 }
 
+.type-worker .btn-mypage,
+.type-worker .btn-contalk,
+.type-worker .page-title .sum-box {
+	display: none !important;
+}
+
 .type-normal .btn-contalk,
 .type-normal .util,
 .type-normal .page-title .sum-box {
@@ -215,7 +221,7 @@
 	height: 1rem;
 	background: #EEE;
 	border: 0;
-	margin: 1.5rem 0 1rem;
+	margin: 0.5rem 0 1rem;
 }
 
 .hr-cont {
@@ -567,7 +573,15 @@ input[type="date"]::after {
 	padding: 2rem 0 0;
 }
 
-.btn-wrap,
+.btn-wrap {
+	position: relative;
+	width: 100%;
+	text-align: center;
+	font-size: 0;
+	display: flex;
+	justify-content: space-between;
+	padding: 2rem 0 0;
+}
 .btn-area {
 	position: relative;
 	width: 100%;
@@ -2696,4 +2710,116 @@ a.ui-acco-btn:after {
 .list-safe .n3::before{
 	background:#F5F4F4 url(../img/icon_comment_check.svg) no-repeat 50% 50% / 2.7rem;
 }
+
+.link-arrow {
+	color:#008F84;
+	font-size:1.4rem;
+	font-weight:500;
+	padding-right:1.3rem;
+	position:relative;
+}
+.link-arrow::after{
+	content:"";
+	display:block;
+	position:absolute;
+	right:0; 
+	top:50%;
+	margin-top:-.5rem;
+	width:1rem;
+	height:1rem;
+	background:url(../img/icon_down_p.svg) no-repeat 100% 50% / 1rem;
+	transform: rotate(-90deg);
+}
+
+.list-base li {
+	font-size:0;
+	width:100%;
+	padding:1rem 0;
+	border-bottom:1px solid #F5F5F5;
+}
+.list-base .tit {
+	width:calc(100% - 7rem);
+	display: inline-block;
+	font-size:1.5rem;
+	font-weight:500;
+	color:#333;
+	text-align: right;
+}
+.list-base .tit .flag{
+	color:#E7565F;
+	border-color:#E7565F;
+	margin-left:0.3rem;
+}
+.list-base .ctg {
+	display: inline-block;
+	font-size:1.5rem;
+	font-weight:500;
+	color:#777;
+	width:7rem;
+}
+
+.list-career li {
+	width:100%;
+	padding:1.5rem 0;
+	border-bottom:1px solid #F5F5F5;
+}
+.list-career .tit {
+	display: block;
+	font-size:1.6rem;
+	font-weight:500;
+}
+.list-career .date {
+	display: block;
+	font-size:1.6rem;
+	font-weight:500;
+	color:#777;
+}
+.list-career .box {
+	height: 2.6rem;
+	border-radius: 1.3rem;
+	background: #F7F7F7;
+	color: #333;
+	font-size: 1.4rem;
+	font-weight: 500;
+	padding: 0.3rem 1.2rem 0;
+	display: inline-block;
+	margin-top: 1rem;
+
+}
+.list-career .box span {
+	display: inline-block;
+	position: relative;
+}
+.list-career .box>span+span {
+	padding-left: 1rem;
+}
+.list-career .box>*::before {
+	content: "";
+	display: block;
+	width: 1px;
+	height: 1rem;
+	background: #C7C7C7;
+	position: absolute;
+	top: 0.5rem;
+	left: 0.3rem;
+}
+
+.btn-more {
+	display:inline-block;
+	width:2rem;
+	height:2rem;
+	border:1px solid #EEE;
+	background: #fff url(../img/icon_down.svg) no-repeat 50% 50% / .8rem;
+}
+
+
+
+
+
+
+
+
+
+
+
 

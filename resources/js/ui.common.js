@@ -229,6 +229,11 @@
 					$('html').addClass('type-normal');
 					$('.base-header-wrap .page-title .text').html(tit);
 					break;
+				case 'woker':
+					console.log(type);
+					$('html').addClass('type-worker');
+					$('.base-header-wrap .page-title .text').html(tit);
+					break;
 				case 'contalk':
 					console.log(type);
 					$('html').addClass('type-contalk');
