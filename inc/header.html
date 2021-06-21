@@ -5,11 +5,10 @@
     </h1>
 
     <button type="button" class="btn-back"><span class="a11y-hidden">뒤로가기</span></button>
-
-    <button type="button" class="btn-menu"><span class="a11y-hidden">전체메뉴</span></button>
+    <button type="button" class="btn-menu" onclick="$plugins.common.navOpen()"><span class="a11y-hidden">전체메뉴</span></button>
+    
     <div class="menu-wrap">
-
-        <div class="menu-body">
+        <div class="menu-body normal">
             <div class="menu-header">
                 <div>
                     <img src="" alt="">
@@ -17,7 +16,7 @@
                 <strong>관리자 홍길동</strong>
                 <span>[광명] sk view 신축공사</span>
     
-                <button type="button" class="btn-close"><span class="a11y-hidden">닫기</span></button>
+                <button type="button" class="btn-close" onclick="$plugins.common.navClose()"><span class="a11y-hidden">닫기</span></button>
             </div>
             <nav style="height: 2000px;">
                 <ul>
@@ -28,8 +27,27 @@
                 
             </nav>
         </div>
-        
-    </div?>
+
+        <div class="menu-body place">
+            <div class="menu-header">
+                <div>
+                    <img src="" alt="">
+                </div>
+                <strong>관리자 홍길동2</strong>
+                <span>[광명] sk view 신축공사</span>
+    
+                <button type="button" class="btn-close" onclick="$plugins.common.navClose()"><span class="a11y-hidden">닫기</span></button>
+            </div>
+            <nav style="height: 2000px;">
+                <ul>
+                    <li>
+                        <a href="#">마이페이지</a>
+                    </li>
+                </ul>
+                
+            </nav>
+        </div>
+    </div>
 
     <div class="util">
         <button type="button" class="btn-contalk">

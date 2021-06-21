@@ -216,6 +216,7 @@
 			var _this = this;
 			var tit  = $('.base-header').data('title');
 			var type  = $('.base-header').data('type');
+			var nav  = $('.base-header').data('nav');
 			
 			console.log(type);
 			switch (type) {
@@ -233,6 +234,12 @@
 					console.log(type);
 					$('html').addClass('type-normal');
 					$('.base-header-wrap .page-title .text').html(tit);
+					if (nav === 'normal') {
+						$('html').addClass('nav-normal');
+					} else if (nav === 'place') {
+						$('html').addClass('nav-place');
+					}
+
 					break;
 				case 'contalk':
 					console.log(type);
@@ -243,8 +250,23 @@
 			} 
 			
 		},
-		navOpen: function(v){
-			
+		navOpen: function(){
+			var $body = $('body');
+			$('.menu-body').off('transitionend.menu');
+			$body.addClass('nav-ready');
+			setTimeout(function(){
+				$body.addClass('nav-open');
+			},0);
+		},
+		navClose: function(){
+			var $body = $('body');
+
+			$body.removeClass('nav-open');
+
+			$('.menu-body').on('transitionend.menu', function(){
+				$body.removeClass('nav-ready');
+			});
+		
 		},
 		footer: function(){
 			console.log('footer load');

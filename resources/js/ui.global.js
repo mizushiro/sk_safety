@@ -686,6 +686,74 @@ if (!Object.keys){
 	}
 
 	/**
+	 * name.snackbars
+	 */
+	win[global].snackbars = {
+		timer : null,
+		options : {
+			time: 3000,
+			classname : ''
+		},
+		set : function(conts){
+			var opt = this.options;
+			var snackbar = '<div class="ui-snackbar snackbar '+ opt.classname +'">'+ conts +'</div>';
+			var $body = $('body');
+
+			$body.append(snackbar);
+
+			var $shanckbar = $('.ui-snackbar');
+			
+			$body.addClass('ui-snackbar-ready');
+
+			setTimeout(function(){
+				$body.addClass('ui-snackbar-show');
+
+				$shanckbar.off('transitionend.snackbarhide').on('transitionend.snackbarshow', function(){
+					$(this).off('transitionend.snackbarshow').addClass('on');
+					win[global].snackbars.timer = setTimeout(win[global].snackbars.hide, opt.time);
+				});
+			},0);
+		},
+		show : function(conts) {
+			var conts = conts;
+
+			console.log($('.ui-snackbar-ready').length);
+
+			if ($('.ui-snackbar-ready').length) {
+				win[global].snackbars.hide(conts, true);
+			} else {
+				win[global].snackbars.set(conts);
+			}
+
+			
+		},
+		hide : function(conts, v){
+			var $body = $('body');
+			var opt = this.options;
+			var show = !!v;
+			var conts = conts;
+
+			if (!$('.ui-snackbar.on').length) {
+				setTimeout(function(){
+					win[global].snackbars.hide(conts, show);
+				},100)
+				
+			} else {
+				clearTimeout(win[global].snackbars.timer);
+				$body.removeClass('ui-snackbar-show');
+				$('.ui-snackbar.on').off('transitionend.snackbarshow').on('transitionend.snackbarhide', function(){
+					$(this).off('transitionend.snackbarhide').remove();
+					$body.removeClass('ui-snackbar-ready');
+					
+					if (show) {
+						win[global].snackbars.show(conts);
+					} 
+				});
+			}
+		}
+	}
+
+	/**
 	* Create a scroll move
 	*/
 	win[global].scroll = {
