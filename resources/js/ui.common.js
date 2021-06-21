@@ -224,14 +224,14 @@
 					$('html').addClass('type-none');
 					$('.base-header-wrap').remove();
 					break;
+				case 'sub':
+					console.log(type);
+					$('html').addClass('type-sub');
+					$('.base-header-wrap .page-title .text').html(tit);
+					break;
 				case 'normal':
 					console.log(type);
 					$('html').addClass('type-normal');
-					$('.base-header-wrap .page-title .text').html(tit);
-					break;
-				case 'woker':
-					console.log(type);
-					$('html').addClass('type-worker');
 					$('.base-header-wrap .page-title .text').html(tit);
 					break;
 				case 'contalk':
