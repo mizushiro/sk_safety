@@ -39,7 +39,11 @@
 </head>
 <body>
     <div class="base-wrap">
-        <header class="base-header" data-pageid="99"></header>
+        <header class="base-header" 
+        data-id="1" 
+        data-type="normal" 
+        data-title="가이드"
+        ></header>
 
         <!-- content -->
         <main class="base-body">
@@ -59,6 +63,10 @@
                 <h2>con-talk</h2>
                 <a href="../html/contalk.html">con-talk</a>
                 <a href="../html/contalk_list.html">con-talk 목록</a>
+
+                <h2>snackbars</h2>
+                <button type="button" id="test1" onclick="
+                    $plugins.snackbars.show('<p><em>근로자 가입이 완료되었습니다.</em></p><p>편리한 현장 서비스 제공을 위해 내 이력을 작성하세요</p>');">가입완료</button>
 
                 <h2>modal</h2>
                 <button type="button" onclick="
@@ -142,9 +150,6 @@
                         });
                     }
                 });">직종선택</button>
-
-               
-
 
                 <button type="button" id="test1" onclick="
                 $plugins.uiModalOpen({ 
