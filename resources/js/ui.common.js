@@ -230,6 +230,11 @@
 					$('html').addClass('type-sub');
 					$('.base-header-wrap .page-title .text').html(tit);
 					break;
+				case 'alarm':
+					console.log(type);
+					$('html').addClass('type-alarm');
+					$('.base-header-wrap .page-title .text').html(tit);
+					break;
 				case 'normal':
 					console.log(type);
 					$('html').addClass('type-normal');
