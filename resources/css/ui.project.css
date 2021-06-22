@@ -3122,8 +3122,9 @@ a.ui-acco-btn:after {
 .alarm-nav .form-item { 
 	padding:1rem 0 1rem 2rem;
 }
+
 .alarm-nav .inp-radio:last-child{
-	margin-right:2rem;
+	padding-right:2rem;
 }
 .scroll-x{
 	overflow-x: auto;
