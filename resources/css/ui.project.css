@@ -2632,7 +2632,6 @@ a.ui-acco-btn:after {
 .banner-top {
 	position: relative;
 	width: 100%;
-	height: 5.5rem;
 	background: #ccc;
 }
 
@@ -3097,11 +3096,28 @@ a.ui-acco-btn:after {
 	background: url(../img/icon_main02.svg) no-repeat 50% 50% / 5.6rem;
 }
 
+.tip-wrap {
+	width:100%;
+	padding:1.5rem 2rem;
+	background: #FFF5F5;
+	
+}
+.tip-wrap .txt-info{
+	color:#E7565F;
+	text-indent:-2.2rem;
+	margin-lefT:2.2rem;
+	width:calc(100% - 2.2rem);
+}
+.tip-wrap .txt-info::before{
+	background: url(../img/icon_info_r.svg) no-repeat 0 0 / cover;
+}
 
-
-
-
-
+.scroll-x{
+	overflow-x: auto;
+}
+.scroll-x .inp-radio{
+	white-space: nowrap;
+}
 
 
 
