@@ -119,7 +119,9 @@
     display: flex;
     justify-content: flex-end;
 }
-
+.type-alarm body {
+	background:#F7F7F7;
+}
 
 .btn-contalk .sum-box {
 	display: inline-block;
@@ -198,6 +200,10 @@
 }
 
 /* gap */
+.pdt-n {
+	padding-top: 0 !important;
+}
+
 .mgt-n {
 	margin-top: 0 !important;
 }
@@ -545,6 +551,7 @@ input[type="date"]::after {
 	font-size: 1.3rem;
 	min-height: 2.2rem;
 	padding: 0.6rem 0 0.4rem 3rem;
+	background:#fff;
 }
 
 .inp-radio label::before {
@@ -3112,6 +3119,12 @@ a.ui-acco-btn:after {
 	background: url(../img/icon_info_r.svg) no-repeat 0 0 / cover;
 }
 
+.alarm-nav .form-item { 
+	padding:1rem 0 1rem 2rem;
+}
+.alarm-nav .inp-radio:last-child{
+	margin-right:2rem;
+}
 .scroll-x{
 	overflow-x: auto;
 }
@@ -3119,6 +3132,94 @@ a.ui-acco-btn:after {
 	white-space: nowrap;
 }
 
+
+.alarm-list {
+	width: 100%;
+	background:#fff;
+	padding:1rem 1rem;
+	border-radius: 1rem;
+}
+.alarm-list .ui-drag{
+	width:100%;
+	overflow: hidden;
+}
+.alarm-list .item:first-child{
+	border-top:0;
+}
+.alarm-list .item {
+	width: 100%;
+	position: relative;
+	margin: 0;
+	display: block;
+	border-top:1px solid #eee;
+}
+
+.alarm-list .item-del {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 5rem;
+	height: 100%;
+	background: #888;
+	box-shadow: inset 5px 0 3px rgb(0, 0, 0, 0.2);
+	color: #fff;
+}
+
+.alarm-list .item-wrap {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	background: #fff;
+	height: 100%;
+	padding:1rem;
+}
+
+.alarm-list .info {
+	width:100%;
+}
+
+.alarm-list .tit {
+	font-size: 1.6rem;
+	font-weight: 500;
+	color: #333;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.alarm-list .state {
+	margin-top: 0.5rem;
+	font-size: 1.4rem;
+	color: #777;
+}
+
+.alarm-list .state>span {
+	display: inline-block;
+	position: relative;
+}
+
+.alarm-list .state>span+span {
+	padding-left: 1rem;
+}
+
+.alarm-list .state>span+span::before {
+	content: "";
+	display: block;
+	width: 1px;
+	height: 1rem;
+	background: #C7C7C7;
+	position: absolute;
+	top: 0.5rem;
+	left: 0.4rem;
+}
+.alarm-info{
+	width:100%;
+	text-align: center;
+	font-size: 1.4rem;
+	color:#777;
+	padding:2.5rem 0;
+}
 
 
 
