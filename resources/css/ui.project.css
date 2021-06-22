@@ -1,4 +1,7 @@
 /* layout */
+.bg-g{
+	background-color:#F7F7F7
+}
 .base-wrap {
 	width: 100%;
 	overflow: hidden;
@@ -110,7 +113,10 @@
 .base-header-wrap .page-title .sum-box {
 	display: none !important;
 }
-
+.util button + button,
+.util-set button + button{
+	margin-left:0.5rem;
+}
 .type-alarm .util-set {
 	display: block;
 	position: absolute;
@@ -490,7 +496,7 @@ input[type="date"]::after {
 	border: 0;
 }
 
-.inp-check.switch label::after {
+/* .inp-check.switch label::after {
 	content: "Off";
 	font-size: 1.2rem;
 	display: block;
@@ -501,7 +507,7 @@ input[type="date"]::after {
 
 .inp-check.switch :checked+label::after {
 	content: "On";
-}
+} */
 
 .inp-check label {
 	display: inline-block;
@@ -2631,10 +2637,10 @@ a.ui-acco-btn:after {
 	opacity: 1;
 	bottom: 2rem;
 }
-
+/* 
 .is-FAB .base-body {
-	border-bottom: 7rem solid #fff;
-}
+	border-bottom: 7rem solid transparent;
+} */
 
 .banner-top {
 	position: relative;
@@ -3133,6 +3139,42 @@ a.ui-acco-btn:after {
 	white-space: nowrap;
 }
 
+.alarmset-list{
+	margin-top:2rem;
+	width: 100%;
+	background:#fff;
+	padding:2rem;
+	border-radius: 1rem;
+}
+.alarmset-list .item {
+	width: 100%;
+	position: relative;
+	padding:1.5rem 0;
+	display: block;
+}
+.alarmset-list .item + .item{
+	border-top:1px solid #eee;
+}
+.alarmset-list .tit{
+	font-size:1.7rem;
+	font-weight:500;
+	flex:1 auto;
+}
+.alarmset-list .desc{
+	font-size:1.3rem;
+	font-weight:500;
+	color:#777;
+}
+.alarmset-list .tit-wrap{
+	position:relative;
+	display:flex;
+	justify-content: space-between;
+}
+.alarmset-list h3{
+	font-size:1.3rem;
+	color:#aaa;
+	margin-bottom:1.5rem;
+}
 
 .alarm-list {
 	width: 100%;
@@ -3172,7 +3214,7 @@ a.ui-acco-btn:after {
 	width: 100%;
 	background: #fff;
 	height: 100%;
-	padding:1rem;
+	padding:1.5rem 1rem;
 }
 
 .alarm-list .info {
@@ -3221,8 +3263,23 @@ a.ui-acco-btn:after {
 	color:#777;
 	padding:2.5rem 0;
 }
-
-
+.alarm-none{
+	width:100%;
+	text-align: center;
+	font-size:1.5rem;
+	color:#999;
+	padding:3rem 0;
+}
+.alarm-none::before{
+	content:"";
+	display:inline-block;
+	width:7rem;
+	height:9rem;
+	background:url(../img/bell-off-outline.svg) no-repeat 50% 50% / 7rem;
+}
+.alarm-none p{
+	width:100%;
+}
 
 
 
