@@ -51,91 +51,81 @@
                     <p class="txt-info">리스트를 왼쪽으로 이동시 삭제 할수 있습니다.</p>
                 </div>
 
-                <div class="alarm-nav">
-                    <div class="form-item align-v scroll-x">
-                        <div class="inp-radio round">
-                            <input type="radio" id="alarmlist_1" name="alarmlist">
-                            <label for="alarmlist_1">전체</label>
-                        </div>
-                        <div class="inp-radio round">
-                            <input type="radio" id="alarmlist_2" name="alarmlist">
-                            <label for="alarmlist_2">현장생성</label>
-                        </div>
-                        <div class="inp-radio round">
-                            <input type="radio" id="alarmlist_3" name="alarmlist">
-                            <label for="alarmlist_3">건강검진</label>
-                        </div>
-                        <div class="inp-radio round">
-                            <input type="radio" id="alarmlist_4" name="alarmlist">
-                            <label for="alarmlist_4">PTW</label>
-                        </div>
-                        <div class="inp-radio round">
-                            <input type="radio" id="alarmlist_5" name="alarmlist">
-                            <label for="alarmlist_5">임금체불 SOS</label>
+                <div class="ui-tab type-scroll alarm-tab" id="alarmTab">
+                    <div class="ui-tab-btns">
+                        <div class="btn-wrap">
+                            <button type="button" class="ui-tab-btn">전체</button>
+                            <button type="button" class="ui-tab-btn">현장생성</button>
+                            <button type="button" class="ui-tab-btn">건강검진</button>
+                            <button type="button" class="ui-tab-btn">PTW</button>
+                            <button type="button" class="ui-tab-btn">임금체불 SOS</button>
                         </div>
                     </div>
+
+                    <div class="ui-tab-pnls">
+                        <section class="ui-tab-pnl">
+                                <div class="alarm-list">
+                                    <ul class="ui-drag">
+                                        <li class="item">
+                                            <div class="item-wrap">
+                                                <div class="info">
+                                                    <a href="#" class="tit">E-ptw 검토 요청이 도착하였습니다. </a>
+                                                    <div class="state">
+                                                        <span>0.01.22</span>
+                                                        <span>09:14:06</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="item-del">
+                                                삭제
+                                            </button>
+                                        </li>
                 
-                </div>
-                <div class="section-item pdt-n">
-                    <div class="alarm-list">
-                        <ul class="ui-drag">
-                            <li class="item">
-                                <div class="item-wrap">
-                                    <div class="info">
-                                        <div class="tit">E-ptw 검토 요청이 도착하였습니다. </div>
-                                        <div class="state">
-                                            <span>0.01.22</span>
-                                            <span>09:14:06</span>
-                                        </div>
-                                    </div>
+                                        <li class="item">
+                                            <div class="item-wrap">
+                                                <div class="info">
+                                                    <a href="#" class="tit">E-ptw 검토 요청이 도착하였습니다. </a>
+                                                    <div class="state">
+                                                        <span>0.01.22</span>
+                                                        <span>09:14:06</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="item-del">
+                                                삭제
+                                            </button>
+                                        </li>
+                
+                                        <li class="item">
+                                            <div class="item-wrap">
+                                                <div class="info">
+                                                    <a href="#" class="tit">E-ptw 검토 요청이 도착하였습니다. </a>
+                                                    <div class="state">
+                                                        <span>0.01.22</span>
+                                                        <span>09:14:06</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="item-del">
+                                                삭제
+                                            </button>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <button type="button" class="item-del">
-                                    삭제
-                                </button>
-                            </li>
-    
-                            <li class="item">
-                                <div class="item-wrap">
-                                    <div class="info">
-                                        <div class="tit">E-ptw 검토 요청이 도착하였습니다. </div>
-                                        <div class="state">
-                                            <span>0.01.22</span>
-                                            <span>09:14:06</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button type="button" class="item-del">
-                                    삭제
-                                </button>
-                            </li>
-    
-                            <li class="item">
-                                <div class="item-wrap">
-                                    <div class="info">
-                                        <div class="tit">E-ptw 검토 요청이 도착하였습니다. </div>
-                                        <div class="state">
-                                            <span>0.01.22</span>
-                                            <span>09:14:06</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button type="button" class="item-del">
-                                    삭제
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
 
-                    <div class="alarm-info">
-                        최근 7일 이내의 알림만 확인할 수 있습니다.
-                    </div>
+                                <div class="alarm-info">
+                                    최근 7일 이내의 알림만 확인할 수 있습니다.
+                                </div>
 
-                    <div class="alarm-none">
-                        <p>받은 알림이 없습니다.</p>
+                                <div class="alarm-none">
+                                    <p>받은 알림이 없습니다.</p>
+                                </div>
+                        </section>
+
                     </div>
-                   
                 </div>
-               
+
+                
                 
             </div>
         </main>
@@ -152,6 +142,16 @@
                 $plugins.common.init();
                 $plugins.common.dragDel();
                 
+
+                $plugins.uiTab({ 
+                    id:'alarmTab', 
+                    current:0, 
+                    onePanel: true,
+                    align : 'center',
+                    callback:function(v){
+                        console.log(1111);
+                    } 
+                });
             });
         })(jQuery, window, document);
     </script>

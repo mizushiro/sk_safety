@@ -707,7 +707,6 @@ if (!Object.keys){
 
 			setTimeout(function(){
 				$body.addClass('ui-snackbar-show');
-
 				$shanckbar.off('transitionend.snackbarhide').on('transitionend.snackbarshow', function(){
 					$(this).off('transitionend.snackbarshow').addClass('on');
 					win[global].snackbars.timer = setTimeout(win[global].snackbars.hide, opt.time);
@@ -717,15 +716,11 @@ if (!Object.keys){
 		show : function(conts) {
 			var conts = conts;
 
-			console.log($('.ui-snackbar-ready').length);
-
 			if ($('.ui-snackbar-ready').length) {
 				win[global].snackbars.hide(conts, true);
 			} else {
 				win[global].snackbars.set(conts);
 			}
-
-			
 		},
 		hide : function(conts, v){
 			var $body = $('body');
@@ -830,6 +825,22 @@ if (!Object.keys){
 		}
 	}
 
+	win[global].para = {
+		get: function(paraname){
+			var _tempUrl = win.location.search.substring(1),
+			_tempArray = _tempUrl.split('&'),
+			_tempArray_len = _tempArray.length,
+			_keyValue;
+
+			for (var i = 0, len = _tempArray_len; i < len; i++) {
+				_keyValue = _tempArray[i].split('=');
+
+				if (_keyValue[0] === paraname) {
+					return _keyValue[1];
+				}
+			}
+		}
+	}
 	/* ------------------------
 	 * [base] URL parameter
 	 * date : 
@@ -1594,7 +1605,7 @@ if (!Object.keys){
 			keys = win[global].option.keys,
 			optAcco;
 
-		var para = win[global].uiPara('acco'),
+		var para = win[global].para.get('acco'),
 			paras,
 			paraname;
 
@@ -3044,7 +3055,7 @@ if (!Object.keys){
 		var	len = $btn.length,
 			keys = win[global].option.keys;
 			
-		var	para = win[global].uiPara('tab'),
+		var	para = win[global].para.get('tab'),
 			paras,
 			paraname;
 

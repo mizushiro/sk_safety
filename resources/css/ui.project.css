@@ -2428,7 +2428,6 @@ a.ui-acco-btn:after {
 
 .ui-tab {
 	position: relative;
-	margin: 10px 0
 }
 
 .ui-tab.type-scroll .ui-tab-btns {
@@ -2442,8 +2441,7 @@ a.ui-acco-btn:after {
 }
 
 .ui-tab.type-scroll .ui-tab-btns .btn-wrap .ui-tab-btn {
-	flex: 1;
-	min-width: 100px
+	flex: 0 auto;
 }
 
 .ui-tab-btns {
@@ -2543,7 +2541,6 @@ a.ui-acco-btn:after {
 	top: 0;
 	left: 0;
 	padding: 2rem;
-	background: #fff;
 	border-top: 0
 }
 
@@ -3127,20 +3124,43 @@ a.ui-acco-btn:after {
 	background: url(../img/icon_info_r.svg) no-repeat 0 0 / cover;
 }
 
-.alarm-nav .form-item { 
-	padding:1rem 0 1rem 2rem;
+.alarm-tab .ui-tab-btns:after{
+	display: none;
 }
-
-.alarm-nav .inp-radio:last-child{
-	padding-right:2rem;
+.alarm-tab .ui-tab-pnl{
+	padding-top:0;
 }
-.scroll-x{
-	overflow-x: auto;
+.alarm-tab .btn-wrap { 
+	width:max-content;
+	padding:1.5rem 0 1.5rem 2rem;
 }
-.scroll-x .inp-radio{
+.alarm-tab .ui-tab-btn+.ui-tab-btn{
+	margin-left:0.6rem;
+}
+.alarm-tab .ui-tab-btn:last-child{
+	margin-right:2rem;
+}
+.alarm-tab .ui-tab-btn{
+	min-width:0;
+	flex:1 auto;
 	white-space: nowrap;
+	width: auto;
+	height: 4rem;
+	border-radius: 2rem;
+	text-align: center;
+	font-weight: 500;
+	color: #666;
+	border: 1px solid #ddd;
+	padding: 0.2rem 1.6rem 0;
+	font-size:1.5rem;
+	font-weight:500;
+	background:#fff;
+	box-sizing:border-box;
 }
-
+.alarm-tab .ui-tab-btn.selected{
+	color:#fff;
+	background:#008F84 ;
+}
 .alarmset-list{
 	margin-top:2rem;
 	width: 100%;
@@ -3181,7 +3201,7 @@ a.ui-acco-btn:after {
 .alarm-list {
 	width: 100%;
 	background:#fff;
-	padding:1rem 1rem;
+	padding:1rem 2rem;
 	border-radius: 1rem;
 }
 .alarm-list .ui-drag{
@@ -3211,14 +3231,27 @@ a.ui-acco-btn:after {
 }
 
 .alarm-list .item-wrap {
+	display: block;
 	position: relative;
 	z-index: 1;
 	width: 100%;
 	background: #fff;
 	height: 100%;
-	padding:1.5rem 1rem;
+	padding:1.5rem 1.5rem 1.5rem 0;
 }
-
+.alarm-list .item-wrap:after {
+	content: "";
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -0.6rem;
+	width: 1.2rem;
+	height: 1.2rem;
+	background: url(../img/icon_down.svg) no-repeat 100% 50% / 1.2rem;
+	transform: rotate(-90deg);
+	opacity:0.4;
+}
 .alarm-list .info {
 	width:100%;
 }
@@ -3282,6 +3315,124 @@ a.ui-acco-btn:after {
 .alarm-none p{
 	width:100%;
 }
+
+.menu-header{
+	width:100%;
+	background: linear-gradient(118deg, #008F84, #0DA79B);
+	color:#fff;
+	padding:1.7rem 2rem;
+	display: flex;
+}
+.menu-header .photo-area{
+	flex:0
+}
+.menu-header .photo{
+	width:5.2rem;
+	height:5.2rem;
+	overflow: hidden;
+	background:#f7f7f7 url(../img/icon_person_g.svg) no-repeat 50% 50% / 2.5rem;
+	border-radius: 50%;
+	margin-right:1.3rem;
+}
+.menu-header .my-info {
+	flex:1;
+	max-width:calc(100% - 7rem);
+	font-size:1.5rem;
+	color:#fff;
+	padding-right:2.0rem;
+	margin-top:0.5rem;
+}
+.menu-header .my-info .name{
+	opacity: 0.8;
+}
+.menu-header .my-info .name>span {
+	display: inline-block;
+	position: relative;
+}
+.menu-header .my-info .name>span+span {
+	padding-left: 1rem;
+}
+
+.menu-header .my-info .name>span+span::before {
+	content: "";
+	display: block;
+	width: 1px;
+	height: 1rem;
+	background: #fff;
+	position: absolute;
+	top: 0.5rem;
+	left: 0.4rem;
+	opacity: 0.5;
+}
+.menu-header .my-info .place{
+	font-size:1.8rem;
+	font-weight:500;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.menu-header .btn-close {
+	position: absolute;
+	top:1.2rem;
+	right:1rem;
+	background: url(../img/icon_close_w.svg) no-repeat 50% 50% / 1.5rem;
+	opacity:0.8;
+}
+
+.menu-qr{
+	width:100%;
+	background: #F7F7F7;
+	height: 6rem;
+	padding:1rem 2rem;
+}
+
+.nav-list {
+	position: relative;
+	width:100%;
+	background:#fff;
+}
+.nav-list ul{
+	padding:1.0rem 2.0rem;
+}
+.nav-list a{
+	position: relative;
+	width: 100%;
+	display: block;
+	font-size: 1.6rem;
+	color:#666;
+}
+.nav-list a::after {
+	content: "";
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -0.6rem;
+	width: 1.2rem;
+	height: 1.2rem;
+	background: url(../img/icon_down.svg) no-repeat 100% 50% / 1.2rem;
+	transform: rotate(-90deg);
+	opacity:0.4;
+}
+.nav-list .point a::after {
+	background: url(../img/icon_down_p.svg) no-repeat 100% 50% / 1.2rem;
+	opacity:0.8;
+
+}
+.nav-list .point a{
+	color:#008F84;
+}
+.nav-list li {
+	border-top:1px solid #eee;
+	padding:1.3rem 0 1.2rem;
+}
+
+.nav-list li:first-child{
+	border:0;
+}
+
+
 
 
 
