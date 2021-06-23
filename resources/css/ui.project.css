@@ -2428,7 +2428,6 @@ a.ui-acco-btn:after {
 
 .ui-tab {
 	position: relative;
-	margin: 10px 0
 }
 
 .ui-tab.type-scroll .ui-tab-btns {
@@ -2442,8 +2441,7 @@ a.ui-acco-btn:after {
 }
 
 .ui-tab.type-scroll .ui-tab-btns .btn-wrap .ui-tab-btn {
-	flex: 1;
-	min-width: 100px
+	flex: 0 auto;
 }
 
 .ui-tab-btns {
@@ -2543,7 +2541,6 @@ a.ui-acco-btn:after {
 	top: 0;
 	left: 0;
 	padding: 2rem;
-	background: #fff;
 	border-top: 0
 }
 
@@ -3127,20 +3124,43 @@ a.ui-acco-btn:after {
 	background: url(../img/icon_info_r.svg) no-repeat 0 0 / cover;
 }
 
-.alarm-nav .form-item { 
-	padding:1rem 0 1rem 2rem;
+.alarm-tab .ui-tab-btns:after{
+	display: none;
 }
-
-.alarm-nav .inp-radio:last-child{
-	padding-right:2rem;
+.alarm-tab .ui-tab-pnl{
+	padding-top:0;
 }
-.scroll-x{
-	overflow-x: auto;
+.alarm-tab .btn-wrap { 
+	width:max-content;
+	padding:1.5rem 0 1.5rem 2rem;
 }
-.scroll-x .inp-radio{
+.alarm-tab .ui-tab-btn+.ui-tab-btn{
+	margin-left:0.6rem;
+}
+.alarm-tab .ui-tab-btn:last-child{
+	margin-right:2rem;
+}
+.alarm-tab .ui-tab-btn{
+	min-width:0;
+	flex:1 auto;
 	white-space: nowrap;
+	width: auto;
+	height: 4rem;
+	border-radius: 2rem;
+	text-align: center;
+	font-weight: 500;
+	color: #666;
+	border: 1px solid #ddd;
+	padding: 0.2rem 1.6rem 0;
+	font-size:1.5rem;
+	font-weight:500;
+	background:#fff;
+	box-sizing:border-box;
 }
-
+.alarm-tab .ui-tab-btn.selected{
+	color:#fff;
+	background:#008F84 ;
+}
 .alarmset-list{
 	margin-top:2rem;
 	width: 100%;
