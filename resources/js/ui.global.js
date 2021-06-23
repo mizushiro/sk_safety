@@ -1605,7 +1605,7 @@ if (!Object.keys){
 			keys = win[global].option.keys,
 			optAcco;
 
-		var para = win[global].uiPara('acco'),
+		var para = win[global].para.get('acco'),
 			paras,
 			paraname;
 
@@ -3055,7 +3055,7 @@ if (!Object.keys){
 		var	len = $btn.length,
 			keys = win[global].option.keys;
 			
-		var	para = win[global].uiPara('tab'),
+		var	para = win[global].para.get('tab'),
 			paras,
 			paraname;
 
