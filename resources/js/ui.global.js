@@ -825,6 +825,22 @@ if (!Object.keys){
 		}
 	}
 
+	win[global].para = {
+		get: function(paraname){
+			var _tempUrl = win.location.search.substring(1),
+			_tempArray = _tempUrl.split('&'),
+			_tempArray_len = _tempArray.length,
+			_keyValue;
+
+			for (var i = 0, len = _tempArray_len; i < len; i++) {
+				_keyValue = _tempArray[i].split('=');
+
+				if (_keyValue[0] === paraname) {
+					return _keyValue[1];
+				}
+			}
+		}
+	}
 	/* ------------------------
 	 * [base] URL parameter
 	 * date : 
