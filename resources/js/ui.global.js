@@ -707,7 +707,6 @@ if (!Object.keys){
 
 			setTimeout(function(){
 				$body.addClass('ui-snackbar-show');
-
 				$shanckbar.off('transitionend.snackbarhide').on('transitionend.snackbarshow', function(){
 					$(this).off('transitionend.snackbarshow').addClass('on');
 					win[global].snackbars.timer = setTimeout(win[global].snackbars.hide, opt.time);
@@ -717,15 +716,11 @@ if (!Object.keys){
 		show : function(conts) {
 			var conts = conts;
 
-			console.log($('.ui-snackbar-ready').length);
-
 			if ($('.ui-snackbar-ready').length) {
 				win[global].snackbars.hide(conts, true);
 			} else {
 				win[global].snackbars.set(conts);
 			}
-
-			
 		},
 		hide : function(conts, v){
 			var $body = $('body');
