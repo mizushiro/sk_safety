@@ -5,18 +5,33 @@
     </h1>
 
     <button type="button" class="btn-back"><span class="a11y-hidden">뒤로가기</span></button>
-    <button type="button" class="btn-menu" onclick="$plugins.common.navOpen()"><span class="a11y-hidden">전체메뉴</span></button>
+    <button type="button" class="btn-menu" onclick="$plugins.common.navOpen();"><span class="a11y-hidden">전체메뉴</span></button>
     
     <div class="menu-wrap">
         <div class="menu-body normal">
             <div class="menu-header">
-                <div>
-                    <img src="" alt="">
+                <div class="photo-area">
+                    <img src="../resources/img/icon_star.svg" alt="작업반장">
+                    <div class="photo">
+                        <img src="" alt="">
+                    </div>
                 </div>
-                <strong>관리자 홍길동</strong>
-                <span>[광명] sk view 신축공사</span>
-    
+                <div class="my-info">
+                    <div>
+                        <span>근로자 홍길동</span>
+                        <span>작업반장</span>
+                    </div>
+                    <div>
+                        [광명] sk view 신축공사
+                    </div>
+                </div>
+
                 <button type="button" class="btn-close" onclick="$plugins.common.navClose()"><span class="a11y-hidden">닫기</span></button>
+            </div>
+            <div class="qr">
+                <button type="button" class="btn-qr">
+                    <span class="a11y-hidden"></span>
+                </button>
             </div>
             <nav style="height: 2000px;">
                 <ul>
