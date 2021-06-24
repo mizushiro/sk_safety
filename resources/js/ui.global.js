@@ -691,7 +691,7 @@ if (!Object.keys){
 	win[global].snackbars = {
 		timer : null,
 		options : {
-			time: 3000,
+			time: 1000,
 			classname : ''
 		},
 		set : function(conts){
@@ -700,7 +700,8 @@ if (!Object.keys){
 			var $body = $('body');
 
 			$body.append(snackbar);
-
+			snackbar = null;
+			
 			var $shanckbar = $('.ui-snackbar');
 			
 			$body.addClass('ui-snackbar-ready');
@@ -717,34 +718,25 @@ if (!Object.keys){
 			var conts = conts;
 
 			if ($('.ui-snackbar-ready').length) {
-				win[global].snackbars.hide(conts, true);
-			} else {
-				win[global].snackbars.set(conts);
-			}
-		},
-		hide : function(conts, v){
-			var $body = $('body');
-			var opt = this.options;
-			var show = !!v;
-			var conts = conts;
-
-			if (!$('.ui-snackbar.on').length) {
-				setTimeout(function(){
-					win[global].snackbars.hide(conts, show);
-				},100)
-				
-			} else {
 				clearTimeout(win[global].snackbars.timer);
-				$body.removeClass('ui-snackbar-show');
-				$('.ui-snackbar.on').off('transitionend.snackbarshow').on('transitionend.snackbarhide', function(){
-					$(this).off('transitionend.snackbarhide').remove();
-					$body.removeClass('ui-snackbar-ready');
-					
-					if (show) {
-						win[global].snackbars.show(conts);
-					} 
-				});
-			}
+				
+				$('body').removeClass('ui-snackbar-show').removeClass('ui-snackbar-ready');
+				$('.ui-snackbar').off('transitionend.snackbarshow').remove();
+			} 
+
+			win[global].snackbars.set(conts);
+		},
+		hide : function(conts){
+			var $body = $('body');
+			var conts = conts;
+			
+			clearTimeout(win[global].snackbars.timer);
+
+			$body.removeClass('ui-snackbar-show');
+			$('.ui-snackbar').off('transitionend.snackbarshow').on('transitionend.snackbarhide', function(){
+				$(this).off('transitionend.snackbarhide').remove();
+				$body.removeClass('ui-snackbar-ready');
+			});
 		}
 	}
 

@@ -2814,13 +2814,12 @@ a.ui-acco-btn:after {
 }
 
 .list-base li {
-	font-size:0;
 	width:100%;
 	padding:1rem 0;
 	border-bottom:1px solid #F5F5F5;
 }
 .list-base .tit {
-	width:calc(100% - 7rem);
+	width:calc(100% - 7.5 rem);
 	display: inline-block;
 	font-size:1.5rem;
 	font-weight:500;
@@ -2838,6 +2837,41 @@ a.ui-acco-btn:after {
 	font-weight:500;
 	color:#777;
 	width:7rem;
+}
+.list-base.type-arrow li a{
+	display:block; 
+	position:relative;
+	width:100%; 
+	padding-right:2rem;
+}
+.list-base.type-arrow li a::before{
+	content:"";
+	position:absolute;
+	display:block;
+	width:1rem;
+	height:1rem;
+	top:50%;
+	right:0;
+	margin-top:-0.5rem;
+	opacity:0.5;
+	background:url(../img/icon_right_b.svg) no-repeat 50% 50% / 0.7rem;
+}
+.list-base.type-arrow li > span {
+	display:inline-block;
+	vertical-align: middle;
+}
+.list-base.type-arrow li [class*="icon-"] + span{
+	position:relative;
+	top:0.2rem;
+}
+.list-base.type-arrow li [class*="icon-"]{
+	display:inline-block;
+	width:3.5rem;
+	height:3.5rem;
+	border-radius: 50%;
+	background-color:#F7F7F7;
+	vertical-align: middle;
+	margin-right:1rem;
 }
 
 .list-career li {

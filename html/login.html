@@ -110,7 +110,12 @@
                             <span>관리자등록</span>
                         </button>
                     </div>
-                    <a href="#" class="link-line mgt-s"><span>다른방법으로 로그인</span></a>
+                    <button type="button" class="link-line mgt-s" onclick="
+                        $plugins.uiModalOpen({ 
+                        id: 'modal_logintype', 
+                        src: '../modal/modal_logintype.html', 
+                        ps: 'bottom'
+                    });"><span>다른방법으로 로그인</span></button>
                 </div>
 
                 <section class="section-item simple-login">

@@ -1,0 +1,39 @@
+<section class="ui-modal" id="modal_logintype">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit">다른 로그인 방식을 선택해 주세요</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_logintype', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+
+            <ul class="list-base type-arrow">
+                <li>
+                    <a href="#">
+                        <span class="icon-login1"></span>
+                        <span>휴대폰/비밀번호</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon-login2"></span>
+                        <span>생체인증 (지문)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon-login3"></span>
+                        <span>안면인증</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
