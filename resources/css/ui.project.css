@@ -98,7 +98,7 @@
 	margin: 0 auto;
 	position: relative
 }
-.type-normal .util-set,
+/* .type-normal .util-set,
 .type-normal .btn-back,
 .type-normal .btn-contalk,
 .type-normal .page-title .sum-box,
@@ -114,7 +114,16 @@
 .type-contalk .btn-contalk,
 .base-header-wrap .page-title .sum-box {
 	display: none !important;
+} */
+
+.type-sub .util-set,
+.type-sub .btn-contalk,
+.type-sub .btn-menu,
+.type-sub .util,
+.type-sub .page-title .sum-box {
+	display: none !important;
 }
+
 .util button + button,
 .util-set button + button{
 	margin-left:0.5rem;
@@ -2222,7 +2231,7 @@ a.ui-acco-btn:after {
 	width: 100%;
 	height: 6.5rem;
 	background: #fff;
-	z-index: 1000;
+	z-index: 900;
 }
 
 .nav-gnb::after {

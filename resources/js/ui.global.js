@@ -390,29 +390,7 @@ if (!Object.keys){
 
 	})();
 
-	/* ------------------------
-	 * [base] selector type
-	 * date : 2020-06-09
-	------------------------ */
-	win[global] = win[global].uiNameSpace(namespace, {
-		uiSelectorType: function (v) {
-			return createUiSelectorType(v);
-		}
-	});
-	function createUiSelectorType(v) {
-		var selector = $('body');
-		if (v === null) {
-			selector = $('body')
-		} else {
-			if (typeof v === 'string') {
-				selector = $('#' + v);
-			} else {
-				selector = v;
-			}
-		}
-
-		return selector;
-	}
+	
 
 	/* ------------------------
 	 * [base] loading
@@ -437,7 +415,7 @@ if (!Object.keys){
 		var styleClass = opt.styleClass;
 		var loadingVisible = opt.visible;
 		var txt = opt.txt;
-		var	$selector = win[global].uiSelectorType(id);
+		var	$selector = !!id ? $('#' + id) : $('body');
 		var htmlLoading = '';
 
 		$('.ui-loading').not('.visible').remove();

@@ -221,22 +221,25 @@
 			console.log(type);
 			switch (type) {
 				case 'none':
-					console.log(type);
+					//없음
 					$('html').addClass('type-none');
 					$('.base-header-wrap').remove();
 					break;
+
 				case 'sub':
-					console.log(type);
+					//뒤로가기
 					$('html').addClass('type-sub');
 					$('.base-header-wrap .page-title .text').html(tit);
 					break;
+
 				case 'alarm':
-					console.log(type);
+					//뒤로가기,알림설정
 					$('html').addClass('type-alarm');
 					$('.base-header-wrap .page-title .text').html(tit);
 					break;
+
 				case 'normal':
-					console.log(type);
+					//메뉴,알림,마이페이지
 					$('html').addClass('type-normal');
 					$('.base-header-wrap .page-title .text').html(tit);
 					if (nav === 'normal') {
@@ -244,10 +247,9 @@
 					} else if (nav === 'place') {
 						$('html').addClass('nav-place');
 					}
-
 					break;
+
 				case 'contalk':
-					console.log(type);
 					$('html').addClass('type-contalk');
 					$('.base-header-wrap .page-title .text').html('Con-Talk');
 
