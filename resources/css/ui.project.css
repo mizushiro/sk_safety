@@ -7,6 +7,11 @@
 	overflow: hidden;
 }
 
+.tab-bar{
+	width:100%;
+	height:6.5rem;
+}
+
 .base-body {
 	width: 100%;
 	padding: 5.5rem 0 0;
@@ -98,43 +103,35 @@
 	margin: 0 auto;
 	position: relative
 }
-/* .type-normal .util-set,
+.type-normal .util-alarm,
 .type-normal .btn-back,
-.type-normal .btn-contalk,
+.type-normal .util-contalk,
 .type-normal .page-title .sum-box,
+
+.type-alarm .util-contalk,
 .type-alarm .util,
 .type-alarm .btn-menu,
-.type-sub .util-set,
-.type-sub .btn-contalk,
-.type-sub .btn-menu,
-.type-sub .util,
-.type-sub .page-title .sum-box,
-.type-contalk .util-set,
-.type-contalk .btn-menu,
-.type-contalk .btn-contalk,
-.base-header-wrap .page-title .sum-box {
-	display: none !important;
-} */
 
-.type-sub .util-set,
-.type-sub .btn-contalk,
-.type-sub .btn-menu,
 .type-sub .util,
-.type-sub .page-title .sum-box {
+.type-sub .util-contalk,
+.type-sub .util-alarm,
+.type-sub .btn-menu,
+.type-sub .page-title .sum-box,
+
+.type-contalk .util,
+.type-contalk .util-alarm,
+.type-contalk .btn-menu,
+.base-header-wrap .page-title .sum-box {
 	display: none !important;
 }
 
 .util button + button,
-.util-set button + button{
+.util-contalk button + button,
+.util-alarm button + button{
 	margin-left:0.5rem;
 }
-.type-alarm .util-set {
+.type-alarm .util-alarm {
 	display: block;
-	position: absolute;
-    right: 1rem;
-    top: 1.25rem;
-    display: flex;
-    justify-content: flex-end;
 }
 .type-alarm body {
 	background:#F7F7F7;
@@ -186,13 +183,14 @@
 	top: 1.25rem;
 }
 
+.base-header-wrap .util-alarm,
+.base-header-wrap .util-contalk,
 .base-header-wrap .util {
 	position: absolute;
 	right: 1rem;
 	top: 1.25rem;
 	display: flex;
 	justify-content: flex-end;
-
 }
 
 .type-safety .section-wrap,
@@ -2633,14 +2631,17 @@ a.ui-acco-btn:after {
 	background: #fff url(../img/icon_top.svg) no-repeat 50% 50% / 1.1rem;
 	opacity: 0;
 	transition: all .2s ease-out;
-	z-index: 900;
+	z-index: 890;
 }
 
 .btn-top:active {
 	border-color: #fff;
 	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
 }
-
+.is-FAB.is-bar .btn-top {
+	opacity: 1;
+	bottom: 8.5rem;
+}
 .is-FAB .btn-top {
 	opacity: 1;
 	bottom: 2rem;
@@ -2938,7 +2939,7 @@ a.ui-acco-btn:after {
 }
 .nav-ready .menu-wrap,
 .nav-normal .menu-body.normal,
-.nav-place .menu-body.place{
+.nav-site .menu-body.site{
 	display:block;
 }
 .menu-wrap {
@@ -2956,7 +2957,7 @@ a.ui-acco-btn:after {
 .menu-body.normal {
 	background:#fff;
 }
-.menu-body.place {
+.menu-body.site {
 	background:#fff;
 }
 .menu-body{
@@ -3407,7 +3408,7 @@ a.ui-acco-btn:after {
 	left: 0.4rem;
 	opacity: 0.5;
 }
-.menu-header .my-info .place{
+.menu-header .my-info .site{
 	font-size:1.8rem;
 	font-weight:500;
 	width: 100%;

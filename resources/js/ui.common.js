@@ -37,12 +37,12 @@
 				// 	callback:$plugins.common.header 
 				// });
 			}
-			if ($('.base-footer').length) {
+			if ($('.tab-bar').length) {
 				$plugins.ajax.init({ 
-					id: $('.base-footer'), 
-					url:'../inc/footer.html', 
+					id: $('.tab-bar'), 
+					url:'../inc/tabBar.html', 
 					page:true, 
-					callback:$plugins.common.footer 
+					callback:$plugins.common.tabBar 
 				});
 
 				// $plugins.uiAjax({ 
@@ -171,8 +171,10 @@
 			var $target = $('.ui-height');
 
 			var hh =  $('.base-header').length ? $('.base-header').outerHeight() : 0;
-			var h = $(win).outerHeight() - hh;
+			var nh =  $('.tab-bar').length ? $('.tab-bar').outerHeight() : 0;
+			var h = $(win).outerHeight() - hh - nh;
 			var add = 0;
+			console.log(nh);
 
 			$target.each(function(){
 				var $this = $(this);
@@ -217,41 +219,45 @@
 			var tit  = $('.base-header').data('title');
 			var type  = $('.base-header').data('type');
 			var nav  = $('.base-header').data('nav');
-			
+			var $html = $('html');
+			var $tit = $('.base-header-wrap .page-title .text');
+
 			console.log(type);
 			switch (type) {
 				case 'none':
 					//없음
-					$('html').addClass('type-none');
+					$html.addClass('type-none');
 					$('.base-header-wrap').remove();
 					break;
 
 				case 'sub':
 					//뒤로가기
-					$('html').addClass('type-sub');
-					$('.base-header-wrap .page-title .text').html(tit);
+					$html.addClass('type-sub');
+					$tit.html(tit);
 					break;
 
 				case 'alarm':
 					//뒤로가기,알림설정
-					$('html').addClass('type-alarm');
-					$('.base-header-wrap .page-title .text').html(tit);
+					$html.addClass('type-alarm');
+					$tit.html(tit);
 					break;
 
 				case 'normal':
-					//메뉴,알림,마이페이지
-					$('html').addClass('type-normal');
-					$('.base-header-wrap .page-title .text').html(tit);
+					//메뉴,콘톡,알림
+					$html.addClass('type-normal');
+					$tit.html(tit);
+
 					if (nav === 'normal') {
-						$('html').addClass('nav-normal');
-					} else if (nav === 'place') {
-						$('html').addClass('nav-place');
+						$html.addClass('nav-normal');
+					} else if (nav === 'site') {
+						$html.addClass('nav-place');
 					}
 					break;
 
 				case 'contalk':
-					$('html').addClass('type-contalk');
-					$('.base-header-wrap .page-title .text').html('Con-Talk');
+					//뒤로가기,신문고,알림
+					$html.addClass('type-contalk');
+					$tit.html('Con-Talk');
 
 					break;
 			} 
@@ -275,8 +281,9 @@
 			});
 		
 		},
-		footer: function(){
-			console.log('footer load');
+		tabBar: function(){
+			$('html').addClass('is-bar');
+			console.log('tab bar load');
 		}
 	};
 
