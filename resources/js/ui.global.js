@@ -390,7 +390,15 @@ if (!Object.keys){
 
 	})();
 
-	
+	win[global].loading = {
+		options : {
+			id: null,
+			visible: true,
+			txt : null,
+			styleClass : 'orbit' //time
+		},
+		
+	}
 
 	/* ------------------------
 	 * [base] loading
