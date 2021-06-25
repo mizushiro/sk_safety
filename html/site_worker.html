@@ -19,7 +19,7 @@
     <meta property="og:site_name" content="SK건설 세이프티" />
     <meta property="og:url" content="http://www.skecoplant.com/" />
     
-    <title>Con-Talk | SK건설 세이프티</title>
+    <title>내 현장 | SK건설 세이프티</title>
 
     <link rel="alternate" hreflang="ko" href="http://www.skecoplant.com/" />
     <link rel="canonical" href="http://www.skecoplant.com/" />
@@ -42,31 +42,123 @@
         data-title="내 현장" 
         ></header>
         <!-- content -->
-        <main class="base-body">
-           
-          
+        <main class="base-body" >
+            <div class="titlebar">
+                <h2 class="titlebar-tit">금일 내 현장</h2>
+                <button type="button" class="btn-base line small icon-qr">
+                    <span>현장생성</span>
+                </button>
+            </div>
+
+            <section class="section-item mgt-n">
+                <div class="box-base">
+                    <ul class="list-base type-arrow fx-sb">
+                        <li>
+                            <a href="#">
+                                <span class="icon-site1"></span>
+                                <span>안전 날씨 맑음</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon-site2"></span>
+                                <span>신문고 작성</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="search-site">
+                    <div>
+                        <button type="button" class="select-box ui-drop" id="uiSiteSelect">
+                            <span>개설된 현장을 선택하세요</span>
+                        </button>
+                        <div class="ui-drop-pnl " data-id="uiSiteSelect">
+                            <div class="ui-drop-box">
+                                <ul class="list-base">
+                                    <li>
+                                        <button type="button" data-tit="광명 SK VIEW 신축공사">
+                                            <div class="tit">광명 SK VIEW 신축공사</div>
+                                            <div class="desc">경기도 광명시 광명구 광명길 55번지 sk건설,보림토건</div>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" data-tit="광명 SK VIEW 신축공사2">
+                                            <div class="tit">광명 SK VIEW 신축공사2</div>
+                                            <div class="desc">경기도 광명시 광명구 광명길 55번지 sk건설,보림토건</div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button type="button" class="ui-drop-close">
+                                <span class="hide">닫기</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="btn-base primary">
+                        <span>신청</span>
+                    </button>
+                    
+                </div>
+            </section>
+            
+            <hr class="hr-sec">
+            <section class="section-item">
+                <div class="tit-sec type-line">
+                    <h3 class="tit">현장배치도</h3>
+                </div>
+                <div class="map-area">
+                    <button type="button" class="point-box off" style="top:5%; left:50%;"><span>미운영</span></button>
+                    <button type="button" class="point-box off" style="top:20%; left:30%;"><span>승인중</span></button>
+                    <button type="button" class="point-box on" style="top:40%; left:60%;"><span>운영중</span></button>
+                </div>
+            </section>
+
+            <hr class="hr-sec">
+            <section class="section-item">
+                <div class="tit-sec type-line">
+                    <h3 class="tit">작업정보</h3>
+                </div>
+                <h4 class="tit-cont">
+                    <span class="icon-possi"></span>
+                    <em class="c-p1">작업가능</em> <span>점검항목</span>
+                </h4>
+                <ul class="list-base type-arrow box">
+                    <li>
+                        <a href="#">
+                            <span>스팀 배관 밸브 설치, 케이싱 작업 종합 사무동 / 지하동</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>스팀 배관 밸브 설치, 케이싱 작업 종합 사무동 / 지하동</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <h4 class="tit-cont">
+                    <span class="icon-impossi"></span>
+                    <em class="c-p2">작업불가</em> <span>점검항목</span>
+                </h4>
+                <ul class="list-base type-arrow box">
+                    <li>
+                        <a href="#">
+                            <span>스팀 배관 밸브 설치, 케이싱 작업 종합 사무동 / 지하동</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>스팀 배관 밸브 설치, 케이싱 작업 종합 사무동 / 지하동</span>
+                        </a>
+                    </li>
+                </ul>
+                
+            </section>
 
         </main>
         <!-- //content -->
 
-        <nav class="ui-sp nav-gnb">
-            <h2 class="a11y-hidden">메뉴</h2>
-            <div class="nav-wrap">
-                <a href="#" class="nav-btn n1 selected">
-                    <span>내현장</span>
-                </a>
-                <a href="#" class="nav-btn n2">
-                    <span>Con-talk</span>
-                    <em class="sum-box">0</em>
-                </a>
-                <a href="#" class="nav-btn n3">
-                    <span>안전관리</span>
-                </a>
-                <a href="#" class="nav-btn n4">
-                    <span>근로자조회</span>
-                </a>
-            </div>
-        </nav>
+        <div class="tab-bar"></div>
 
         
     </div>
@@ -78,15 +170,25 @@
                 //기본 실행
                 $plugins.common.init();
                 
-                $('#searchOpen').on('click', function(){
-                    $('body').addClass('talk-search-open');
-                    $plugins.common.contentHeight();
-                });
-                $('#searchClose').on('click', function(){
-                    $('body').removeClass('talk-search-open');
-                    $plugins.common.contentHeight();
+                $plugins.uiDropdown({ 
+                    id:'uiSiteSelect',
+                    ps: 'BL',
+                    hold: true,
+                    dropSpace: $('body'),
+                    dropSrc: false,
+                    dropOffset: false,
+                    openback:function() { console.log('open callback'); },
+                    closeback:function() { console.log('close callback'); } 
                 });
 
+                $('[data-id="uiSiteSelect"] .list-base button').on('click', function(){
+                    var v = $(this).data('tit');
+                    $('#uiSiteSelect span').text(v);
+                    $plugins.uiDropdownToggle({ 
+                        id:'uiSiteSelect',
+                        state: 'close' 
+                    });
+                });
                 
             });
         })(jQuery, window, document);

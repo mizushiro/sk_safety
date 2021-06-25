@@ -174,7 +174,7 @@
 			var nh =  $('.tab-bar').length ? $('.tab-bar').outerHeight() : 0;
 			var h = $(win).outerHeight() - hh - nh;
 			var add = 0;
-			console.log(nh);
+			console.log(h);
 
 			$target.each(function(){
 				var $this = $(this);
@@ -192,7 +192,7 @@
 					}
 				}
 
-				console.log(add, hh, h);
+				console.log(add, hh, h, $(win).outerHeight());
 
 				$this.css({
 					'max-height': '100%',
