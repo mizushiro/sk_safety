@@ -292,6 +292,12 @@
 	margin: 2rem 0;
 }
 
+.c-p1{
+	color:#26A69A !important;
+}
+.c-p2{
+	color:#D84D56 !important;
+}
 
 /* heading title */
 .tit-page {
@@ -2844,7 +2850,18 @@ a.ui-acco-btn:after {
 	background:url(../img/icon_down_p.svg) no-repeat 100% 50% / 1rem;
 	transform: rotate(-90deg);
 }
-
+.list-base.box.type-arrow li a::before{
+	margin-top:-0.5rem;
+}
+.list-base.box{
+	border:1px solid #F5F5F5;
+}
+.list-base.box li{
+	padding:1.4rem 1.5rem;
+}
+.list-base.box li:last-child{
+	border:0;
+}
 .list-base li {
 	width:100%;
 	padding:1rem 0;
