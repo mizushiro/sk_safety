@@ -470,7 +470,7 @@ dl[class*="bul-"]>dt {
 .tit-sec {
 	font-size: 1.8rem;
 	font-weight: 700;
-	margin-bottom: 1.8rem;
+	margin-bottom: 1rem;
 	display: flex;
 	justify-content: space-between;
 }
@@ -785,6 +785,11 @@ input[type="date"]::after {
 	background: #fff;
 }
 
+.inp-radio.tab label::after,
+.inp-radio.tab label::before {
+	display: none;
+}
+
 /* button */
 .section-item .btn-area {
 	padding: 2rem 0 0;
@@ -1071,7 +1076,14 @@ a.btn-base {
 	display: flex;
 
 }
-
+.form-item.search-ctg {
+	width:calc(100% + 4rem);
+	padding:0 4rem;
+	margin-left:-2rem;
+	margin-top:-2rem;
+	border-bottom:1px solid #eee;
+	
+}
 .type-ts .form-item {
 	align-items: center;
 }
@@ -2200,7 +2212,22 @@ a.ui-acco-btn:after {
 	height: 4.5rem;
 }
 
-
+.inp-wrap.type-searchbox{
+	position: relative;
+	padding:1rem 0;
+	width:100%;
+}
+.inp-wrap.type-searchbox .inp-base {
+	border:1px solid #ddd;
+	background: #fff;
+	width:100%;
+	padding:0 5rem 0 2rem
+} 
+.inp-wrap.type-searchbox .btn-search {
+	position:absolute;
+	right:0.6rem;
+	top:1.5rem;
+}
 
 .latest-list {
 	width: 100%;
@@ -2655,12 +2682,19 @@ a.ui-acco-btn:after {
 	height: 1px;
 	background: #EEE;
 }
-
+.inp-radio.tab label{
+	border-bottom: 0.2rem solid #fff;
+}
+.inp-radio.tab label,
 .ui-tab-btn {
 	box-sizing: border-box;
 	float: left;
 	position: relative;
-	z-index: 0
+	z-index: 0;
+	padding: 1.5rem;
+	font-size: 1.6rem;
+	color: #999;
+	font-weight: 700;
 }
 
 .ui-tab-btn:hover span,
@@ -2713,17 +2747,11 @@ a.ui-acco-btn:after {
 	justify-content: center;
 }
 
-.ui-tab-btn {
-	padding: 1.5rem;
-	font-size: 1.6rem;
-	color: #999;
-	font-weight: 700;
-}
-
 .ui-tab-btn+.ui-tab-btn {
 	margin-left: 1rem;
 }
 
+.inp-radio.tab :checked + label,
 .ui-tab-btn.selected {
 	color: #008F84;
 	border-bottom: 0.2rem solid #008F84ff;
@@ -3041,7 +3069,6 @@ a.ui-acco-btn:after {
 	width: 100%;
 	padding-right: 2rem;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 }
 
@@ -3820,8 +3847,15 @@ a.ui-acco-btn:after {
 	margin-right: .4rem;
 }
 
+.list-base.fx-sb-li li,
 .fx-sb {
 	justify-content: space-between;
+	display: flex;
+}
+
+.list-base.fx-sa-li li,
+.fx-sa {
+	justify-content:space-around;
 	display: flex;
 }
 
@@ -3991,7 +4025,16 @@ a.ui-acco-btn:after {
 	margin-top:-1.6rem;
 }
 
-
+.search-resultbox {
+	position:absolute;
+	top:5rem;
+	left:0;
+	width:calc(100% + 4rem);
+	margin-left:-2rem;
+	background:#fff;
+	padding:2rem;
+	z-index: 100;
+}
 
 
 

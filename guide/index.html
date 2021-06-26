@@ -71,7 +71,7 @@
                 <a target="sk" href="../html/site_add.html">내 현장 추가하기</a>
 
                 <h2>관리자</h2>
-                
+                <a target="sk" href="../html/site_admin.html">내 현장</a>
                 
                 <h2>내 현장 안전관리</h2>
                 <a target="sk" href="../html/safety_management.html">내현장 안전관리</a>
@@ -140,17 +140,30 @@
                 });">면허(자격증) 등록</button>
 
                 <button type="button" onclick="
-                $plugins.uiModalOpen({ 
-                id: 'modal_checklist', 
-                src: '../modal/modal_checklist.html', 
-                ps: 'center', 
-                closeCallback: function(v) { 
-                    console.log('close callback', v); 
-                },
-                callback: function(v) { 
-                    console.log('callback', v); 
-                }
+                    $plugins.uiModalOpen({ 
+                    id: 'modal_checklist', 
+                    src: '../modal/modal_checklist.html', 
+                    ps: 'center', 
+                    closeCallback: function(v) { 
+                        console.log('close callback', v); 
+                    },
+                    callback: function(v) { 
+                        console.log('callback', v); 
+                    }
                 });">점검항목 확인하기</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                    id: 'modal_qr', 
+                    src: '../modal/modal_qr.html', 
+                    ps: 'center', 
+                    closeCallback: function(v) { 
+                        console.log('close callback', v); 
+                    },
+                    callback: function(v) { 
+                        console.log('callback', v); 
+                    }
+                });">내현장 Qr 코드 확인</button>
 
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 

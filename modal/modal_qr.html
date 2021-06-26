@@ -1,0 +1,23 @@
+<section class="ui-modal" id="modal_qr">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit">내현장 Qr 코드 확인</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_qr', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+
+            <div class="digitalsign-img">
+                <img src="../resources/img/@qrcode.jpg" alt="">
+            </div>
+
+        </div>
+    </div>
+</section>
+
