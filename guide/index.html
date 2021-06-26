@@ -41,7 +41,7 @@
 <body>
     <div class="base-wrap">
         <header class="base-header" 
-        data-id="1" 
+        
         data-type="normal" 
         data-title="가이드"
         ></header>
@@ -135,6 +135,19 @@
                         console.log('callback', v); 
                     }
                 });">면허(자격증) 등록</button>
+
+                <button type="button" onclick="
+                $plugins.uiModalOpen({ 
+                id: 'modal_checklist', 
+                src: '../modal/modal_checklist.html', 
+                ps: 'center', 
+                closeCallback: function(v) { 
+                    console.log('close callback', v); 
+                },
+                callback: function(v) { 
+                    console.log('callback', v); 
+                }
+                });">점검항목 확인하기</button>
 
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 

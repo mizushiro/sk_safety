@@ -19,7 +19,7 @@
     <meta property="og:site_name" content="SK건설 세이프티" />
     <meta property="og:url" content="http://www.skecoplant.com/" />
     
-    <title>로그인 | SK건설 세이프티</title>
+    <title>내 현장 | SK건설 세이프티</title>
 
     <link rel="alternate" hreflang="ko" href="http://www.skecoplant.com/" />
     <link rel="canonical" href="http://www.skecoplant.com/" />
@@ -31,60 +31,47 @@
 	<script src="../resources/js/ui.global.js"></script>
 	<script src="../resources/js/ui.common.js"></script>
 
+    
+
     <style>
     </style>
 </head>
-<body class="type-splash">
+<body>
     <div class="base-wrap">
         <header class="base-header" 
-        
-        data-type="none" 
+        data-type="sub" 
+        data-title="내 현장" 
         ></header>
         <!-- content -->
         <main class="base-body">
-            <div class="logo">
-                <img src="../resources/img/sk_logo.svg" alt="SK ecoplant">
-            </div>
-            <div class="slogan">
-                <h1>Safety platform</h1>
-                <p>
-                    <strong>Sk 건설 안전관리 시스템 </strong>
-                    <span>Sk 건설은 미래의 건축 문화를 이끌어갑니다.</span>
-                </p>
+            <div id="map" class="map-area">
+
             </div>
 
-            <div class="loading">
-                <div class="bar" style="width:50%">
-                    <span class="a11y-hidden">50%</span>
-                </div>
-            </div>
-            
         </main>
         <!-- //content -->
+
+        <div class="tab-bar"></div>
+
+        
     </div>
 
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?9906c009f8e9c9a1a36542d2c08c1361"></script>
     <script> 
         ;(function($, win, doc, undefined) {
             $(doc).ready(function() {
                
                 //기본 실행
                 $plugins.common.init();
-                $('.ui-modal-btn').off('click.modal').on('click.modal', function(e){
-                    var $btn = $(this);
-                    
-                    $plugins.uiModalOpen({ 
-                        id: $btn.attr('data-id'), 
-                        src: $btn.attr('data-src') === undefined ? false : $btn.attr('data-src'), 
-                        ps: $btn.attr('data-ps') === undefined ? 'center' : $btn.attr('data-ps'), 
-                      
-                        closeCallback: function(v) { 
-                            console.log('close callback', v); 
-                        },
-                        callback: function(v) { 
-                            console.log('callback', v); 
-                        }
-                    });
-                })
+
+                var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+                var options = { //지도를 생성할 때 필요한 기본 옵션
+                    center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+                    level: 3 //지도의 레벨(확대, 축소 정도)
+                };
+
+                var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+                
             });
         })(jQuery, window, document);
     </script>
