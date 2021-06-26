@@ -44,19 +44,44 @@
         ></header>
         <!-- content -->
         <main class="base-body">
-            <div id="map" class="map-area">
+            <div class="map-area ">
 
+                <div id="map" class="map ui-height"></div>
+
+                <button type="button" class="point-box off" style="top:35%; left:50%;"><span>미운영</span></button>
+                <button type="button" class="point-box off" style="top:50%; left:30%;"><span>승인중</span></button>
+                <button type="button" class="point-box on" style="top:40%; left:60%;"><span>운영중</span></button>
+                
+                <button type="button" class="point-box on selected " style="top:25%; left:50%;">
+                    <div class="tit">광명 SK VIEW 신축공사</div>
+                    <div class="desc">경기도 광명시 광명구 광명길 55번지 sk건설,보림토건</div>
+                </button>
+               
+
+                <div class="btn-area fix ui-sp">
+                    <button type="button" class="btn-base primary large">
+                        <span class="icon-navi-w"></span>
+                        <span>내 현장으로 추가하기</span>
+                    </button>
+                </div>
+                <!-- 지도 확대, 축소 컨트롤 div 입니다
+                <div class="custom_zoomcontrol"> 
+                    <button type="button" class="" onclick="$plugins.map.zoomIn();">
+                        <span class="a11y-hidden">확대</span>
+                    </button>
+                    <button type="button" class="" onclick="$plugins.map.zoomOut();">
+                        <span class="a11y-hidden">축소</span>
+                    </button>
+                </div>
+                 -->
             </div>
-
+           
         </main>
         <!-- //content -->
-
-        <div class="tab-bar"></div>
-
         
     </div>
 
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?9906c009f8e9c9a1a36542d2c08c1361"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9906c009f8e9c9a1a36542d2c08c1361"></script>
     <script> 
         ;(function($, win, doc, undefined) {
             $(doc).ready(function() {
@@ -64,13 +89,43 @@
                 //기본 실행
                 $plugins.common.init();
 
-                var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-                var options = { //지도를 생성할 때 필요한 기본 옵션
-                    center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-                    level: 3 //지도의 레벨(확대, 축소 정도)
-                };
+                $plugins.map = {
+                    name: {},
+                    init: function(){
+                        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                            mapOption = { 
+                                center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                level: 3 // 지도의 확대 레벨
+                            };  
 
-                var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+                        $plugins.map.name = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+                            
+                        // 지도타입 컨트롤의 지도 또는 스카이뷰 버튼을 클릭하면 호출되어 지도타입을 바꾸는 함수입니다
+                        function setMapType(maptype) { 
+                            var roadmapControl = document.getElementById('btnRoadmap');
+                            var skyviewControl = document.getElementById('btnSkyview'); 
+                            if (maptype === 'roadmap') {
+                                $plugins.map.name.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);    
+                                roadmapControl.className = 'selected_btn';
+                                skyviewControl.className = 'btn';
+                            } else {
+                                $plugins.map.name.setMapTypeId(kakao.maps.MapTypeId.HYBRID);    
+                                skyviewControl.className = 'selected_btn';
+                                roadmapControl.className = 'btn';
+                            }
+                        }
+
+                    },
+                    zoomIn: function(){
+                        $plugins.map.name.setLevel($plugins.map.name.getLevel() - 1);
+                    },
+                    zoomOut: function(){
+                        $plugins.map.name.setLevel($plugins.map.name.getLevel() + 1);
+                    }
+                }
+                $plugins.map.init();
+  
+                
                 
             });
         })(jQuery, window, document);

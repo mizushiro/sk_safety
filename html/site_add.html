@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index, follow" />
+
+    <meta name="subject" content="SK건설 안전관리 시스템">
+    <meta name="author" content="SK건설">
+    <meta name="title" content="SK건설 세이프티" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="SK건설, SK, SK ecoplant, safety platform, 안전, 관리, 건축" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SK건설 세이프티" />
+    <meta property="og:url" content="http://www.skecoplant.com/" />
+    
+    <title>내 현장 추가하기 | SK건설 세이프티</title>
+
+    <link rel="alternate" hreflang="ko" href="http://www.skecoplant.com/" />
+    <link rel="canonical" href="http://www.skecoplant.com/" />
+    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <link rel="apple-touch-icon" href="../resources/img/common/ico_app.png" >
+
+	<link rel="stylesheet" href="../resources/css/ui.base.css">
+	<script src="../resources/js/lib/jquery-3.2.1.min.js"></script>
+	<script src="../resources/js/ui.global.js"></script>
+	<script src="../resources/js/ui.common.js"></script>
+
+    
+
+    <style>
+    </style>
+</head>
+<body>
+    <div class="base-wrap">
+        <header class="base-header" 
+        data-type="sub" 
+        data-title="내 현장 추가하기" 
+        ></header>
+        <!-- content -->
+        <main class="base-body">
+            <div class="section-wrap">
+                <!-- 시공물 종류 -->
+                <section class="section-item mgt-n">
+                    <h3 class="tit-sec a11y-hidden">내 현장 시공물</h3>
+                    <div class="form-wrap">
+                        <div class="form-dl mgt-n">
+                            <div class="form-dt">
+                                <label class="form-tit" for="siteAdd_1">시공물 종류</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <select class="inp-select" id="siteAdd_1" title="시공물 선택">
+                                        <option>건축 아파트</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //시공물 종류 -->
+
+                <!-- 현장 대표사진 등록 -->
+                <hr class="hr-sec">
+                <section class="section-item">
+                    <div class="tit-sec type-line">
+                        <h3 class="tit">현장 대표사진 등록<sub class="desc">(선택)</sub></h3>
+                        <div class="tit-util">
+                            <button type="button" class="btn-photo" onclick="
+                            $plugins.uiModalOpen({ 
+                                id: 'modal_photo', 
+                                src: '../modal/modal_photo.html', 
+                                full:true,
+                                ps: 'center'
+                            });
+                            ">
+                                <span class="a11y-hidden">촬영</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="photo-repes">
+                        <div class="data-no">
+                            대표사진을 등록해 주세요.
+                        </div>
+                        <!--
+                            <img src="현장사진" alt="현장 대표 사진">
+                        -->
+                    </div>
+                </section>
+                <!-- //현장 대표사진 등록 -->
+
+                <!-- 시공사 인증 -->
+                <hr class="hr-sec">
+                <section class="section-item mgt-n">
+                    <div class="tit-sec type-line">
+                        <h3 class="tit">시공사 인증<sub class="desc">(착공신고서 촬영)</sub></h3>
+                        <div class="tit-util">
+                            <button type="button" class="btn-photo" onclick="
+                            $plugins.uiModalOpen({ 
+                                id: 'modal_photo', 
+                                src: '../modal/modal_photo.html', 
+                                full:true,
+                                ps: 'center'
+                            });
+                            ">
+                                <span class="a11y-hidden">촬영</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <ul class="list-imgfile">
+                        <li class="list-imgfile-item">
+                            <button type="button" class="img">
+                                <img src="" alt="">
+                            </button>
+                            <div class="group">
+                                <div class="name">001.jpg</div>
+                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
+                            </div>
+                        </li>
+                        <li class="list-imgfile-item">
+                            <button type="button" class="img">
+                                <img src="" alt="">
+                            </button>
+                            <div class="group">
+                                <div class="name">001.jpg</div>
+                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <!-- //시공사 인증 -->
+
+                 <!-- 협력사 인증 -->
+                 <hr class="hr-sec">
+                 <section class="section-item mgt-n">
+                     <div class="tit-sec type-line">
+                         <h3 class="tit">협력사 인증<sub class="desc">(하도급 계약표지)</sub></h3>
+                         <div class="tit-util">
+                             <button type="button" class="btn-photo" onclick="
+                             $plugins.uiModalOpen({ 
+                                 id: 'modal_photo', 
+                                 src: '../modal/modal_photo.html', 
+                                 full:true,
+                                 ps: 'center'
+                             });
+                             ">
+                                 <span class="a11y-hidden">촬영</span>
+                             </button>
+                         </div>
+                     </div>
+ 
+                     <ul class="list-imgfile">
+                         <li class="list-imgfile-item">
+                             <button type="button" class="img">
+                                 <img src="" alt="">
+                             </button>
+                             <div class="group">
+                                 <div class="name">001.jpg</div>
+                                 <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
+                             </div>
+                         </li>
+                         <li class="list-imgfile-item">
+                             <button type="button" class="img">
+                                 <img src="" alt="">
+                             </button>
+                             <div class="group">
+                                 <div class="name">001.jpg</div>
+                                 <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
+                             </div>
+                         </li>
+                     </ul>
+                 </section>
+                 <!-- //협력사 인증 -->
+
+                
+                
+            </div>
+           
+        </main>
+        <!-- //content -->
+        
+    </div>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9906c009f8e9c9a1a36542d2c08c1361&libraries=services"></script>
+    <script> 
+        ;(function($, win, doc, undefined) {
+            $(doc).ready(function() {
+               
+                //기본 실행
+                $plugins.common.init();
+                
+            });
+        })(jQuery, window, document);
+    </script>
+    
+</body>
+</html>

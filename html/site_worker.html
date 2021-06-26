@@ -107,7 +107,7 @@
                 <div class="tit-sec type-line">
                     <h3 class="tit">현장배치도</h3>
                 </div>
-                <div class="map-area">
+                <div id="map" class="map-area">
                     <button type="button" class="point-box off" style="top:5%; left:50%;"><span>미운영</span></button>
                     <button type="button" class="point-box off" style="top:20%; left:30%;"><span>승인중</span></button>
                     <button type="button" class="point-box on" style="top:40%; left:60%;"><span>운영중</span></button>
@@ -163,12 +163,21 @@
         
     </div>
 
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9906c009f8e9c9a1a36542d2c08c1361"></script>
     <script> 
         ;(function($, win, doc, undefined) {
             $(doc).ready(function() {
                
                 //기본 실행
                 $plugins.common.init();
+
+                var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+                var options = { //지도를 생성할 때 필요한 기본 옵션
+                    center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+                    level: 3 //지도의 레벨(확대, 축소 정도)
+                };
+
+                var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
                 
                 $plugins.uiDropdown({ 
                     id:'uiSiteSelect',

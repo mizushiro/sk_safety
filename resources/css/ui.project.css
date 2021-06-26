@@ -321,7 +321,12 @@
 [class*="bul-"] {
 	margin: 0;
 }
-
+[class*="bul-"]>li:first-child,
+[class*="bul-"]>div:first-child>dd:first-child,
+[class*="bul-"]>dd:first-child,
+p[class*="bul-"] {
+	margin-top:0;
+}
 [class*="bul-"]>li,
 [class*="bul-"]>div>dd,
 [class*="bul-"]>dd,
@@ -465,7 +470,6 @@ dl[class*="bul-"]>dt {
 .tit-sec {
 	font-size: 1.8rem;
 	font-weight: 700;
-	color: #333;
 	margin-bottom: 1.8rem;
 	display: flex;
 	justify-content: space-between;
@@ -498,7 +502,6 @@ dl[class*="bul-"]>dt {
 .tit-cont {
 	font-size: 1.6rem;
 	font-weight: 700;
-	color: #333;
 	margin-top: 1rem;
 	margin-bottom: 0.8rem;
 }
@@ -515,7 +518,6 @@ button.inp-select {
 	width: 100%;
 	height: 4rem;
 	font-size: 1.5rem;
-	color: #333;
 	padding: 0 1rem;
 }
 
@@ -526,7 +528,6 @@ button.inp-select {
 	width: 100%;
 	height: 4rem;
 	font-size: 1.5rem;
-	color: #333;
 	padding: 0;
 }
 
@@ -808,7 +809,12 @@ input[type="date"]::after {
 	justify-content: space-between;
 	padding: 2rem;
 }
-
+.btn-area.fix {
+	position:fixed;
+	padding:0;
+	bottom:0; 
+	left:0;
+}
 .btn-area.stick .btn-base {
 	margin-left: 0 !important;
 }
@@ -827,7 +833,6 @@ input[type="date"]::after {
 	text-align: center;
 	font-size: 1.4rem;
 	font-weight: 500;
-	color: #333;
 	border: 1px solid #ddd;
 	padding: 0.2rem 1rem 0;
 	background-color: #fff;
@@ -1939,7 +1944,6 @@ a.ui-acco-btn:after {
 	display: flex;
 	align-items: flex-end;
 	font-size: 1.2rem;
-	color: #333;
 	white-space: nowrap;
 }
 
@@ -2317,7 +2321,6 @@ a.ui-acco-btn:after {
 .talk-list .tit {
 	font-size: 1.6rem;
 	font-weight: 700;
-	color: #333;
 	width: 100%;
 	white-space: nowrap;
 	overflow: hidden;
@@ -2327,7 +2330,6 @@ a.ui-acco-btn:after {
 .talk-list .opt {
 	font-size: 1.6rem;
 	font-weight: 500;
-	color: #333;
 }
 
 .talk-list .opt em {
@@ -2483,7 +2485,7 @@ a.ui-acco-btn:after {
 }
 
 .nav-btn.selected span {
-	color: #333333;
+	color: #333;
 }
 
 .type-splash {
@@ -2833,10 +2835,12 @@ a.ui-acco-btn:after {
 	bottom: 2rem;
 }
 
-/* 
-.is-FAB .base-body {
+.is-FAB .type-safety .base-body::after {
+	border-bottom: 7rem solid #F7F7F7;
+}
+.is-FAB .base-body::after {
 	border-bottom: 7rem solid transparent;
-} */
+}
 
 .banner-top {
 	position: relative;
@@ -2879,7 +2883,14 @@ a.ui-acco-btn:after {
 	height: 2rem;
 	background: url(../img/icon_pencil_g.svg) no-repeat 50% 50% / 1rem;
 }
-
+.icon-navi-w{
+	display: inline-block;
+	position: relative;
+	top:.3rem;
+	width: 2rem;
+	height: 2rem;
+	background: url(../img/icon_navi_w.svg) no-repeat 50% 50% / 1.3rem;
+}
 
 .tit-sec .btns {
 	position: relative;
@@ -2915,7 +2926,6 @@ a.ui-acco-btn:after {
 	word-break: break-all;
 	background: #fff;
 	text-align: left;
-	color: #333;
 	font-weight: 500;
 }
 
@@ -2996,7 +3006,6 @@ a.ui-acco-btn:after {
 	display: inline-block;
 	font-size: 1.5rem;
 	font-weight: 500;
-	color: #333;
 	text-align: left;
 }
 
@@ -3103,7 +3112,6 @@ a.ui-acco-btn:after {
 	height: 2.6rem;
 	border-radius: 1.3rem;
 	background: #F7F7F7;
-	color: #333;
 	font-size: 1.4rem;
 	font-weight: 500;
 	padding: 0.3rem 1.2rem 0;
@@ -3142,7 +3150,6 @@ a.ui-acco-btn:after {
 .list-safe li {
 	flex: 1 33.33%;
 	font-size: 1.6rem;
-	color: #333;
 	text-align: center;
 	font-weight: 500;
 }
@@ -3250,7 +3257,6 @@ a.ui-acco-btn:after {
 	opacity: 0;
 	width: calc(100% - 9rem);
 	background: #fff;
-	color: #333;
 	font-size: 1.5rem;
 	top: 60%;
 	transform: translate(0, -50%);
@@ -3347,7 +3353,6 @@ a.ui-acco-btn:after {
 	display: inline-block;
 	font-size: 1.7rem;
 	font-weight: 700;
-	color: #333;
 }
 
 .safety-list>li h3::after {
@@ -3597,7 +3602,6 @@ a.ui-acco-btn:after {
 .alarm-list .tit {
 	font-size: 1.6rem;
 	font-weight: 500;
-	color: #333;
 	width: 100%;
 	white-space: nowrap;
 	overflow: hidden;
@@ -3800,7 +3804,6 @@ a.ui-acco-btn:after {
 .titlebar-tit {
 	font-size: 1.6rem;
 	font-weight: 700;
-	color: #333;
 	line-height: 3rem;
 }
 
@@ -3857,14 +3860,79 @@ a.ui-acco-btn:after {
 .map-area {
 	position: relative;
 	width: 100%;
-	height: 16.3rem;
+	min-height: 16.3rem;
 	background: #ccc;
 }
+.map-area .map {
+	width:100%;
+	height:100%;
+}
+
+.map-guide {
+	position:absolute;
+	top:1rem;
+	left:1rem;
+	width:calc(100% - 2rem);
+	background:#fff;
+	text-align:center;
+	border:1px solid #ccc;
+	box-shadow: 0 .2rem .3rem rgba(0,0,0,0.1);
+	font-size: 1.4rem;
+	font-weight: 500;
+	color:#666;
+	z-index: 20;
+	padding:1rem 1rem;
+}
+.map-address{
+	position:absolute;
+	bottom:1rem;
+	left:1rem;
+	width:calc(100% - 2rem);
+	background:#fff;
+	text-align:left;
+	border:1px solid #ccc;
+	box-shadow: 0 .2rem .3rem rgba(0,0,0,0.1);
+	font-size: 1.4rem;
+	font-weight: 500;
+	color:#666;
+	z-index: 20;
+	padding:1rem 1rem;
+}
+
+.custom_zoomcontrol{
+	position:absolute;
+	bottom:1rem;
+	right:1rem;
+	z-index: 30;
+	overflow: hidden;
+}
+.custom_zoomcontrol button{
+	display:block;
+	width:4rem;
+	height:4rem;
+	border:1px solid #707070;
+	background: #fff;
+}
+.custom_zoomcontrol button + button {
+	margin-top:-1px;
+}
+
 
 .point-box.on {
 	border: 1px solid #D9242F;
 	background: #E7565F;
 	color: #fff;
+}
+.point-box.selected {
+	max-width:80%;
+	border: 1px solid #008F84;
+	background: #fff;
+	color: #333;
+	text-align: left;
+	z-index: 11;
+	padding:1rem 1.3rem;
+	border-radius:1rem;
+
 }
 
 .point-box.on::after {
@@ -3874,18 +3942,24 @@ a.ui-acco-btn:after {
 }
 
 .point-box {
-	position: absolute;
-	width: 5.8rem;
+	position:absolute;
+	width:auto;
 	padding: 0.6rem 1rem;
 	border: 1px solid #333;
 	border-radius: 0.3rem;
 	background: #fff;
 	box-shadow: 0 .3rem .6rem rgba(0, 0, 0, 0.1);
 	font-size: 1.3rem;
-	color: #333;
 	font-weight: 500;
+	z-index: 10;
+	transform: translate(-50%, -100%);
+	margin-top:-1rem;
 }
-
+.point-box.selected::after{
+	background: #fff;
+	border-bottom: 1px solid #008F84;;
+	border-right: 1px solid #008F84;;
+}
 .point-box::after {
 	content: "";
 	display: block;
@@ -3900,3 +3974,35 @@ a.ui-acco-btn:after {
 	border-right: 1px solid #333;
 	transform: rotate(45deg);
 }
+.point-box .tit {
+	font-size:1.6rem;
+	font-weight:700;
+}
+.point-box .desc {
+	font-size:1.3rem;
+	font-weight:500;
+	opacity: 0.8;;
+}
+
+.photo-repes {
+	position:relative;
+	width:100%;
+	background: #F7F7F7;
+	margin-top:-1.6rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
