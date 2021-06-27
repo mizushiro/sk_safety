@@ -120,6 +120,29 @@
 			}
 
 		},
+		siteSelect: function() {
+			$plugins.uiDropdown({ 
+				id:'uiSiteSelect',
+				ps: 'BR',
+				openback:function() { console.log('open callback'); },
+				closeback:function() { console.log('close callback'); } 
+			});
+
+			$('[data-id="uiSiteSelect"] .list-base button').off('click.site').on('click.site', function(){
+				var v = $(this).data('tit');
+
+				if ($('.ui-siteselect-result').prop('tagName') === 'INPUT') {
+					$('.ui-siteselect-result').val(v);
+				} else {
+					$('.ui-siteselect-result').text(v);
+				}
+				
+				$plugins.uiDropdownToggle({ 
+					id:'uiSiteSelect',
+					state: 'close' 
+				});
+			});
+		},
 		dragDel: function(){
 			var $item = $('.ui-drag > .item');
 			var s = 0;
