@@ -4502,7 +4502,11 @@ a.ui-acco-btn:after {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom:.5rem;
+	margin-bottom:.8rem;
+}
+.tbl-header .total em{
+	color:#E7565F;
+	font-weight: 700;
 }
 .inp-select.small{
 	border:0;
@@ -4595,7 +4599,11 @@ a.ui-acco-btn:after {
 	background:#f2f2f2;
 }
 
-
+.risk-head{
+	width:100%;
+	text-align: right;
+	padding:1rem 0 3rem;
+}
 
 
 

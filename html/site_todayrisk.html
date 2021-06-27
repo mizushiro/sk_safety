@@ -54,8 +54,8 @@
                 </div>
             </div>
 
-            <section class="section-item">
-                <div class="tbl-header">
+            <section class="section-item pdt-n">
+                <!-- <div class="tbl-header">
                     <div class="total">
                         <em>작업중지 10건</em> / 38건
                     </div>
@@ -114,13 +114,28 @@
                            
                         </tbody>
                     </table>
-                </div>
-            </section>
+                </div> -->
 
-            <hr class="hr-sec">
-            <section class="section-item">
+                <div class="risk-head align-v">
+                    <div class="inp-radio round">
+                        <input type="radio" id="riskstate1" name="riskstate" checked>
+                        <label for="riskstate1">점검대기</label>
+                    </div>
+                    <div class="inp-radio round">
+                        <input type="radio" id="riskstate2" name="riskstate">
+                        <label for="riskstate2">작업중</label>
+                    </div>
+                    <div class="inp-radio round">
+                        <input type="radio" id="riskstate3" name="riskstate">
+                        <label for="riskstate3">작업중지</label>
+                    </div>
+                    <div class="inp-radio round">
+                        <input type="radio" id="riskstate4" name="riskstate">
+                        <label for="riskstate4">완료</label>
+                    </div>
+                </div>
+
                 <div class="tbl-header">
-                    
                     <div class="total">
                         <em>작업중지 10건</em> / 38건
                     </div>
@@ -133,10 +148,6 @@
                             <option>점검자</option>
                         </select>
                     </div>
-
-                   
-
-                    
                 </div>
                 
                 <ul class="list-card">
@@ -163,7 +174,7 @@
                             </a>
                         </div>
                     </li>
-                    
+
                     <li class="item">
                         <div class="inp-check">
                             <input type="checkbox" id="점검자지정4">
@@ -189,15 +200,23 @@
                 </ul>
                 
                 <div class="btn-area pdt-n">
-                    <button type="button" class="btn-base primary large">
+                    <button type="button" class="btn-base line">
                         <span>점검자 지정하기</span>
                     </button>
                 </div>
                 <p class="txt-info mgt-xs">목록에서 선택한 후 점검자를 지정하세요.</p>
             </section>
 
+            <div class="btn-area stick">
+                <button type="button" class="btn-base primary large">
+                    <span class="icon-navi-w"></span>
+                    <span>작업허가서작성</span>
+                </button>
+            </div>
         </main>
         <!-- //content -->
+
+        <div class="tab-bar"></div>
     </div>
 
      <!-- tooltip -->
