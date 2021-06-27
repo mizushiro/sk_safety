@@ -3151,6 +3151,12 @@ a.ui-acco-btn:after {
 	vertical-align: middle;
 	margin-right: 1rem;
 }
+.list-base.type-arrow li .icon-site1 {
+	background: url(../img/icon_weather01.svg) no-repeat 50% 50%;
+}
+.list-base.type-arrow li .icon-site2 {
+	background: url(../img/icon_write01.svg) no-repeat 50% 50%;
+}
 
 .list-career li {
 	width: 100%;
@@ -3887,6 +3893,12 @@ a.ui-acco-btn:after {
 .fx-sb {
 	justify-content: space-between;
 	display: flex;
+}
+.list-base.type-arrow.fx-sb li {
+	padding-right:24px;
+}
+.list-base.type-arrow.fx-sb li a::before {
+	opacity:1;
 }
 
 .list-base.fx-sa-li li,
