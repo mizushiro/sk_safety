@@ -54,9 +54,161 @@
                 </div>
             </div>
 
-            
+            <section class="section-item">
+                <div class="tbl-header">
+                    <div class="total">
+                        <em>작업중지 10건</em> / 38건
+                    </div>
+
+                    <div>
+                        <div class="inp-check">
+                            <input type="checkbox" id="inspector">
+                            <label for="inspector">점검자 지정</label>
+                            <button type="button" aria-describedby="tt2" class="ui-tooltip-btn" data-class="tip-test0"><span class="a11y-hidden">점검자 지정이란?</span></button> 
+                        </div>
+                      
+                    </div>
+
+                    <div>
+                        <select class="inp-select small" id="테스트21" title="선택" style="width:6.5rem">
+                            <option>전체</option>
+                            <option>업체명</option>
+                            <option>작업명</option>
+                            <option>점검자</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="tbl-base ">
+                    <table>
+                        <caption>순위, 업체별 발생, 유형별 적발 정보입니다.</caption>
+                        <colgroup>
+                            <col style="width:4rem">
+                            <col style="width:auto">
+                            <col style="width:auto">
+                            <col style="width:auto">
+                            <col style="width:auto">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">업체명</th>
+                                <th scope="col">작업장소 작업명</th>
+                                <th scope="col">점검현황</th>
+                                <th scope="col">점검자</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ta-c">
+                                    <div class="inp-check">
+                                        <input type="checkbox" id="점검자지정1">
+                                        <label for="점검자지정1"><span class="a11y-hidden">김철수</span></label>
+                                    </div>
+                                </td>
+                                <td class="ta-c">일우건설</td>
+                                <td>101동 지하 밀폐 공간 작업 밀폐 공간 작업…</td>
+                                
+                                <td class="ta-c"><span class="flag">중지</span></td>
+                                <td class="ta-c">김철수</td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <hr class="hr-sec">
+            <section class="section-item">
+                <div class="tbl-header">
+                    
+                    <div class="total">
+                        <em>작업중지 10건</em> / 38건
+                    </div>
+                   
+                    <div>
+                        <select class="inp-select small" id="테스트21" title="선택" style="width:6.5rem">
+                            <option>전체</option>
+                            <option>업체명</option>
+                            <option>작업명</option>
+                            <option>점검자</option>
+                        </select>
+                    </div>
+
+                   
+
+                    
+                </div>
+                
+                <ul class="list-card">
+                    <li class="item">
+                        <div class="inp-check">
+                            <input type="checkbox" id="점검자지정2">
+                            <label for="점검자지정2">
+                                <span class="a11y-hidden">김철수</span>
+                            </label>
+                            <span class="bg"></span>
+                        </div>
+                        <a href="#">
+                            <div class="info">
+                                <div class="tit">
+                                    <span class="flag">중지</span> 
+                                    101동 지하 밀폐 공간 작업 밀폐 공간 작업
+                                </div>
+                                <div class="etc">
+                                    <span>No.C213778</span>
+                                    <span>일우건설</span>
+                                </div>
+                                <div class="etc">
+                                    <span>점검자 : <b>미정</b></span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <div class="inp-check">
+                            <input type="checkbox" id="점검자지정4">
+                            <label for="점검자지정4">
+                                <span class="a11y-hidden">김철수</span>
+                            </label>
+                            <span class="bg"></span>
+                        </div>
+                        <a href="#">
+                            <div class="info">
+                                <div class="tit">
+                                    <span class="flag">중지</span> 
+                                    101동 지하 밀폐 공간 작업 밀폐 공간 작업
+                                </div>
+                                <div class="etc">
+                                    <span>No.C213778</span>
+                                    <span>일우건설</span>
+                                </div>
+                                <div class="etc">
+                                    <span>점검자 : <b>김철수</b></span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="btn-area pdt-n">
+                    <button type="button" class="btn-base primary large">
+                        <span>점검자 지정하기</span>
+                    </button>
+                </div>
+                <p class="txt-info mgt-xs">목록에서 선택한 후 점검자를 지정하세요.</p>
+            </section>
+
         </main>
         <!-- //content -->
+    </div>
+
+     <!-- tooltip -->
+     <div class="ui-tooltip" id="tt2" role="tooltip" aria-hidden="true">
+        <button class="ui-tooltip-close" type="button"><span class="a11y-hidden">툴팁닫기</span></button>
+        <dl>
+            <dt>점검자 지정</dt>
+            <dd>버튼을 눌러서 목록을 선택한 후 점검자를 지정하세요.</dd>
+        </dl>
     </div>
 
     <script> 
