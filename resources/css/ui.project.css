@@ -2896,8 +2896,9 @@ a.ui-acco-btn:after {
 	text-align: center;
 	border: 1px solid #ccc;
 	border-radius: 0.4rem;
-	padding: 0.1rem 0.6rem 0;
+	padding: 0.3rem 0.6rem 0;
 	font-size: 1.2rem;
+	background: #fff;
 }
 
 .flag.modify {
@@ -4526,6 +4527,7 @@ a.ui-acco-btn:after {
 	font-size:1.5rem;
 	font-weight: 700;
 	margin-bottom:.5rem;
+	padding-right:4rem;
 }
 .list-card .item .etc span {
 	display:inline-block;
@@ -4543,7 +4545,16 @@ a.ui-acco-btn:after {
 	position: relative;
 	font-size:1.3rem;
 }
-
+.list-card .info{
+	flex:1;
+	position: relative;
+	z-index: 2;
+}
+.list-card .info a{
+	display: block;
+	width: 100%;
+	position:static;
+}
 .list-card .etc>*+*{
 	padding-left: 2rem;
 }
@@ -4558,7 +4569,7 @@ a.ui-acco-btn:after {
 	height: 1rem;
 	background: #C7C7C7;
 	position: absolute;
-	top: 0.5rem;
+	top: 0.3rem;
 	left: 0.8rem;
 }
 
@@ -4568,10 +4579,9 @@ a.ui-acco-btn:after {
 }
 .list-card .flag{
 	margin-right:.4rem;
-}
-.list-card a{
-	position: relative;
-	z-index: 2;
+	position:absolute;
+	top:0;
+	right:0;
 }
 .list-card .bg{
 	position:absolute;
