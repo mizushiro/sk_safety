@@ -1569,7 +1569,6 @@ a.btn-base {
 
 .box-line {
 	border: 1px solid #eee;
-	;
 	padding: 1rem 1.5rem;
 	background: #fff;
 	border-radius: 0;
@@ -2302,7 +2301,7 @@ a.ui-acco-btn:after {
 	width: 5rem;
 	height: 100%;
 	background: #888;
-	box-shadow: inset 5px 0 3px rgb(0, 0, 0, 0.2);
+	box-shadow: inset 5px 0 3px rgba(0, 0, 0, 0.2);
 	color: #fff;
 	border-top-right-radius: 0.4rem;
 	border-bottom-right-radius: 0.4rem;
@@ -3030,7 +3029,7 @@ a.ui-acco-btn:after {
 }
 
 .list-base .tit {
-	width: calc(100% - 7.5 rem);
+	width: calc(100% - 7.5rem);
 	display: inline-block;
 	font-size: 1.5rem;
 	font-weight: 500;
@@ -3297,7 +3296,7 @@ a.ui-acco-btn:after {
 	z-index: 3000;
 	border-radius: 1rem;
 	text-align: center;
-	box-shadow: 0 0.3rem 0.6rem rgb(0 0 0 / 50%);
+	box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, .5);
 	padding: 2.5rem 2rem;
 }
 
@@ -3600,7 +3599,7 @@ a.ui-acco-btn:after {
 	width: 5rem;
 	height: 100%;
 	background: #888;
-	box-shadow: inset 5px 0 3px rgb(0, 0, 0, 0.2);
+	box-shadow: inset 5px 0 3px rgba(0, 0, 0, 0.2);
 	color: #fff;
 }
 
