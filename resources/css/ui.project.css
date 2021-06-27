@@ -524,7 +524,6 @@ button.inp-select {
 }
 
 .select-box {
-	border: 0;
 	border: 1px solid #ddd;
 	width: 100%;
 	height: 4rem;
@@ -698,7 +697,6 @@ input[type="date"]::after {
 .inp-check label {
 	display: inline-block;
 	position: relative;
-	padding-left: 3rem;
 	font-size: 1.3rem;
 	min-height: 2.2rem;
 	padding: 0.6rem 0 0.4rem 3rem;
@@ -738,7 +736,6 @@ input[type="date"]::after {
 .inp-radio label {
 	display: block;
 	position: relative;
-	padding-left: 3rem;
 	font-size: 1.3rem;
 	min-height: 2.2rem;
 	padding: 0.6rem 0 0.4rem 3rem;
@@ -2984,7 +2981,6 @@ a.ui-acco-btn:after {
 .tbl-base table>tbody>tr>td {
 	border-bottom: 1px solid #F5F5F5;
 	padding: 1.2rem 1rem;
-	font-weight: 300;
 	font-size: 1.5rem;
 	word-break: break-all;
 	background: #fff;
@@ -3099,7 +3095,6 @@ a.ui-acco-btn:after {
 }
 
 .list-base.type-arrow li a {
-	display: block;
 	position: relative;
 	width: 100%;
 	padding-right: 2rem;
@@ -3546,7 +3541,6 @@ a.ui-acco-btn:after {
 	height: 4rem;
 	border-radius: 2rem;
 	text-align: center;
-	font-weight: 500;
 	color: #666;
 	border: 1px solid #ddd;
 	padding: 0.2rem 1.6rem 0;
