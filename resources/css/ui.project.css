@@ -3011,6 +3011,24 @@ a.ui-acco-btn:after {
 	background: url(../img/icon_navi_w.svg) no-repeat 50% 50% / 1.3rem;
 }
 
+.icon-possi {
+	display: inline-block;
+	position: relative;
+	top: .1rem;
+	width: 2.3rem;
+	height: 1.4rem;
+	background: url(../img/icon_possi.svg) no-repeat 50% 50% / 2.3rem;
+}
+.icon-impossi {
+	display: inline-block;
+	position: relative;
+	top: .1rem;
+	left:-0.1rem;
+	width: 2.3rem;
+	height: 1.4rem;
+	background: url(../img/icon_impossi.svg) no-repeat 50% 50% / 2.4rem;
+}
+
 .tit-sec .btns {
 	position: relative;
 	top: -0.3rem;
@@ -3364,7 +3382,7 @@ a.ui-acco-btn:after {
 }
 
 
-
+/* 알림메시지 */
 .ui-snackbar {
 	display: none;
 	transition: all .2s ease-out;
@@ -3399,6 +3417,7 @@ a.ui-acco-btn:after {
 	color: #008F84;
 }
 
+/*  */
 .weather-wrap {
 	position: absolute;
 	top: 5.5rem;
@@ -4454,10 +4473,29 @@ a.ui-acco-btn:after {
 	color:#666;
 }
 
-
-
-
-
+.search-risk{
+	width:100%;
+	padding:1.5rem 2rem;
+	background: linear-gradient(105deg, #167C99, #169C9D);
+	border-bottom-left-radius:3rem;
+	border-bottom-right-radius:3rem;
+}
+.search-risk .type-searchbox {
+	background: #fff;
+	height:4rem;
+	border-radius:2rem;
+	box-shadow: 0 .3rem .6rem rgba(0,0,0,0.1);
+	padding:0;
+	overflow: hidden;
+}
+.search-risk .type-searchbox .inp-base{
+	border:0;
+	background: transparent;
+	padding-left:2rem;
+}
+.search-risk .inp-wrap.type-searchbox .btn-search{
+	top:.5rem;
+}
 
 
 

@@ -269,12 +269,12 @@
 					//메뉴,콘톡,알림
 					$html.addClass('type-normal');
 					$tit.html(tit);
-
-					if (nav === 'normal') {
-						$html.addClass('nav-normal');
-					} else if (nav === 'site') {
-						$html.addClass('nav-place');
-					}
+					$html.addClass('nav-normal');
+					// if (nav === 'normal') {
+					// 	$html.addClass('nav-normal');
+					// } else if (nav === 'site') {
+					// 	$html.addClass('nav-place');
+					// }
 					break;
 
 				case 'contalk':
