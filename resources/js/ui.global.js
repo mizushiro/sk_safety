@@ -229,7 +229,7 @@ if (!Object.keys){
 				deviceSizeClassName(width);
 
 				colClass = width >= devsize[5] ? 'col-12' : width > devsize[8] ? 'col-8' : 'col-4';
-				$html.removeClass('s1920 s1600 s1440 s1280 s1024 s940 s840 s720 s600 s480 s400 s360 s300 col-12 col-8 col-4');
+				$html.removeClass('s1920 s1600 s1440 s1280 s1024 s960 s840 s720 s600 s480 s400 s360 s300 col-12 col-8 col-4');
 				win[global].breakpoint = width >= devsize[5] ? true : false;
 
 				deviceSizeClassName(width);
@@ -2371,7 +2371,38 @@ if (!Object.keys){
 		}
 	}
 
+	win[global].modal = {
+		options : {
+			/* type : normal, system */
+			type: 'normal',
+			wrap: false,
+			full: false,
+			ps: 'center',
+			src: false,
+			remove: false,
+			modalWidth: false,
+			modalHeight: false,
+			innerScroll: false,
+			mg: 20,
+			callback:false,
+			closeCallback:false,
+			endfocus:false,
 
+			sMessage: '',
+			sBtnConfirmTxt: 'Ok',
+			sBtnCancelTxt: 'Cancel',
+			sZindex: false,
+			sClass: 'type-system',
+			sConfirmCallback: false,
+			sCancelCallback: false
+		},
+		show: function(opt){
+
+		},
+		hide: function(){
+
+		}
+	}
 	/* ------------------------
 	* name : modal
 	* date : 2020-06-11
@@ -2448,15 +2479,6 @@ if (!Object.keys){
 						act();
 					}
 				});
-
-				// $plugins.uiAjax({
-				// 	id: wrap,
-				// 	url: src,
-				// 	add: true,
-				// 	callback: function(){
-				// 		act();
-				// 	}
-				// });
 			} else {
 				act();
 			}
@@ -2518,7 +2540,7 @@ if (!Object.keys){
 				.data('active', endfocus)
 				.data('closecallback', closeCallback);
 
-			if (full && !$plugins.breakpoint) {
+			if (full) {
 				$modal.addClass('type-full');
 				mg = 0;
 			} 
