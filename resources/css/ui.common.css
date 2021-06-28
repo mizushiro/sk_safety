@@ -317,3 +317,28 @@ select::-ms-expand {
     99% {bottom:-100vw; opacity:0;}
     100% {display:none; z-index: -1;}
 }
+
+
+[class*="ui-focusloop-"]:focus{
+    height: auto;
+}
+[class*="ui-focusloop-"]{
+    position:absolute;
+    left:0;
+    width:100%; 
+    height: 0;
+    overflow: hidden;
+}
+[class*="ui-focusloop-"] span{
+    display: block;
+    padding:0.5rem 1rem;
+    font-size:1.2rem;
+    background:rgba(0,0,0,0.5);
+    color:#fff;
+}
+.ui-focusloop-start{
+    top:0;
+}
+.ui-focusloop-end{
+    bottom:0;
+}

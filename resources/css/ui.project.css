@@ -1,4 +1,8 @@
 /* layout */
+*:focus{
+	outline:2px solid black !important;
+}
+
 .bg-g {
 	background-color: #F7F7F7
 }
@@ -4015,7 +4019,7 @@ a.ui-acco-btn:after {
 }
 
 .tit-sec+.map-area {
-	margin-top: -1.8rem;
+	margin-top: -1rem;
 }
 
 .map-area {
