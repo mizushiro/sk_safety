@@ -390,93 +390,77 @@ if (!Object.keys){
 
 	})();
 
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * loading show/hide
+	 */
 	win[global].loading = {
+		timerShow : {},
+		timerHide : {},
 		options : {
-			id: null,
-			visible: true,
+			selector: null,
 			txt : null,
 			styleClass : 'orbit' //time
 		},
-		
-	}
+		show : function(opt){
+			var opt = $.extend(true, {}, win[global].uiLoading.option, opt);
+			var selector = opt.selector;
+			var styleClass = opt.styleClass;
+			var txt = opt.txt;
+			var	$selector = !!selector ? selector : $('body');
+			var htmlLoading = '';
 
-	/* ------------------------
-	 * [base] loading
-	 * date : 2020-06-09
-	------------------------ */
-	win[global] = win[global].uiNameSpace(namespace, {
-		uiLoading: function (opt) {
-			return createUiLoading(opt);
-		}
-	});
-	win[global].uiLoading.timerShow = {};
-	win[global].uiLoading.timerHide = {};
-	win[global].uiLoading.option = {
-		id: null,
-		visible: true,
-		txt : null,
-		styleClass : 'orbit' //time
-	}
-	function createUiLoading(opt) {
-		var opt = $.extend(true, {}, win[global].uiLoading.option, opt);
-		var id = opt.id;
-		var styleClass = opt.styleClass;
-		var loadingVisible = opt.visible;
-		var txt = opt.txt;
-		var	$selector = !!id ? $('#' + id) : $('body');
-		var htmlLoading = '';
+			$('.ui-loading').not('.visible').remove();
 
-		$('.ui-loading').not('.visible').remove();
-
-		id === null ?
+			selector === null ?
 			htmlLoading += '<div class="ui-loading '+ styleClass +'">':
 			htmlLoading += '<div class="ui-loading '+ styleClass +'" style="position:absolute">';
-		htmlLoading += '<div class="ui-loading-wrap">';
+				htmlLoading += '<div class="ui-loading-wrap">';
 
-		txt !== null ?
-			htmlLoading += '<strong class="ui-loading-txt"><span>'+ txt +'</span></strong>':
-			htmlLoading += '';
+			txt !== null ?
+					htmlLoading += '<strong class="ui-loading-txt"><span>'+ txt +'</span></strong>':
+					htmlLoading += '';
 
-		htmlLoading += '</div>';
-		htmlLoading += '<button type="button" class="btn-base" style="position:fixed; bottom:10%; right:10%; z-index:100;" onclick="$plugins.uiLoading({ visible:false });"><span>$plugins.uiLoading({ visible:false })</span></button>';
-		htmlLoading += '</div>';
+				htmlLoading += '</div>';
+			htmlLoading += '</div>';
 
-		if(loadingVisible) {
-			clearTimeout(win[global].uiLoading.timerShow);
-			clearTimeout(win[global].uiLoading.timerHide);
-			win[global].uiLoading.timerShow = setTimeout(function(){
-				showLoading();
-			},300);
+			clearTimeout(this.timerShow);
+			clearTimeout(this.timerHide);
+			this.timerShow = setTimeout(showLoading,300);
 			
-		}
-		if(!loadingVisible) {
-			clearTimeout(win[global].uiLoading.timerShow);
-			win[global].uiLoading.timerHide = setTimeout(function(){
-				hideLoading();
+			function showLoading(){
+				!$selector.find('.ui-loading').length && $selector.append(htmlLoading);	
+				htmlLoading = null;		
+
+				$('.ui-loading').addClass('visible').removeClass('close');			
+			}
+		},
+		hide: function(){
+			clearTimeout(this.timerShow);
+			this.timerHide = setTimeout(function(){
+
+				$('.ui-loading').addClass('close');	
+				setTimeout(function(){
+					$('.ui-loading').removeClass('visible')
+					$('.ui-loading').remove();
+				},300);
 			},300)
-			
-		}	
+		}
 
-		function showLoading(){
-			!$selector.find('.ui-loading').length && $selector.append(htmlLoading);	
-			htmlLoading = '';		
-			$selector.data('loading', true);
-			$('.ui-loading').addClass('visible').removeClass('close');			
-		}
-		function hideLoading(){
-			$selector.data('loading', false);
-			$('.ui-loading').addClass('close');	
-			setTimeout(function(){
-				$('.ui-loading').removeClass('visible')
-				$('.ui-loading').remove();
-			},300);
-		}
 	}
 
-	/* ------------------------
-	 * [base] Ajax
-	 * date : 2020-06-09
-	------------------------ */
+	/**
+	 * ajax
+	 */
 	win[global].ajax = {
 		options : {
 			page: true,
@@ -507,9 +491,7 @@ if (!Object.keys){
 			var errorCallback = opt.errorCallback === undefined ? false : opt.errorCallback;
 	
 			if (loading) {
-				win[global].uiLoading({
-					visible: true
-				});
+				win[global].loading.show();
 			}
 	
 			if (effect) {
@@ -527,9 +509,7 @@ if (!Object.keys){
 
 				if (xhr.status === 200) {
 					if (loading) {
-						win[global].uiLoading({
-							visible: false
-						});
+						win[global].loading.hide();
 					}
 	
 					if (opt.page) {
@@ -542,9 +522,7 @@ if (!Object.keys){
 
 				} else {
 					if (loading) {
-						win[global].uiLoading({
-							visible: false
-						});
+						win[global].loading.hide();
 					}
 					errorCallback ? errorCallback() : '';
 				}
@@ -588,91 +566,8 @@ if (!Object.keys){
 		}
 	}
 
-	win[global] = win[global].uiNameSpace(namespace, {
-		uiAjax: function (opt) {
-			return createUiAjax(opt);
-		}
-	});
-	win[global].uiAjax.option = {
-		page: true,
-		add: false,
-		prepend: false,
-		effect: false,
-		loading:false,
-		callback: false,
-		errorCallback: false,
-
-		type: 'GET',
-		cache: false,
-		async: true,
-		contType: 'application/x-www-form-urlencoded',
-		dataType: 'html'
-	};
-	function createUiAjax(opt) {
-		if (opt === undefined) {
-			return false;
-		}
-
-		var opt = opt === undefined ? {} : opt;
-		var opt = $.extend(true, {}, win[global].uiAjax.option, opt);
-		var $id = typeof opt.id === 'string' ? $('#' + opt.id) : typeof opt.id === 'object' ? opt.id : $('body');
-		var loading = opt.loading;
-		var effect = opt.effect;
-		var callback = opt.callback === undefined ? false : opt.callback;
-		var errorCallback = opt.errorCallback === undefined ? false : opt.errorCallback;
-
-		if (loading) {
-			win[global].uiLoading({
-				visible: true
-			});
-		}
-
-		if (effect) {
-			$id.removeClass('changeover action');
-			$id.addClass('changeover');
-		}
-
-		$.ajax({
-			type: opt.type,
-			url: opt.url,
-			cache: opt.cache,
-			async: opt.async,  
-			headers: {
-				"cache-control": "no-cache",
-				"pragma": "no-cache"
-			},
-			error: function (request, status, err) {
-				if (loading) {
-					win[global].uiLoading({
-						visible: false
-					});
-				}
-				//console.log(request, status, err);
-				errorCallback ? errorCallback() : '';
-			},
-			success: function (v) {
-				if (loading) {
-					win[global].uiLoading({
-						visible: false
-					});
-				}
-
-				if (opt.page) {
-					opt.add ? opt.prepend ? $id.prepend(v) : $id.append(v) : $id.html(v);
-					callback && callback();
-					effect && $id.addClass('action');
-				} else {
-					callback && callback(v);
-				}
-			},
-			complete: function(v){
-				//console.log(v);
-			}
-		});
-	}
-
 	/**
-	 * name.snackbars
+	 * snackbars(toast)
 	 */
 	win[global].snackbars = {
 		timer : null,
@@ -680,10 +575,16 @@ if (!Object.keys){
 			time: 1000,
 			classname : ''
 		},
-		set : function(conts){
+		show : function(conts) {
 			var opt = this.options;
 			var snackbar = '<div class="ui-snackbar snackbar '+ opt.classname +'">'+ conts +'</div>';
 			var $body = $('body');
+
+			if (!!$('.ui-snackbar-ready').length) {
+				clearTimeout(win[global].snackbars.timer);
+				$body.removeClass('ui-snackbar-show').removeClass('ui-snackbar-ready');
+				$('.ui-snackbar').off('transitionend.snackbarshow').remove();
+			} 
 
 			$body.append(snackbar);
 			snackbar = null;
@@ -694,31 +595,19 @@ if (!Object.keys){
 
 			setTimeout(function(){
 				$body.addClass('ui-snackbar-show');
+
 				$shanckbar.off('transitionend.snackbarhide').on('transitionend.snackbarshow', function(){
 					$(this).off('transitionend.snackbarshow').addClass('on');
 					win[global].snackbars.timer = setTimeout(win[global].snackbars.hide, opt.time);
 				});
 			},0);
 		},
-		show : function(conts) {
-			var conts = conts;
-
-			if ($('.ui-snackbar-ready').length) {
-				clearTimeout(win[global].snackbars.timer);
-				
-				$('body').removeClass('ui-snackbar-show').removeClass('ui-snackbar-ready');
-				$('.ui-snackbar').off('transitionend.snackbarshow').remove();
-			} 
-
-			win[global].snackbars.set(conts);
-		},
-		hide : function(conts){
+		hide : function(){
 			var $body = $('body');
-			var conts = conts;
 			
 			clearTimeout(win[global].snackbars.timer);
-
 			$body.removeClass('ui-snackbar-show');
+
 			$('.ui-snackbar').off('transitionend.snackbarshow').on('transitionend.snackbarhide', function(){
 				$(this).off('transitionend.snackbarhide').remove();
 				$body.removeClass('ui-snackbar-ready');
@@ -816,29 +705,6 @@ if (!Object.keys){
 				if (_keyValue[0] === paraname) {
 					return _keyValue[1];
 				}
-			}
-		}
-	}
-	/* ------------------------
-	 * [base] URL parameter
-	 * date : 
-	------------------------ */
-	win[global] = win[global].uiNameSpace(namespace, {
-		uiPara: function (v) {
-			return createUiPara(v);
-		}
-	});
-	function createUiPara(paraname){
-		var _tempUrl = win.location.search.substring(1),
-			_tempArray = _tempUrl.split('&'),
-			_tempArray_len = _tempArray.length,
-			_keyValue;
-
-		for (var i = 0, len = _tempArray_len; i < len; i++) {
-			_keyValue = _tempArray[i].split('=');
-
-			if (_keyValue[0] === paraname) {
-				return _keyValue[1];
 			}
 		}
 	}
@@ -1148,7 +1014,47 @@ if (!Object.keys){
 		}
 	}
 
+	/**
+	 * Focus Loop 
+	 * 
+	 */
+	win[global].focus = {
+		options: {
+			callback: false
+		},
+		loop : function(opt){
+			if (opt === undefined) {
+				return false;
+			}
 
+			var opt = $.extend(true, {}, this.options, opt);
+			var $base = opt.selector;
+			var callback = opt.callback;
+
+			if(!$base.find('[class*="ui-focusloop-"]').length) {
+				$base.prepend('<div tabindex="0" class="ui-focusloop-start"><span>시작지점입니다.</span></div>');
+				$base.append('<div tabindex="0" class="ui-focusloop-end"><span>마지막지점입니다.</span></div>');
+			}
+
+			var $itemStart = $base.find('.ui-focusloop-start');
+			var $itemEnd = $base.find('.ui-focusloop-end');
+						
+			$itemStart.off('keydown.loop').on('keydown.loop', function(e) {
+				if (e.shiftKey && e.keyCode == 9) {
+					e.preventDefault();
+					$itemEnd.focus();
+					!!callback && callback();
+				}
+			});
+			$itemEnd.off('keydown.loop').on('keydown.loop', function(e) {
+				if (!e.shiftKey && e.keyCode == 9) {
+					e.preventDefault();
+					$itemStart.focus();
+					!!callback && callback();
+				}
+			});
+		}
+	}
 	/* ------------------------
 	 * [base] focus scope
 	 * date : 
@@ -2008,7 +1914,7 @@ if (!Object.keys){
 				if (n < itemSum) {
 					setItem();
 				} else {
-					$plugins.uiLoading({ visible:false });
+					win[global].loading.hide();
 				}
 
 				timer = setTimeout(function(){
@@ -2206,10 +2112,14 @@ if (!Object.keys){
 			$btn.attr('aria-expanded', true);
 			$pnl.attr('aria-hidden', false).addClass('on');
 
+			win[global].focus.loop({
+				selector: $('.ui-drop-pnl[data-id="'+ id +'"]'),
+				callback:pnlHide
+			});
 			//focus hold or sense
-			hold ?	
-				win[global].uiFocusTab({ selector:'.ui-drop-pnl[data-id="'+ id +'"]', type:'hold' }):
-				win[global].uiFocusTab({ selector:'.ui-drop-pnl[data-id="'+ id +'"]', type:'sense', callback:pnlHide });
+			// hold ?	
+			// 	win[global].uiFocusTab({ selector:'.ui-drop-pnl[data-id="'+ id +'"]', type:'hold' }):
+			// 	win[global].uiFocusTab({ selector:'.ui-drop-pnl[data-id="'+ id +'"]', type:'sense', callback:pnlHide });
 
 			switch (ps) {
 				case 'BL': 
