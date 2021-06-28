@@ -1,8 +1,7 @@
 /* layout */
-*:focus{
-	outline:2px solid black !important;
+[tabindex]:focus{
+	outline: 0;
 }
-
 .bg-g {
 	background-color: #F7F7F7
 }
@@ -504,7 +503,9 @@ dl[class*="bul-"]>dt {
 	position: relative;
 	top: 0.5rem;
 }
-
+.tit-sec.type-line + .form-wrap{
+	margin-top:2rem;
+}
 .tit-sec.type-line {
 	width: 100%;
 	position: relative;
@@ -859,6 +860,9 @@ input[type="date"]::after {
 .btn-area.stick .btn-base {
 	margin-left: 0 !important;
 }
+.btn-area.stick .btn-base.primary{
+	min-width:50%;
+}
 
 .btn-area .btn-base {
 	flex: 1 auto;
@@ -880,7 +884,7 @@ input[type="date"]::after {
 	line-height:1.2;
 }
 a.btn-base.small {
-	padding:0.7em 1rem .6rem;
+	padding:0.7em .8rem .6rem 0.5rem;
 }
 .btn-base.small {
 	min-height: 3rem;
@@ -991,6 +995,9 @@ a.btn-base {
 	background: #F7F7F7 url(../img/icon_btn_talk.svg) no-repeat 50% 50% / 2.4rem;
 }
 
+.type-searchbox .btn-clear {
+	right:3rem;
+}
 .btn-clear {
 	display: block;
 	position: absolute;
@@ -2893,7 +2900,21 @@ a.ui-acco-btn:after {
 	font-weight: 500;
 	border-bottom: 1px solid #008F84;
 }
-
+.flag.st-1{
+	background:#DEDEDE;
+	color:#333;
+	border:0;
+}
+.flag.st-2{
+	background:#DCEDC8;
+	color:#41791A;
+	border:0;
+}
+.flag.st-3{
+	background:#FFCDD2;
+	color:#C61B17;
+	border:0;
+}
 .flag {
 	display: inline-block;
 	height: 2.0rem;
@@ -2917,7 +2938,9 @@ a.ui-acco-btn:after {
 	font-size: 1.4rem;
 	color: #999;
 }
-
+.data-no.type-map::before{
+	background: #F7F7F7 url(../img/icon_navi_p.svg) no-repeat 50% 50% / 1.7rem;
+}
 .data-no::before {
 	content: "";
 	display: block;
@@ -2956,6 +2979,11 @@ a.ui-acco-btn:after {
 	opacity: 1;
 	bottom: 2rem;
 }
+.is-FAB .type-career .base-body,
+.is-FAB.type-none .base-body {
+	border-bottom: 7rem solid #fff;
+}
+
 
 .is-FAB .type-safety .base-body {
 	border-bottom: 7rem solid #F7F7F7;
@@ -3034,6 +3062,17 @@ a.ui-acco-btn:after {
 	background: url(../img/icon_impossi.svg) no-repeat 50% 50% / 2.4rem;
 }
 
+.icon-login1 {
+	background: url(../img/icon_lock.svg) no-repeat 50% 50% / 1.5rem;
+}
+.icon-login2 {
+	background: url(../img/icon_fingerprint.svg) no-repeat 50% 50% / 1.8rem;
+}
+.icon-login3 {
+	background: url(../img/icon_happy.svg) no-repeat 50% 50% / 2rem;
+}
+
+
 .tit-sec .btns {
 	position: relative;
 	top: -0.3rem;
@@ -3093,6 +3132,39 @@ a.ui-acco-btn:after {
 
 .tbl-base tbody+tbody,
 .tbl-base tbody.line-t {
+	border-top: 1px solid #c5c5c5;
+}
+
+.tbl-list {
+	margin: 0;
+	width: 100%;
+	position: relative;
+}
+
+.tbl-list table {
+	width: 100%;
+}
+
+.tbl-list table>tbody>tr>th,
+.tbl-list table>tbody>tr>td {
+	border-bottom: 1px solid #F5F5F5;
+	padding: 1.2rem 1rem;
+	font-size: 1.5rem;
+	word-break: break-all;
+	background: #fff;
+	text-align: left;
+	font-weight: 500;
+}
+
+.tbl-list table>tbody>tr>th {
+	background: #fff;
+	color: #777;
+	font-weight: 500;
+	font-size: 1.5rem;
+}
+
+.tbl-list tbody+tbody,
+.tbl-list tbody.line-t {
 	border-top: 1px solid #c5c5c5;
 }
 
@@ -3388,21 +3460,21 @@ a.ui-acco-btn:after {
 
 
 /* 알림메시지 */
-.ui-snackbar {
+.ui-toast {
 	display: none;
 	transition: all .2s ease-out;
 }
 
-.ui-snackbar-ready .ui-snackbar {
+.ui-toast-ready .ui-toast {
 	display: block;
 }
 
-.ui-snackbar-show .snackbar {
+.ui-toast-show .toast {
 	opacity: 1;
 	top: 50%;
 }
 
-.snackbar {
+.toast {
 	position: fixed;
 	opacity: 0;
 	width: calc(100% - 9rem);
@@ -3418,7 +3490,7 @@ a.ui-acco-btn:after {
 	padding: 2.5rem 2rem;
 }
 
-.snackbar em {
+.toast em {
 	color: #008F84;
 }
 
@@ -4180,7 +4252,7 @@ a.ui-acco-btn:after {
 	width: calc(100% + 4rem);
 	margin-left: -2rem;
 	background: #fff;
-	padding: 1rem 2rem;
+	padding: 1rem 2rem 2.2rem;
 	z-index: 100;
 	box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.1);
 }
@@ -4195,10 +4267,16 @@ a.ui-acco-btn:after {
 	text-align: right;
 	padding-top: 1rem;
 	border-top: 1px solid #eee;
+	display:flex;
+	justify-content: space-between;
 }
-
+.search-resultbox-map .btn-base + .btn-base {
+	margin-left:1rem;
+}
 .search-resultbox-map .btn-base {
 	display: inline-block;
+	flex:1 auto;
+	max-width:50%;
 }
 
 .search-resultbox .list-base button {
@@ -4427,6 +4505,10 @@ a.ui-acco-btn:after {
 .today-risk th,
 .today-risk td{
 	text-align: center !important;
+	padding:1rem 0.5rem;
+}
+.today-risk td .btn-base.small{
+	width:100%;
 }
 .today-risk td:nth-child(2) .box-num{
 	border-color:#89929B;

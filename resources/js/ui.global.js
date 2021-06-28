@@ -567,9 +567,9 @@ if (!Object.keys){
 	}
 
 	/**
-	 * snackbars(toast)
+	 * toast
 	 */
-	win[global].snackbars = {
+	win[global].toast = {
 		timer : null,
 		options : {
 			time: 1000,
@@ -577,40 +577,40 @@ if (!Object.keys){
 		},
 		show : function(conts) {
 			var opt = this.options;
-			var snackbar = '<div class="ui-snackbar snackbar '+ opt.classname +'">'+ conts +'</div>';
+			var toast = '<div class="ui-toast toast '+ opt.classname +'">'+ conts +'</div>';
 			var $body = $('body');
 
-			if (!!$('.ui-snackbar-ready').length) {
-				clearTimeout(win[global].snackbars.timer);
-				$body.removeClass('ui-snackbar-show').removeClass('ui-snackbar-ready');
-				$('.ui-snackbar').off('transitionend.snackbarshow').remove();
+			if (!!$('.ui-toast-ready').length) {
+				clearTimeout(win[global].toast.timer);
+				$body.removeClass('ui-toast-show').removeClass('ui-toast-ready');
+				$('.ui-toast').off('transitionend.toastshow').remove();
 			} 
 
-			$body.append(snackbar);
-			snackbar = null;
+			$body.append(toast);
+			toast = null;
 			
-			var $shanckbar = $('.ui-snackbar');
+			var $shanckbar = $('.ui-toast');
 			
-			$body.addClass('ui-snackbar-ready');
+			$body.addClass('ui-toast-ready');
 
 			setTimeout(function(){
-				$body.addClass('ui-snackbar-show');
+				$body.addClass('ui-toast-show');
 
-				$shanckbar.off('transitionend.snackbarhide').on('transitionend.snackbarshow', function(){
-					$(this).off('transitionend.snackbarshow').addClass('on');
-					win[global].snackbars.timer = setTimeout(win[global].snackbars.hide, opt.time);
+				$shanckbar.off('transitionend.toasthide').on('transitionend.toastshow', function(){
+					$(this).off('transitionend.toastshow').addClass('on');
+					win[global].toast.timer = setTimeout(win[global].toast.hide, opt.time);
 				});
 			},0);
 		},
 		hide : function(){
 			var $body = $('body');
 			
-			clearTimeout(win[global].snackbars.timer);
-			$body.removeClass('ui-snackbar-show');
+			clearTimeout(win[global].toast.timer);
+			$body.removeClass('ui-toast-show');
 
-			$('.ui-snackbar').off('transitionend.snackbarshow').on('transitionend.snackbarhide', function(){
-				$(this).off('transitionend.snackbarhide').remove();
-				$body.removeClass('ui-snackbar-ready');
+			$('.ui-toast').off('transitionend.toastshow').on('transitionend.toasthide', function(){
+				$(this).off('transitionend.toasthide').remove();
+				$body.removeClass('ui-toast-ready');
 			});
 		}
 	}
