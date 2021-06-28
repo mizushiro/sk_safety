@@ -58,9 +58,8 @@
 
 .type-safety .tit-page {
 	color: #fff;
-	padding: 2rem 2rem 2.7rem;
+	padding: 2rem 2rem 6rem;
 	margin: 0;
-	text-align: right;
 }
 
 .type-career .tit-page {
@@ -215,7 +214,6 @@
 	justify-content: flex-end;
 }
 
-.type-safety .section-wrap,
 .type-career .section-wrap {
 	border-top-left-radius: 3rem;
 	border-top-right-radius: 3rem;
@@ -224,7 +222,7 @@
 }
 
 .type-safety .section-wrap {
-	background: #F7F7F7;
+	background: #F7FAF9;
 }
 
 .section-wrap {
@@ -2979,19 +2977,17 @@ a.ui-acco-btn:after {
 	opacity: 1;
 	bottom: 2rem;
 }
-.is-FAB .type-career .base-body,
+
+/* .is-FAB .type-career .base-body,
 .is-FAB.type-none .base-body {
 	border-bottom: 7rem solid #fff;
 }
-
-
 .is-FAB .type-safety .base-body {
-	border-bottom: 7rem solid #F7F7F7;
+	border-bottom: 7rem solid #F7FAF9;
 }
-
 .is-FAB .base-body {
 	border-bottom: 7rem solid transparent;
-}
+} */
 
 .banner-top {
 	position: relative;
@@ -3497,8 +3493,8 @@ a.ui-acco-btn:after {
 /*  */
 .weather-wrap {
 	position: absolute;
-	top: 5.5rem;
-	left: 2rem;
+	top: 2.5rem;
+	right: 2rem;
 	font-size: 1.4rem;
 	color: #fff;
 
@@ -3528,57 +3524,61 @@ a.ui-acco-btn:after {
 	position: relative;
 	width: 100%;
 	display: flex;
-	flex-flow: column wrap;
-	align-content: flex-start;
-	height: 40rem;
-}
-
-.safety-list>.n1 {
-	max-height: 13rem;
-}
-
-.safety-list>.n2 {
-	max-height: 12rem;
-	background: linear-gradient(110deg, #17789A, #0CAC9B);
-	color: #fff;
-}
-
-.safety-list>.n3 {
-	max-height: 12rem;
-}
-
-.safety-list>.n4 {
-	max-height: 9rem;
-	background: linear-gradient(110deg, #17789A, #0CAC9B);
-	color: #fff;
-}
-
-.safety-list>.n5 {
-	max-height: 18rem;
-}
-
-.safety-list>.n6 {
-	max-height: 10rem;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-top:-6rem;
 }
 
 .safety-list>li {
 	flex: 1 50%;
-	max-width: calc(50% - 1rem);
-	min-width: calc(50% - 1rem);
-	padding: 2rem;
+	max-width: calc(50% - 1.4rem);
+	min-width: calc(50% - 1.4rem);
+	
 	background: #fff;
 	border-radius: 2rem;
-	margin: 0 0.5rem 1rem;
+	margin: 0 0.7rem 1.4rem;
 	position: relative;
+	min-height:16rem;
+	max-height:16rem;
+	text-align: center;
+	box-shadow:0 .6rem .6rem rgba(0, 0, 0, .1);
 }
 
-.safety-list>li h3 {
+.safety-list>li a {
 	display: inline-block;
-	font-size: 1.7rem;
-	font-weight: 700;
+	width:100%;
+	height:100%;
+	padding: 2rem;
+	font-size: 1.5rem;
+	font-weight: 500;
 }
-
-.safety-list>li h3::after {
+.safety-list>li a::before{
+	content:"";
+	display: inline-block;
+	width:100%;
+	height:8rem;
+	margin-bottom:.6rem;
+	background:url(../img/icon_menu01.svg) no-repeat 50% 50% / 7.1rem;
+}
+.safety-list>li.n1 a::before{
+	background:url(../img/icon_menu01.svg) no-repeat 50% 50% / 7.1rem;
+}
+.safety-list>li.n2 a::before{
+	background:url(../img/icon_menu02.svg) no-repeat 50% 50% / 7.1rem;
+}
+.safety-list>li.n3 a::before{
+	background:url(../img/icon_menu03.svg) no-repeat 50% 50% / 7.1rem;
+}
+.safety-list>li.n4 a::before{
+	background:url(../img/icon_menu04.svg) no-repeat 50% 50% / 7.1rem;
+}
+.safety-list>li.n5 a::before{
+	background:url(../img/icon_menu05.svg) no-repeat 50% 50% / 7.1rem;
+}
+.safety-list>li.n6 a::before{
+	background:url(../img/icon_menu06.svg) no-repeat 50% 50% / 7.1rem;
+}
+.safety-list>li a::after {
 	content: "";
 	display: inline-block;
 	width: 1rem;
@@ -3597,62 +3597,7 @@ a.ui-acco-btn:after {
 	margin-top: 0.3rem;
 }
 
-.safety-list>.n2 h3,
-.safety-list>.n4 h3,
-.safety-list>.n2 p,
-.safety-list>.n4 p {
-	color: #fff;
-}
 
-.safety-list>li.n1 p {
-	margin-top: 1.5rem;
-}
-
-.safety-list>li.n2 h3::after,
-.safety-list>li.n4 h3::after {
-	background: url(../img/icon_down_w.svg) no-repeat 50% 50% / 1rem;
-}
-
-.safety-list>.n2::after {
-	content: "";
-	display: block;
-	position: absolute;
-	right: 2.4rem;
-	bottom: 2rem;
-	width: 5.4rem;
-	height: 5.4rem;
-	background: url(../img/icon_main01.svg) no-repeat 50% 50% / 5.4rem;
-}
-
-.safety-list>.n3::after {
-	content: "";
-	display: block;
-	position: absolute;
-	right: 2.1rem;
-	bottom: 2rem;
-	width: 7rem;
-	height: 4rem;
-	background: url(../img/icon_main03.svg) no-repeat 50% 50% / 6.9rem;
-}
-
-.safety-list>.n5 {
-	padding-top: 10.4rem;
-}
-
-.safety-list>.n6 {
-	padding-top: 2.8rem;
-}
-
-.safety-list>.n5::after {
-	content: "";
-	display: block;
-	position: absolute;
-	left: 2.1rem;
-	top: 3.2rem;
-	width: 5.6rem;
-	height: 6rem;
-	background: url(../img/icon_main02.svg) no-repeat 50% 50% / 5.6rem;
-}
 
 .tip-wrap {
 	width: 100%;
