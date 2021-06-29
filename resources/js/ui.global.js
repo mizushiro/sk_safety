@@ -202,20 +202,18 @@ if (!Object.keys){
 	//set device information
 	(function () {
 		var ua = navigator.userAgent;
+		var maxTouchPoints = navigator.maxTouchPoints;
 		var ie = ua.match(/(?:msie ([0-9]+)|rv:([0-9\.]+)\) like gecko)/i);
 		var deviceInfo = ['android', 'iphone', 'ipod', 'ipad', 'blackberry', 'windows ce', 'samsung', 'lg', 'mot', 'sonyericsson', 'nokia', 'opeara mini', 'opera mobi', 'webos', 'iemobile', 'kfapwi', 'rim', 'bb10'];
 		var filter = "win16|win32|win64|mac|macintel";
 		var uAgent = ua.toLowerCase();
 		var deviceInfo_len = deviceInfo.length;
-		var touchPoints = ua.maxTouchPoints;
 
 		var browser = win[global].browser = {};
 		var support = win[global].support = {};
 		var i = 0;
 		var version;
 		var device;
-
-		alert(ua.maxTouchPoints);
 
 		for (i = 0; i < deviceInfo_len; i++) {
 			if (uAgent.match(deviceInfo[i]) !== null) {
