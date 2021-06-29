@@ -129,116 +129,6 @@ if (!Object.keys){
 		return w;
 	}
 
-	//jquery easing add
-	var easings = {
-		linear : function(t,b,c,d){return c*t/d+b;},
-		easeInQuad : function(t,b,c,d){return c*(t/=d)*t+b;},
-		easeOutQuad : function(t,b,c,d){return -c*(t/=d)*(t-2)+b;},
-		easeInOutQuad : function(t,b,c,d){if((t/=d/2)<1)return c/2*t*t+b;return -c/2*((--t)*(t-2)-1)+b;},
-		easeOutInQuad : function(t,b,c,d){if(t < d/2)return easings.easeOutQuad(t*2,b,c/2,d);return easings.easeInQuad((t*2)-d,b+c/2,c/2,d);},
-		easeInCubic : function(t,b,c,d){return c*(t/=d)*t*t+b;},
-		easeOutCubic : function(t,b,c,d){return c*((t=t/d-1)*t*t+1)+b;},
-		easeInOutCubic : function(t,b,c,d){if((t/=d/2)<1)return c/2*t*t*t+b;return c/2*((t-=2)*t*t+2)+b;},
-		easeOutInCubic : function(t,b,c,d){if(t<d/2)return easings.easeOutCubic(t*2,b,c/2,d);return easings.easeInCubic((t*2)-d,b+c/2,c/2,d);},
-		easeInQuart : function(t,b,c,d){return c*(t/=d)*t*t*t+b;},
-		easeOutQuart : function(t,b,c,d){return -c*((t=t/d-1)*t*t*t-1)+b;},
-		easeInOutQuart : function(t,b,c,d){if((t/=d/2)<1)return c/2*t*t*t*t+b;return -c/2*((t-=2)*t*t*t-2)+b;},
-		easeOutInQuart : function(t,b,c,d){if(t<d/2)return easings.easeOutQuart(t*2,b,c/2,d);return easings.easeInQuart((t*2)-d,b+c/2,c/2,d);},
-		easeInQuint : function(t,b,c,d){return c*(t/=d)*t*t*t*t+b;},
-		easeOutQuint : function(t,b,c,d){return c*((t=t/d-1)*t*t*t*t+1)+b;},
-		easeInOutQuint : function(t,b,c,d){if((t/=d/2)<1)return c/2*t*t*t*t*t+b;return c/2*((t-=2)*t*t*t*t+2)+b;},
-		easeOutInQuint : function(t,b,c,d){if(t<d/2)return easings.easeOutQuint(t*2,b,c/2,d);return easings.easeInQuint((t*2)-d,b+c/2,c/2,d);},
-		easeInSine : function(t,b,c,d){return -c*Math.cos(t/d*(Math.PI/2))+c+b;},
-		easeOutSine : function(t,b,c,d){return c*Math.sin(t/d*(Math.PI/2))+b;},
-		easeInOutSine : function(t,b,c,d){return -c/2*(Math.cos(Math.PI*t/d)-1)+b;},
-		easeOutInSine : function(t,b,c,d){if(t<d/2)return easings.easeOutSine(t*2,b,c/2,d);return easings.easeInSine((t*2)-d,b+c/2,c/2,d);},
-		easeInExpo : function(t,b,c,d){return (t===0)? b : c*Math.pow(2,10*(t/d-1))+b-c*0.001;},
-		easeOutExpo : function(t,b,c,d){return (t==d)? b+c : c*1.001*(-Math.pow(2,-10*t/d)+1)+b;},
-		easeInOutExpo : function(t,b,c,d){if(t===0)return b;if(t==d)return b+c;if((t/=d/2)<1)return c/2*Math.pow(2,10*(t-1))+b-c*0.0005;return c/2*1.0005*(-Math.pow(2,-10*--t)+2)+b;},
-		easeOutInExpo : function(t,b,c,d){if(t<d/2)return easings.easeOutExpo(t*2,b,c/2,d);return easings.easeInExpo((t*2)-d,b+c/2,c/2,d);},
-		easeInCirc : function(t,b,c,d){return -c*(Math.sqrt(1-(t/=d)*t)-1)+b;},
-		easeOutCirc : function(t,b,c,d){return c*Math.sqrt(1-(t=t/d-1)*t)+b;},
-		easeInOutCirc : function(t,b,c,d){if((t/=d/2)<1)return -c/2*(Math.sqrt(1-t*t)-1)+b;return c/2*(Math.sqrt(1-(t-=2)*t)+1)+b;},
-		easeOutInCirc : function(t,b,c,d){if (t<d/2)return easings.easeOutCirc(t*2,b,c/2,d);return easings.easeInCirc((t*2)-d,b+c/2,c/2,d);},		
-		easeInElastic : function(t,b,c,d,a,p){if(!t)return b;if((t/=d)==1)return b+c;var s,p=(!p||typeof(p)!='number')? d*.3 : p,a=(!a||typeof(a)!='number')? 0 : a;if(!a||a<Math.abs(c)){a=c;s=p/4;}else s=p/(2*Math.PI)*Math.asin(c/a);return -(a*Math.pow(2,10*(t-=1))*Math.sin((t*d-s)*(2*Math.PI)/p))+b;},
-		easeOutElastic : function(t,b,c,d,a,p){if(!t)return b;if((t/=d)==1)return b+c;var s,p=(!p||typeof(p)!='number')? d*.3 : p,a=(!a||typeof(a)!='number')? 0 : a;if(!a||a<Math.abs(c)){a=c;s=p/4;}else s=p/(2*Math.PI)*Math.asin(c/a);return (a*Math.pow(2,-10*t)*Math.sin((t*d-s)*(2*Math.PI)/p)+c+b);},
-		easeInOutElastic : function(t,b,c,d,a,p){if(t===0)return b;if((t/=d/2)==2)return b+c;var s,p=d*(.3*1.5),a=0;var s,p=(!p||typeof(p)!='number')? d*(.3*1.5) : p,a=(!a||typeof(a)!='number')? 0 : a;if(!a||a<Math.abs(c)){a=c;s=p/4;}else s=p/(2*Math.PI)*Math.asin(c/a);if(t<1)return -.5*(a*Math.pow(2,10*(t-=1))*Math.sin((t*d-s)*(2*Math.PI)/p))+b;return a*Math.pow(2,-10*(t-=1))*Math.sin((t*d-s)*(2*Math.PI)/p)*.5+c+b;},
-		easeOutInElastic : function(t,b,c,d,a,p){if (t<d/2)return easings.easeOutElastic(t*2,b,c/2,d,a,p);return easings.easeInElastic((t*2)-d,b+c/2,c/2,d,a,p);},
-		easeInBack : function(t,b,c,d,s){var s=(!s||typeof(s)!='number')? 1.70158 : s;return c*(t/=d)*t*((s+1)*t-s)+b;},
-		easeOutBack : function(t,b,c,d,s){var s=(!s||typeof(s)!='number')? 1.70158 : s;return c*((t=t/d-1)*t*((s+1)*t+s)+1)+b;},
-		easeInOutBack : function(t,b,c,d,s){var s=(!s||typeof(s)!='number')? 1.70158 : s;if((t/=d/2)<1)return c/2*(t*t*(((s*=(1.525))+1)*t-s))+b;return c/2*((t-=2)*t*(((s*=(1.525))+1)*t+s)+2)+b;},
-		easeOutInBack : function(t,b,c,d,s){if(t<d/2)return easings.easeOutBack(t*2,b,c/2,d,s);return easings.easeInBack((t*2)-d,b+c/2,c/2,d,s);},			
-		easeInBounce : function(t,b,c,d){return c-easings.easeOutBounce(d-t,0,c,d)+b;},
-		easeOutBounce : function(t,b,c,d){if((t/=d)<(1/2.75))return c*(7.5625*t*t)+b;else if(t<(2/2.75))return c*(7.5625*(t-=(1.5/2.75))*t+.75)+b;else if(t<(2.5/2.75))return c*(7.5625*(t-=(2.25/2.75))*t+.9375)+b;else return c*(7.5625*(t-=(2.625/2.75))*t+.984375)+b;},
-		easeInOutBounce : function(t,b,c,d){if(t<d/2)return easings.easeInBounce(t*2,0,c,d)*.5+b;else return easings.easeOutBounce(t*2-d,0,c,d)*.5+c*.5+b;},
-		easeOutInBounce : function(t,b,c,d){if(t<d/2)return easings.easeOutBounce(t*2,b,c/2,d);return easings.easeInBounce((t*2)-d,b+c/2,c/2,d);}
-	};
-	var easing;
-	for (easing in easings) {
-		$.easing[easing] = (function(easingname) {
-			return function(x, t, b, c, d) {
-				return easings[easingname](t, b, c, d);
-			};
-		})(easing);
-	}
-
-	//html5 tag & device size class 
-	(function () {
-		var devsize = [1920, 1600, 1440, 1280, 1024, 960, 840, 720, 600, 480, 400, 360];
-		var html5tags = ['article', 'aside', 'details', 'figcaption', 'figure', 'footer', 'header', 'hgroup', 'nav', 'main', 'section', 'summary'];
-		var width = $('html').outerWidth(),
-			colClass = width >= devsize[5] ? 'col-12' : width > devsize[8] ? 'col-8' : 'col-4',
-			i = 0,
-			size_len = devsize.length,
-			max = html5tags.length,
-			sizeMode,
-			timer;
-
-		win[global].breakpoint = width >= devsize[5] ? true : false;
-
-		var deviceSizeClassName = function(w) {
-			for (var i = 0; i < size_len; i++) {
-				if (w >= devsize[i]) {
-					
-					sizeMode = devsize[i];
-					win[global].breakpoint = width >= devsize[5] ? true : false;
-					break;
-				} else {
-					w < devsize[size_len - 1] ? sizeMode = 300 : '';
-				}
-			}
-		};
-
-		for (i = 0; i < max; i++) {
-			doc.createElement(html5tags[i]);
-		}
-
-		deviceSizeClassName(width);
-		var sizeCls = 's' + sizeMode;
-		
-		$('html').addClass(sizeCls).addClass(colClass);
-		win.addEventListener('resize', function() {
-			clearTimeout(timer);			
-			timer = setTimeout(function () {
-				var $html = $('html');
-				
-				width = win.innerWidth; 
-				// document.body.offsetWidth === $(win).outerWidth()
-				// win.innerWidth : scroll 포함된 width (+17px)
-				// win.outerWidth === screen.availWidth 
-				deviceSizeClassName(width);
-
-				colClass = width >= devsize[5] ? 'col-12' : width > devsize[8] ? 'col-8' : 'col-4';
-				$html.removeClass('s1920 s1600 s1440 s1280 s1024 s960 s840 s720 s600 s480 s400 s360 s300 col-12 col-8 col-4');
-				win[global].breakpoint = width >= devsize[5] ? true : false;
-
-				deviceSizeClassName(width);
-				sizeCls = 's' + sizeMode;
-				$html.addClass(sizeCls).addClass(colClass);
-			}, 100);
-		});
-	})();
-
 	//requestAnimationFrame
 	win.requestAFrame = (function () {
 		return win.requestAnimationFrame || win.webkitRequestAnimationFrame || win.mozRequestAnimationFrame || win.oRequestAnimationFrame ||
@@ -309,23 +199,26 @@ if (!Object.keys){
 		}
 	};
 
-	// set device information
+	//set device information
 	(function () {
-		var ua = navigator.userAgent,
-			ie = ua.match(/(?:msie ([0-9]+)|rv:([0-9\.]+)\) like gecko)/i),
-			deviceInfo = ['android', 'iphone', 'ipod', 'ipad', 'blackberry', 'windows ce', 'samsung', 'lg', 'mot', 'sonyericsson', 'nokia', 'opeara mini', 'opera mobi', 'webos', 'iemobile', 'kfapwi', 'rim', 'bb10'],
-			filter = "win16|win32|win64|mac|macintel",
-			uAgent = ua.toLowerCase(),
-			deviceInfo_len = deviceInfo.length;
+		var ua = navigator.userAgent;
+		var ie = ua.match(/(?:msie ([0-9]+)|rv:([0-9\.]+)\) like gecko)/i);
+		var deviceInfo = ['android', 'iphone', 'ipod', 'ipad', 'blackberry', 'windows ce', 'samsung', 'lg', 'mot', 'sonyericsson', 'nokia', 'opeara mini', 'opera mobi', 'webos', 'iemobile', 'kfapwi', 'rim', 'bb10'];
+		var filter = "win16|win32|win64|mac|macintel";
+		var uAgent = ua.toLowerCase();
+		var deviceInfo_len = deviceInfo.length;
+		var touchPoints = ua.maxTouchPoints;
 
-		var browser = win[global].browser = {},
-			support = win[global].support = {},
-			i = 0,
-			version,
-			device;
+		var browser = win[global].browser = {};
+		var support = win[global].support = {};
+		var i = 0;
+		var version;
+		var device;
+
+		alert(ua.maxTouchPoints);
 
 		for (i = 0; i < deviceInfo_len; i++) {
-			if (uAgent.match(deviceInfo[i]) != null) {
+			if (uAgent.match(deviceInfo[i]) !== null) {
 				device = deviceInfo[i];
 				break;
 			}
