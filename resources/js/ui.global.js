@@ -215,6 +215,8 @@ if (!Object.keys){
 		var version;
 		var device;
 
+		console.log(ua);
+
 		for (i = 0; i < deviceInfo_len; i++) {
 			if (uAgent.match(deviceInfo[i]) !== null) {
 				device = deviceInfo[i];
@@ -303,7 +305,7 @@ if (!Object.keys){
 			styleClass : 'orbit' //time
 		},
 		show : function(opt){
-			var opt = $.extend(true, {}, win[global].uiLoading.option, opt);
+			var opt = $.extend(true, {}, this.options, opt);
 			var selector = opt.selector;
 			var styleClass = opt.styleClass;
 			var txt = opt.txt;
@@ -583,6 +585,9 @@ if (!Object.keys){
 		}
 	}
 
+	/**
+	 * parameter get
+	 */
 	win[global].para = {
 		get: function(paraname){
 			var _tempUrl = win.location.search.substring(1),
@@ -600,11 +605,346 @@ if (!Object.keys){
 		}
 	}
 
+	/**
+	 * Focus Loop 
+	 */
+	 win[global].focus = {
+		options: {
+			callback: false
+		},
+		loop : function(opt){
+			if (opt === undefined) {
+				return false;
+			}
+
+			var opt = $.extend(true, {}, this.options, opt);
+			var $base = opt.selector;
+			var callback = opt.callback;
+
+			if(!$base.find('[class*="ui-focusloop-"]').length) {
+				$base.prepend('<div tabindex="0" class="ui-focusloop-start"><span>시작지점입니다.</span></div>');
+				$base.append('<div tabindex="0" class="ui-focusloop-end"><span>마지막지점입니다.</span></div>');
+			}
+
+			var $itemStart = $base.find('.ui-focusloop-start');
+			var $itemEnd = $base.find('.ui-focusloop-end');
+						
+			$itemStart.off('keydown.loop').on('keydown.loop', function(e) {
+				if (e.shiftKey && e.keyCode == 9) {
+					e.preventDefault();
+					$itemEnd.focus();
+					!!callback && callback();
+				}
+			});
+			$itemEnd.off('keydown.loop').on('keydown.loop', function(e) {
+				if (!e.shiftKey && e.keyCode == 9) {
+					e.preventDefault();
+					$itemStart.focus();
+					!!callback && callback();
+				}
+			});
+		}
+	}
+
 
 	/* ------------------------
 	 * scroll bar
 	 * date : 2020.06.12
 	------------------------ */
+	win[global].scrollBar = {
+		options : {
+			id: false,
+			callback:false,
+			infiniteCallback:false,
+			space: false,
+			remove: false
+		},
+		init: function(opt){
+			var opt = $.extend(true, {}, this.options, opt),
+				id = opt.id,
+				space = opt.space,
+				callback = opt.callback,
+				infiniteCallback = opt.infiniteCallback,
+				remove = opt.remove,
+				$base = !id ? $('.ui-scrollbar') : typeof id === 'object' ? id : $('[scroll-id="' + id +'"]');
+			
+			var timerResize;
+			
+			if (win[global].support.touch) {
+				return false;
+			} 
+
+			$base.each(function () {
+				!remove ? scrollbarReady($(this)) : scrollbarRemove($(this));
+			});
+			function scrollbarUpdate(t, wrapH, wrapW, itemH, itemW, space){
+				var $wrap = t;
+				var	$item = $wrap.children('.ui-scrollbar-item');
+
+				if (!$item.length) {
+					return false;
+				}
+
+				var nWrapH = $wrap.outerHeight();
+				var nWrapW = $wrap.outerWidth();
+				var nItemH = $item.prop('scrollHeight');
+				var nItemW = $item.prop('scrollWidth');
+				var changeH = (itemH !== nItemH || wrapH !== nWrapH);
+				var changeW = (itemW !== nItemW || wrapW !== nWrapW);
+				var timer;
+
+				$(win).on('resize', function(){
+					clearTimeout(timerResize);
+					timerResize = setTimeout(function(){
+						$wrap.removeAttr('style');						
+						nWrapH = $wrap.outerHeight();
+						$wrap.css('height', nWrapH);
+					}, 300);
+				});
+
+				if (changeH || changeW) {
+					var barH = Math.floor(nWrapH / (nItemH / 100));
+					var barW = Math.floor(nWrapW / (nItemW / 100));
+					var $barY = $wrap.find('> .ui-scrollbar-barwrap.type-y .ui-scrollbar-bar');
+					var $barX = $wrap.find('> .ui-scrollbar-barwrap.type-x .ui-scrollbar-bar');
+
+					changeH && $barY.css('height', barH + '%').data('height', barH);
+					changeW && $barX.css('width', barW + '%').data('width', barW);
+					
+					(nWrapH < nItemH) ? $wrap.addClass('view-y') : $wrap.removeClass('view-y');
+					(nWrapW < nItemW) ? $wrap.addClass('view-x') : $wrap.removeClass('view-x');
+
+					$wrap.data(
+						'opt', {
+							'itemH':nItemH, 
+							'itemW':nItemW, 
+							'wrapH':nWrapH, 
+							'wrapW':nWrapW 
+						});
+					eventFn();
+					scrollEvent($item, space);
+				}
+
+				clearTimeout(timer);
+				timer = setTimeout(function(){
+					scrollbarUpdate(t, nWrapH, nWrapW, nItemH, nItemW);
+				}, 300);
+			}
+			function scrollbarRemove(t){
+				var $wrap = t;
+
+				$wrap.removeClass('ready view-scrollbar').removeData('infiniteCallback').removeData('ready').removeAttr('style');
+				$wrap.find('> .ui-scrollbar-item').contents().unwrap();
+				$wrap.find('> .ui-scrollbar-wrap').contents().unwrap();
+				$wrap.find('> .ui-scrollbar-barwrap').remove();
+			}
+			function scrollbarReady(t) {
+				var $wrap = t;
+				var	html_scrollbar = '';
+
+				$wrap.removeClass('ready').data('infiniteCallback', infiniteCallback).data('ready', false);
+				$wrap.find('> .ui-scrollbar-item').contents().unwrap();
+				$wrap.find('> .ui-scrollbar-wrap').contents().unwrap();
+				$wrap.find('> .ui-scrollbar-barwrap').remove();
+
+				var wrapW = $wrap.innerWidth();
+				var wrapH = $wrap.outerHeight();
+
+				$wrap.wrapInner('<div class="ui-scrollbar-item"><div class="ui-scrollbar-wrap"></div></div>');
+
+				var	$item = $wrap.find('> .ui-scrollbar-item');
+				var	$itemWrap = $item.find('> .ui-scrollbar-wrap');
+
+				var cssDisplay = $wrap.css('display');
+				var cssPadding = $wrap.css('padding');
+
+				$itemWrap.css({
+					display: cssDisplay,
+					padding: cssPadding
+				});
+
+				if (!space) {
+					cssDisplay === 'inline-block' && $itemWrap.css('display','block');
+					$itemWrap.css('width','100%');
+				} 
+
+				!space && $item.css('width','100%');
+				$wrap.css('overflow','hidden');
+
+				var itemW =  $item.prop('scrollWidth');
+				var itemH =$item.prop('scrollHeight');
+
+				$wrap.data('opt', {'itemH':itemH, 'itemW':itemW, 'wrapH':wrapH, 'wrapW':wrapW });
+				
+				var idN = JSON.parse(sessionStorage.getItem('scrollbarID'));
+
+				//idN = idN === undefined ? 0 : idN;
+				
+				if (!$wrap.data('ready') || !$wrap.attr('scroll-id')) {
+					
+					if (!$wrap.attr('scroll-id')) {
+						$wrap.attr('scroll-id', 'uiScrollBar_' + idN).data('ready', true).addClass('ready');
+						idN = idN + 1;
+						sessionStorage.setItem('scrollbarID', idN);
+					} else {
+						$wrap.data('ready', true).addClass('ready');
+					}
+
+					$item.attr('tabindex', 0);
+					$wrap.css('height', wrapH + 'px');
+					
+					if (space) {
+						$item.addClass('scroll-y-padding');
+						$item.addClass('scroll-x-padding');
+					} else {
+						!!$wrap.parent('.ui-tablescroll').length && $wrap.parent('.ui-tablescroll').addClass('not-space');
+					}
+
+					html_scrollbar += '<div class="ui-scrollbar-barwrap type-y" >';
+					html_scrollbar += '<button type="button" class="ui-scrollbar-bar" aria-hidden="true" tabindex="-1" data-scrollxy="y"><span class="hide">scroll</span></button>';
+					html_scrollbar += '</div>';
+					html_scrollbar += '<div class="ui-scrollbar-barwrap type-x" >';
+					html_scrollbar += '<button type="button" class="ui-scrollbar-bar" aria-hidden="true" tabindex="-1" data-scrollxy="x"><span class="hide">scroll</span></button>';
+					html_scrollbar += '</div>';
+					
+					$wrap.prepend(html_scrollbar);
+
+					(wrapH < itemH) ? $wrap.addClass('view-y') : $wrap.removeClass('view-y');
+					(wrapW < itemW) ? $wrap.addClass('view-x') : $wrap.removeClass('view-x');
+
+					var barH = Math.floor(wrapH / (itemH / 100));
+					var barW = Math.floor(wrapW / (itemW / 100));
+					var $barY = $wrap.find('> .ui-scrollbar-barwrap.type-y .ui-scrollbar-bar');
+					var $barX = $wrap.find('> .ui-scrollbar-barwrap.type-x .ui-scrollbar-bar');
+					
+					$barY.css('height', barH + '%').data('height', barH);
+					$barX.css('width', barW + '%').data('width', barW);
+
+					$wrap.addClass('view-scrollbar');
+					!!callback && callback(); 
+					scrollEvent($item);
+					scrollbarUpdate(t, wrapH, wrapW, itemH, itemW, space);
+					eventFn();
+				}
+			}	
+			function eventFn(){
+				$(doc).find('.ui-scrollbar-item').off('scroll.uiscr').on('scroll.uiscr', function(){
+					scrollEvent(this);
+				});
+				$(doc).find('.ui-scrollbar-bar').off('mousedown.bar touchstart.bar').on('mousedown.bar touchstart.bar', function(e) {
+					dragMoveAct(e, this);
+				});
+			}	
+			function scrollEvent(t){
+				var $this = $(t),
+					$wrap = $this.closest('.ui-scrollbar'),
+					$barY = $wrap.find('> .type-y .ui-scrollbar-bar'),
+					$barX = $wrap.find('> .type-x .ui-scrollbar-bar');
+				
+				var opt = $wrap.data('opt');
+
+				if (opt === undefined) {
+					return false;
+				}
+
+				var itemH = opt.itemH,
+					itemW = opt.itemW,
+					wrapH = opt.wrapH,
+					wrapW = opt.wrapW;
+
+				var scrT = $this.scrollTop(),
+					scrL = $this.scrollLeft(),
+					barH = $barY.data('height'),
+					barW = $barX.data('width');
+				
+				var hPer = Math.round(scrT / (itemH - wrapH) * 100),
+					_hPer = (barH / 100) * hPer,
+					wPer = Math.round(scrL / (itemW - wrapW) * 100),
+					_wPer = (barW / 100) * wPer;
+
+				var _infiniteCallback = $wrap.data('infiniteCallback');
+
+				$barY.css('top', hPer - _hPer + '%');
+				$barX.css('left', wPer - _wPer + '%');
+
+				if (!!_infiniteCallback) {
+					hPer === 100 && _infiniteCallback(); 
+				}
+			}
+			function dragMoveAct(e, t) {
+				var $bar = $(t),
+					$uiScrollbar = $bar.closest('.ui-scrollbar'),
+					$barWrap = $bar.closest('.ui-scrollbar-barwrap'),
+					$wrap = $bar.closest('.ui-scrollbar'),
+					$item = $uiScrollbar.find('> .ui-scrollbar-item');
+
+				var off_t = $barWrap.offset().top,
+					w_h = $barWrap.innerHeight(),
+					off_l = $barWrap.offset().left,
+					w_w = $barWrap.innerWidth(),
+					barH = $bar.data('height'),
+					barW = $bar.data('width'),
+					opt = $wrap.data('opt');
+
+				var yRPer, xRPer;
+				var $btn = e.target;
+				var isXY = $btn.getAttribute('data-scrollxy');
+				
+				$('body').addClass('scrollbar-move');
+
+				$(doc).off('mousemove.bar touchmove.bar').on('mousemove.bar touchmove.bar', function (e) {
+					var y_m, 
+						x_m;
+					
+					if (e.touches === undefined) {
+						if (e.pageY !== undefined) {
+							y_m = e.pageY;
+						} else if (e.pageY === undefined) {
+							y_m = e.clientY;
+						}
+
+						if (e.pageX !== undefined) {
+							x_m = e.pageX;
+						} else if (e.pageX === undefined) {
+							x_m = e.clientX;
+						}
+					}
+
+					var yR = y_m - off_t;
+					var xR = x_m - off_l;
+
+					yR < 0 ? yR = 0 : '';
+					yR > w_h ? yR = w_h : '';
+					xR < 0 ? xR = 0 : '';
+					xR > w_w ? xR = w_w : '';
+
+					yRPer = yR / w_h * 100;
+					xRPer = xR / w_w * 100;
+					var nPerY = (yRPer - (barH / 100 * yRPer)).toFixed(2);
+					var nPerX = (xRPer - (barW / 100 * xRPer)).toFixed(2);
+
+					if (isXY === 'y') {
+						$bar.css('top', nPerY + '%');
+						$item.scrollTop(opt.itemH * nPerY / 100);
+					} else {
+						$bar.css('left', nPerX + '%');
+						$item.scrollLeft(opt.itemW * nPerX / 100);
+					}
+
+				}).off('mouseup.bar touchcancel.bar touchend.bar').on('mouseup.bar touchcancel.bar touchend.bar', function () {
+					var _infiniteCallback = $wrap.data('infiniteCallback');
+
+					if (!!_infiniteCallback) {
+						yRPer === 100 && _infiniteCallback(); 
+					}
+
+					$('body').removeClass('scrollbar-move');
+					$(doc).off('mousemove.bar mouseup.bar touchmove.bar');
+				});
+			}
+		}
+	}
+
 	win[global] = win[global].uiNameSpace(namespace, {
 		uiScrollBar: function (opt) {
 			return createuiScrollBar(opt);
@@ -906,229 +1246,135 @@ if (!Object.keys){
 	}
 
 	/**
-	 * Focus Loop 
-	 * 
-	 */
-	win[global].focus = {
-		options: {
-			callback: false
-		},
-		loop : function(opt){
-			if (opt === undefined) {
-				return false;
-			}
-
-			var opt = $.extend(true, {}, this.options, opt);
-			var $base = opt.selector;
-			var callback = opt.callback;
-
-			if(!$base.find('[class*="ui-focusloop-"]').length) {
-				$base.prepend('<div tabindex="0" class="ui-focusloop-start"><span>시작지점입니다.</span></div>');
-				$base.append('<div tabindex="0" class="ui-focusloop-end"><span>마지막지점입니다.</span></div>');
-			}
-
-			var $itemStart = $base.find('.ui-focusloop-start');
-			var $itemEnd = $base.find('.ui-focusloop-end');
-						
-			$itemStart.off('keydown.loop').on('keydown.loop', function(e) {
-				if (e.shiftKey && e.keyCode == 9) {
-					e.preventDefault();
-					$itemEnd.focus();
-					!!callback && callback();
-				}
-			});
-			$itemEnd.off('keydown.loop').on('keydown.loop', function(e) {
-				if (!e.shiftKey && e.keyCode == 9) {
-					e.preventDefault();
-					$itemStart.focus();
-					!!callback && callback();
-				}
-			});
-		}
-	}
-	/* ------------------------
-	 * [base] focus scope
-	 * date : 
-	------------------------ */
-	win[global] = win[global].uiNameSpace(namespace, {
-		uiFocusTab: function (opt) {
-			return createUiFocusTab(opt);
-		}
-	});
-	win[global].uiFocusTab.option = {
-		focusitem : '.ui-select-tit, iframe, a:not([data-disabled]), button:not(:disabled), input:not(:disabled), select:not(:disabled), textarea:not(:disabled), label, [role="button"]',
-		callback: false,
-		focusnot: false,
-		type: 'hold' //'hold', 'sense'
-	};
-	function createUiFocusTab(opt){
-		if (opt === undefined) {
-			return false;
-		}
-		
-		var opt = opt === undefined ? {} : opt,
-			opt = $.extend(true, {}, win[global].uiFocusTab.option, opt),
-			$focus = $(opt.selector),
-			$item = $focus.find(opt.focusitem),
-			callback = opt.callback,
-			focusnot = opt.focusnot,
-			type = opt.type,
-			timer; 
-
-		if (!!$item.length) {
-			$item.eq(0).addClass('ui-fctab-s').attr('tabindex', 0).attr('holds', true);
-			$item.eq(-1).addClass('ui-fctab-e').attr('tabindex', 0).attr('holde', true);
-		} else {
-			$focus.prepend('<div class="ui-fctab-s" tabindex="0" holds="true"></div>');
-			$focus.append('<div class="ui-fctab-e" tabindex="0" holde="true"></div>');
-			$item = $focus.find('.ui-fctab-s, .ui-fctab-e');
-		}
-		
-		clearTimeout(timer);
-		timer = setTimeout(function(){
-			!focusnot ? $item.eq(0).focus() : '';
-		},300);
-		timer = '';
-
-		$focus.find('.ui-fctab-s').off('keydown.holds').on('keydown.holds', function (e) {
-			if (type === 'hold') {
-				if (e.shiftKey && e.keyCode == 9) {
-					e.preventDefault();
-					$focus.find('.ui-fctab-e').focus();
-				}
-			} else if (type === 'sense') {
-				$focus.off('keydown.holds');
-				(e.shiftKey && e.keyCode == 9) ? callback('before') : '';
-			}
-		});
-		$focus.find('.ui-fctab-e').off('keydown.holde').on('keydown.holde', function (e) {
-			if (type === 'hold') {
-				if (!e.shiftKey && e.keyCode == 9) {
-					e.preventDefault();
-					$focus.find('.ui-fctab-s').focus();
-				}
-			} else if (type === 'sense') {
-				$focus.off('keydown.holds');
-				(!e.shiftKey && e.keyCode == 9) ? callback('after') : '';
-			}
-		});
-	}
-
-
-	/* ------------------------
 	 * window popup
-	 * date : 
-	------------------------ */
-	win[global] = win[global].uiNameSpace(namespace, {
-		uiPopup: function (opt) {
-			return createUiPopup(opt);
-		}
-	});
-	win[global].uiPopup.option = {
-		name: 'new popup',
-		width: 790,
-		height: 620,
-		align: 'center',
-		top: 0,
-		left: 0,
-		toolbar: 'no',
-		location: 'no',
-		memubar: 'no',
-		status: 'no',
-		resizable: 'no',
-		scrolbars: 'yes'
-	};
-	function createUiPopup(opt) {
-		var opt = opt === undefined ? {} : opt,
-			opt = $.extend(true, {}, win[global].uiPopup.option, opt),
-			specs;
-
-		if (opt.align === 'center') {
-			opt.left = ($(win).outerWidth() / 2) - (opt.width / 2);
-			opt.top = ($(win).outerHeight() / 2) - (opt.height / 2);
-		}
-
-		specs = 'width=' + opt.width + ', height='+ opt.height + ', left=' + opt.left + ', top=' + opt.top;
-		specs += ', toolbar=' + opt.toolbar + ', location=' + opt.location + ', resizable=' + opt.resizable + ', status=' + opt.status + ', menubar=' + opt.menubar + ', scrollbars=' + opt.scrollbars;
-		
-		win.open(opt.link, opt.name , specs);
-	}
-
-
-	/* ------------------------
-	 * cookie
-	 * date : 
-	------------------------ */
-	win[global] = win[global].uiNameSpace(namespace, {
-		uiCookieSet: function (opt) {
-			return creaeteUiCookieSet(opt);
+	 */
+	win[global].popup = {
+		options: {
+			name: 'new popup',
+			width: 790,
+			height: 620,
+			align: 'center',
+			top: 0,
+			left: 0,
+			toolbar: 'no',
+			location: 'no',
+			memubar: 'no',
+			status: 'no',
+			resizable: 'no',
+			scrolbars: 'yes'
 		},
-		uiCookieGet: function (opt) {
-			return creaeteUiCookieGet(opt);
-		},
-		uiCookieDel: function (opt) {
-			return creaeteUiCookieDel(opt);
-		}
-	});
-	function creaeteUiCookieSet(opt){
-		var cookieset = opt.name + '=' + opt.value + ';',
-			expdate;
-		if (opt.term) {
-			expdate = new Date();
-			expdate.setTime( expdate.getTime() + opt.term * 1000 * 60 * 60 * 24 ); // term 1 is a day
-			cookieset += 'expires=' + expdate.toGMTString() + ';';
-		}
-		(opt.path) ? cookieset += 'path=' + opt.path + ';' : '';
-		(opt.domain) ? cookieset += 'domain=' + opt.domain + ';' : '';
-		document.cookie = cookieset;
-	}
-	function creaeteUiCookieGet(opt){
-		var match = ( document.cookie || ' ' ).match( new RegExp(opt.name + ' *= *([^;]+)') );
-		return (match) ? match[1] : null;
-	}
-	function creaeteUiCookieDel(opt){
-		var expireDate = new Date();
+		open: function(opt){
+			var opt = opt === undefined ? {} : opt;
+			var opt = $.extend(true, {}, this.options, opt);
+			var specs;
 
-		expireDate.setDate(expireDate.getDate() + -1);
-		win[global].uiCookieSet({ name:opt.name, term:'-1' });
-	}
-
-
-	/* ------------------------
-	 * table caption
-	 * date : 
-	------------------------ */
-	win[global] = win[global].uiNameSpace(namespace, {
-		uiCaption: function () {
-			return createUiCaption();
-		}
-	});
-	function createUiCaption(){
-		var $cp = $('.ui-caption');
-
-		$cp.text('');
-		$cp.each(function(){
-			var $table = $(this).closest('table'),
-				isthead = !!$table.find('> thead').length,
-				$th = $(this).closest('table').find('> tbody th'),
-				th_len = $th.length,
-				i = 0,
-				cp_txt = '';
-			if (isthead) {
-				$th = $(this).closest('table').find('> thead th');
-				th_len = $th.length
+			if (opt.align === 'center') {
+				opt.left = ($(win).outerWidth() / 2) - (opt.width / 2);
+				opt.top = ($(win).outerHeight() / 2) - (opt.height / 2);
 			}
 
-			for (i = 0; i < th_len; i++) {
-				if ($th.eq(i).text() !== '') {
-					cp_txt += $th.eq(i).text();
+			specs = 'width=' + opt.width + ', height='+ opt.height + ', left=' + opt.left + ', top=' + opt.top;
+			specs += ', toolbar=' + opt.toolbar + ', location=' + opt.location + ', resizable=' + opt.resizable + ', status=' + opt.status + ', menubar=' + opt.menubar + ', scrollbars=' + opt.scrollbars;
+			
+			win.open(opt.link, opt.name , specs);
+		}
+	}
+	
+
+	/**
+	 * cookie set/get/del
+	 */
+	win[global].cookie = {
+		set: function(){
+			var cookieset = opt.name + '=' + opt.value + ';';
+			var expdate;
+
+			if (opt.term) {
+				expdate = new Date();
+				expdate.setTime( expdate.getTime() + opt.term * 1000 * 60 * 60 * 24 ); // term 1 is a day
+				cookieset += 'expires=' + expdate.toGMTString() + ';';
+			}
+			(opt.path) ? cookieset += 'path=' + opt.path + ';' : '';
+			(opt.domain) ? cookieset += 'domain=' + opt.domain + ';' : '';
+			document.cookie = cookieset;
+		},
+		get: function(opt){
+			var match = ( document.cookie || ' ' ).match( new RegExp(opt.name + ' *= *([^;]+)') );
+
+			return (match) ? match[1] : null;
+		},
+		del: function(opt){
+			var expireDate = new Date();
+
+			expireDate.setDate(expireDate.getDate() + -1);
+			this.set({ name:opt.name, term:'-1' });
+		}
+	}
+
+	/**
+	 * table caption/scroll(vertical)
+	 */
+	win[global].table = {
+		caption: function(){
+			var $cp = $('.ui-caption');
+
+			$cp.text('');
+			$cp.each(function(){
+				var $table = $(this).closest('table');
+				var isthead = !!$table.find('> thead').length;
+				var $th = $(this).closest('table').find('> tbody th');
+				var th_len = $th.length;
+				var i = 0;
+				var cp_txt = '';
+
+				if (isthead) {
+					$th = $(this).closest('table').find('> thead th');
+					th_len = $th.length
 				}
-				if (i < th_len - 1) {
-					cp_txt += ', ';
+
+				for (i = 0; i < th_len; i++) {
+					if ($th.eq(i).text() !== '') {
+						cp_txt += $th.eq(i).text();
+					}
+					if (i < th_len - 1) {
+						cp_txt += ', ';
+					}
+				}
+				$(this).text(cp_txt + ' 정보입니다.');
+			});
+		},
+		scrollOption: {
+			callback:false
+		},
+		scroll: function(opt){
+			var opt = $.extend(true, {}, this.scrollOption, opt);
+			var callback = opt.callback;
+			var $tblWrap = $('.ui-tablescroll');
+
+			for (var i = 0, len = $tblWrap.length; i < len; i++) {
+				var $tbl = $tblWrap.eq(i),
+					_$tblWrap = $tbl.find('.ui-tablescroll-wrap'),
+					_$tbl = _$tblWrap.find('table'),
+					cloneTable = _$tbl.clone();
+				
+				if (!$tbl.find('.ui-tablescroll-clone').length) {
+					$tbl.prepend(cloneTable);
+
+					var $cloneTable = $tbl.find('> table:first-child'),
+						$cloneTableTh = $cloneTable.find('th');
+
+					$cloneTable.find('caption').remove();
+					$cloneTable.find('tbody').remove();
+					$cloneTable.addClass('ui-tablescroll-clone');
+					$cloneTable.attr('aria-hidden', true);
+					$cloneTableTh.each(function(){
+						$(this).attr('aria-hidden', true);
+					});
 				}
 			}
-			$(this).text(cp_txt + ' 정보입니다.');
-		});
+
+			!!callback && callback();
+		}
 	}
 
 
@@ -1291,47 +1537,7 @@ if (!Object.keys){
 
 
 
-	/* ------------------------
-	* table scroll(vertical)
-	* date : 2020-05-17
-	------------------------ */	
-	win[global] = win[global].uiNameSpace(namespace, {
-		uiTableScroll: function (opt) {
-			return createUiTableScroll(opt);
-		}
-	});
-	win[global].uiTableScroll.option = {
-		callback:false
-	};
-	function createUiTableScroll(opt){
-		var opt = $.extend(true, {}, win[global].uiAccordion.option, opt);
-		var callback = opt.callback;
-		var $tblWrap = $('.ui-tablescroll');
-
-		for (var i = 0, len = $tblWrap.length; i < len; i++) {
-			var $tbl = $tblWrap.eq(i),
-				_$tblWrap = $tbl.find('.ui-tablescroll-wrap'),
-				_$tbl = _$tblWrap.find('table'),
-				cloneTable = _$tbl.clone();
-			
-			if (!$tbl.find('.ui-tablescroll-clone').length) {
-				$tbl.prepend(cloneTable);
-
-				var $cloneTable = $tbl.find('> table:first-child'),
-					$cloneTableTh = $cloneTable.find('th');
-
-				$cloneTable.find('caption').remove();
-				$cloneTable.find('tbody').remove();
-				$cloneTable.addClass('ui-tablescroll-clone');
-				$cloneTable.attr('aria-hidden', true);
-				$cloneTableTh.each(function(){
-					$(this).attr('aria-hidden', true);
-				});
-			}
-		}
-
-		!!callback && callback();
-	}
+	
 
 
 	/* ------------------------
