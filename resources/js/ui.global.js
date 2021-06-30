@@ -285,14 +285,6 @@ if (!Object.keys){
 
 
 
-
-
-
-
-
-
-
-
 	/**
 	 * loading show/hide
 	 */
@@ -618,7 +610,7 @@ if (!Object.keys){
 	/**
 	 * Focus Loop 
 	 */
-	 win[global].focus = {
+	win[global].focus = {
 		options: {
 			callback: false
 		},
@@ -656,11 +648,9 @@ if (!Object.keys){
 		}
 	}
 
-
-	/* ------------------------
-	 * scroll bar
-	 * date : 2020.06.12
-	------------------------ */
+	/**
+	 * custom scroll bar
+	 */
 	win[global].scrollBar = {
 		options : {
 			id: false,
@@ -955,306 +945,6 @@ if (!Object.keys){
 		}
 	}
 
-	win[global] = win[global].uiNameSpace(namespace, {
-		uiScrollBar: function (opt) {
-			return createuiScrollBar(opt);
-		}
-	});
-	win[global].uiScrollBar.option = {
-		id: false,
-		callback:false,
-		infiniteCallback:false,
-		space: false,
-		remove: false
-	};
-	sessionStorage.setItem('scrollbarID', 0);
-	win[global].uiScrollBar.timer = {}
-	function createuiScrollBar(opt) {
-		var opt = $.extend(true, {}, win[global].uiScrollBar.option, opt),
-			id = opt.id,
-			space = opt.space,
-			callback = opt.callback,
-			infiniteCallback = opt.infiniteCallback,
-			remove = opt.remove,
-			$base = !id ? $('.ui-scrollbar') : typeof id === 'object' ? id : $('[scroll-id="' + id +'"]');
-		
-		var timerResize;
-		
-		if (win[global].support.touch) {
-			return false;
-		} 
-
-		$base.each(function () {
-			!remove ? scrollbarReady($(this)) : scrollbarRemove($(this));
-		});
-		function scrollbarUpdate(t, wrapH, wrapW, itemH, itemW, space){
-			var $wrap = t;
-			var	$item = $wrap.children('.ui-scrollbar-item');
-
-			if (!$item.length) {
-				return false;
-			}
-
-			var nWrapH = $wrap.outerHeight();
-			var nWrapW = $wrap.outerWidth();
-			var nItemH = $item.prop('scrollHeight');
-			var nItemW = $item.prop('scrollWidth');
-
-			var changeH = (itemH !== nItemH || wrapH !== nWrapH);
-			var changeW = (itemW !== nItemW || wrapW !== nWrapW);
-
-			$(win).on('resize', function(){
-				clearTimeout(timerResize);
-				timerResize = setTimeout(function(){
-					console.log(111);
-					$wrap.removeAttr('style');
-					//$wrap.css('overflow', 'hidden');
-					
-					nWrapH = $wrap.outerHeight();
-					//nWrapW = $wrap.outerWidth();
-					//$wrap.css('width', nWrapW);
-					$wrap.css('height', nWrapH);
-				}, 300);
-			});
-
-			if (changeH || changeW) {
-				var barH = Math.floor(nWrapH / (nItemH / 100));
-				var barW = Math.floor(nWrapW / (nItemW / 100));
-				var $barY = $wrap.find('> .ui-scrollbar-barwrap.type-y .ui-scrollbar-bar');
-				var $barX = $wrap.find('> .ui-scrollbar-barwrap.type-x .ui-scrollbar-bar');
-
-				changeH && $barY.css('height', barH + '%').data('height', barH);
-				changeW && $barX.css('width', barW + '%').data('width', barW);
-				
-				(nWrapH < nItemH) ? $wrap.addClass('view-y') : $wrap.removeClass('view-y');
-				(nWrapW < nItemW) ? $wrap.addClass('view-x') : $wrap.removeClass('view-x');
-
-				$wrap.data('opt', {'itemH':nItemH, 'itemW':nItemW, 'wrapH':nWrapH, 'wrapW':nWrapW });
-				eventFn();
-				scrollEvent($item, space);
-			}
-
-			var timer;
-
-			clearTimeout(timer);
-			timer = setTimeout(function(){
-				scrollbarUpdate(t, nWrapH, nWrapW, nItemH, nItemW);
-			}, 300);
-		}
-		function scrollbarRemove(t){
-			var $wrap = t;
-
-			$wrap.removeClass('ready view-scrollbar').removeData('infiniteCallback').removeData('ready').removeAttr('style');
-			$wrap.find('> .ui-scrollbar-item').contents().unwrap();
-			$wrap.find('> .ui-scrollbar-wrap').contents().unwrap();
-			$wrap.find('> .ui-scrollbar-barwrap').remove();
-		}
-		function scrollbarReady(t) {
-			var $wrap = t;
-			var	html_scrollbar = '';
-
-			$wrap.removeClass('ready').data('infiniteCallback', infiniteCallback).data('ready', false);
-			$wrap.find('> .ui-scrollbar-item').contents().unwrap();
-			$wrap.find('> .ui-scrollbar-wrap').contents().unwrap();
-			$wrap.find('> .ui-scrollbar-barwrap').remove();
-
-			var wrapW = $wrap.innerWidth();
-			var wrapH = $wrap.outerHeight();
-
-			$wrap.wrapInner('<div class="ui-scrollbar-item"><div class="ui-scrollbar-wrap"></div></div>');
-
-			var	$item = $wrap.find('> .ui-scrollbar-item');
-			var	$itemWrap = $item.find('> .ui-scrollbar-wrap');
-
-			var cssDisplay = $wrap.css('display');
-			var cssPadding = $wrap.css('padding');
-
-			$itemWrap.css({
-				display: cssDisplay,
-				padding: cssPadding
-			});
-
-			if (!space) {
-				cssDisplay === 'inline-block' && $itemWrap.css('display','block');
-				$itemWrap.css('width','100%');
-			} 
-
-			!space && $item.css('width','100%');
-			$wrap.css('overflow','hidden');
-
-			var itemW =  $item.prop('scrollWidth');
-			var itemH =$item.prop('scrollHeight');
-
-			$wrap.data('opt', {'itemH':itemH, 'itemW':itemW, 'wrapH':wrapH, 'wrapW':wrapW });
-			
-			var idN = JSON.parse(sessionStorage.getItem('scrollbarID'));
-
-			//idN = idN === undefined ? 0 : idN;
-			
-			if (!$wrap.data('ready') || !$wrap.attr('scroll-id')) {
-				
-				if (!$wrap.attr('scroll-id')) {
-					$wrap.attr('scroll-id', 'uiScrollBar_' + idN).data('ready', true).addClass('ready');
-					idN = idN + 1;
-					sessionStorage.setItem('scrollbarID', idN);
-				} else {
-					$wrap.data('ready', true).addClass('ready');
-				}
-
-				$item.attr('tabindex', 0);
-				$wrap.css('height', wrapH + 'px');
-				
-				if (space) {
-					$item.addClass('scroll-y-padding');
-					$item.addClass('scroll-x-padding');
-				} else {
-					!!$wrap.parent('.ui-tablescroll').length && $wrap.parent('.ui-tablescroll').addClass('not-space');
-				}
-
-				html_scrollbar += '<div class="ui-scrollbar-barwrap type-y" >';
-				html_scrollbar += '<button type="button" class="ui-scrollbar-bar" aria-hidden="true" tabindex="-1" data-scrollxy="y"><span class="hide">scroll</span></button>';
-				html_scrollbar += '</div>';
-				html_scrollbar += '<div class="ui-scrollbar-barwrap type-x" >';
-				html_scrollbar += '<button type="button" class="ui-scrollbar-bar" aria-hidden="true" tabindex="-1" data-scrollxy="x"><span class="hide">scroll</span></button>';
-				html_scrollbar += '</div>';
-				
-				$wrap.prepend(html_scrollbar);
-
-				(wrapH < itemH) ? $wrap.addClass('view-y') : $wrap.removeClass('view-y');
-				(wrapW < itemW) ? $wrap.addClass('view-x') : $wrap.removeClass('view-x');
-
-				var barH = Math.floor(wrapH / (itemH / 100));
-				var barW = Math.floor(wrapW / (itemW / 100));
-				var $barY = $wrap.find('> .ui-scrollbar-barwrap.type-y .ui-scrollbar-bar');
-				var $barX = $wrap.find('> .ui-scrollbar-barwrap.type-x .ui-scrollbar-bar');
-				
-				$barY.css('height', barH + '%').data('height', barH);
-				$barX.css('width', barW + '%').data('width', barW);
-
-				$wrap.addClass('view-scrollbar');
-				!!callback && callback(); 
-				scrollEvent($item);
-				scrollbarUpdate(t, wrapH, wrapW, itemH, itemW, space);
-				eventFn();
-			}
-		}	
-		function eventFn(){
-			$(doc).find('.ui-scrollbar-item').off('scroll.uiscr').on('scroll.uiscr', function(){
-				scrollEvent(this);
-			});
-			$(doc).find('.ui-scrollbar-bar').off('mousedown.bar touchstart.bar').on('mousedown.bar touchstart.bar', function(e) {
-				dragMoveAct(e, this);
-			});
-		}	
-		function scrollEvent(t){
-			var $this = $(t),
-				$wrap = $this.closest('.ui-scrollbar'),
-				$barY = $wrap.find('> .type-y .ui-scrollbar-bar'),
-				$barX = $wrap.find('> .type-x .ui-scrollbar-bar');
-			
-			var opt = $wrap.data('opt');
-
-			if (opt === undefined) {
-				return false;
-			}
-
-			var itemH = opt.itemH,
-				itemW = opt.itemW,
-				wrapH = opt.wrapH,
-				wrapW = opt.wrapW;
-
-			var scrT = $this.scrollTop(),
-				scrL = $this.scrollLeft(),
-				barH = $barY.data('height'),
-				barW = $barX.data('width');
-			
-			var hPer = Math.round(scrT / (itemH - wrapH) * 100),
-				_hPer = (barH / 100) * hPer,
-				wPer = Math.round(scrL / (itemW - wrapW) * 100),
-				_wPer = (barW / 100) * wPer;
-
-			var _infiniteCallback = $wrap.data('infiniteCallback');
-
-			$barY.css('top', hPer - _hPer + '%');
-			$barX.css('left', wPer - _wPer + '%');
-
-			if (!!_infiniteCallback) {
-				hPer === 100 && _infiniteCallback(); 
-			}
-		}
-		function dragMoveAct(e, t) {
-			var $bar = $(t),
-				$uiScrollbar = $bar.closest('.ui-scrollbar'),
-				$barWrap = $bar.closest('.ui-scrollbar-barwrap'),
-				$wrap = $bar.closest('.ui-scrollbar'),
-				$item = $uiScrollbar.find('> .ui-scrollbar-item');
-
-			var off_t = $barWrap.offset().top,
-				w_h = $barWrap.innerHeight(),
-				off_l = $barWrap.offset().left,
-				w_w = $barWrap.innerWidth(),
-				barH = $bar.data('height'),
-				barW = $bar.data('width'),
-				opt = $wrap.data('opt');
-
-			var yRPer, xRPer;
-			var $btn = e.target;
-			var isXY = $btn.getAttribute('data-scrollxy');
-			
-			$('body').addClass('scrollbar-move');
-
-			$(doc).off('mousemove.bar touchmove.bar').on('mousemove.bar touchmove.bar', function (e) {
-				var y_m, 
-					x_m;
-				
-				if (e.touches === undefined) {
-					if (e.pageY !== undefined) {
-						y_m = e.pageY;
-					} else if (e.pageY === undefined) {
-						y_m = e.clientY;
-					}
-
-					if (e.pageX !== undefined) {
-						x_m = e.pageX;
-					} else if (e.pageX === undefined) {
-						x_m = e.clientX;
-					}
-				}
-
-				var yR = y_m - off_t;
-				var xR = x_m - off_l;
-
-				yR < 0 ? yR = 0 : '';
-				yR > w_h ? yR = w_h : '';
-				xR < 0 ? xR = 0 : '';
-				xR > w_w ? xR = w_w : '';
-
-				yRPer = yR / w_h * 100;
-				xRPer = xR / w_w * 100;
-				var nPerY = (yRPer - (barH / 100 * yRPer)).toFixed(2);
-				var nPerX = (xRPer - (barW / 100 * xRPer)).toFixed(2);
-
-				if (isXY === 'y') {
-					$bar.css('top', nPerY + '%');
-					$item.scrollTop(opt.itemH * nPerY / 100);
-				} else {
-					$bar.css('left', nPerX + '%');
-					$item.scrollLeft(opt.itemW * nPerX / 100);
-				}
-
-			}).off('mouseup.bar touchcancel.bar touchend.bar').on('mouseup.bar touchcancel.bar touchend.bar', function () {
-				var _infiniteCallback = $wrap.data('infiniteCallback');
-
-				if (!!_infiniteCallback) {
-					yRPer === 100 && _infiniteCallback(); 
-				}
-
-				$('body').removeClass('scrollbar-move');
-				$(doc).off('mousemove.bar mouseup.bar touchmove.bar');
-			});
-		}
-	}
-
 	/**
 	 * window popup
 	 */
@@ -1481,79 +1171,213 @@ if (!Object.keys){
 		}
 	}
 
-
-	/* ------------------------
-	 * error message
-	 * date : 
-	 * option
-	 * - opt.message : 'message text' / [string]
-	 * - opt.error : true or false / [string]
-	 * - opt.selector : 'id' or $(...) / [strong] or [object]
-	 * - opt.wrapper : '...' / [strong]
-	------------------------ */
-	win[global] = win[global].uiNameSpace(namespace, {
-		uiError: function (opt) {
-			return createUiError(opt);
-		}
-	});
-	function createUiError(opt){
-		var msg = opt.message, 
-			err = opt.error, 
-			$this = typeof opt.selector === 'string' ? $('#' + opt.selector) : opt.selector,
-			$wrap = opt.wrapper === undefined ? $this.parent() : $this.closest(opt.wrapper),
-			id = $this.attr('id'),
-			err_html = '<em class="ui-error-msg" aria-hidden="true" id="'+ id +'-error">'+ msg +'</em>';
-
-		//generate error message
-		$this.attr('aria-labelledby', id + '-error');
-
-		!$('#'+ id +'-error').length ? $wrap.append(err_html) : $wrap.find('.ui-error-msg').text(msg) ;
-		
-		//error 여부에 따른 설정
-		if (err) {
-			$('#'+ id +'-error').attr('aria-hidden', false);
-			$wrap.addClass('ui-error-true');
-			$this.addClass('ui-error-item');
-			$this.closest('.ui-select').addClass('ui-error-select');
-		} else {
-			$('#'+ id +'-error').attr('aria-hidden', true).remove();
-			$wrap.find('.ui-error-item').length === 1 ? $wrap.removeClass('ui-error-true') : '';
-			$this.removeClass('ui-error-item');
-			$this.closest('.ui-select').removeClass('ui-error-select');
-		}
-	}
-
-
-
-	/* ------------------------
-	 * input placeholder
-	 * date : 
-	------------------------ */
-	win[global] = win[global].uiNameSpace(namespace, {
-		uiPlaceholder: function () {
-			return createUiPlaceholder();
-		}
-	});
-	function createUiPlaceholder(){
-		var $ph = $('[placeholder]'),
-			phname = '';
-
-		$('.ui-placeholder').remove();
-		$ph.each(function(){
-			phname = $(this).attr('placeholder');
-			$(this).before('<span class="hide ui-placeholder">' + phname + '</span>')
-		});
-	}
-
-
-
-	
-
-
 	/* ------------------------
 	* accordion tab  
 	* date : 2020-05-17
 	------------------------ */
+	win[global].accordion = {
+		options: {
+			current: null,
+			autoclose: false,
+			callback: false,
+			add: false,
+			level: 3,
+			effect: win[global].option.effect.easeInOut,
+			effTime: '.2'
+		},
+		init: function(opt){
+			if (opt === undefined || !$('#' + opt.id).length) {
+				return false;
+			}
+	
+			var opt = $.extend(true, {}, this.option, opt),
+				id = opt.id,
+				current = opt.current,
+				callback = opt.callback,
+				autoclose = opt.autoclose,
+				level = opt.level,
+				add = opt.add,
+				effect = opt.effect,
+				effTime = opt.effTime;
+	
+			var	$acco = $('#' + id),
+				$wrap = $acco.children('.ui-acco-wrap'),
+				$pnl = $wrap.children('.ui-acco-pnl'),
+				$tit = $wrap.children('.ui-acco-tit'),
+				$btn = $tit.find('.ui-acco-btn');
+	
+			var	len = $wrap.length, 
+				keys = win[global].option.keys,
+				optAcco;
+	
+			var para = win[global].para.get('acco'),
+				paras,
+				paraname;
+	
+			//set up
+			if (!!para && !add) {
+				if (para.split('+').length > 1) {
+					//2 or more : acco=exeAcco1*2+exeAcco2*3
+					paras = para.split('+');
+	
+					for (var j = 0; j < paras.length; j++ ) {
+						paraname = paras[j].split('*');
+						opt.id === paraname[0] ? current = [Number(paraname[1])] : '';
+					}
+				} else {
+					//only one : tab=1
+					 if (para.split('*').length > 1) {
+						paraname = para.split('*');
+						opt.id === paraname[0] ? current = [Number(paraname[1])] : '';
+					} else {
+						current = [Number(para)];
+					}
+				}
+			}
+	
+			if (add) {
+				current = [];
+				var ss = JSON.parse(sessionStorage.getItem(id));
+	
+				autoclose = autoclose || ss.close;
+	
+				$acco.find('.ui-acco-btn.selected').each(function(){
+					current.push($(this).closest('.ui-acco-wrap').index());
+				});
+				$btn.removeAttr('acco-last').removeAttr('acco-first');
+	
+				autoclose = $acco.data('opt').close;
+				callback = $acco.data('opt').callback;
+			}
+	
+			sessionStorage.setItem(id, JSON.stringify({ 'close': autoclose, 'current': current, 'effTime':effTime, 'effect':effect }) );
+			win[global].uiAccordion[id] = callback;
+	
+			//set up
+			!$pnl ? $pnl = $tit.children('.ui-acco-pnl') : '';
+			$acco.data('opt', { 
+				id: id, 
+				close: autoclose, 
+				callback: callback
+			});
+	
+			for (var i = 0; i < len; i++) {
+				var $wrap_i = $wrap.eq(i),
+					$accotit = $wrap_i.find('> .ui-acco-tit'),
+					$accopln = $wrap_i.find('> .ui-acco-pnl'),
+					$accobtn = $accotit.find('.ui-acco-btn');
+	
+				if ($accotit.prop('tagName') !== 'DT') {
+					$accotit.attr('role','heading');
+					$accotit.attr('aria-level', level);
+				}
+				
+				if (!$accopln) {
+					$accopln = $accotit.children('.ui-acco-pnl');
+				}
+	
+				($accotit.attr('id') === undefined) && $accobtn.attr('id', id + '-btn' + i);
+				($accopln.attr('id') === undefined) && $accopln.attr('id', id + '-pnl' + i);
+				
+				$accobtn
+					.data('selected', false)
+					.attr('data-n', i)
+					.attr('data-len', len)
+					.attr('aria-expanded', false)
+					.attr('aria-controls', $accopln.attr('id'))
+					.removeClass('selected');
+				$accopln
+					.attr('data-n', i)
+					.attr('data-len', len)
+					.attr('aria-labelledby', $accobtn.attr('id'))
+					.attr('aria-hidden', true).hide();
+	
+				(i === 0) && $accobtn.attr('acco-first', true);
+				(i === len - 1) && $accobtn.attr('acco-last', true);
+			}
+			
+			if (current !== null) {
+				win[global].uiAccordionToggle({ 
+					id: id, 
+					current: current, 
+					motion: false 
+				});
+			}
+	
+			//event
+			$btn.off('click.uiaccotab keydown.uiaccotab')
+				.on({
+					'click.uiaccotab': evtClick,
+					'keydown.uiaccotab': evtKeys
+				});
+	
+			function evtClick(e) {
+				if (!!$(this).closest('.ui-acco-wrap').find('.ui-acco-pnl').length) {
+					e.preventDefault();
+					var $this = $(this);
+	
+					optAcco = $this.closest('.ui-acco').data('opt');
+					win[global].uiAccordionToggle({ 
+						id: optAcco.id, 
+						current: [$this.data('n')], 
+						close: optAcco.close, 
+						callback: optAcco.callback
+					});
+				}
+			}
+			function evtKeys(e) {
+				var $this = $(this),
+					n = Number($this.data('n')),
+					m = Number($this.data('len')),
+					id = $this.closest('.ui-acco').attr('id');
+	
+				switch(e.keyCode){
+					case keys.up: upLeftKey(e);
+					break;
+	
+					case keys.left: upLeftKey(e);
+					break;
+	
+					case keys.down: downRightKey(e);
+					break;
+	
+					case keys.right: downRightKey(e);
+					break;
+	
+					case keys.end: endKey(e);
+					break;
+	
+					case keys.home: homeKey(e);
+					break;
+				}
+	
+				function upLeftKey(e) {
+					e.preventDefault();
+					
+					!$this.attr('acco-first') ?
+					$('#' + id + '-btn' + (n - 1)).focus():
+					$('#' + id + '-btn' + (m - 1)).focus();
+				}
+				function downRightKey(e) {
+					e.preventDefault();
+	
+					!$this.attr('acco-last') ? 
+					$('#' + id + '-btn' + (n + 1)).focus():
+					$('#' + id + '-btn0').focus();
+				}
+				function endKey(e) {
+					e.preventDefault();
+	
+					$('#' + id + '-btn' + (m - 1)).focus();
+				}
+				function homeKey(e) {
+					e.preventDefault();
+					$('#' + id + '-btn0').focus();
+				}
+			}
+		}
+	}
+
 	win[global] = win[global].uiNameSpace(namespace, {
 		uiAccordion: function (opt) {
 			return createUiAccordion(opt);
@@ -2966,74 +2790,74 @@ if (!Object.keys){
 	function createUiPopupBook() {	
 		var $wrap = $('.ui-popupbook');
 					
-        $wrap.off('mouseover.pspt').on('mouseover.pspt', function(){
-            $wrap.off('mousemove.pspt').on('mousemove.pspt', function(event){
-                event = event || window.event;
+				$wrap.off('mouseover.pspt').on('mouseover.pspt', function(){
+						$wrap.off('mousemove.pspt').on('mousemove.pspt', function(event){
+								event = event || window.event;
 				
 				var wrapL = $wrap.position().left;
-                var _x = ( event.pageX ) ? event.pageX - wrapL : event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft - wrapL; 
-                var isMove = $wrap.data('move');
+								var _x = ( event.pageX ) ? event.pageX - wrapL : event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft - wrapL; 
+								var isMove = $wrap.data('move');
 
-                if (_x > $wrap.outerWidth() / 2) {
-                    if (!isMove || isMove === 'right') {
-                        moving('.ui-popupbook-scene-a', true, 'left');
-                        moving('.ui-popupbook-scene-b', true, 'left');
-                        moving('.ui-popupbook-scene-c', true, 'left');
-                    } 
-                } else {
-                    if (!isMove || isMove === 'left') {
-                        moving('.ui-popupbook-scene-a', true, 'right');
-                        moving('.ui-popupbook-scene-b', true, 'right');
-                        moving('.ui-popupbook-scene-c', true, 'right');
-                    } 
-                }
-            });
-        }).off('mouseleave.pspt').on('mouseleave.pspt', function(){
-            moving('.ui-popupbook-scene-a', false);
-            moving('.ui-popupbook-scene-b', false);
-            moving('.ui-popupbook-scene-c', false);
-        });
+								if (_x > $wrap.outerWidth() / 2) {
+										if (!isMove || isMove === 'right') {
+												moving('.ui-popupbook-scene-a', true, 'left');
+												moving('.ui-popupbook-scene-b', true, 'left');
+												moving('.ui-popupbook-scene-c', true, 'left');
+										} 
+								} else {
+										if (!isMove || isMove === 'left') {
+												moving('.ui-popupbook-scene-a', true, 'right');
+												moving('.ui-popupbook-scene-b', true, 'right');
+												moving('.ui-popupbook-scene-c', true, 'right');
+										} 
+								}
+						});
+				}).off('mouseleave.pspt').on('mouseleave.pspt', function(){
+						moving('.ui-popupbook-scene-a', false);
+						moving('.ui-popupbook-scene-b', false);
+						moving('.ui-popupbook-scene-c', false);
+				});
 
-        $wrap.find('.ui-popupbook-item').off('mouseover.pspti').on('mouseover.pspti', function(event){
-            pause();
-        }).off('mouseleave.pspti').on('mouseleave.pspti', function(event){
-            moving('.ui-popupbook-scene-a', false);
-            moving('.ui-popupbook-scene-b', false);
-            moving('.ui-popupbook-scene-c', false);
-        });
+				$wrap.find('.ui-popupbook-item').off('mouseover.pspti').on('mouseover.pspti', function(event){
+						pause();
+				}).off('mouseleave.pspti').on('mouseleave.pspti', function(event){
+						moving('.ui-popupbook-scene-a', false);
+						moving('.ui-popupbook-scene-b', false);
+						moving('.ui-popupbook-scene-c', false);
+				});
 
-        function pause() {
+				function pause() {
 			$wrap.data('move', 'stop');
 			$('.ui-popupbook-scene-a').stop();
 			$('.ui-popupbook-scene-b').stop();
 			$('.ui-popupbook-scene-c').stop();
-        }
-        function moving(t, v, w){
-            var $scene = $(t);
+				}
+				function moving(t, v, w){
+						var $scene = $(t);
 
-            if (v) {
-                var n = $scene.outerWidth() - $wrap.outerWidth();
-                var per = Math.floor((n - Math.abs($scene.position().left)) / n * 100);
-                var per2 = Math.floor(Math.abs($scene.position().left) / n * 100);
-                var speed = 8000 * (per / 100);
-                var speed2 = 8000 * (per2 / 100);
+						if (v) {
+								var n = $scene.outerWidth() - $wrap.outerWidth();
+								var per = Math.floor((n - Math.abs($scene.position().left)) / n * 100);
+								var per2 = Math.floor(Math.abs($scene.position().left) / n * 100);
+								var speed = 8000 * (per / 100);
+								var speed2 = 8000 * (per2 / 100);
 
-                if (w === 'left') {
-                    $wrap.data('move', 'left');
-                    $scene.stop().animate({
-                        left: ($scene.outerWidth() - $wrap.outerWidth()) * -1 + 'px'
-                    }, speed);
-                } else {
-                    $wrap.data('move', 'right');
-                    $scene.stop().animate({
-                        left: 0
-                    }, speed2);
-                }
-            } else {
+								if (w === 'left') {
+										$wrap.data('move', 'left');
+										$scene.stop().animate({
+												left: ($scene.outerWidth() - $wrap.outerWidth()) * -1 + 'px'
+										}, speed);
+								} else {
+										$wrap.data('move', 'right');
+										$scene.stop().animate({
+												left: 0
+										}, speed2);
+								}
+						} else {
 				$wrap.data('move', false);
 				$scene.stop();	
-            }
-        }
+						}
+				}
 	}
 
 
