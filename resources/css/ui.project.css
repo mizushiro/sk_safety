@@ -1462,7 +1462,7 @@ a.btn-base {
 
 .type-system .ui-modal-body {
 	padding: 3.5rem 1rem;
-	font-size: 1.5rem 2rem;
+	font-size: 1.5rem;
 }
 
 .type-system .ui-modal-body em {
@@ -1472,7 +1472,7 @@ a.btn-base {
 .ui-modal-body {
 	position: relative;
 	margin-top: 0;
-	padding: 1.5rem;
+	padding: 1.5rem 2rem;
 }
 
 .ui-modal-footer {
@@ -3210,11 +3210,17 @@ a.ui-acco-btn:after {
 
 dl.list-base > div{
 	display: flex;
-	justify-content: space-between;
 	border-bottom: 1px solid #F5F5F5;
 }
+dl.list-base dt{
+	margin-right:1rem;
+	color:#777;
+	padding:0 1rem;
+	max-width:30%;
+	min-width:30%;
+}
 dl.list-base > div > *{
-	flex:0 auto;
+	flex:1 auto;
 }
 dl.list-base > div,
 .list-base>li {
@@ -3411,15 +3417,15 @@ dl.list-base > div,
 }
 
 .list-safe .n1::before {
-	background: #F5F4F4 url(../img/icon_sunny.svg) no-repeat 50% 50% / 2.7rem;
+	background: #F5F4F4 url(../img/icon_weather01.svg) no-repeat 50% 50% / 2.7rem;
 }
 
 .list-safe .n2::before {
-	background: #F5F4F4 url(../img/icon_trophy.svg) no-repeat 50% 50% / 2.7rem;
+	background: #F5F4F4 url(../img/icon_commendation.svg) no-repeat 50% 50% / 2.7rem;
 }
 
 .list-safe .n3::before {
-	background: #F5F4F4 url(../img/icon_comment_check.svg) no-repeat 50% 50% / 2.7rem;
+	background: #F5F4F4 url(../img/icon_write01.svg) no-repeat 50% 50% / 2.7rem;
 }
 
 
@@ -3506,6 +3512,10 @@ dl.list-base > div,
 }
 
 .toast em {
+	color: #008F84;
+}
+.toast strong {
+	font-weight:700;
 	color: #008F84;
 }
 
@@ -4655,10 +4665,40 @@ dl.list-base > div,
 	padding:1rem 0 3rem;
 }
 
-
-
-
-
+.inspector{
+	width:100%;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+.inspector-wrap{
+	padding-left:6rem;
+	position:relative;
+	font-size: 1.5rem;
+	margin:3rem 0;
+}
+.inspector span{
+	display:block;
+}
+.inspector .name{
+	font-size:1.8rem;
+	color:#008F84;
+}
+.inspector strong{
+	font-weight: 700;
+}
+.inspector-wrap::before{
+	content:"";
+	display:block;
+	position: absolute;
+	top:0;
+	left:0;
+	width:4.4rem;
+	height:4.4rem;
+	border-radius:50%;
+	border:1px solid #008F84;
+	background:url(../img/icon_safety_p.svg) no-repeat 50% 50% / 2rem;
+}
 
 
 

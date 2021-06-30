@@ -90,68 +90,89 @@
                     $plugins.toast.show({
                         delay: 'short',
                         conts: '<p><em>근로자 가입이 완료되었습니다.</em></p><p>편리한 현장 서비스 제공을 위해 내 이력을 작성하세요</p>'
-                    });"><em class="flag">완료</em>가입완료</button>
+                    });">
+                <em class="flag">완료</em>가입완료</button>
 
                 <button type="button" id="test1" onclick="
                     $plugins.toast.show({
                         delay: 'long',
-                        conts: '<dl class=\'list-base\'><div><dt>보림토건</dt><dd>102동 지하 비계설치해제</dd></div><div><dt>보림토건</dt><dd>102동 지하 비계설치해제</dd></div><div><dt>보림토건</dt><dd>102동 지하 비계설치해제</dd></div></dl><p class=\'mgt-m\'><em>점검자가 지정되었습니다.</em></p>'
-                    });"><em class="flag">완료</em>점검자지정완료</button>
+                        conts: '<dl class=\'list-base\'><div><dt>보림토건</dt><dd>102동 지하 비계설치해제 102동 지하 비계설치해제 102동 지하 비계설치해제</dd></div><div><dt>보림토건</dt><dd>102동 지하 비계설치해제</dd></div><div><dt>보림토건</dt><dd>102동 지하 비계설치해제</dd></div></dl><p class=\'mgt-m\'><strong>점검자가 지정되었습니다.</strong></p>'
+                    });">
+                <em class="flag">완료</em>점검자지정완료</button>
 
 
                 <h2>modal</h2>
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 
-                    id: 'modal_logintype', 
-                    src: '../modal/modal_logintype.html', 
-                    ps: 'bottom'
-                });"><em class="flag">완료</em>로그인방식선택</button>
-                <button type="button" onclick="
-                    $plugins.uiModalOpen({ 
-                    id: 'modal_agree', 
-                    src: '../modal/modal_agree.html', 
-                    ps: 'bottom', 
-                    closeCallback: function(v) { 
-                        console.log('close callback', v); 
-                    },
-                    callback: function(v) { 
-                        console.log('callback', v); 
-
-                        $plugins.uiAccordion({ 
-                            id: 'exeAcco1', 
-                            current: null, 
-                            autoclose: true, 
-                            callback: function(v){console.log(v)} 
-                        });
-                    }
-                });"><em class="flag">완료</em>약관동의</button>
+                        id: 'modal_logintype', 
+                        src: '../modal/modal_logintype.html', 
+                        ps: 'bottom'
+                    });">
+                <em class="flag">완료</em>로그인방식선택</button>
 
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 
-                    id: 'modal_digitalsign', 
-                    full:true,
-                    src: '../modal/modal_digitalSign.html', 
-                    ps: 'center', 
-                    closeCallback: function(v) { 
-                        console.log('close callback', v); 
-                    },
-                    callback: function(v) { 
-                        console.log('callback', v); 
-                    }
-                });"><em class="flag">완료</em>전자서명</button>
+                        id: 'modal_agree', 
+                        src: '../modal/modal_agree.html', 
+                        ps: 'bottom', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+
+                            $plugins.uiAccordion({ 
+                                id: 'exeAcco1', 
+                                current: null, 
+                                autoclose: true, 
+                                callback: function(v){console.log(v)} 
+                            });
+                        }
+                    });">
+                <em class="flag">완료</em>약관동의</button>
 
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 
-                    id: 'modal_license', 
-                    src: '../modal/modal_license.html', 
-                    ps: 'center', 
-                    closeCallback: function(v) { 
-                        console.log('close callback', v); 
-                    },
-                    callback: function(v) { 
-                        console.log('callback', v); 
-                    }
-                });"><em class="flag">완료</em>면허(자격증) 등록</button>
+                        id: 'modal_digitalsign', 
+                        full:true,
+                        src: '../modal/modal_digitalSign.html', 
+                        ps: 'center', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
+                    });">
+                <em class="flag">완료</em>전자서명</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                        id: 'modal_license', 
+                        src: '../modal/modal_license.html', 
+                        ps: 'center', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
+                    });">
+                <em class="flag">완료</em>면허(자격증) 등록</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                        id: 'modal_inspector2', 
+                        src: '../modal/modal_inspector2.html', 
+                        ps: 'center', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
+                    });">
+                <em class="flag">완료</em>점검자 지정 안내</button>
 
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 
