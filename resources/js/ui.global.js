@@ -979,7 +979,6 @@ if (!Object.keys){
 			win.open(opt.link, opt.name , specs);
 		}
 	}
-	
 
 	/**
 	 * cookie set/get/del
@@ -1186,19 +1185,18 @@ if (!Object.keys){
 			effTime: '.2'
 		},
 		init: function(opt){
-			if (opt === undefined || !$('#' + opt.id).length) {
+			if (opt === undefined) {
 				return false;
 			}
 	
-			var opt = $.extend(true, {}, this.option, opt),
-				id = opt.id,
-				current = opt.current,
-				callback = opt.callback,
-				autoclose = opt.autoclose,
-				level = opt.level,
-				add = opt.add,
-				effect = opt.effect,
-				effTime = opt.effTime;
+			var opt = $.extend(true, {}, this.options, opt);
+			var id = opt.id;
+			var current = opt.current;
+			var callback = opt.callback;
+			var autoclose = opt.autoclose;
+			var level = opt.level;
+			var add = opt.add;
+
 	
 			var	$acco = $('#' + id),
 				$wrap = $acco.children('.ui-acco-wrap'),
@@ -1250,7 +1248,7 @@ if (!Object.keys){
 				callback = $acco.data('opt').callback;
 			}
 	
-			sessionStorage.setItem(id, JSON.stringify({ 'close': autoclose, 'current': current, 'effTime':effTime, 'effect':effect }) );
+			sessionStorage.setItem(id, JSON.stringify({ 'close': autoclose, 'current': current }) );
 			win[global].uiAccordion[id] = callback;
 	
 			//set up
