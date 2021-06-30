@@ -1462,7 +1462,7 @@ a.btn-base {
 
 .type-system .ui-modal-body {
 	padding: 3.5rem 1rem;
-	font-size: 1.5rem
+	font-size: 1.5rem 2rem;
 }
 
 .type-system .ui-modal-body em {
@@ -3208,6 +3208,15 @@ a.ui-acco-btn:after {
 	border: 0;
 }
 
+dl.list-base > div{
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #F5F5F5;
+}
+dl.list-base > div > *{
+	flex:0 auto;
+}
+dl.list-base > div,
 .list-base>li {
 	width: 100%;
 	padding: 1rem 0;
@@ -3251,7 +3260,7 @@ a.ui-acco-btn:after {
 	margin-top: 0.6rem;
 }
 
-.list-base.type-arrow li a {
+.list-base.type-arrow>li a {
 	position: relative;
 	width: 100%;
 	padding-right: 2rem;
@@ -3259,7 +3268,7 @@ a.ui-acco-btn:after {
 	align-items: center;
 }
 
-.list-base.type-arrow li a::before {
+.list-base.type-arrow>li a::before {
 	content: "";
 	position: absolute;
 	display: block;
@@ -3272,18 +3281,18 @@ a.ui-acco-btn:after {
 	background: url(../img/icon_right_b.svg) no-repeat 50% 50% / 0.7rem;
 }
 
-.list-base.type-arrow li>span {
+.list-base.type-arrow>li>span {
 	display: inline-block;
 	vertical-align: middle;
 }
 
-.list-base.type-arrow li [class*="icon-"]+span {
+.list-base.type-arrow>li [class*="icon-"]+span {
 	position: relative;
 	top: 0.2rem;
 	display: inline-block;
 }
 
-.list-base.type-arrow li [class*="icon-"] {
+.list-base.type-arrow>li [class*="icon-"] {
 	display: inline-block;
 	width: 3.5rem;
 	height: 3.5rem;
@@ -3293,8 +3302,8 @@ a.ui-acco-btn:after {
 	margin-right: 1rem;
 }
 
-.list-base.type-arrow li .icon-site2,
-.list-base.type-arrow li .icon-site1 {
+.list-base.type-arrow>li .icon-site2,
+.list-base.type-arrow>li .icon-site1 {
 	display: inline-block;
 	min-width: 4.2rem;
 	width: 4.2rem;
@@ -3303,13 +3312,19 @@ a.ui-acco-btn:after {
 	margin-right: 1rem;
 }
 
-.list-base.type-arrow li .icon-site1 {
+.list-base.type-arrow>li .icon-site1 {
 	background: url(../img/icon_weather01.svg) no-repeat 50% 50%;
 }
 
-.list-base.type-arrow li .icon-site2 {
+.list-base.type-arrow>li .icon-site2 {
 	background: url(../img/icon_write01.svg) no-repeat 50% 50%;
 }
+.list-base.type-insp label{
+	font-size:1.6rem;
+	font-size: 500;
+	padding-top:0.4rem;
+}
+
 
 .list-career li {
 	width: 100%;
@@ -3994,7 +4009,7 @@ a.ui-acco-btn:after {
 .list-base.fx-sb-li li,
 .fx-sb {
 	justify-content: space-between;
-	display: flex;
+	display: flex !important;
 }
 
 .list-base.type-arrow.fx-sb li {
