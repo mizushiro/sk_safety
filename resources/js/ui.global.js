@@ -2700,10 +2700,13 @@ if (!Object.keys){
 			
 			clearTimeout(timer);
 			timer = setTimeout(function(){
-				win[global].uiFocusTab({ 
+				win[global].focus.loop({ 
 					selector: $modal, 
-					type:'hold' 
 				});
+				// win[global].uiFocusTab({ 
+				// 	selector: $modal, 
+				// 	type:'hold' 
+				// });
 
 				$modal.addClass('open');
 
