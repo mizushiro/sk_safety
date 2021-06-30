@@ -465,13 +465,23 @@ if (!Object.keys){
 	win[global].toast = {
 		timer : null,
 		options : {
-			time: 1000,
+			delay: 'short',
 			classname : ''
 		},
-		show : function(conts) {
-			var opt = this.options;
-			var toast = '<div class="ui-toast toast '+ opt.classname +'">'+ conts +'</div>';
+		show : function(opt) {
+			var opt = $.extend(true, {}, this.options, opt);
+			var delay = opt.delay;
+			var toast = '<div class="ui-toast toast '+ opt.classname +'">'+ opt.conts +'</div>';
 			var $body = $('body');
+			var time = delay === 'short' ? 2000 : 3500;
+
+			if (delay === 'short') {
+				time = 2000;
+			} else if(delay === 'long') {
+				time = 3500;
+			} else {
+				time = delay;
+			}
 
 			if (!!$('.ui-toast-ready').length) {
 				clearTimeout(win[global].toast.timer);
@@ -491,7 +501,7 @@ if (!Object.keys){
 
 				$shanckbar.off('transitionend.toasthide').on('transitionend.toastshow', function(){
 					$(this).off('transitionend.toastshow').addClass('on');
-					win[global].toast.timer = setTimeout(win[global].toast.hide, opt.time);
+					win[global].toast.timer = setTimeout(win[global].toast.hide, time);
 				});
 			},0);
 		},

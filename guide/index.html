@@ -87,7 +87,16 @@
                 <hr class="ht-cont">
                 <h2>Toast</h2>
                 <button type="button" id="test1" onclick="
-                    $plugins.toast.show('<p><em>근로자 가입이 완료되었습니다.</em></p><p>편리한 현장 서비스 제공을 위해 내 이력을 작성하세요</p>');"><em class="flag">완료</em>가입완료</button>
+                    $plugins.toast.show({
+                        delay: 'short',
+                        conts: '<p><em>근로자 가입이 완료되었습니다.</em></p><p>편리한 현장 서비스 제공을 위해 내 이력을 작성하세요</p>'
+                    });"><em class="flag">완료</em>가입완료</button>
+
+                <button type="button" id="test1" onclick="
+                    $plugins.toast.show({
+                        delay: 'long',
+                        conts: '<dl class=\'list-base\'><div><dt>보림토건</dt><dd>102동 지하 비계설치해제</dd></div><div><dt>보림토건</dt><dd>102동 지하 비계설치해제</dd></div><div><dt>보림토건</dt><dd>102동 지하 비계설치해제</dd></div></dl><p class=\'mgt-m\'><em>점검자가 지정되었습니다.</em></p>'
+                    });"><em class="flag">완료</em>점검자지정완료</button>
 
 
                 <h2>modal</h2>
@@ -204,6 +213,20 @@
                         });
                     }
                 });"><em class="flag">완료</em>직종선택</button>
+
+                <button type="button" onclick="
+                $plugins.uiModalOpen({ 
+                id: 'modal_inspector', 
+                full:true,
+                src: '../modal/modal_inspector.html', 
+                ps: 'center', 
+                closeCallback: function(v) { 
+                    console.log('close callback', v); 
+                },
+                callback: function(v) { 
+                    console.log('callback', v); 
+                }
+                });"><em class="flag">완료</em>점검자지정</button>
 
                 <button type="button" id="test1" onclick="
                 $plugins.uiModalOpen({ 
