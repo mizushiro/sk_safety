@@ -31,6 +31,10 @@
 	<script src="../resources/js/ui.global.js"></script>
 	<script src="../resources/js/ui.common.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
     <style>
     </style>
 </head>
@@ -53,7 +57,7 @@
                 </div>
                 <div class="photo"></div>
                 <button type="button" class="btn-photo"><span  class="a11y-hidden">사진변경</span></button>
-                <h2 class="name">홍길동</h2>
+                <h2 class="name">홍길동 (46세,남)</h2>
                 <div class="box">
                     <span>형틀</span>
                     <span>경력 5년 미만</span>
@@ -73,7 +77,7 @@
                         </div>
                     </div>
                     
-                    <div>
+                    <div class="week-head">
                         <button type="button" class="btn-prev">
                             <span class="a11y-hidden">지난 달</span>
                         </button>
@@ -82,44 +86,318 @@
                             <span class="a11y-hidden">다음 달</span>
                         </button>
                     </div>
-                    <div class="tbl-list">
-                        <table>
-                            <caption></caption>
-                            <colgroup>
-                                <col span="7" style="width:auto">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th scope="col">일</th>
-                                    <th scope="col">월</th>
-                                    <th scope="col">화</th>
-                                    <th scope="col">수</th>
-                                    <th scope="col">목</th>
-                                    <th scope="col">금</th>
-                                    <th scope="col">토</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div>
-                                            <span>21</span>
-                                            <span class="st-1"></span>
-                                        </div>
-                                        <div>
-                                            <div class="inp-check">
-                                                <input type="checkbox" id="wds1">
-                                                <label for="wds1">
-                                                    <span class="a11y-hidden">선택</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
+                    <div class="swiper-week">
+                        <div>
+                            <div class="tbl-list">
+                                <table>
+                                    <caption></caption>
+                                    <colgroup>
+                                        <col span="7" style="width:auto">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">일</th>
+                                            <th scope="col">월</th>
+                                            <th scope="col">화</th>
+                                            <th scope="col">수</th>
+                                            <th scope="col">목</th>
+                                            <th scope="col">금</th>
+                                            <th scope="col">토</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="tbl-list">
+                                <table>
+                                    <caption></caption>
+                                    <colgroup>
+                                        <col span="7" style="width:auto">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">일</th>
+                                            <th scope="col">월</th>
+                                            <th scope="col">화</th>
+                                            <th scope="col">수</th>
+                                            <th scope="col">목</th>
+                                            <th scope="col">금</th>
+                                            <th scope="col">토</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="tbl-list">
+                                <table>
+                                    <caption></caption>
+                                    <colgroup>
+                                        <col span="7" style="width:auto">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">일</th>
+                                            <th scope="col">월</th>
+                                            <th scope="col">화</th>
+                                            <th scope="col">수</th>
+                                            <th scope="col">목</th>
+                                            <th scope="col">금</th>
+                                            <th scope="col">토</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span>21</span>
+                                                    <span class="st-1"></span>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn-check">
+                                                        <span class="a11y-hidden">선택</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
+                    
                 </section>
                 <!-- //기본정보 -->
 
@@ -163,177 +441,66 @@
                 <hr class="hr-sec">
                 <section class="section-item mgt-n">
                     <div class="tit-sec type-line">
-                        <h3 class="tit">내 경력</h3>
+                        <h3 class="tit">내 인맥 목록
+                            <em class="num">3</em>
+                        </h3>
                         <div class="tit-util">
-                            <a href="#" class="link-arrow">
-                                <span>수정요청</span>
-                            </a>
+                            <button type="button" class="btn-network">
+                                <span class="a11y-hidden">인맥추가</span>
+                            </button>
                         </div>
                     </div>
 
-                    <ul class="list-career">
+                    <div class="data-no.type-network">
+                        내 인맥 목록이 없습니다.
+                    </div>
+                    
+                    <ul class="list-network">
                         <li>
-                            <div class="tit">건설 부평 SK VIEW 해모로 </div>
-                            <div class="date">20.01.22~20.04.21(55일)</div>
-                            <div class="box">
+                            <div class="tit">
+                                홍길동
+                                <em class="flag">my</em>
+                            </div>
+                            <div class="opt">
+                                <span>서울</span>
                                 <span>형틀</span>
-                                <span>경력 5년 미만</span>
+                            </div>
+                            <div class="form-item">
+                                <input type="text" class="inp-base" value="" placeholder="메모를 입력하세요.">
                             </div>
                         </li>
                         <li>
-                            <div class="tit">건설 부평 SK VIEW 해모로 </div>
-                            <div class="date">20.01.22~20.04.21(55일)</div>
-                            <div class="box">
+                            <div class="tit">홍길동</div>
+                            <div class="opt">
+                                <span>서울</span>
                                 <span>형틀</span>
-                                <span>경력 5년 미만</span>
+                            </div>
+                            <div class="form-item">
+                                <input type="text" class="inp-base" value="" placeholder="메모를 입력하세요.">
                             </div>
                         </li>
-                        <li>
-                            <div class="tit">건설 부평 SK VIEW 해모로 </div>
-                            <div class="date">20.01.22~20.04.21(55일)</div>
-                            <div class="box">
-                                <span>형틀</span>
-                                <span>경력 5년 미만</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="tit">건설 부평 SK VIEW 해모로 </div>
-                            <div class="date">20.01.22~20.04.21(55일)</div>
-                            <div class="box">
-                                <span>형틀</span>
-                                <span>경력 5년 미만</span>
-                            </div>
-                        </li>
+
                     </ul>
                 </section>
                 <!-- //경력 -->
 
-                <!-- 검진이력 -->
-                <hr class="hr-sec">
-                <section class="section-item mgt-n">
-                    <div class="tit-sec type-line">
-                        <h3 class="tit">검진이력</h3>
-                        <div class="tit-util">
-                            <a href="#" class="link-arrow">
-                                <span>내 검진기록</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <ul class="list-base fx-sb-li">
-                        <li>
-                            <div class="ctg">일반검진</div>
-                            <div class="tit">
-                                <span>일산병원 2021.01.09</span>
-                                <span class="flag">D-50</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ctg">일반검진</div>
-                            <div class="tit">
-                                <span>일산병원 2021.01.09</span>
-                                <span class="flag">D-50</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ctg">일반검진</div>
-                            <div class="tit">
-                                <span>일산병원 2021.01.09</span>
-                                <span class="flag">D-50</span>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="btn-wrap">
-                        <button type="button" class="btn-more">
-                            <span class="a11y-hidden">더보기</span>
+                <section class="section-item simple-login">
+                    <h3 class="tit">
+                        <span>공유하기</span>
+                    </h3>
+                    <div class="simple-login-area">
+                        <button type="button" class="sim-c">
+                            <span class="a11y-hidden">카카오톡 공유</span>
                         </button>
+                        <button type="button" class="sim-e">
+                            <span class="a11y-hidden">이메일 공유</span>
+                        </button>
+                        <button type="button" class="sim-l">
+                            <span class="a11y-hidden">url복사</span>
+                        </button>
+                        
                     </div>
                 </section>
-                <!-- //검진이력 -->
-
-                <!-- 교육이력 -->
-                <hr class="hr-sec">
-                <section class="section-item mgt-n">
-                    <div class="tit-sec type-line">
-                        <h3 class="tit">
-                            교육이력
-                        </h3>
-                    </div>
-
-                    <ul class="list-base fx-sb-li">
-                        <li>
-                            <div class="ctg">신규 방수</div>
-                            <div class="tit">
-                                <span>2021.01.09</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ctg">신규 방수</div>
-                            <div class="tit">
-                                <span>2021.01.09</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ctg">신규 방수</div>
-                            <div class="tit">
-                                <span>2021.01.09</span>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="btn-wrap">
-                        <button type="button" class="btn-more">
-                            <span class="a11y-hidden">더보기</span>
-                        </button>
-                    </div>
-                </section>
-                <!-- //교육이력 -->
-
-                <!-- 면허 -->
-                <hr class="hr-sec">
-                <section class="section-item mgt-n">
-                    <div class="tit-sec type-line">
-                        <h3 class="tit">
-                            면허(자격증)
-                        </h3>
-                    </div>
-
-                    <ul class="list-base fx-sb-li">
-                        <li>
-                            <div class="ctg">기능사 방수</div>
-                            <div class="tit">
-                                <span>2021.01.09</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ctg">기능사 방수</div>
-                            <div class="tit">
-                                <span>2021.01.09</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ctg">기능사 방수</div>
-                            <div class="tit">
-                                <span>2021.01.09</span>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="btn-wrap">
-                        <button type="button" class="btn-more">
-                            <span class="a11y-hidden">더보기</span>
-                        </button>
-                    </div>
-                </section>
-                <!-- //면허 -->
-
-                <div class="btn-area stick">
-                    <button type="button" class="btn-base large line" id="a1">
-                        <span>이력수정</span>
-                    </button>
-                    <button type="button" class="btn-base large primary">
-                        <span>확인</span>
-                    </button>
-                </div>
-
                 
             </div>
         </main>
@@ -349,6 +516,20 @@
                 //기본 실행
                 $plugins.common.init();
                 
+                var currentSlide = $('.swiper-week').slick({
+                    arrows: false,
+                    dots: true,
+                    infinite: false
+                });
+
+                $('.btn-prev').on('click', function(){
+                    currentSlide.slick('slickPrev');
+                });
+                $('.btn-next').on('click', function(){
+                    currentSlide.slick('slickNext');
+                });
+
+                $plugins.common.checkButton();
             });
         })(jQuery, window, document);
     </script>
