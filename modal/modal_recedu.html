@@ -1,0 +1,35 @@
+<section class="ui-modal" id="modal_recedu">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit">채용교육완료</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_recedu', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+            <div class="txtnoti">
+                <div class="txtnoti-wrap">
+                    <span class="name"><strong>루원시티 SK Leader VIEW</strong></span>
+                    <span>신규 채용교육을 완료합니다.</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="ui-modal-footer">
+            <div class="btn-area stick">
+                <button type="button" class="btn-base ">
+                    <span>취소</span>
+                </button>
+                <button type="button" class="btn-base primary">
+                    <span>확인</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+

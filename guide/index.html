@@ -73,13 +73,20 @@
                 <a target="sk" href="../html/site_map2.html"><em class="flag">완료</em>지도-주소</a>
                 <a target="sk" href="../html/worker_mypage.html">마이페이지</a>
 
+                
+
                 <h2>관리자</h2>
                 <a target="sk" href="../html/site_admin.html"><em class="flag">완료</em>내 현장</a>
                 <a target="sk" href="../html/site_add.html"><em class="flag">완료</em>내 현장 추가하기</a>
                 <a target="sk" href="../html/site_todayrisk.html"><em class="flag">완료</em>일일위험작업 현황</a>
 
-                <h2>내 현장 안전관리</h2>
+                <a target="sk" href="../html/site_profile.html">근로자 프로필</a>
+                <a target="sk" href="../html/site_checkAtt.html">오늘 출석 근로자 현황</a>
+
+                <h2>안전관리</h2>
                 <a target="sk" href="../html/safety_management.html">내현장 안전관리</a>
+
+                <a target="sk" href="../html/safety_training.html">안전교육</a>
 
                 <h2>con-talk</h2>
                 <a target="sk" href="../html/contalk.html">con-talk</a>
@@ -177,6 +184,20 @@
 
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 
+                        id: 'modal_recedu', 
+                        src: '../modal/modal_recedu.html', 
+                        ps: 'center', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
+                    });">
+                채용교육완료</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
                     id: 'modal_checklist', 
                     src: '../modal/modal_checklist.html', 
                     ps: 'center', 
@@ -237,18 +258,32 @@
                 });"><em class="flag">완료</em>직종선택</button>
 
                 <button type="button" onclick="
-                $plugins.uiModalOpen({ 
-                id: 'modal_inspector', 
-                full:true,
-                src: '../modal/modal_inspector.html', 
-                ps: 'center', 
-                closeCallback: function(v) { 
-                    console.log('close callback', v); 
-                },
-                callback: function(v) { 
-                    console.log('callback', v); 
-                }
+                    $plugins.uiModalOpen({ 
+                    id: 'modal_inspector', 
+                    full:true,
+                    src: '../modal/modal_inspector.html', 
+                    ps: 'center', 
+                    closeCallback: function(v) { 
+                        console.log('close callback', v); 
+                    },
+                    callback: function(v) { 
+                        console.log('callback', v); 
+                    }
                 });"><em class="flag">완료</em>점검자지정</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                    id: 'modal_eduinfo', 
+                    full:true,
+                    src: '../modal/modal_eduinfo.html', 
+                    ps: 'center', 
+                    closeCallback: function(v) { 
+                        console.log('close callback', v); 
+                    },
+                    callback: function(v) { 
+                        console.log('callback', v); 
+                    }
+                });">교육정보 (신규교육)</button>
 
                 <button type="button" id="test1" onclick="
                 $plugins.uiModalOpen({ 
