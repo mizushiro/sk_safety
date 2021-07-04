@@ -30,6 +30,11 @@
 	<script src="../resources/js/lib/jquery-3.2.1.min.js"></script>
 	<script src="../resources/js/ui.global.js"></script>
 	<script src="../resources/js/ui.common.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
     <style>
         .coding-list h2{margin-top:2rem}
         .coding-list h3{margin-top:1.51rem; padding-left:2rem;}
@@ -87,6 +92,7 @@
                 <a target="sk" href="../html/safety_management.html">내현장 안전관리</a>
 
                 <a target="sk" href="../html/safety_training.html">안전교육</a>
+                <a target="sk" href="../html/safety_make.html">교육정보 생성</a>
 
                 <h2>con-talk</h2>
                 <a target="sk" href="../html/contalk.html">con-talk</a>
@@ -283,7 +289,23 @@
                     callback: function(v) { 
                         console.log('callback', v); 
                     }
-                });">교육정보 (신규교육)</button>
+                });">
+                교육정보 (신규교육)</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                    id: 'modal_eduinfo_detail', 
+                    full:true,
+                    src: '../modal/modal_eduinfo_detail.html', 
+                    ps: 'center', 
+                    closeCallback: function(v) { 
+                        console.log('close callback', v); 
+                    },
+                    callback: function(v) { 
+                        console.log('callback', v); 
+                    }
+                });">
+                교육정보 (신규교육) 상세보기</button>
 
                 <button type="button" id="test1" onclick="
                 $plugins.uiModalOpen({ 

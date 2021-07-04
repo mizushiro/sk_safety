@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index, follow" />
+
+    <meta name="subject" content="SK건설 안전관리 시스템">
+    <meta name="author" content="SK건설">
+    <meta name="title" content="SK건설 세이프티" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="SK건설, SK, SK ecoplant, safety platform, 안전, 관리, 건축" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SK건설 세이프티" />
+    <meta property="og:url" content="http://www.skecoplant.com/" />
+    
+    <title>교육정보 생성 | SK건설 세이프티</title>
+
+    <link rel="alternate" hreflang="ko" href="http://www.skecoplant.com/" />
+    <link rel="canonical" href="http://www.skecoplant.com/" />
+    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <link rel="apple-touch-icon" href="../resources/img/common/ico_app.png" >
+
+	<link rel="stylesheet" href="../resources/css/ui.base.css">
+	<script src="../resources/js/lib/jquery-3.2.1.min.js"></script>
+	<script src="../resources/js/ui.global.js"></script>
+	<script src="../resources/js/ui.common.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <style>
+    </style>
+</head>
+<body>
+    <div class="base-wrap">
+        <header class="base-header" 
+        data-type="sub" 
+        data-title="교육정보 생성" 
+        ></header>
+        <!-- content -->
+        <main class="base-body">
+            <div class="section-wrap">
+                <!-- 시공물 종류 -->
+                <section class="section-item mgt-n">
+                    <h3 class="tit-sec a11y-hidden">안전교육 기본정보</h3>
+                    <div class="form-wrap">
+                        <div class="form-dl mgt-n">
+                            <div class="form-dt">
+                                <label class="form-tit" for="training1">교육종류</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <input type="text" id="training1" class="inp-base" value="고덕 그라시움 신규 채용교육" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="training3">교육시간</label>
+                            </div>
+      
+                            <div class="form-dd col2-c">
+                                <div class="form-item">
+                                    <input type="tel" id="training3" class="inp-base" value="00:00" title="시작시간">
+                                    <div class="form-div">~</div>
+                                    <input type="tel" class="inp-base" value="00:00" title="종료시간">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="training4">교육내용 (교육명)</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <input type="text" id="training4" class="inp-base" value="고덕 그라시움 신규 채용 교육 내용" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //시공물 종류 -->
+
+                <!-- 현장 대표사진 등록 -->
+                <hr class="hr-sec">
+                <section class="section-item">
+                    <div class="tit-sec type-line">
+                        <h3 class="tit">교육 참석자 확인</h3>
+                        <div class="tit-util">
+                            <button type="button" class="btn-photo">
+                                <span class="a11y-hidden">촬영</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="swiper-week">
+                        <div>
+                            <div class="photo-2col">
+                                <div class="item"></div>
+                                <div class="item"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="photo-2col">
+                                <div class="item"></div>
+                                <div class="item"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //현장 대표사진 등록 -->
+
+                <div class="btn-area stick">
+                    <button type="button" class="btn-base large line">
+                        <span>교육정보 QR 생성</span>
+                    </button>
+                    <button type="button" class="btn-base large primary">
+                        <span>교육정보 저장</span>
+                    </button>
+                </div>
+
+                <!-- 안전교육정보 -->
+                <hr class="hr-sec">
+                <section class="section-item">
+                    <div class="tit-sec type-line mgb-n">
+                        <h3 class="tit">주간 교육현황</h3>
+                    </div>
+
+                    <div class="swiper-weekedu">
+                        <div>
+                            <div class="tbl-base type-b">
+                                <table>
+                                    <caption>교육종류, 교육일시, 인원, 주관 정보입니다.</caption>
+                                    <colgroup>
+                                        <col style="width:6rem">
+                                        <col style="width:auto">
+                                        <col style="width:6rem">
+                                        <col style="width:6rem">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">교육종류</th>
+                                            <th scope="col">교육일시</th>
+                                            <th scope="col">인원</th>
+                                            <th scope="col">주관</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ta-c">
+                                                <em class="flag new">신규</em>
+                                            </td>
+                                            <td>21.03.04 09:00~11:00</td>
+                                            <td class="ta-c">15명</td>
+                                            <td class="ta-c">김철수</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ta-c">
+                                                <em class="flag spc">특별</em>
+                                            </td>
+                                            <td>21.03.04 09:00~11:00</td>
+                                            <td class="ta-c">15명</td>
+                                            <td class="ta-c">김철수</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ta-c">
+                                                <em class="flag any">정기</em>
+                                            </td>
+                                            <td>21.03.04 09:00~11:00</td>
+                                            <td class="ta-c">15명</td>
+                                            <td class="ta-c">김철수</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="tbl-base type-b">
+                                <table>
+                                    <caption>교육종류, 교육일시, 인원, 주관 정보입니다.</caption>
+                                    <colgroup>
+                                        <col style="width:6rem">
+                                        <col style="width:auto">
+                                        <col style="width:6rem">
+                                        <col style="width:6rem">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">교육종류</th>
+                                            <th scope="col">교육일시</th>
+                                            <th scope="col">인원</th>
+                                            <th scope="col">주관</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ta-c">
+                                                <em class="flag new">신규</em>
+                                            </td>
+                                            <td>21.03.04 09:00~11:00</td>
+                                            <td class="ta-c">15명</td>
+                                            <td class="ta-c">김철수</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ta-c">
+                                                <em class="flag spc">특별</em>
+                                            </td>
+                                            <td>21.03.04 09:00~11:00</td>
+                                            <td class="ta-c">15명</td>
+                                            <td class="ta-c">김철수</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ta-c">
+                                                <em class="flag any">정기</em>
+                                            </td>
+                                            <td>21.03.04 09:00~11:00</td>
+                                            <td class="ta-c">15명</td>
+                                            <td class="ta-c">김철수</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //안전교육정보 -->
+
+            </div>
+           
+        </main>
+        <!-- //content -->
+        
+    </div>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9906c009f8e9c9a1a36542d2c08c1361&libraries=services"></script>
+    <script> 
+        ;(function($, win, doc, undefined) {
+            $(doc).ready(function() {
+               
+                //기본 실행
+                $plugins.common.init();
+
+                var currentSlide = $('.swiper-week').slick({
+                    arrows: false,
+                    dots: true,
+                    infinite: false
+                });
+
+                var currentSlide2 = $('.swiper-weekedu').slick({
+                    arrows: false,
+                    dots: true,
+                    infinite: false
+                });
+
+            });
+        })(jQuery, window, document);
+    </script>
+    
+</body>
+</html>
