@@ -76,7 +76,7 @@
                 <a target="sk" href="../html/site_worker.html"><em class="flag">완료</em>내 현장</a>
                 <a target="sk" href="../html/site_map.html"><em class="flag">완료</em>지도</a>
                 <a target="sk" href="../html/site_map2.html"><em class="flag">완료</em>지도-주소</a>
-                <a target="sk" href="../html/worker_mypage.html">마이페이지</a>
+                <a target="sk" href="../html/worker_mypage.html"><em class="flag">완료</em>마이페이지</a>
 
                 
 
@@ -85,14 +85,14 @@
                 <a target="sk" href="../html/site_add.html"><em class="flag">완료</em>내 현장 추가하기</a>
                 <a target="sk" href="../html/site_todayrisk.html"><em class="flag">완료</em>일일위험작업 현황</a>
 
-                <a target="sk" href="../html/site_profile.html">근로자 프로필</a>
-                <a target="sk" href="../html/site_checkAtt.html">오늘 출석 근로자 현황</a>
+                <a target="sk" href="../html/site_profile.html"><em class="flag">완료</em>근로자 프로필</a>
+                <a target="sk" href="../html/site_checkAtt.html"><em class="flag">완료</em>오늘 출석 근로자 현황</a>
 
                 <h2>안전관리</h2>
-                <a target="sk" href="../html/safety_management.html">내현장 안전관리</a>
+                <a target="sk" href="../html/safety_management.html"><em class="flag">완료</em>내현장 안전관리</a>
 
-                <a target="sk" href="../html/safety_training.html">안전교육</a>
-                <a target="sk" href="../html/safety_make.html">교육정보 생성</a>
+                <a target="sk" href="../html/safety_training.html"><em class="flag">완료</em>안전교육</a>
+                <a target="sk" href="../html/safety_make.html"><em class="flag">완료</em>교육정보 생성</a>
 
                 <h2>con-talk</h2>
                 <a target="sk" href="../html/contalk.html">con-talk</a>
@@ -200,128 +200,134 @@
                             console.log('callback', v); 
                         }
                     });">
-                채용교육완료</button>
+                <em class="flag">완료</em>채용교육완료</button>
 
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 
-                    id: 'modal_checklist', 
-                    src: '../modal/modal_checklist.html', 
-                    ps: 'center', 
-                    closeCallback: function(v) { 
-                        console.log('close callback', v); 
-                    },
-                    callback: function(v) { 
-                        console.log('callback', v); 
-                    }
-                });"><em class="flag">완료</em>점검항목 확인하기</button>
-
-                <button type="button" onclick="
-                    $plugins.uiModalOpen({ 
-                    id: 'modal_qr', 
-                    src: '../modal/modal_qr.html', 
-                    ps: 'center', 
-                    closeCallback: function(v) { 
-                        console.log('close callback', v); 
-                    },
-                    callback: function(v) { 
-                        console.log('callback', v); 
-                    }
-                });"><em class="flag">완료</em>내현장 Qr 코드 확인</button>
-
-                <button type="button" onclick="
-                    $plugins.uiModalOpen({ 
-                    id: 'modal_cbse', 
-                    full:true,
-                    src: '../modal/modal_cbse.html', 
-                    ps: 'center', 
-                    closeCallback: function(v) { 
-                        console.log('close callback', v); 
-                    },
-                    callback: function(v) { 
-                        console.log('callback', v); 
-                    }
-                });"><em class="flag">완료</em>기초안전교육 이수증</button>
-
-                <button type="button" onclick="
-                    $plugins.uiModalOpen({ 
-                    id: 'modal_typework', 
-                    full:true,
-                    src: '../modal/modal_typeWork.html', 
-                    ps: 'center', 
-                    closeCallback: function(v) { 
-                        console.log('close callback', v); 
-                    },
-                    callback: function(v) { 
-                        console.log('callback', v); 
-                        $plugins.uiTab({ 
-                            id:'exeWorkTab', 
-                            current:0, 
-                            callback:function(v){
-                                console.log(111111);
-                            } 
-                        });
-                    }
-                });"><em class="flag">완료</em>직종선택</button>
-
-                <button type="button" onclick="
-                    $plugins.uiModalOpen({ 
-                    id: 'modal_inspector', 
-                    full:true,
-                    src: '../modal/modal_inspector.html', 
-                    ps: 'center', 
-                    closeCallback: function(v) { 
-                        console.log('close callback', v); 
-                    },
-                    callback: function(v) { 
-                        console.log('callback', v); 
-                    }
-                });"><em class="flag">완료</em>점검자지정</button>
-
-                <button type="button" onclick="
-                    $plugins.uiModalOpen({ 
-                    id: 'modal_eduinfo', 
-                    full:true,
-                    src: '../modal/modal_eduinfo.html', 
-                    ps: 'center', 
-                    closeCallback: function(v) { 
-                        console.log('close callback', v); 
-                    },
-                    callback: function(v) { 
-                        console.log('callback', v); 
-                    }
+                        id: 'modal_checklist', 
+                        src: '../modal/modal_checklist.html', 
+                        ps: 'center', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
                 });">
-                교육정보 (신규교육)</button>
+                <em class="flag">완료</em>점검항목 확인하기</button>
 
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 
-                    id: 'modal_eduinfo_detail', 
-                    full:true,
-                    src: '../modal/modal_eduinfo_detail.html', 
-                    ps: 'center', 
-                    closeCallback: function(v) { 
-                        console.log('close callback', v); 
-                    },
-                    callback: function(v) { 
-                        console.log('callback', v); 
-                    }
+                        id: 'modal_qr', 
+                        src: '../modal/modal_qr.html', 
+                        ps: 'center', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
                 });">
-                교육정보 (신규교육) 상세보기</button>
+                <em class="flag">완료</em>내현장 Qr 코드 확인</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                        id: 'modal_cbse', 
+                        full:true,
+                        src: '../modal/modal_cbse.html', 
+                        ps: 'center', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
+                });">
+                <em class="flag">완료</em>기초안전교육 이수증</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                        id: 'modal_typework', 
+                        full:true,
+                        src: '../modal/modal_typeWork.html', 
+                        ps: 'center', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                            $plugins.uiTab({ 
+                                id:'exeWorkTab', 
+                                current:0, 
+                                callback:function(v){
+                                    console.log(111111);
+                                } 
+                            });
+                        }
+                });">
+                <em class="flag">완료</em>직종선택</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                        id: 'modal_inspector', 
+                        full:true,
+                        src: '../modal/modal_inspector.html', 
+                        ps: 'center', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
+                });">
+                <em class="flag">완료</em>점검자지정</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                        id: 'modal_eduinfo', 
+                        full:true,
+                        src: '../modal/modal_eduinfo.html', 
+                        ps: 'center', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
+                });">
+                <em class="flag">완료</em>교육정보 (신규교육)</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                        id: 'modal_eduinfo_detail', 
+                        full:true,
+                        src: '../modal/modal_eduinfo_detail.html', 
+                        ps: 'center', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
+                });">
+                <em class="flag">완료</em>교육정보 (신규교육) 상세보기</button>
 
                 <button type="button" id="test1" onclick="
-                $plugins.uiModalOpen({ 
-                    type: 'alert', //'confirm'
-                    ps: 'center', 
-                    sMessage: '<p><em>근로자 가입이 완료되었습니다.</em></p><p>편리한 현장 서비스 제공을 위해 내 이력을 작성하세요</p>',
-                    sBtnConfirmTxt: '확인',
-                    sConfirmCallback: function() { 
-                        console.log('확인'); 
-                        $plugins.uiModalClose({ 
-                            id: 'uiSystemModal', 
-                            remove: true,
-                            endfocus: 'test1' //$('#idname')
-                        });
-                    }
-                });"><em class="flag">완료</em>가입완료</button>
+                    $plugins.uiModalOpen({ 
+                        type: 'alert', //'confirm'
+                        ps: 'center', 
+                        sMessage: '<p><em>근로자 가입이 완료되었습니다.</em></p><p>편리한 현장 서비스 제공을 위해 내 이력을 작성하세요</p>',
+                        sBtnConfirmTxt: '확인',
+                        sConfirmCallback: function() { 
+                            console.log('확인'); 
+                            $plugins.uiModalClose({ 
+                                id: 'uiSystemModal', 
+                                remove: true,
+                                endfocus: 'test1' //$('#idname')
+                            });
+                        }
+                });">
+                <em class="flag">완료</em>가입완료</button>
             </div>
         </main>
         <!-- //content -->
