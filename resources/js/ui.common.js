@@ -259,6 +259,12 @@
 					$tit.html(tit);
 					break;
 
+				case 'qr':
+					//뒤로가기
+					$html.addClass('type-qr');
+					$tit.html(tit);
+					break;
+
 				case 'alarm':
 					//뒤로가기,알림설정
 					$html.addClass('type-alarm');

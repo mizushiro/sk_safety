@@ -57,8 +57,12 @@
             <section class="section-item pdt-n">
                 <div class="risk-head align-v">
                     <div class="inp-radio round">
-                        <input type="radio" id="riskstate1" name="riskstate" checked>
-                        <label for="riskstate1">점검대기</label>
+                        <input type="radio" id="riskstate0" name="riskstate" checked>
+                        <label for="riskstate0">전체</label>
+                    </div>
+                    <div class="inp-radio round">
+                        <input type="radio" id="riskstate1" name="riskstate">
+                        <label for="riskstate1">작업대기</label>
                     </div>
                     <div class="inp-radio round">
                         <input type="radio" id="riskstate2" name="riskstate">
@@ -146,6 +150,29 @@
                         <div class="info">
                             <a href="#">
                                 <span class="flag st-3">완료</span> 
+                                <div class="tit">
+                                    <span>[유진전기]</span>
+                                    107 동 3층 정전작업
+                                </div>
+                                <div class="etc">
+                                    <span>No.C213778</span>
+                                    <span>점검자 : <b>김철수</b></span>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="item">
+                        <div class="inp-check">
+                            <input type="checkbox" id="점검자지정4">
+                            <label for="점검자지정4">
+                                <span class="a11y-hidden">김철수</span>
+                            </label>
+                            <span class="bg"></span>
+                        </div>
+                        <div class="info">
+                            <a href="#">
+                                <span class="flag st-4">작업중</span> 
                                 <div class="tit">
                                     <span>[유진전기]</span>
                                     107 동 3층 정전작업
