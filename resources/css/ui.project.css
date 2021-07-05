@@ -3572,7 +3572,7 @@ dl.list-base > div,
 .list-network .opt>*+*{
 	padding-left: 1rem;
 }
-.opt-div>*::before,
+.opt-div>*+*::before,
 .list-network .opt>*::before {
 	content: "";
 	display: block;
