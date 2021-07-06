@@ -3316,7 +3316,7 @@ a.ui-acco-btn:after {
 }
 
 .list-base.box>li:last-child {
-	border: 0;
+	border-bottom: 0;
 }
 
 dl.list-base > div{
