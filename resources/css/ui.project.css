@@ -597,7 +597,24 @@ button.inp-select {
 	font-size: 1.5rem;
 	padding: 0;
 }
-
+div.inp-base {
+	border: 0;
+	border-bottom: 1px solid #ddd;
+	width: 100%;
+	min-height: 4rem;
+	height: auto;
+	font-size: 1.5rem;
+	padding:1rem 0;
+}
+textarea.inp-base {
+	border: 0;
+	border-bottom: 1px solid #ddd;
+	width: 100%;
+	min-height: 6rem;
+	height: auto;
+	font-size: 1.5rem;
+	padding:1rem 0;
+}
 input[type="date"]::-webkit-calendar-picker-indicator {
 	color: rgba(0, 0, 0, 0);
 	opacity: 1;
@@ -901,7 +918,16 @@ input[type="date"]::after {
 .btn-area .btn-base+.btn-base {
 	margin-left: .7rem;
 }
-
+.btn-base.arrow::after{
+	content:"";
+	display:inline-block;
+	position: relative;
+	top: 0;
+	width: 1rem;
+	height: 1rem;
+	background: url(../img/icon_down_p.svg) no-repeat 100% 50% / 1rem;
+	transform: rotate(-90deg);
+}
 .btn-base {
 	width: auto;
 	min-height: 4rem;
@@ -1585,7 +1611,7 @@ a.btn-base {
 
 .ps-bottom .ui-modal-footer {
 	overflow: hidden;
-	padding: 0 2rem 2rem;
+	padding: 0;
 }
 
 .ps-bottom .ui-modal-footer .btn-wrap,
@@ -1810,7 +1836,13 @@ a.ui-acco-btn:after {
 	text-decoration: none;
 	color: #000;
 }
-
+.type-workletter .ui-acco-btn:after {
+	background-color:#fff;
+	border:1px solid #eee;
+	width:2rem;
+	height:2rem;
+	background-size:1rem;
+}
 
 /* content */
 .lang-select {
@@ -2364,6 +2396,24 @@ a.ui-acco-btn:after {
 	right: 0.6rem;
 	top: 1.5rem;
 }
+
+.inp-wrap.type-search {
+	position: relative;
+	width: 100%;
+}
+
+.inp-wrap.type-search .inp-base {
+	background: #fff;
+	width: 100%;
+	padding: 0 4rem 0 0
+}
+
+.inp-wrap.type-search .btn-search {
+	position: absolute;
+	right: 0;
+	top: 0.5rem;
+}
+
 
 .latest-list {
 	width: 100%;
@@ -3603,7 +3653,7 @@ dl.list-base > div,
 	padding-left: 1rem;
 }
 .opt-div>*+*::before,
-.list-network .opt>*::before {
+.list-network .opt>*+*::before {
 	content: "";
 	display: block;
 	width: 1px;
@@ -5204,10 +5254,27 @@ dl.list-base > div,
 	top:-.2rem;
 }
 
-
-
-
-
+.work-checklist .inp-check{
+	width:100%;
+}
+.work-checklist .inp-check label {
+	width:100%;
+	padding:0 3rem 0 0;
+}
+.work-checklist .inp-check label::before {
+	left:auto;
+	right:0;
+	top:-.1rem;
+}
+.modal-contalk .ui-modal-header {
+	background: transparent;
+	border:0;
+}
+.modal-contalk.ps-bottom .ui-modal-body{
+	padding-top:0;
+}
+.modal-contalk.ps-bottom .section-wrap {
+}
 
 
 

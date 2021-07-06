@@ -1,0 +1,71 @@
+<section class="ui-modal" id="modal_pointout">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit">지적 대상 근로자만 선택하세요.</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_pointout', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+            <div>
+                <div class="inp-check round">
+                    <input type="checkbox" id="allpointout">
+                    <label for="allpointout">전체선택</label>
+                </div>
+            </div>
+
+            <hr class="hr-cont">
+            <ul class="list-base type-insp">
+                <li>
+                    <div class="inp-check">
+                        <input type="checkbox" id="insp1" name="insp">
+                        <label for="insp1" class="fx-sb">
+                            <span>가길동 (작업반장)</span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="inp-check">
+                        <input type="checkbox" id="insp2" name="insp">
+                        <label for="insp2" class="fx-sb">
+                            <span>가길동</span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="inp-check">
+                        <input type="checkbox" id="insp3" name="insp">
+                        <label for="insp3" class="fx-sb">
+                            <span>가길동</span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="inp-check">
+                        <input type="checkbox" id="insp4" name="insp">
+                        <label for="insp4" class="fx-sb">
+                            <span>가길동</span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+        <div class="ui-modal-footer">
+            <div class="btn-area stick">
+                <button type="button" class="btn-base ">
+                    <span>취소</span>
+                </button>
+                <button type="button" class="btn-base primary">
+                    <span>확인</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+

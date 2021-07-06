@@ -86,6 +86,7 @@
                 <a target="sk" href="../html/site_todayrisk.html"><em class="flag">완료</em>일일위험작업 현황</a>
 
                 <a target="sk" href="../html/workletter.html">작업허가서 작성</a>
+                <a target="sk" href="../html/workletter_check.html">작업허가서 점검</a>
 
                 <a target="sk" href="../html/site_profile.html"><em class="flag">완료</em>근로자 프로필</a>
                 <a target="sk" href="../html/site_checkAtt.html"><em class="flag">완료</em>오늘 출석 근로자 현황</a>
@@ -149,6 +150,49 @@
 
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 
+                        id: 'modal_contalk', 
+                        src: '../modal/modal_contalk.html', 
+                        ps: 'bottom', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
+                    });">
+                contalk 내용입력</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                        id: 'modal_contalk2', 
+                        src: '../modal/modal_contalk2.html', 
+                        ps: 'bottom', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
+                    });">
+                contalk 내용입력2</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                        id: 'modal_pointout',
+                        full:true, 
+                        src: '../modal/modal_pointout.html', 
+                        ps: 'center', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
+                    });">
+                지적대상 근로자 선택</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
                         id: 'modal_digitalsign', 
                         full:true,
                         src: '../modal/modal_digitalSign.html', 
@@ -189,6 +233,7 @@
                         }
                     });">
                 <em class="flag">완료</em>점검자 지정 안내</button>
+                
 
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 
