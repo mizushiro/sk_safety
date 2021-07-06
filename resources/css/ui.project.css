@@ -8,7 +8,7 @@
 
 .base-wrap {
 	width: 100%;
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 
 .tab-bar {
@@ -371,8 +371,6 @@ p[class*="bul-"] {
 	line-height: 1.5;
 	display: block;
 }
-
-
 
 p.bul-care {
 	padding-left: 1.5rem;
@@ -5169,6 +5167,12 @@ dl.list-base > div,
 .type-workletter .ui-acco-btn{
 	display: flex;
 	justify-content: space-between;
+}
+.type-workletter .ui-acco-tit{
+	position: -webkit-sticky;
+	position: sticky;
+	top:5.5rem;
+	z-index: 10;
 }
 .nec{
 	color:#E7565F !important;
