@@ -85,8 +85,8 @@
                 <a target="sk" href="../html/site_add.html"><em class="flag">완료</em>내 현장 추가하기</a>
                 <a target="sk" href="../html/site_todayrisk.html"><em class="flag">완료</em>일일위험작업 현황</a>
 
-                <a target="sk" href="../html/workletter.html">작업허가서 작성</a>
-                <a target="sk" href="../html/workletter_check.html">작업허가서 점검</a>
+                <a target="sk" href="../html/workletter.html"><em class="flag">완료</em>작업허가서 작성</a>
+                <a target="sk" href="../html/workletter_check.html"><em class="flag">완료</em>작업허가서 점검</a>
 
                 <a target="sk" href="../html/site_profile.html"><em class="flag">완료</em>근로자 프로필</a>
                 <a target="sk" href="../html/site_checkAtt.html"><em class="flag">완료</em>오늘 출석 근로자 현황</a>
@@ -98,8 +98,8 @@
                 <a target="sk" href="../html/safety_make.html"><em class="flag">완료</em>교육정보 생성</a>
 
                 <h2>con-talk</h2>
-                <a target="sk" href="../html/contalk.html">con-talk</a>
-                <a target="sk" href="../html/contalk_list.html">con-talk 목록</a>
+                <a target="sk" href="../html/contalk.html"><em class="flag">완료</em>con-talk</a>
+                <a target="sk" href="../html/contalk_list.html"><em class="flag">완료</em>con-talk 목록</a>
 
                 <hr class="ht-cont">
                 <h2>Toast</h2>
@@ -160,7 +160,7 @@
                             console.log('callback', v); 
                         }
                     });">
-                contalk 내용입력</button>
+                <em class="flag">완료</em>contalk 내용입력</button>
 
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 
@@ -174,7 +174,21 @@
                             console.log('callback', v); 
                         }
                     });">
-                contalk 내용입력2</button>
+                <em class="flag">완료</em>contalk 내용입력2</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                        id: 'modal_photolist', 
+                        src: '../modal/modal_photolist.html', 
+                        ps: 'bottom', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
+                    });">
+                <em class="flag">완료</em>contalk 사진모아보기</button>
 
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 
@@ -189,7 +203,7 @@
                             console.log('callback', v); 
                         }
                     });">
-                지적대상 근로자 선택</button>
+                <em class="flag">완료</em>지적대상 근로자 선택</button>
 
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 

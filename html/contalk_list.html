@@ -37,63 +37,72 @@
 <body>
     <div class="base-wrap">
         <header class="base-header" 
-        
         data-type="contalk" 
         ></header>
         <!-- content -->
         <main class="base-body">
             <h2 class="a11y-hidden">talk</h2>
             
+            <div class="talk-noti ui-sp">
+                <div class="day">
+                    <button type="button" class="prev-day">
+                        <span class="a11y-hidden">이전</span>
+                    </button>
+                    <span>2021-07-07</span>
+                    <button type="button" class="next-day">
+                        <span class="a11y-hidden">다음</span>
+                    </button>
+                </div>
+                <input type="date" class="btn-date" >
+            </div>
+
             <div class="ui-sp talk-search type-c">
                 <div class="talk-search-wrap type-ts">
                     <div class="form-item">
                         <div class="inp-wrap">
                             <input type="text" class="inp-base" value="" placeholder="내용을 입력하세요.">
+                            
                         </div>
-                        <button type="button" class="btn-filter ui-drop" id="uiFilterDrop">
-                            <span class="a11y-hidden">설정</span>
+                        <button type="button" class="btn-search">
+                            <span class="a11y-hidden">검색</span>
                         </button>
-                        <section class="ui-drop-pnl talk-filter" data-id="uiFilterDrop">
-                            <div class="ui-drop-box">
-                                <button type="button" class="filter-item" onclick="
-                                    alert('전체대화'); 
-                                    $plugins.uiDropdownToggle({ 
-                                        id:'uiFilterDrop',
-                                        state: 'close' 
-                                    });">
-                                    <span>전체대화</span>
-                                </button>
-                                <button type="button" class="filter-item" onclick="
-                                    alert('미수신'); 
-                                    $plugins.uiDropdownToggle({ 
-                                        id:'uiFilterDrop',
-                                        state: 'close' 
-                                    });">
-                                    <span>미수신</span>
-                                </button>
-                                <button type="button" class="filter-item" onclick="
-                                    alert('답변수신'); 
-                                    $plugins.uiDropdownToggle({ 
-                                        id:'uiFilterDrop',
-                                        state: 'close' 
-                                    });">
-                                    <span>답변수신</span>
-                                </button>
-                            </div>
-                            <button type="button" class="ui-drop-close">
-                                <span class="hide">닫기</span>
-                            </button>
-                        </section>
                     </div>
                 </div>
             </div>
 
-            <!-- talk area -->
+            
             <div class="section-talk ui-height" data-type='fix'>
+                <div class="talk-ctg">
+                    <div class="inp-radio round">
+                        <input type="radio" id="talkCtg1" name="talkCtg" checked>
+                        <label for="talkCtg1">전체</label>
+                    </div>
+                    <div class="inp-radio round">
+                        <input type="radio" id="talkCtg2" name="talkCtg">
+                        <label for="talkCtg2">점검완료</label>
+                    </div>
+                    <div class="inp-radio round">
+                        <input type="radio" id="talkCtg3" name="talkCtg">
+                        <label for="talkCtg3">미완료</label>
+                    </div>
+    
+                    <select class="inp-select round" id="테스트21" title="조건별 선택">
+                        <option>조건별 선택</option>
+                        <option>업체명</option>
+                        <option>작업명</option>
+                    </select>
+                </div>
+
                 <div class="talk-list ">
                     <ul class="ui-drag">
                         <li class="item">
                             <div class="item-wrap">
+                                <div class="inp-check">
+                                    <input type="checkbox" id="checklist1" name="insp">
+                                    <label for="checklist1" class="fx-sb">
+                                        <span class="a11y-hidden">선택</span>
+                                    </label>
+                                </div>
                                 <div class="photo">
                                     <img src="../resources/img/@img1.png" alt="">
                                 </div>
@@ -118,6 +127,12 @@
                         </li>
                         <li class="item">
                             <div class="item-wrap">
+                                <div class="inp-check">
+                                    <input type="checkbox" id="checklist2" name="insp">
+                                    <label for="checklist2" class="fx-sb">
+                                        <span class="a11y-hidden">선택</span>
+                                    </label>
+                                </div>
                                 <div class="photo">
                                     <img src="../resources/img/@img1.png" alt="">
                                 </div>
@@ -142,6 +157,12 @@
                         </li>
                         <li class="item">
                             <div class="item-wrap">
+                                <div class="inp-check">
+                                    <input type="checkbox" id="checklist3" name="insp">
+                                    <label for="checklist3" class="fx-sb">
+                                        <span class="a11y-hidden">선택</span>
+                                    </label>
+                                </div>
                                 <div class="photo">
                                     <img src="../resources/img/@img1.png" alt="">
                                 </div>
@@ -166,6 +187,12 @@
                         </li>
                         <li class="item">
                             <div class="item-wrap">
+                                <div class="inp-check">
+                                    <input type="checkbox" id="checklist4" name="insp">
+                                    <label for="checklist4" class="fx-sb">
+                                        <span class="a11y-hidden">선택</span>
+                                    </label>
+                                </div>
                                 <div class="photo">
                                     <img src="../resources/img/@img1.png" alt="">
                                 </div>
@@ -191,18 +218,41 @@
                     </ul>
                 </div>
             </div>
-            <!-- //talk area -->
 
-            <div class="ui-sp talk-search">
-                <div class="talk-search-wrap">
-                    <div class="group">
-                        <button type="button" class="btn-base round-s">
-                            <span>점검일지만들기</span>
+            <div class="ui-sp talk-search record">
+                <div class="talk-latest-wrap">
+                    <div class="tit">
+                        <span>최근검색</span>
+                        <button type="button" class="ui-close">
+                            <span>닫기</span>
                         </button>
                     </div>
-                    <div class="group">
-                        <button type="button" class="btn-base primary round-s">
-                            <span>편집</span>
+                    <div class="latest-list">
+                        <ul class="latest-list-wrap">
+                            <li>
+                                <button type="button" class="word">일우건설</button>
+                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
+                            </li>
+                            <li>
+                                <button type="button" class="word">밀폐공간</button>
+                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
+                            </li>
+                            <li>
+                                <button type="button" class="word">중지</button>
+                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
+                            </li>
+                            <li>
+                                <button type="button" class="word">홍길동</button>
+                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="talk-search-wrap">
+                    <div class="group ">
+                        <button type="button" class="btn-base round-s">
+                            <span>점검일지</span>
                         </button>
                     </div>
                 </div>
@@ -210,24 +260,7 @@
         </main>
         <!-- //content -->
 
-        <nav class="ui-sp nav-gnb">
-            <h2 class="a11y-hidden">메뉴</h2>
-            <div class="nav-wrap">
-                <a href="#" class="nav-btn n1 selected">
-                    <span>내현장</span>
-                </a>
-                <a href="#" class="nav-btn n2">
-                    <span>Con-talk</span>
-                    <em class="sum-box">0</em>
-                </a>
-                <a href="#" class="nav-btn n3">
-                    <span>안전관리</span>
-                </a>
-                <a href="#" class="nav-btn n4">
-                    <span>근로자조회</span>
-                </a>
-            </div>
-        </nav>
+        <div class="tab-bar"></div>
 
         
     </div>

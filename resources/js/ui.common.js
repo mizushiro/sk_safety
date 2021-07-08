@@ -103,9 +103,30 @@
 				});
 			});
 
-			
+			$('.ui-talkview').off('click.talk').on('click.talk', function(){
+				var $this = $(this);
+				var $item = $(this).closest('.talk-item');
 
+				if (!$item.hasClass('view')) {
+					$item.addClass('view');
+				} else {
+					$item.removeClass('view');
+				}
+			});
 
+			$('.ui-reply').off('click.reply').on('click.reply', function(){
+				var $reply = $('.ui-talkreply');
+
+				$reply.addClass('view');
+				$plugins.common.contentHeight();
+			});
+
+			$('.ui-talkreply .ui-close').on('click.reply', function(){
+				var $reply = $('.ui-talkreply');
+
+				$reply.removeClass('view');
+				$plugins.common.contentHeight();
+			});
 
 		},
 		pageTop: function(v){

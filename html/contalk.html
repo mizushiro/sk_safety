@@ -44,128 +44,170 @@
         <main class="base-body">
             <h2 class="a11y-hidden">talk</h2>
             <div class="talk-noti ui-sp">
-                <a href="#" class="noti">Talk 게시판 주요 알림 공지</a>
-                <a href="#" class="sos">임금체불 SOS</a>
+
+                <div class="day">
+                    <button type="button" class="prev-day">
+                        <span class="a11y-hidden">이전</span>
+                    </button>
+                    <span>2021-07-07</span>
+                    <button type="button" class="next-day">
+                        <span class="a11y-hidden">다음</span>
+                    </button>
+                </div>
+                <input type="date" class="btn-date" >
             </div>
 
             <!-- talk area -->
             <div class="section-talk ui-height" data-type="fix">
+                <div class="talk-ctg">
+                    <div class="inp-radio round">
+                        <input type="radio" id="talkCtg1" name="talkCtg" checked>
+                        <label for="talkCtg1">전체</label>
+                    </div>
+                    <div class="inp-radio round">
+                        <input type="radio" id="talkCtg2" name="talkCtg">
+                        <label for="talkCtg2">점검완료</label>
+                    </div>
+                    <div class="inp-radio round">
+                        <input type="radio" id="talkCtg3" name="talkCtg">
+                        <label for="talkCtg3">미완료</label>
+                    </div>
+                </div>
+
                 <div class="talk-date">
                    <div class="box">2021.5.23(일)</div>
                 </div>
 
-                <div class="talk-item">
-                    <div class="photo">
-                        <img src="" alt="">
-                    </div>
+                <!-- 톡 주제 -->
+                <div class="talk-item subject">
                     <div class="item">
-                        <div class="name">관리자</div>
                         <div class="box">
-                            <div class="talk">
-                                작업허가서 검토 요청합니다. <em>특별 일우건설</em> 밀폐공간 작업
+                            <div class="box-wrap">
+                                <div class="tit">
+                                    <h3>
+                                        작업허가서 <em>작업중지</em> 안내
+                                    </h3>
+                                    <div class="flag">
+                                        작업완료
+                                    </div>
+                                </div>
+                                <div class="opt-div">
+                                    <span>특별</span>
+                                    <span>안심건설</span>
+                                    <span>미폐공간 작업</span>
+                                </div>
+                                <div class="cont">
+                                    <ul>
+                                        <li>작업장 조도 미확보</li>
+                                        <li>출입통제불량</li>
+                                    </ul>
+                                </div>
+                                <div class="photo-wrap">
+                                    <div class="photo-item">
+                                        <img src="../resources/img/@img1.png" alt="">
+                                    </div>
+                                    <div class="photo-item">
+                                        <img src="../resources/img/@img1.png" alt="">
+                                    </div>
+                                </div>
                             </div>
-
                             <div class="btns">
+                                <button type="button" class="ui-reply">
+                                    <span>답글달기</span>
+                                </button>
                                 <button type="button">
                                     <span>상세보기</span>
-                                </button>
-                                <button type="button">
-                                    <span>공유하기</span>
-                                </button>
-                            </div>
-                            <div class="view">
-                                <button type="button">
-                                    <span>전체보기</span>
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div class="time">
-                        오후 4:20
-                    </div>
                 </div>
 
+                <!-- 톡 조치자 -->
                 <div class="talk-item me">
                     <div class="photo">
                         <img src="" alt="">
                     </div>
                     <div class="item">
-                        <div class="name">답변완료</div>
+                        <div class="name">
+                            <span>점검자에게 회신</span>
+                            <span class="time">
+                                오후 4:20
+                            </span>
+                        </div>
                         <div class="box">
-                            <div class="talk">
-                                안전나간대 복구 완료
+                            <div class="box-wrap">
+                                <div class="talk">
+                                    안전나간대 복구 완료 안전나간대 복구 완료 안전나간대 복구 완료
+                                </div>
+                                <div class="photo-wrap">
+                                    <div class="photo-item">
+                                        <img src="../resources/img/@img1.png" alt="">
+                                    </div>
+                                    <div class="photo-item">
+                                        <img src="../resources/img/@img1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btns">
+                                <button type="button">
+                                    <span>점검완료</span>
+                                </button>
+                                <button type="button" class="ui-reply">
+                                    <span>답글달기</span>
+                                </button>
+                                <button type="button" class="ui-talkview">
+                                    <span>펼쳐보기</span>
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="time">
-                        오후 4:20
-                    </div>
                 </div>
 
+                <!-- 톡 점검자 -->
                 <div class="talk-item">
                     <div class="photo">
                         <img src="" alt="">
                     </div>
                     <div class="item">
-                        <div class="name">관리자</div>
+                        <div class="name">
+                            <span>조치자에게 회신</span>
+                            <span class="time">
+                                오후 4:20
+                            </span>
+                        </div>
                         <div class="box">
-                            <div class="talk">
-                                작업허가서 검토 요청합니다. <em>특별 일우건설</em> 밀폐공간 작업
+                            <div class="box-wrap">
+                                <div class="talk">
+                                    작업장 조도 확보 미흡 재조치 바람 작업장 조도 확보 미흡 재조치 바람작업장 조도 확보 미흡 재조치 바람작업장 조도 확보 미흡 재조치 바람작업장 조도 확보 미흡 재조치 바람작업장 조도 확보 미흡 재조치 바람작업장 조도 확보 미흡 재조치 바람
+                                </div>
                             </div>
 
                             <div class="btns">
-                                <button type="button">
-                                    <span>상세보기</span>
+                                <button type="button" class="ui-reply">
+                                    <span>답글달기</span>
                                 </button>
-                            </div>
-                            <div class="view">
-                                <button type="button">
-                                    <span>전체보기</span>
+                                <button type="button" class="ui-talkview">
+                                    <span>펼쳐보기</span>
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div class="time">
-                        오후 4:20
-                    </div>
+                    
                 </div>
 
-                <div class="talk-item me">
-                    <div class="photo">
-                        <img src="" alt="">
-                    </div>
-                    <div class="item">
-                        <div class="name">답변완료</div>
-                        <div class="box">
-                            <div class="talk">
-                                안전나간대 복구 완료
-                            </div>
-                        </div>
-                    </div>
-                    <div class="time">
-                        오후 4:20
-                    </div>
-                </div>
             </div>
             <!-- //talk area -->
 
             <div class="ui-sp talk-search type-a">
-                <div class="talk-search-wrap">
-                    <div class="group">
-                        <button type="button" class="btn-base round-s">
-                            <span>점검일지만들기</span>
-                        </button>
-                        <button type="button" class="btn-base round-s">
-                            <span>사진모아보기</span>
-                        </button>
-                    </div>
-                    <div class="group">
-                        <button type="button" class="btn-base primary round-s">
-                            <span>목록</span>
+                
+                <div class="talk-search-wrap type-pts ui-talkreply" >
+                    <div class="tit">
+                        <span>조치자에게 회신</span>
+                        <button type="button" class="ui-close">
+                            <span>닫기</span>
                         </button>
                     </div>
-                </div>
-                <div class="talk-search-wrap type-pts">
                     <div class="form-item">
                         <button type="button" class="btn-photo">
                             <span class="a11y-hidden">사진등록</span>
@@ -173,50 +215,37 @@
                         <div class="inp-wrap">
                             <input type="text" class="inp-base" value="" placeholder="내용을 입력하세요.">
                         </div>
-                        <button type="button" class="btn-search" id="searchOpen">
-                            <span class="a11y-hidden">검색열기</span>
+                        <button type="button" class="btn">
+                            <span>확인</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="talk-search-wrap">
+                    <div class="group">
+                        <button type="button" class="btn-base round-s">
+                            <span>사진모아보기</span>
+                        </button>
+                        <button type="button" class="btn-base round-s">
+                            <span>점검일지</span>
+                        </button>
+                        <button type="button" class="btn-base round-s"  onclick="
+                        $plugins.uiModalOpen({ 
+                            id: 'modal_contalk2', 
+                            src: '../modal/modal_contalk2.html', 
+                            ps: 'bottom', 
+                            closeCallback: function(v) { 
+                                console.log('close callback', v); 
+                            },
+                            callback: function(v) { 
+                                console.log('callback', v); 
+                            }
+                        });">
+                            <span>입력</span>
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- 검색 -->
-            <div class="ui-sp talk-search type-b">
-                <div class="talk-latest-wrap">
-                    <h3 class="tit">최근검색</h3>
-                    <div class="latest-list">
-                        <ul class="latest-list-wrap">
-                            <li>
-                                <button type="button" class="word">일우건설</button>
-                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
-                            </li>
-                            <li>
-                                <button type="button" class="word">밀폐공간</button>
-                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
-                            </li>
-                            <li>
-                                <button type="button" class="word">중지</button>
-                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
-                            </li>
-                            <li>
-                                <button type="button" class="word">홍길동</button>
-                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="talk-search-wrap type-ts">
-                    <div class="form-item">
-                        <div class="inp-wrap">
-                            <input type="text" class="inp-base" value="" placeholder="내용을 입력하세요.">
-                        </div>
-                        <button type="button" class="btn-close" id="searchClose">
-                            <span class="a11y-hidden">검색닫기</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- //검색 -->
 
         </main>
         <!-- //content -->
@@ -233,15 +262,7 @@
                 //기본 실행
                 $plugins.common.init();
                 
-                $('#searchOpen').on('click', function(){
-                    $('body').addClass('talk-search-open');
-                    $plugins.common.contentHeight();
-                });
-                $('#searchClose').on('click', function(){
-                    $('body').removeClass('talk-search-open');
-                    $plugins.common.contentHeight();
-                });
-
+             
                 
             });
         })(jQuery, window, document);
