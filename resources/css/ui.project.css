@@ -2887,7 +2887,7 @@ a.ui-acco-btn:after {
 .nav-gnb {
 	width: 100%;
 	height: 6.5rem;
-	background: #ccc;
+	background: #fff;
 	z-index: 900;
 }
 
@@ -2906,7 +2906,7 @@ a.ui-acco-btn:after {
 	width: 100%;
 	padding: 1.3rem 1rem;
 	height: 6.5rem;
-	background: yellow;
+	background: #fff;
 	position: relative;
 	z-index: 1;
 	display: flex;
