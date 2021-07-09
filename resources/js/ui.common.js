@@ -38,6 +38,7 @@
 				// });
 			}
 			if ($('.tab-bar').length) {
+				console.log('tabbar');
 				$plugins.ajax.init({ 
 					id: $('.tab-bar'), 
 					url:'../inc/tabBar.html', 
