@@ -41,7 +41,7 @@
 				console.log('tabbar');
 				$plugins.ajax.init({ 
 					id: $('.tab-bar'), 
-					url:'../inc/tabBar.html', 
+					url:'../inc/tabbar.html', 
 					page:true, 
 					callback:$plugins.common.tabBar 
 				});
