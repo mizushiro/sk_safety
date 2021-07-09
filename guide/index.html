@@ -62,6 +62,8 @@
                 <h2>공통</h2>
                 <a target="sk" href="../html/splash.html"><em class="flag">완료</em>splash</a>
                 <a target="sk" href="../html/login.html"><em class="flag">완료</em>로그인</a>
+                <a target="sk" href="../html/login2.html"><em class="flag">완료</em>로그인(생체)</a>
+
                 <a target="sk" href="../html/alarm.html"><em class="flag">완료</em>알람</a>
                 <a target="sk" href="../html/alarm_setting.html"><em class="flag">완료</em>알람 수신 설정</a>
                 <a target="sk" href="../html/worker_profile.html"><em class="flag">완료</em>근로자 프로필 가입하기</a>
@@ -126,6 +128,14 @@
                         ps: 'bottom'
                     });">
                 <em class="flag">완료</em>로그인방식선택</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                        id: 'modal_bioinfo', 
+                        src: '../modal/modal_bioinfo.html', 
+                        ps: 'bottom'
+                    });">
+                <em class="flag">완료</em>생체인증 안내</button>
 
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 

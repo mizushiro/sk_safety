@@ -5496,11 +5496,45 @@ dl.list-base > div,
 .modal-contalk.ps-bottom .section-wrap {
 }
 
+.bio-wrap {
+	position:relative;
+	width:100%;
+	text-align: center;
+	padding:3rem 3rem;
+}
+.bio-wrap p{
+	font-size: 1.6rem;
+	width:100%;
+	text-align: center;
+	margin-bottom:2rem;
+}
+.bio-wrap .login-finger {
+	width:9.8rem;
+	height:9.8rem;
+	border-radius: 50%;
+	display: inline-block;
+	background:#F7F7F7 url(../img/icon_fingerprint.svg) no-repeat 50% 50% / 5rem;
+}
+.bio-wrap .login-face {
+	width:9.8rem;
+	height:9.8rem;
+	border-radius: 50%;
+	display: inline-block;
+	background:#F7F7F7 url(../img/icon_happy.svg) no-repeat 50% 50% / 5rem;
+}
 
+.bio-wrap .box{
+	margin-top:2rem;
+	background:#F6F6F6;
+	padding:2rem;
+	text-align: left;
+}
+.bio-wrap .box .inp-base{
+	margin-top:.8rem;
+	border:1px dotted #B2B2B2;
+	background:#fff;
 
-
-
-
+}
 
 
 
