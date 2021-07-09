@@ -2501,8 +2501,11 @@ a.ui-acco-btn:after {
 	padding: 0 5.5rem;
 	height: 4.5rem;
 }
-.talk-search .inp-wrap .ui-clear{
+.talk-search.type-a .inp-wrap .ui-clear{
 right: 5rem;
+}
+.talk-search .inp-wrap .ui-clear{
+right: 4rem;
 }
 .type-pts {
 	display: flex;
