@@ -644,6 +644,9 @@ input[type="date"]::after {
 .inp-base:disabled {
 	background-color: #F5F5F5;
 	color: #999;
+	border:0;
+	padding:0 1rem;
+	font-weight: 500;
 }
 
 .inp-base:read-only {
@@ -1170,8 +1173,11 @@ a.btn-base {
 	color: #666;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
-
+.form-dt .tit-util .btn-photo{
+	top:0;
+}
 .form-dd {
 	width: 100%;
 	position: relative;
@@ -4484,12 +4490,14 @@ dl.list-base > div,
 }
 
 .titlebar {
-	position: relative;
+	position: sticky;
 	width: 100%;
 	padding: 0.6rem 2rem;
 	background: #E3F1F5;
 	display: flex;
 	justify-content: space-between;
+	z-index: 10;
+	top:5.5rem;
 }
 
 .titlebar-tit {
@@ -4497,7 +4505,15 @@ dl.list-base > div,
 	font-weight: 700;
 	line-height: 3rem;
 }
-
+.titlebar-tit span{
+	font-weight: 400;
+}
+.titlebar-tit em{
+	font-weight: 700;
+	color:#008F84;
+	display:inline-block;
+	margin-left:2rem;
+}
 .titlebar .btn-base.icon-qr::before {
 	content: "";
 	position: absolute;
@@ -5536,14 +5552,49 @@ dl.list-base > div,
 
 }
 
+.photo-list2{
+	width:100%;
+}
+.photo-list2-wrap {
+	width:100%;
+	overflow: hidden;
+}
+.photo-list2 li + li{
+	margin-left:1rem;
+}
+.photo-list2 li {
+	position:relative;
+	float:left;
+	width:calc(33% - .7rem);
+}
+.photo-list2 li img {
+	width:100%;
+}
+.photo-list2 .btn-del {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    background: #333 url(../img/icon_close_w.svg) no-repeat 50% 50% / 0.8rem;
+}
 
-
-
-
-
-
-
-
+.dl-detail {
+	width:100%;
+}
+.dl-detail h3{
+	width:100%;
+	font-size: 1.5rem;
+	margin-bottom: .5rem;
+	
+}
+.dl-detail li{
+	font-size:1.3rem;
+}
+.dl-detail li::before{
+	top:0;
+}
 
 
 
