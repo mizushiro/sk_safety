@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index, follow" />
+
+    <meta name="subject" content="SK건설 안전관리 시스템">
+    <meta name="author" content="SK건설">
+    <meta name="title" content="SK건설 세이프티" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="SK건설, SK, SK ecoplant, safety platform, 안전, 관리, 건축" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SK건설 세이프티" />
+    <meta property="og:url" content="http://www.skecoplant.com/" />
+    
+    <title>안전점검일지 목록 | SK건설 세이프티</title>
+
+    <link rel="alternate" hreflang="ko" href="http://www.skecoplant.com/" />
+    <link rel="canonical" href="http://www.skecoplant.com/" />
+    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <link rel="apple-touch-icon" href="../resources/img/common/ico_app.png" >
+
+	<link rel="stylesheet" href="../resources/css/ui.base.css">
+	<script src="../resources/js/lib/jquery-3.2.1.min.js"></script>
+	<script src="../resources/js/ui.global.js"></script>
+	<script src="../resources/js/ui.common.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <style>
+    </style>
+</head>
+<body>
+    <div class="base-wrap">
+        <header class="base-header" 
+        data-type="sub" 
+        data-title="안전점검일지 목록" 
+        ></header>
+        <!-- content -->
+        <main class="base-body">
+            <div class="titlebar">
+                <h2 class="titlebar-tit">
+                    <span>현장명</span>
+                    <em>광명 SK VIEW 신축공사</em>
+                </h2>
+            </div>
+
+            <div class="section-wrap">
+                
+
+                <div class="section-item mgt-n">
+                    <div class="form-wrap">
+                        
+                        <div class="form-item col2-c">
+                            <div class="col-item">
+                                <input type="date" id="프로필_휴대폰번호" class="inp-base box" value="" data-placeholder="점검일자" required>
+                            </div>
+                            <div class="col-item">
+                                <button type="button" class="btn-base line">
+                                    <span>검색</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+
+                    <div class="align-v mgt-s">
+                        <div class="inp-radio round">
+                            <input type="radio" id="riskstate0" name="riskstate" checked="">
+                            <label for="riskstate0">전체</label>
+                        </div>
+                        <div class="inp-radio round">
+                            <input type="radio" id="riskstate1" name="riskstate">
+                            <label for="riskstate1">결재완료</label>
+                        </div>
+                        <div class="inp-radio round">
+                            <input type="radio" id="riskstate2" name="riskstate">
+                            <label for="riskstate2">결재대기</label>
+                        </div>
+                    </div>
+
+                    <div class="tit-sec type-line mgt-xl">
+                        <button type="button" class="btn-base line mgb-xs">
+                            <span>전체승인</span>
+                        </button>
+                        <div class="tit-util">
+                            <div class="total">
+                                총 <em>10</em>건
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tbl-list type-safetylist">
+                        <table>
+                            <caption>안전점걸일지 목록</caption>
+                            <caption>
+                                <col style="width:4rem">
+                                <col style="width:10rem">
+                                <col style="width:auto">
+                                <col style="width:8rem">
+                                <col style="width:5rem">
+                            </caption>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="inp-check">
+                                            <input type="checkbox" id="aaa1">
+                                            <label for="aaa1">
+                                                <span class="a11y-hidden">선택</span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>2021.06.30</td>
+                                    <td>홍길동</td>
+                                    <td>
+                                        <em class="flag st-2">결제대기</em>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn-pdf">
+                                            <span class="a11y-hidden">PDF 다운로드</span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="inp-check">
+                                            <input type="checkbox" id="aaa2">
+                                            <label for="aaa2">
+                                                <span class="a11y-hidden">선택</span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>2021.06.30</td>
+                                    <td>홍길동</td>
+                                    <td>
+                                        <em class="flag st-2">결제대기</em>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn-pdf">
+                                            <span class="a11y-hidden">PDF 다운로드</span>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                   
+                </div> 
+            </div>
+           
+        </main>
+        <!-- //content -->
+        
+    </div>
+
+    <script> 
+        ;(function($, win, doc, undefined) {
+            $(doc).ready(function() {
+               
+                //기본 실행
+                $plugins.common.init();
+
+                $plugins.uiAccordion({
+                    id:'safetycheckAcco',
+                    current:[0],
+                    autoclose:true
+                });
+
+                $plugins.uiAccordion({
+                    id:'safetycheckAcco2',
+                    current:[0],
+                    autoclose:true
+                });
+
+            });
+        })(jQuery, window, document);
+    </script>
+    
+</body>
+</html>

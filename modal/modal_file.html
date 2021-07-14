@@ -1,0 +1,26 @@
+<section class="ui-modal" id="modal_file">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit">첨부파일</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_file', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+            <div class="filedown-wrap">
+                <button type="button" class="file-mail">
+                    <span>메일로 전송</span>
+                </button>
+                <button type="button" class="file-pdf">
+                    <span>PDF 파일저장</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+

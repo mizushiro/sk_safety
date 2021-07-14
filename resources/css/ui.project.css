@@ -308,6 +308,18 @@
 	margin-top: 5rem !important;
 }
 
+.mgb-xxs {
+	margin-bottom: 0.2rem !important;
+}
+
+.mgb-xs {
+	margin-bottom: 0.5rem !important;
+}
+
+.mgb-s {
+	margin-bottom: 1rem !important;
+}
+
 /* align */
 .ta-c {
 	text-align: center !important;
@@ -514,6 +526,7 @@ dl[class*="bul-"]>dt {
 	margin-bottom: 1rem;
 	display: flex;
 	justify-content: space-between;
+	align-items: baseline;
 }
 
 .tit-sec .tit {
@@ -674,6 +687,23 @@ input[type="date"]::after {
 .error .inp-select,
 .error .inp-base {
 	border-color: #E7565F;
+}
+
+.inp-base.box{
+	border:1px solid #DDD;
+	padding:0 1rem;
+}
+input[type="date"].box::after{
+	right:1rem;
+}
+input[type="date"].box::before {
+	content:attr(data-placeholder);
+	width:100%;
+	font-size:1.6rem 
+}
+input[type="date"].box:focus::before,
+input[type="date"].box:valid::before{
+	display: none;
 }
 
 .select-box,
@@ -3511,7 +3541,9 @@ right: 4rem;
 	border-right:0  !important;
 	padding:1rem 0.3rem !important;
 }
-
+.tbl-list.type-b{
+	border:0;
+}
 .tbl-list {
 	margin: 0;
 	width: 100%;
@@ -5649,11 +5681,37 @@ dl.list-base > div,
 	font-size:1.6rem;
 	margin-bottom:.5rem;
 }
+.type-safetylist .inp-check label{
+	vertical-align: top;
+}
+.type-safetylist .inp-check label::before{
+	top:0;
+}
 
+.filedown-wrap{
+	width:25rem;
+	margin: 1rem auto 2rem;
+	position:relative;
+	display: flex;
+	justify-content: space-between;
+}
 
-
-
-
+.filedown-wrap button{
+	display: flex;
+	flex-wrap: wrap;
+	margin:0 2rem;
+	align-items: flex-start;
+	justify-content: center;
+}
+.filedown-wrap button::before{
+	content:"";
+	display: block;
+	width:6.8rem;
+	height: 6.8rem;
+	border-radius: 50%;
+	background:#EEEEEE;
+	margin-bottom: .5rem;
+}
 
 
 

@@ -402,6 +402,20 @@
                         }
                 });">
                 <em class="flag">완료</em>가입완료</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                        id: 'modal_file', 
+                        src: '../modal/modal_file.html', 
+                        ps: 'center', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
+                    });">
+                <em class="flag">완료</em>첨부파일</button>
             </div>
         </main>
         <!-- //content -->
