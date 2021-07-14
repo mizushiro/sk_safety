@@ -102,6 +102,11 @@
 
                 <a target="sk" href="../html/safety_check.html"><em class="flag">완료</em>안전점검일지 작성</a>
 
+                <a target="sk" href="../html/safety_detail.html"><em class="flag">완료</em>안전점검일지 상세</a>
+
+                <a target="sk" href="../html/safety_list.html"><em class="flag">완료</em>안전점검일지 목록</a>
+
+
                 <h2>con-talk</h2>
                 <a target="sk" href="../html/contalk.html"><em class="flag">완료</em>con-talk</a>
                 <a target="sk" href="../html/contalk_list.html"><em class="flag">완료</em>con-talk 목록</a>
@@ -121,6 +126,13 @@
                         conts: '<dl class=\'list-base\'><div><dt>보림토건</dt><dd>102동 지하 비계설치해제 102동 지하 비계설치해제 102동 지하 비계설치해제</dd></div><div><dt>보림토건</dt><dd>102동 지하 비계설치해제</dd></div><div><dt>보림토건</dt><dd>102동 지하 비계설치해제</dd></div></dl><p class=\'mgt-m\'><strong>점검자가 지정되었습니다.</strong></p>'
                     });">
                 <em class="flag">완료</em>점검자지정완료</button>
+
+                <button type="button" id="test1" onclick="
+                    $plugins.toast.show({
+                        delay: 'short',
+                        conts: '<h5>현장 참여 신청</h5><p>광명 안심 건설 신축공사현장에 <br><em>참여 신청 합니다.</em></p>'
+                    });">
+                <em class="flag">완료</em>현장 참여 신청</button>
 
 
                 <h2>modal</h2>
@@ -292,6 +304,21 @@
 
                 <button type="button" onclick="
                     $plugins.uiModalOpen({ 
+                        id: 'modal_checklist2', 
+                        full:true,
+                        src: '../modal/modal_checklist2.html', 
+                        ps: 'center', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
+                });">
+                <em class="flag">완료</em>점검항목 확인하기2</button>
+                
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
                         id: 'modal_qr', 
                         src: '../modal/modal_qr.html', 
                         ps: 'center', 
@@ -416,6 +443,40 @@
                         }
                     });">
                 <em class="flag">완료</em>첨부파일</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                        id: 'modal_invitapp', 
+                        src: '../modal/modal_invitapp.html', 
+                        ps: 'center', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
+                    });">
+                <em class="flag">완료</em>현장초대승인</button>
+
+                <button type="button" onclick="
+                    $plugins.uiModalOpen({ 
+                        id: 'modal_siteSearch', 
+                        full:true,
+                        src: '../modal/modal_siteSearch.html', 
+                        ps: 'center', 
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                            $plugins.uiAccordion({
+                                id:'siteSearchAcco',
+                                current:[0],
+                                autoclose:true
+                            });
+                        }
+                });">
+                <em class="flag">완료</em>현장검색/참여</button>
             </div>
         </main>
         <!-- //content -->

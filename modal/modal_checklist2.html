@@ -1,0 +1,107 @@
+<section class="ui-modal" id="modal_checklist2">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit">점검항목 확인하기</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_checklist2', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+
+            <div class="box-line primary">
+                <ul class="bul-dot primary">
+                    <li>스팀 배관 밸브 설치, 케이싱 작업</li>
+                    <li>종합 사무동 / 지하동</li>
+                </ul>
+            </div>
+            <ol class="bul-num list-base">
+                <li>
+                    <div>작업 전 산소 / 가스 농도 측정 / 기록</div>
+                </li>
+                <li>
+                    <div>환기시설 설치 적정성 확인</div>
+                </li>
+                <li>
+                    <div>비상상황 대피 피난 또는 구조장비 비치</div>
+                </li>
+                <li>
+                    <div>
+                        출입통제 조치<br>
+                        <span class="txt-adddesc">(경고 표식, 감시자, 출입기록 대장)</span>
+                    </div>
+                </li>
+                
+            </ol>
+
+            <section class="section-item">
+                <div class="tit-sec type-line mgb-n">
+                    <h3 class="tit">위험성평가</h3>
+                </div>
+                <div class="form-wrap">
+                    <div class="form-dl">
+                        <div class="form-dt">
+                            <label class="form-tit" for="smscl1">위험요인</label>
+                        </div>
+                        <div class="form-dd">
+                            <div class="form-item">
+                                <input type="text" id="smscl1" class="inp-base" value="" placeholder="위험요인을 작성하세요.">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-wrap">
+                    <div class="form-dl">
+                        <div class="form-dt">
+                            <label class="form-tit" for="smscl2">대책</label>
+                        </div>
+                        <div class="form-dd">
+                            <div class="form-item">
+                                <input type="text" id="smscl2" class="inp-base" value="" placeholder="위험요인을 작성하세요.">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-area stick">
+                    <button type="button" class="btn-base large">
+                        <span>위험성평가 저장</span>
+                    </button>
+                    <button type="button" class="btn-base large primary">
+                        <span>작업개시</span>
+                    </button>
+                </div>
+                
+            </section>
+            <hr class="hr-cont">
+            <div class="section-item pdt-n pdb-n">
+                <div class="tit-cont">
+                    <div class="tit fx-sb">
+                        <div class="total">
+                            위험성평가 <b>전체 <em>90</em>건</b>
+                        </div>
+                        <div>
+                            <a href="#" class="link">전체보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="ui-modal-footer">
+            <div class="btn-area stick">
+                <button type="button" class="btn-base">
+                    <span>위험성평가추가</span>
+                </button>
+                <button type="button" class="btn-base primary">
+                    <span>작업개시</span>
+                </button>
+            </div>
+        </div> -->
+    </div>
+</section>
+

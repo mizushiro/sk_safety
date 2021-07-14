@@ -1,0 +1,93 @@
+<section class="ui-modal type-sitesearch" id="modal_siteSearch">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit">현장검색 / 참여</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_siteSearch', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+            <div class="section-item">
+                <div class="ui-acco type-safetycheck" id="siteSearchAcco">
+                    <div class="ui-acco-wrap">
+                        <div class="ui-acco-tit">
+                            <button type="button" class="ui-acco-btn">
+                                <b>광명 안심건설 신축공사</b>
+                                <span>경기도 광명시 광명구 광명길 55번지 </span>
+                                <span>안심건설,ㅇㅇ토건</span>
+                            </button>
+                        </div>
+                        <div class="ui-acco-pnl">
+                            <div class="ui-acco-pnl-wrap">
+                                <ul class="list-base type-insp">
+                                    <li>
+                                        <div class="inp-radio">
+                                            <input type="radio" id="insp1" name="insp">
+                                            <label for="insp1" class="fx-sb">
+                                                <span>OO 건설</span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="inp-radio">
+                                            <input type="radio" id="insp2" name="insp">
+                                            <label for="insp2" class="fx-sb">
+                                                <span>OO 토목</span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui-acco-wrap">
+                        <div class="ui-acco-tit">
+                            <button type="button" class="ui-acco-btn">
+                                <b>광명 안심건설 신축공사</b>
+                                <span>경기도 광명시 광명구 광명길 55번지 </span>
+                                <span>안심건설,ㅇㅇ토건</span>
+                            </button>
+                        </div>
+                        <div class="ui-acco-pnl">
+                            <div class="ui-acco-pnl-wrap">
+                                <ul class="list-base type-insp">
+                                    <li>
+                                        <div class="inp-check">
+                                            <input type="checkbox" id="insp1_1" name="insp">
+                                            <label for="insp1_1" class="fx-sb">
+                                                <span>OO 건설</span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="inp-check">
+                                            <input type="checkbox" id="insp2_1" name="insp">
+                                            <label for="insp2_1" class="fx-sb">
+                                                <span>OO 토목</span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="btn-area full">
+                    <button type="button" class="btn-base line">
+                        <span>현장참여신청</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</section>
+
