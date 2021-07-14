@@ -45,12 +45,12 @@
         ></header>
         <!-- content -->
         <main class="base-body">
-            <div class="titlebar">
+            <!-- <div class="titlebar">
                 <h2 class="titlebar-tit">
                     <span>현장명</span>
                     <em>광명 SK VIEW 신축공사</em>
                 </h2>
-            </div>
+            </div> -->
 
             <div class="section-wrap">
                 <!-- 시공물 종류 -->
@@ -85,7 +85,7 @@
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="text" id="safetyC01_03" class="inp-base" value="일우건설" placeholder="" >
+                                    <input type="text" id="safetyC01_03" class="inp-base" value="일우건설" placeholder="" disabled>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +96,7 @@
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="text" id="safetyC01_04" class="inp-base" value="형틀" placeholder="" >
+                                    <input type="text" id="safetyC01_04" class="inp-base" value="형틀" placeholder="" disabled>
                                 </div>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="text" id="safetyC01_05" class="inp-base" value="105동 지하4층 집 수정" placeholder="" >
+                                    <input type="text" id="safetyC01_05" class="inp-base" value="105동 지하4층 집 수정" placeholder="" disabled>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +118,7 @@
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="text" id="safetyC01_06" class="inp-base" value="나소장" placeholder="" >
+                                    <input type="text" id="safetyC01_06" class="inp-base" value="나소장" placeholder="" disabled>
                                 </div>
                             </div>
                         </div>
@@ -129,7 +129,7 @@
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="date" id="safetyC01_07" class="inp-base" value="2021-06-21" placeholder="" >
+                                    <input type="date" id="safetyC01_07" class="inp-base" value="2021-06-21" placeholder="" disabled>
                                 </div>
                             </div>
                         </div>
@@ -352,7 +352,6 @@
         
     </div>
 
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9906c009f8e9c9a1a36542d2c08c1361&libraries=services"></script>
     <script> 
         ;(function($, win, doc, undefined) {
             $(doc).ready(function() {
@@ -360,17 +359,7 @@
                 //기본 실행
                 $plugins.common.init();
 
-                var currentSlide = $('.swiper-week').slick({
-                    arrows: false,
-                    dots: true,
-                    infinite: false
-                });
-
-                var currentSlide2 = $('.swiper-weekedu').slick({
-                    arrows: false,
-                    dots: true,
-                    infinite: false
-                });
+             
 
             });
         })(jQuery, window, document);

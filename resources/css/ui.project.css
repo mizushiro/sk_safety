@@ -626,7 +626,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 	border-width: thin;
 	z-index: 1;
 }
-
+input[type="date"]:disabled::after{
+	display: none;
+}
 input[type="date"]::after {
 	content: "";
 	display: block;
@@ -2727,15 +2729,15 @@ right: 4rem;
 	border-bottom-right-radius: .4rem;
 }
 
-.talk-list .flag-a {
+.flag-a {
 	background-color: #3949AB;
 }
 
-.talk-list .flag-b {
+.flag-b {
 	background-color: #E7565F;
 }
 
-.talk-list .flag-c {
+.flag-c {
 	background-color: #008F84;
 }
 .tbl-base .flag.new{
@@ -5084,6 +5086,11 @@ dl.list-base > div,
 	align-items: center;
 	margin-bottom:.8rem;
 }
+.tit-util .total{
+	font-size:1.4rem;
+	padding-top:.5rem;
+}
+.tit-util .total em,
 .tbl-header .total em{
 	color:#E7565F;
 	font-weight: 700;
@@ -5596,17 +5603,52 @@ dl.list-base > div,
 	top:0;
 }
 
+.type-safetycheck .ui-acco-wrap + .ui-acco-wrap{
+	margin-top:1rem;
+}
+.type-safetycheck .ui-acco-wrap{
+	border:1px solid #EEEEEE;
+}
+.type-safetycheck .ui-acco-tit{
+	border:0;
+	margin-top:0;
+	
+}
+.type-safetycheck .ui-acco-btn {
+	padding:2rem 1.5rem;
+}
+.type-safetycheck .ui-acco-btn b{
+	display: block;
+	font-size:1.6rem;
+	margin-bottom:0.5rem;
+	font-weight: 500;
+}
+.type-safetycheck .ui-acco-btn span{
+	display: block;
+	font-size:1.4rem;
+}
+.type-safetycheck .tbl-base{
+	border:0;
+}
+.type-safetycheck .tbl-base th,
+.type-safetycheck .tbl-base td{
+	background-color: transparent;
+	border-bottom:1px solid #CCCCCC;
+	color:#333;
+	font-weight:500;
+}
+.type-safetycheck .tbl-base th{
+	color:#777;
+}
 
-
-
-
-
-
-
-
-
-
-
+.type-safetycheck .section-item{
+	padding:0;
+	margin-top:3rem;
+}
+.type-safetycheck .section-item .tit{
+	font-size:1.6rem;
+	margin-bottom:.5rem;
+}
 
 
 
