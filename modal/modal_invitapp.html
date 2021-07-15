@@ -1,0 +1,32 @@
+<section class="ui-modal type-invitapp" id="modal_invitapp">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit ">초대를 승인하면 해당 현장에 참여 하게 됩니다. <br>
+                <span>20.06.22</span>
+            </h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_invitapp', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+            <h3>광명 안심건설신축공사 <em>현장 참여 초대</em></h3>
+            <p>홍길동 관리자가 000근로자를 광명SK View현장에 참여하도록 초대합니다.</p>
+        </div>
+        <div class="ui-modal-footer">
+            <div class="btn-area stick">
+                <button type="button" class="btn-base ">
+                    <span>취소</span>
+                </button>
+                <button type="button" class="btn-base primary">
+                    <span>현장초대승인</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
