@@ -46,7 +46,7 @@
             <div class="search-risk">
                 <div class="form-item">
                     <div class="inp-wrap type-searchbox">
-                        <input type="search" class="inp-base ui-siteselect-result" value="" placeholder="소속, 공종, 신규 교육일, 이름">
+                        <input type="search" class="inp-base ui-siteselect-result" value="" placeholder="업체명, 공종, 이름, 현장투입일">
                         <button type="button" class="btn-search ui-drop" id="uiSiteSelect">
                             <span class="a11y-hidden">검색열기</span>
                         </button>
@@ -54,28 +54,42 @@
                 </div>
             </div>
  
-            <section class="section-item ">
-                <div class="tbl-header">
+            <section class="section-item pdt-n">
+                <div class="align-v mgt-s">
+                    <div class="inp-radio round">
+                        <input type="radio" id="riskstate0" name="riskstate" checked="">
+                        <label for="riskstate0">전체</label>
+                    </div>
+                    <div class="inp-radio round">
+                        <input type="radio" id="riskstate1" name="riskstate">
+                        <label for="riskstate1">신규</label>
+                    </div>
+                    <div class="inp-radio round">
+                        <input type="radio" id="riskstate2" name="riskstate">
+                        <label for="riskstate2">고령</label>
+                    </div>
+                    <div class="inp-radio round">
+                        <input type="radio" id="riskstate3" name="riskstate">
+                        <label for="riskstate3">관심</label>
+                    </div>
+                </div>
+                <div class="tbl-header mgt-l">
                     <div class="total">
                         검색결과 <em>124</em>
-                    </div>
-
-                    <div>
-                        <select class="inp-select small" title="선택" style="width:6.5rem">
-                            <option>전체</option>
-                            <option>조작순</option>
-                            <option>연령순</option>
-                            <option>교육일순</option>
-                        </select>
                     </div>
                 </div>
                 
                 <ul class="list-network type-b">
                     <li>
+                        <div class="photo">
+                            <div class="img">
+                                <img src="../resources/img/@person.jfif" alt="">
+                            </div>
+                            <em class="icon-head"><span class="hidden">작업반장</span></em>
+                        </div>
                         <a href="#">
                             <div class="tit">
-                                홍길동 (48세, 남)
-                                <em class="flag">my</em>
+                                홍길동 <span>(48세, 남)</span>
                             </div>
                             <div class="opt">
                                 <span>일우건설</span>
@@ -83,12 +97,21 @@
                                 <span>2021.10.31</span>
                             </div>
                         </a>
+                        <button type="button" class="btn-star">
+                            <span class="a11y-hidden">선택</span>
+                        </button>
                     </li>
                     <li>
+                        <div class="photo">
+                            <div class="img">
+                               
+                            </div>
+                            <em class="icon-head"><span class="hidden">작업반장</span></em>
+                        </div>
                         <a href="#">
                             <div class="tit">
-                                홍길동 (48세, 남)
-                                <em class="flag">신규</em>
+                                홍길동 <span>(48세, 남)</span>
+                                <em class="flag-new">신규</em>
                             </div>
                             <div class="opt">
                                 <span>일우건설</span>
@@ -96,12 +119,21 @@
                                 <span>2021.10.31</span>
                             </div>
                         </a>
+                        <button type="button" class="btn-star">
+                            <span class="a11y-hidden">선택</span>
+                        </button>
                     </li>
                     <li>
+                        <div class="photo">
+                            <div class="img">
+                                <img src="../resources/img/@person.jfif" alt="">
+                            </div>
+                            <em class="icon-head"><span class="hidden">작업반장</span></em>
+                        </div>
                         <a href="#">
                             <div class="tit">
-                                홍길동 (48세, 남)
-                                <em class="flag">고령</em>
+                                홍길동 <span>(48세, 남)</span>
+                                <em class="flag-old">고령</em>
                             </div>
                             <div class="opt">
                                 <span>일우건설</span>
@@ -109,12 +141,21 @@
                                 <span>2021.10.31</span>
                             </div>
                         </a>
+                        <button type="button" class="btn-star">
+                            <span class="a11y-hidden">선택</span>
+                        </button>
                     </li>
                     <li>
+                        <div class="photo">
+                            <div class="img">
+                                <img src="../resources/img/@person.jfif" alt="">
+                            </div>
+                            <em class="icon-head"><span class="hidden">작업반장</span></em>
+                        </div>
                         <a href="#">
                             <div class="tit">
-                                홍길동 (48세, 남)
-                                <em class="flag">관심</em>
+                                홍길동 <span>(48세, 남)</span>
+                                <em class="flag-int">관심</em>
                             </div>
                             <div class="opt">
                                 <span>일우건설</span>
@@ -122,6 +163,9 @@
                                 <span>2021.10.31</span>
                             </div>
                         </a>
+                        <button type="button" class="btn-star">
+                            <span class="a11y-hidden">선택</span>
+                        </button>
                     </li>
                 </ul>
             </section>
@@ -137,7 +181,9 @@
                
                 //기본 실행
                 $plugins.common.init();
-                
+                $('.btn-star').on('click', function(){
+                    !$(this).hasClass('on') ? $(this).addClass('on') : $(this).removeClass('on');
+                });
             });
         })(jQuery, window, document);
     </script>

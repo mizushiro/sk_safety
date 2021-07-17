@@ -1,11 +1,11 @@
-<section class="ui-modal modal-contalk" id="modal_contalk">
+<section class="ui-modal modal-contalk" id="modal_workerSel">
     <div class="ui-modal-wrap">
         <div class="ui-modal-header">
-            <h2 class="ui-modal-tit"></h2>
+            <h2 class="ui-modal-tit">근로자 선택</h2>
             <button type="button" class="btn-close" aria-label="close" 
             onclick="
                 $plugins.uiModalClose({ 
-                    id:'modal_contalk', 
+                    id:'modal_workerSel', 
                     callback:function(v){ console.log(v); } 
                 });">
                 <span class="hide">close</span>
@@ -18,65 +18,74 @@
                     <div class="form-wrap">
                         <div class="form-dl mgt-n">
                             <div class="form-dt">
-                                <label class="form-tit" for="contalkInp1">업체명
+                                <label for="contalkInp1" class="form-tit">협력사
                                     <em class="nec" aria-label="필수입력">*</em>
                                 </label>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="text" id="contalkInp1" class="inp-base" value="일우건설" placeholder="" readonly>
+                                    <select class="inp-select" id="contalkInp1" title="협력사 선택" >
+                                        <option>협력사명</option>
+                                        <option>협력사명</option>
+                                        <option>협력사명</option>
+                                        <option>협력사명</option>
+                                        <option>협력사명</option>
+                                        <option>협력사명</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-dl">
                             <div class="form-dt">
-                                <label class="form-tit" for="contalkInp2">공종
+                                <div class="form-tit">공종
                                     <em class="nec" aria-label="필수입력">*</em>
-                                </label>
+                                </div>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="text" id="contalkInp2" class="inp-base" value="형틀" placeholder="" readonly>
+                                    <button type="button" class="inp-select modal-typework" >
+                                        <span></span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-dl">
                             <div class="form-dt">
-                                <label class="form-tit" for="contalkInp3">작업반장
+                                <label class="form-tit" for="contalkInp2">작업반장
                                     <em class="nec" aria-label="필수입력">*</em>
                                 </label>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="text" id="contalkInp3" class="inp-base" value="김반장" placeholder="" readonly>
+                                    <input type="text" id="contalkInp2" class="inp-base" value="" placeholder="">
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-dl">
                             <div class="form-dt">
-                                <label class="form-tit" for="contalkInp4">작업장소
+                                <label class="form-tit" for="contalkInp3">위치
                                     <em class="nec" aria-label="필수입력">*</em>
                                 </label>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="text" id="contalkInp4" class="inp-base" value="105동 지하4층" placeholder="" readonly>
+                                    <input type="text" id="contalkInp3" class="inp-base" value="" placeholder="">
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-dl">
                             <div class="form-dt">
-                                <label class="form-tit" for="contalkInp5">근로자
+                                <label class="form-tit" for="contalkInp4">근로자
                                 </label>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
                                     <div class="inp-wrap type-search">
-                                        <input type="search" class="inp-base ui-siteselect-result" value="" placeholder="지적 대상 근로자를 검색하세요." id="contalkInp5">
+                                        <input type="search" class="inp-base ui-siteselect-result" value="" placeholder="지적 대상 근로자를 검색하세요." id="contalkInp4">
 
                                         <button type="button" class="btn-search">
                                             <span class="a11y-hidden">검색열기</span>
@@ -88,13 +97,18 @@
 
                         <div class="form-dl">
                             <div class="form-dt">
-                                <label class="form-tit" for="contalkInp6">대상작업
+                                <label for="contalkInp8" class="form-tit">재해유형
                                     <em class="nec" aria-label="필수입력">*</em>
                                 </label>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="text" id="contalkInp6" class="inp-base" value="밀페공간작업" placeholder="" readonly>
+                                    <select class="inp-select" id="contalkInp8" title="재해유형 선택" >
+                                        <option>감전</option>
+                                        <option>깔림</option>
+                                        <option>끼임</option>
+                                        <option>떨어짐</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -104,13 +118,6 @@
                                 <label class="form-tit" for="contalkInp7">상세내용
                                     <em class="nec" aria-label="필수입력">*</em>
                                 </label>
-                            </div>
-                            <div class="form-dd">
-                                <div class="form-item">
-                                    <div class="inp-base">작업장 조도 미확보, 출입통제 불량 작업장 조도 미확보, 출입통제 불량
-                                    </div>
-
-                                </div>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
@@ -145,7 +152,6 @@
                     </ul>
                 </section>
             </div>
-
         </div>
         <div class="ui-modal-footer">
             <div class="btn-area stick">

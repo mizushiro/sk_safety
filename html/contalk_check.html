@@ -1,82 +1,123 @@
-<section class="ui-modal modal-contalk" id="modal_contalk">
-    <div class="ui-modal-wrap">
-        <div class="ui-modal-header">
-            <h2 class="ui-modal-tit"></h2>
-            <button type="button" class="btn-close" aria-label="close" 
-            onclick="
-                $plugins.uiModalClose({ 
-                    id:'modal_contalk', 
-                    callback:function(v){ console.log(v); } 
-                });">
-                <span class="hide">close</span>
-            </button>
-        </div>
-        <div class="ui-modal-body">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index, follow" />
 
+    <meta name="subject" content="SK건설 안전관리 시스템">
+    <meta name="author" content="SK건설">
+    <meta name="title" content="SK건설 세이프티" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="SK건설, SK, SK ecoplant, safety platform, 안전, 관리, 건축" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SK건설 세이프티" />
+    <meta property="og:url" content="http://www.skecoplant.com/" />
+    
+    <title>작업허가서 점검 | SK건설 세이프티</title>
+
+    <link rel="alternate" hreflang="ko" href="http://www.skecoplant.com/" />
+    <link rel="canonical" href="http://www.skecoplant.com/" />
+    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <link rel="apple-touch-icon" href="../resources/img/common/ico_app.png" >
+
+	<link rel="stylesheet" href="../resources/css/ui.base.css">
+	<script src="../resources/js/lib/jquery-3.2.1.min.js"></script>
+	<script src="../resources/js/ui.global.js"></script>
+	<script src="../resources/js/ui.common.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <style>
+    </style>
+</head>
+<body>
+    <div class="base-wrap">
+        <header class="base-header" 
+        data-type="sub" 
+        data-title="작업허가서 점검" 
+        ></header>
+        <!-- content -->
+        <main class="base-body">
             <div class="section-wrap">
-                <div class="section-item pdt-n">
+                <div class="section-item">
                     <div class="form-wrap">
                         <div class="form-dl mgt-n">
                             <div class="form-dt">
-                                <label class="form-tit" for="contalkInp1">업체명
+                                <label for="contalkInp1" class="form-tit">협력사
                                     <em class="nec" aria-label="필수입력">*</em>
                                 </label>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="text" id="contalkInp1" class="inp-base" value="일우건설" placeholder="" readonly>
+                                    <select class="inp-select" id="contalkInp1" title="협력사 선택" >
+                                        <option>협력사명</option>
+                                        <option>협력사명</option>
+                                        <option>협력사명</option>
+                                        <option>협력사명</option>
+                                        <option>협력사명</option>
+                                        <option>협력사명</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-dl">
                             <div class="form-dt">
-                                <label class="form-tit" for="contalkInp2">공종
+                                <div class="form-tit">공종
                                     <em class="nec" aria-label="필수입력">*</em>
-                                </label>
+                                </div>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="text" id="contalkInp2" class="inp-base" value="형틀" placeholder="" readonly>
+                                    <button type="button" class="inp-select modal-typework" >
+                                        <span></span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-dl">
                             <div class="form-dt">
-                                <label class="form-tit" for="contalkInp3">작업반장
+                                <label class="form-tit" for="contalkInp2">작업반장
                                     <em class="nec" aria-label="필수입력">*</em>
                                 </label>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="text" id="contalkInp3" class="inp-base" value="김반장" placeholder="" readonly>
+                                    <input type="text" id="contalkInp2" class="inp-base" value="" placeholder="">
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-dl">
                             <div class="form-dt">
-                                <label class="form-tit" for="contalkInp4">작업장소
+                                <label class="form-tit" for="contalkInp3">위치
                                     <em class="nec" aria-label="필수입력">*</em>
                                 </label>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="text" id="contalkInp4" class="inp-base" value="105동 지하4층" placeholder="" readonly>
+                                    <input type="text" id="contalkInp3" class="inp-base" value="" placeholder="">
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-dl">
                             <div class="form-dt">
-                                <label class="form-tit" for="contalkInp5">근로자
+                                <label class="form-tit" for="contalkInp4">근로자
                                 </label>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
                                     <div class="inp-wrap type-search">
-                                        <input type="search" class="inp-base ui-siteselect-result" value="" placeholder="지적 대상 근로자를 검색하세요." id="contalkInp5">
+                                        <input type="search" class="inp-base ui-siteselect-result" value="" placeholder="지적 대상 근로자를 검색하세요." id="contalkInp4">
 
                                         <button type="button" class="btn-search">
                                             <span class="a11y-hidden">검색열기</span>
@@ -88,13 +129,18 @@
 
                         <div class="form-dl">
                             <div class="form-dt">
-                                <label class="form-tit" for="contalkInp6">대상작업
+                                <label for="contalkInp8" class="form-tit">재해유형
                                     <em class="nec" aria-label="필수입력">*</em>
                                 </label>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="text" id="contalkInp6" class="inp-base" value="밀페공간작업" placeholder="" readonly>
+                                    <select class="inp-select" id="contalkInp8" title="재해유형 선택" >
+                                        <option>감전</option>
+                                        <option>깔림</option>
+                                        <option>끼임</option>
+                                        <option>떨어짐</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -104,13 +150,6 @@
                                 <label class="form-tit" for="contalkInp7">상세내용
                                     <em class="nec" aria-label="필수입력">*</em>
                                 </label>
-                            </div>
-                            <div class="form-dd">
-                                <div class="form-item">
-                                    <div class="inp-base">작업장 조도 미확보, 출입통제 불량 작업장 조도 미확보, 출입통제 불량
-                                    </div>
-
-                                </div>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
@@ -144,19 +183,33 @@
                         </li>
                     </ul>
                 </section>
-            </div>
 
-        </div>
-        <div class="ui-modal-footer">
-            <div class="btn-area stick">
-                <button type="button" class="btn-base ">
-                    <span>취소</span>
-                </button>
-                <button type="button" class="btn-base primary">
-                    <span>확인</span>
-                </button>
+                <div class="btn-area stick">
+                    <button type="button" class="btn-base large line">
+                        <span>취소</span>
+                    </button>
+                    <button type="button" class="btn-base large primary">
+                        <span>확인</span>
+                    </button>
+                </div>
             </div>
-        </div>
+        </main>
+        <!-- //content -->
+        
     </div>
-</section>
 
+    <script> 
+        ;(function($, win, doc, undefined) {
+            $(doc).ready(function() {
+               
+                //기본 실행
+                $plugins.common.init();
+
+             
+
+            });
+        })(jQuery, window, document);
+    </script>
+    
+</body>
+</html>

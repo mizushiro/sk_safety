@@ -43,77 +43,73 @@
         <!-- content -->
         <main class="base-body" >
             <div class="titlebar">
-                <button type="button" class="btn-base line small ui-drop arrow-s" id="uiSiteSelect">
-                    <span>현장 참여</span>
+                <h2 class="titlebar-tit">내 현장 추가</h2>
+                <button type="button" class="btn-base line small icon-qr">
+                    <span>현장생성</span>
                 </button>
-                <div class="ui-drop-pnl search-resultbox" data-id="uiSiteSelect">
-                    <div class="ui-drop-box">
-                        <div class="section-item mgt-n pdtb-n">
-                            <div class="align-v mgt-s">
-                                <div class="inp-radio round">
-                                    <input type="radio" id="riskst0" name="riskst" checked="">
-                                    <label for="riskst0">전체</label>
-                                </div>
-                                <div class="inp-radio round">
-                                    <input type="radio" id="riskst1" name="riskst">
-                                    <label for="riskst1">결재완료</label>
-                                </div>
-                                <div class="inp-radio round">
-                                    <input type="radio" id="riskst2" name="riskst">
-                                    <label for="riskst2">결재대기</label>
-                                </div>
-                            </div>
+            </div>
 
-                            <div class="form-item">
-                                <div class="inp-wrap type-searchbox">
-                                    <input type="search" class="inp-base ui-siteselect-result" value="" placeholder="내용을 입력하세요.">
-                                    <button type="button" class="btn-search ui-drop" id="uiSiteSelect">
-                                        <span class="a11y-hidden">검색열기</span>
+            <div class="section-item mgt-n pdtb-n">
+                <div class="form-item align-v fx-sa search-ctg">
+                    <div class="inp-radio tab">
+                        <input type="radio" id="searchCtg_1" name="searchCtg" checked>
+                        <label for="searchCtg_1">주소</label>
+                    </div>
+                    <div class="inp-radio tab">
+                        <input type="radio" id="searchCtg_2" name="searchCtg">
+                        <label for="searchCtg_2">현장명</label>
+                    </div>
+                    <div class="inp-radio tab">
+                        <input type="radio" id="searchCtg_3" name="searchCtg">
+                        <label for="searchCtg_3">회사명</label>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="inp-wrap type-searchbox">
+                        <input type="search" class="inp-base ui-siteselect-result" value="" placeholder="내용을 입력하세요.">
+                        <button type="button" class="btn-search ui-drop" id="uiSiteSelect">
+                            <span class="a11y-hidden">검색열기</span>
+                        </button>
+                        
+                    </div>
+                    <div class="ui-drop-pnl search-resultbox" data-id="uiSiteSelect">
+                        <div class="ui-drop-box">
+                            
+                            <ul class="list-base">
+                                <li>
+                                    <div class="data-no type-map">
+                                        운영중인 현장이 없습니다.
+                                    </div>
+                                </li>
+                                <li>
+                                    <button type="button" data-tit="광명 SK VIEW 신축공사">
+                                        <div class="tit">광명 SK VIEW 신축공사</div>
+                                        <div class="desc">경기도 광명시 광명구 광명길 55번지</div>
+                                        <div class="desc">sk건설,보림토건</div>
                                     </button>
-                                </div>
-                            </div>
-                            <div class="search-resultbox-scroll">
-                                <div id="map" class="map-area">
-                                    <button type="button" class="point-box off" style="top:25%; left:50%;"><span>미운영</span></button>
-                                    <button type="button" class="point-box off" style="top:40%; left:30%;"><span>승인중</span></button>
-                                    <button type="button" class="point-box on" style="top:70%; left:60%;"><span>운영중</span></button>
-                                </div>
-                                <ul class="list-base">
-                                    <li>
-                                        <div class="data-no type-map">
-                                            운영중인 현장이 없습니다.
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <button type="button" data-tit="광명 SK VIEW 신축공사">
-                                            <div class="tit">광명 SK VIEW 신축공사</div>
-                                            <div class="desc">경기도 광명시 광명구 광명길 55번지</div>
-                                            <div class="desc">sk건설,보림토건</div>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button type="button" data-tit="광명 SK VIEW 신축공사2">
-                                            <div class="tit">광명 SK VIEW 신축공사2</div>
-                                            <div class="desc">경기도 광명시 광명구 광명길 55번지</div>
-                                            <div class="desc">sk건설,보림토건</div>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button type="button" data-tit="광명 SK VIEW 신축공사3">
-                                            <div class="tit">광명 SK VIEW 신축공사2</div>
-                                            <div class="desc">경기도 광명시 광명구 광명길 55번지</div>
-                                            <div class="desc">sk건설,보림토건</div>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button type="button" data-tit="광명 SK VIEW 신축공사4">
-                                            <div class="tit">광명 SK VIEW 신축공사2</div>
-                                            <div class="desc">경기도 광명시 광명구 광명길 55번지</div>
-                                            <div class="desc">sk건설,보림토건</div>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
+                                </li>
+                                <li>
+                                    <button type="button" data-tit="광명 SK VIEW 신축공사2">
+                                        <div class="tit">광명 SK VIEW 신축공사2</div>
+                                        <div class="desc">경기도 광명시 광명구 광명길 55번지</div>
+                                        <div class="desc">sk건설,보림토건</div>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" data-tit="광명 SK VIEW 신축공사3">
+                                        <div class="tit">광명 SK VIEW 신축공사2</div>
+                                        <div class="desc">경기도 광명시 광명구 광명길 55번지</div>
+                                        <div class="desc">sk건설,보림토건</div>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" data-tit="광명 SK VIEW 신축공사4">
+                                        <div class="tit">광명 SK VIEW 신축공사2</div>
+                                        <div class="desc">경기도 광명시 광명구 광명길 55번지</div>
+                                        <div class="desc">sk건설,보림토건</div>
+                                    </button>
+                                </li>
+                            </ul>
                             <div class="search-resultbox-map">
                                 <button type="button" class="btn-base line">
                                     <span>현재위치로 주소설정</span>
@@ -125,23 +121,12 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn-base line small icon-qr">
-                    <span>현장생성</span>
-                </button>
-            </div>
 
-            <div class="section-item mgt-n pdtb-n">
-                <div class="form-item align-v fx-sa search-ctg">
-                    <div class="inp-radio tab">
-                        <input type="radio" id="searchCtg_1" name="searchCtg" checked>
-                        <label for="searchCtg_1">내현장(3)</label>
-                    </div>
-                    <div class="inp-radio tab">
-                        <input type="radio" id="searchCtg_2" name="searchCtg">
-                        <label for="searchCtg_2">전체 현장(89)</label>
-                    </div>
+                <div id="map" class="map-area full">
+                    <button type="button" class="point-box off" style="top:25%; left:50%;"><span>미운영</span></button>
+                    <button type="button" class="point-box off" style="top:40%; left:30%;"><span>승인중</span></button>
+                    <button type="button" class="point-box on" style="top:70%; left:60%;"><span>운영중</span></button>
                 </div>
-                
             </div>
             
             <section class="section-item">
@@ -288,18 +273,14 @@
                     <table>
                         <caption>순위, 업체별 발생, 유형별 적발 정보입니다.</caption>
                         <colgroup>
-                            <col style="width:5rem">
+                            <col style="width:6rem">
                             <col style="width:auto">
-                        </colgroup>
-                        <colgroup>
-                            <col style="width:5rem">
-                            <col style="width:auto">
+                            <col style="width:11rem">
                         </colgroup>
                         <thead>
                             <tr>
                                 <th scope="col">순위</th>
                                 <th scope="col">업체별 발생</th>
-                                <th scope="col">순위</th>
                                 <th scope="col">유형별 적발</th>
                             </tr>
                         </thead>
@@ -312,9 +293,6 @@
                                     <b>중원엔지니어링</b>
                                 </td>
                                 <td class="ta-c">
-                                    <b>1</b>
-                                </td>
-                                <td class="ta-c">
                                     <b>협착</b>
                                 </td>
                             </tr>
@@ -326,9 +304,6 @@
                                     <b>중원엔지니어링</b>
                                 </td>
                                 <td class="ta-c">
-                                    <b>1</b>
-                                </td>
-                                <td class="ta-c">
                                     <b>협착</b>
                                 </td>
                             </tr>
@@ -338,9 +313,6 @@
                                 </td>
                                 <td>
                                     <b>중원엔지니어링</b>
-                                </td>
-                                <td class="ta-c">
-                                    <b>1</b>
                                 </td>
                                 <td class="ta-c">
                                     <b>협착</b>
@@ -352,7 +324,7 @@
             </section>
 
             <hr class="hr-sec">
-            <section class="section-item last">
+            <section class="section-item">
                 <div class="tit-cont">
                     <h3 class="tit fx-sb">
                         일일 위험작업 현황
