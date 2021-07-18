@@ -3834,6 +3834,7 @@ dl.list-base > div,
 
 .list-base button {
 	text-align: left;
+	width: 100%;
 }
 
 .list-base .desc {
@@ -4796,7 +4797,11 @@ dl.list-base > div,
 .list-base.type-arrow.fx-sb li a::before {
 	opacity: 1;
 }
-
+.list-base.type-line{
+	border-top:1px solid #EEEEEE;
+	margin-top:2rem;
+	padding-top:1rem;
+}
 .list-base.fx-sa-li li,
 .fx-sa {
 	justify-content: space-around;
