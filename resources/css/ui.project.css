@@ -1605,8 +1605,10 @@ a.btn-base {
 .ui-modal-header {
 	position: relative;
 	top: 0;
-	left: 0;
+	left:50%;
+	transform: translate(-50%,0);
 	width: 100%;
+	max-width:40rem;
 	min-height: 5rem;
 	background: #fff;
 	color: #000;
@@ -1676,6 +1678,7 @@ a.btn-base {
 
 .ps-center .ui-modal-wrap {
 	width:100%;
+	max-width:40rem;
  	border-radius: 1rem;
 	margin: 2.0rem;
 }
@@ -4260,12 +4263,13 @@ dl.list-base > div,
 .toast {
 	position: fixed;
 	opacity: 0;
+	max-width:40rem;
 	width: calc(100% - 9rem);
 	background: #fff;
 	font-size: 1.5rem;
 	top: 60%;
-	transform: translate(0, -50%);
-	left: 4.5rem;
+	transform: translate(-50%, -50%);
+	left: 50%;
 	z-index: 3000;
 	border-radius: 1rem;
 	text-align: center;
