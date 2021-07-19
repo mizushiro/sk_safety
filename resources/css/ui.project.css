@@ -2386,7 +2386,9 @@ a.ui-acco-btn:after {
 	width:100%;
 }
 
-
+.section-talk .talk-list .info{
+	width:calc(100% - 17.5rem);
+}
 
 .talk-item {
 	position: relative;
