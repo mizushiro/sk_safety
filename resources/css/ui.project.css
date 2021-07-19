@@ -152,6 +152,12 @@
 .type-normal .util-contalk,
 .type-normal .page-title .sum-box,
 
+.type-auth .util-qr,
+.type-auth .util-contalk,
+.type-auth .util-alarm,
+.type-auth .btn-menu,
+.type-auth .page-title .sum-box,
+
 .type-alarm .util-qr,
 .type-alarm .util-contalk,
 .type-alarm .util,
@@ -190,7 +196,7 @@
 .type-alarm .util-alarm {
 	display: block;
 }
-
+.type-auth body,
 .type-alarm body {
 	background: #F7F7F7;
 }
@@ -3911,7 +3917,10 @@ dl.list-base > div,
 	font-size: 500;
 	padding-top:0.4rem;
 }
-
+.type-worklist.list-base.type-arrow a{
+	font-size: 1.6rem;
+	padding:1rem;
+}
 
 .list-career li {
 	width: 100%;
@@ -3963,7 +3972,21 @@ dl.list-base > div,
 	top: 0.5rem;
 	left: 0.3rem;
 }
-
+.list-network .btn-del{
+	width:3rem;
+	height:3rem;
+	border-radius:50%;
+	background:#F7F7F7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.list-network .btn-del::before{
+	content: "";
+	background-color: #222222;
+	width:1.2rem;
+	height: 0.2rem;
+}
 .list-network.type-b {
 	border-top:1px solid #EEE;
 }
@@ -3994,11 +4017,15 @@ dl.list-base > div,
 .list-network.noline li{
 	border:0;
 }
+.list-network li + li{
+	border-top:1px solid #EEE;
+}
+
 .list-network li {
 	position:relative;
 	width: 100%;
 	padding: 1.5rem 0 1.5rem ;
-	border-bottom:1px solid #EEE;
+	
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -5757,13 +5784,13 @@ dl.list-base > div,
 
 .work-check-tit{
 	width:100%;
-	text-align: center;
+	text-align: left;
 	padding:1.3rem 2rem 1rem;
-	background:#E3F1F5;
+	background:#F8F8F8;
 	color:#008F84;
 	font-size:1.5rem;
 	font-weight: 700;
-	margin-bottom: 2.3rem;
+	margin-bottom: 0;
 }
 .work-checklist li{margin-bottom:1rem}
 .work-checklist .inp-check{
@@ -5777,6 +5804,11 @@ dl.list-base > div,
 	left:auto;
 	right:0;
 	top:-.1rem;
+}
+.work-check li{
+	border-top:1px solid #F8F8F8;
+	padding:1rem 0;
+	margin:0;
 }
 .modal-contalk .ui-modal-header {
 	background: transparent;

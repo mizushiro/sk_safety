@@ -293,6 +293,12 @@
 					$tit.html(tit);
 					break;
 
+				case 'auth':
+					//뒤로가기,알림
+					$html.addClass('type-auth');
+					$tit.html(tit);
+					break;
+
 				case 'normal':
 					//메뉴,콘톡,알림
 					$html.addClass('type-normal');
