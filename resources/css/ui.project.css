@@ -950,7 +950,19 @@ input[type="date"].box:valid::before{
 .section-item:last-child .btn-area {
 	padding: 2rem 0 7rem;
 }
-
+.btn-wrap.type-more{
+	font-size:1.5rem;
+	padding-top:1rem;
+}
+.btn-wrap.type-more .btn-more{
+	width:auto;
+	height: auto;
+	border:0;
+	padding-right:1.5rem;
+	background-position:100% 50%;
+	font-weight:500;
+	color:#999;
+}
 .btn-wrap {
 	position: relative;
 	width: 100%;
@@ -1243,6 +1255,19 @@ a.btn-base {
 	height: 2rem;
 	border: 1px solid #EEE;
 	background: #fff url(../img/icon_down.svg) no-repeat 50% 50% / .8rem;
+}
+.btn-link{
+	font-size:1.3rem;
+}
+.btn-link.arrow::after{
+	content:"";
+	display:inline-block;
+	position: relative;
+	top: 0;
+	width: 1rem;
+	height: 1rem;
+	background: url(../img/icon_down.svg) no-repeat 100% 50% / 1rem;
+	transform: rotate(-90deg);
 }
 
 /* form layout */
@@ -1608,7 +1633,7 @@ a.btn-base {
 	left:50%;
 	transform: translate(-50%,0);
 	width: 100%;
-	max-width:40rem;
+	max-width:60rem;
 	min-height: 5rem;
 	background: #fff;
 	color: #000;
@@ -1678,7 +1703,7 @@ a.btn-base {
 
 .ps-center .ui-modal-wrap {
 	width:100%;
-	max-width:40rem;
+	max-width:60rem;
  	border-radius: 1rem;
 	margin: 2.0rem;
 }
@@ -2654,6 +2679,9 @@ a.ui-acco-btn:after {
 	display: flex;
 	justify-content: space-between;
 	
+}
+.ui-modal .talk-search-wrap.type-ts{
+	padding:0
 }
 .talk-search-wrap.type-ts {
 	padding: .8rem 2rem;
@@ -5456,6 +5484,22 @@ dl.list-base > div,
 	display: flex;
 	justify-content: space-between;
 } */
+.list-card.type-b li{
+	align-items: center;
+}
+.list-card.type-b .etc>* {
+	display: block;
+	width:100%;
+}
+.list-card.type-b .etc>*::before{
+	display:none;
+}
+.list-card.type-b .etc>*+*{
+	padding-left:0;
+}
+.list-card.type-b .etc b{
+	color:#008F84;
+}
 .list-card .etc>* {
 	display: inline-block;
 	position: relative;

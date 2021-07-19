@@ -152,6 +152,11 @@ select {
 label {
     cursor: pointer;
 }
+sub, sup{
+    font-size:100%;
+    bottom:0;
+    top:0;
+}
 
 caption {
     position: relative !important;

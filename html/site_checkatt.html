@@ -181,7 +181,7 @@
                
                 //기본 실행
                 $plugins.common.init();
-                $('.btn-star').on('click', function(){
+                $('.btn-star').off('click.star').on('click.star', function(){
                     !$(this).hasClass('on') ? $(this).addClass('on') : $(this).removeClass('on');
                 });
             });

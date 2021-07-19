@@ -1,0 +1,104 @@
+<section class="ui-modal" id="modal_site">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit">전체현장</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_site', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+            <div class="talk-search type-c">
+                <div class="talk-search-wrap type-ts">
+                    <div class="form-item">
+                        <div class="inp-wrap">
+                            <input type="text" class="inp-base" value="" placeholder="지역명, 주소, 현장명을 입력하세요.">
+                            
+                        </div>
+                        <button type="button" class="btn-search">
+                            <span class="a11y-hidden">검색</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="section-item">
+                
+                <div class="tit-sec">
+                    <h3 class="tit">
+                        관심 현장
+                        <sub class="num">5/80</sub>
+                    </h3>
+                   
+                </div>
+
+                <ul class="list-card type-b">
+                    <li class="item">
+                        <div class="info">
+                            <div class="tit">
+                                <span>[광명] </span> 
+                                안심건설 신축현장
+                            </div>
+                            <div class="etc">
+                                <span>경기도 광명시 모세로 52번지 </span>
+                                <span><b>안심건설, OO토건</b></span>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-star">
+                            <span class="a11y-hidden">선택</span>
+                        </button>
+                    </li>
+                    <li class="item">
+                        <div class="info">
+                            <div class="tit">
+                                <span>[광명] </span> 
+                                안심건설 신축현장
+                            </div>
+                            <div class="etc">
+                                <span>경기도 광명시 모세로 52번지 </span>
+                                <span><b>안심건설, OO토건</b></span>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-star">
+                            <span class="a11y-hidden">선택</span>
+                        </button>
+                    </li>
+                    <li class="item">
+                        <div class="info">
+                            <div class="tit">
+                                <span>[광명] </span> 
+                                안심건설 신축현장
+                            </div>
+                            <div class="etc">
+                                <span>경기도 광명시 모세로 52번지 </span>
+                                <span><b>안심건설, OO토건</b></span>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-star">
+                            <span class="a11y-hidden">선택</span>
+                        </button>
+                    </li>
+                   
+                </ul>
+                <div class="btn-wrap type-more">
+                    <button type="button" class="btn-more ">
+                        <span>더보기</span>
+                    </button>
+                </div>
+            </div>
+           
+
+        </div>
+        <div class="ui-modal-footer">
+            <div class="btn-area stick">
+                <button type="button" class="btn-base primary">
+                    <span>확인</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+

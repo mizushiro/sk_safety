@@ -33802,17 +33802,34 @@ div.specView:focus {
                                                 class="title-2qG2p" data-auto="artboardTitleGridView">04_내현장_ POPUP 현장검색/ 참여 – 1</span></div>
                                     </div></button>
                                 </li>
-<li class="singleGridTile-3sBLh" data-id="d5602922-f535-4fb3-a125-66afb95f5f29"
-    id="d5602922-f535-4fb3-a125-66afb95f5f29" data-auto="card-52-div"  style="outline:1px solid red;">
-    <div class="card-15R5T" tabindex="0" data-id="d5602922-f535-4fb3-a125-66afb95f5f29">
-        <div class="imageWrapper-GEZBB">
-            <div class="imageBlock-2im2e imageLoaded-2tjtu"><img crossorigin="anonymous"
-                    src=""
-                    class="image-iY65B"></div>
-        </div>
-        <div class="artboardTitle-3qs0w titleWithoutConnectionsIcon-31eun"><span
-                class="title-2qG2p" data-auto="artboardTitleGridView">디자인 없음. 04_내현장 안전관리-관리자 – 전체현장</span></div>
-    </div>
+                                <li class="singleGridTile-3sBLh" data-id="d5602922-f535-4fb3-a125-66afb95f5f29"
+                                    id="d5602922-f535-4fb3-a125-66afb95f5f29" data-auto="card-52-div" >
+                                    <button type="button" onclick="
+                                    $plugins.uiModalOpen({ 
+                                        id: 'modal_site', 
+                                        src: '../modal/modal_site.html', 
+                                        ps: 'center', 
+                                        full: true,
+                                        closeCallback: function(v) { 
+                                            console.log('close callback', v); 
+                                            $('.btn-star').off('click.star').on('click.star', function(){
+                                                !$(this).hasClass('on') ? $(this).addClass('on') : $(this).removeClass('on');
+                                            });
+                                        },
+                                        callback: function(v) { 
+                                            console.log('callback', v); 
+                                        }
+                                    });">
+                                    <div class="card-15R5T" tabindex="0" data-id="d5602922-f535-4fb3-a125-66afb95f5f29">
+                                        <div class="imageWrapper-GEZBB">
+                                            <div class="imageBlock-2im2e imageLoaded-2tjtu"><img crossorigin="anonymous"
+                                                    src="../resources/dummy/list61.png"
+                                                    class="image-iY65B"></div>
+                                        </div>
+                                        <div class="artboardTitle-3qs0w titleWithoutConnectionsIcon-31eun"><span
+                                                class="title-2qG2p" data-auto="artboardTitleGridView">내현장안전관리_전체현장_팝업</span></div>
+                                    </div>
+                                </button>
                                 </li>
                                 <li class="singleGridTile-3sBLh" data-id="e784c9b4-0b05-4da7-9413-a1b4b4e885d6"
                                     id="e784c9b4-0b05-4da7-9413-a1b4b4e885d6" data-auto="card-53-div">
