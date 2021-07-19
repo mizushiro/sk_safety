@@ -2387,7 +2387,7 @@ a.ui-acco-btn:after {
 }
 
 .section-talk .talk-list .info{
-	width:calc(100% - 17.5rem);
+	max-width:calc(100% - 20.5rem);
 }
 
 .talk-item {
