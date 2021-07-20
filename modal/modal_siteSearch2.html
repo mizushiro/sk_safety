@@ -1,0 +1,105 @@
+<section class="ui-modal type-sitesearch" id="modal_siteSearch2">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit">현장참여</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_siteSearch2', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+            <div class="section-item mgt-n pdtb-n">
+                <div class="align-v mgt-s">
+                    <div class="inp-radio round">
+                        <input type="radio" id="riskst0" name="riskst" checked="">
+                        <label for="riskst0">전체</label>
+                    </div>
+                    <div class="inp-radio round">
+                        <input type="radio" id="riskst1" name="riskst">
+                        <label for="riskst1">결재완료</label>
+                    </div>
+                    <div class="inp-radio round">
+                        <input type="radio" id="riskst2" name="riskst">
+                        <label for="riskst2">결재대기</label>
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <div class="inp-wrap type-searchbox">
+                        <input type="search" class="inp-base ui-siteselect-result" value="" placeholder="내용을 입력하세요.">
+                        <button type="button" class="btn-search ui-drop" id="uiSiteSelect">
+                            <span class="a11y-hidden">검색열기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="search-resultbox-scroll">
+                    <div id="map" class="map-area">
+                        <button type="button" class="point-box off" style="top:25%; left:50%;"><span>미운영</span></button>
+                        <button type="button" class="point-box off" style="top:40%; left:30%;"><span>승인중</span></button>
+                        <button type="button" class="point-box on" style="top:70%; left:60%;"><span>운영중</span></button>
+                    </div>
+                    <ul class="list-base">
+                        <li>
+                            <div class="data-no type-map">
+                                운영중인 현장이 없습니다.
+                            </div>
+                        </li>
+                        <li>
+                            <button type="button" data-tit="광명 SK VIEW 신축공사">
+                                <div class="tit">광명 SK VIEW 신축공사</div>
+                                <div class="desc">경기도 광명시 광명구 광명길 55번지</div>
+                                <div class="desc">sk건설,보림토건</div>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" data-tit="광명 SK VIEW 신축공사2">
+                                <div class="tit">광명 SK VIEW 신축공사2</div>
+                                <div class="desc">경기도 광명시 광명구 광명길 55번지</div>
+                                <div class="desc">sk건설,보림토건</div>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" data-tit="광명 SK VIEW 신축공사3">
+                                <div class="tit">광명 SK VIEW 신축공사2</div>
+                                <div class="desc">경기도 광명시 광명구 광명길 55번지</div>
+                                <div class="desc">sk건설,보림토건</div>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" data-tit="광명 SK VIEW 신축공사4">
+                                <div class="tit">광명 SK VIEW 신축공사2</div>
+                                <div class="desc">경기도 광명시 광명구 광명길 55번지</div>
+                                <div class="desc">sk건설,보림토건</div>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div class="search-resultbox-map">
+                    <button type="button" class="btn-base line">
+                        <span>현재위치로 주소설정</span>
+                    </button>
+                    <button type="button" class="btn-base line">
+                        <span>지도에서 선택</span>
+                    </button>
+                </div> -->
+            </div>
+            
+        </div>
+        <div class="ui-modal-footer">
+            <div class="btn-area stick">
+                <button type="button" class="btn-base ">
+                    <span>현재위치로 주소설정</span>
+                </button>
+                <button type="button" class="btn-base primary">
+                    <span>지도에서 선택</span>
+                </button>
+            </div>
+        </div>
+       
+    </div>
+</section>
+

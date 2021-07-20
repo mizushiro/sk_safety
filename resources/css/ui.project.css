@@ -1752,7 +1752,12 @@ a.btn-base {
 .ps-bottom .ui-modal-footer .btn-area .btn-base {
 	height: 5rem;
 }
-
+.ui-modal-footer{
+	z-index: 2;
+}
+.ui-modal-body{
+	z-index: 1;
+}
 .ps-bottom .ui-modal-body {
 	padding: 2rem;
 }
@@ -5084,7 +5089,9 @@ dl.list-base > div,
 	box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.0);
 
 }
-
+.ui-modal .search-resultbox-scroll {
+	max-height: 100%;
+}
 .search-resultbox-scroll {
 	max-height: 38vh;
 	overflow-y: auto;
