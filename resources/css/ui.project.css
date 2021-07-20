@@ -148,6 +148,7 @@
 	position: relative
 }
 
+.type-normal .btn-contalk,
 .type-normal .util-qr,
 .type-normal .util-alarm,
 .type-normal .btn-back,
@@ -171,7 +172,7 @@
 .type-qr .btn-menu,
 .type-qr .page-title .sum-box,
 
-.type-sub .util,
+.type-sub .btn-contalk,
 .type-sub .util-qr,
 .type-sub .util-contalk,
 .type-sub .util-alarm,
@@ -1248,7 +1249,7 @@ a.btn-base {
 	position: relative;
 	width: 3rem;
 	height: 3rem;
-	background: url(../img/icon_talk_b.svg) no-repeat 50% 50% / 1.8rem;
+	background: url(../img/icon_talk_b.svg) no-repeat 50% 53% / 1.8rem;
 }
 
 .btn-more {
@@ -4124,7 +4125,13 @@ dl.list-base > div,
 	margin-top: 1rem;
 
 }
-
+.list-network.ai-t li{
+	align-items: flex-start;
+}
+.list-network li > .group{
+	flex: 1;
+	margin-left:.4rem;
+}
 .list-network .box span {
 	display: inline-block;
 	position: relative;
@@ -5400,11 +5407,14 @@ dl.list-base > div,
 }
 
 .search-risk{
+	position:sticky;
+	top:5.5rem;
 	width:100%;
 	padding:1.5rem 2rem;
 	background: linear-gradient(105deg, #167C99, #169C9D);
 	border-bottom-left-radius:3rem;
 	border-bottom-right-radius:3rem;
+	z-index:3;
 }
 .search-risk .type-searchbox {
 	background: #fff;
