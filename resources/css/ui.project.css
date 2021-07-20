@@ -5090,7 +5090,7 @@ dl.list-base > div,
 
 }
 .ui-modal .search-resultbox-scroll {
-	max-height: 100%;
+	max-height: 62vh;
 }
 .search-resultbox-scroll {
 	max-height: 38vh;
