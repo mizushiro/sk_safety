@@ -276,13 +276,13 @@
 					break;
 
 				case 'sub':
-					//뒤로가기
+					//뒤로가기, 알림
 					$html.addClass('type-sub');
 					$tit.html(tit);
 					break;
 
 				case 'qr':
-					//뒤로가기
+					//뒤로가기, qr코드
 					$html.addClass('type-qr');
 					$tit.html(tit);
 					break;
@@ -294,16 +294,30 @@
 					break;
 
 				case 'auth':
-					//뒤로가기,알림
+					//뒤로가기,콘톡,알림
 					$html.addClass('type-auth');
 					$tit.html(tit);
 					break;
 
 				case 'normal':
+					//메뉴, 알림
+					$html.addClass('type-normal');
+					$tit.html(tit);
+					$html.removeClass('nav-admin');
+					$html.addClass('nav-normal');
+					// if (nav === 'normal') {
+					// 	$html.addClass('nav-normal');
+					// } else if (nav === 'site') {
+					// 	$html.addClass('nav-place');
+					// }
+					break;
+
+				case 'admin':
 					//메뉴,콘톡,알림
 					$html.addClass('type-normal');
 					$tit.html(tit);
-					$html.addClass('nav-normal');
+					$html.removeClass('nav-normal');
+					$html.addClass('nav-admin');
 					// if (nav === 'normal') {
 					// 	$html.addClass('nav-normal');
 					// } else if (nav === 'site') {

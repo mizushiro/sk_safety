@@ -8,6 +8,7 @@
     <button type="button" class="btn-menu" onclick="$plugins.common.navOpen();"><span class="a11y-hidden">전체메뉴</span></button>
     
     <div class="menu-wrap">
+        <!--근로자 메뉴-->
         <div class="menu-body normal">
             <div class="menu-header">
                 <div class="photo-area">
@@ -66,26 +67,83 @@
                 
             </nav>
         </div>
+        <!--//근로자 메뉴-->
 
-        <div class="menu-body site">
+        <!--관리자 메뉴-->
+        <div class="menu-body admin">
             <div class="menu-header">
-                <div>
-                    <img src="" alt="">
+                <div class="photo-area">
+                    <div class="photo">
+                        <img src="" alt="">
+                    </div>
                 </div>
-                <strong>관리자 홍길동2</strong>
-                <span>[광명] sk view 신축공사</span>
-    
+                <div class="my-info">
+                    <div class="name">
+                        <span>관리자 홍길동</span>
+                    </div>
+                    <div class="place">
+                        [광명] sk view 신축공사광명] sk view 신축공사
+                    </div>
+                </div>
+
                 <button type="button" class="btn-close" onclick="$plugins.common.navClose()"><span class="a11y-hidden">닫기</span></button>
             </div>
-            <nav style="height: 2000px;">
+
+            <nav class="nav-list">
+                <h3 class="h3">금일 내 현장</h3>
                 <ul>
                     <li>
-                        <a href="#">마이페이지</a>
+                        <a href="#">오늘 출석 현황보기</a>
+                    </li>
+                    <li>
+                        <a href="#">시정조치 현황보기</a>
+                    </li>
+                    <li>
+                        <a href="#">근로자 프로필보기</a>
+                    </li>
+                </ul>
+                <hr class="hr-sec">
+                <h3 class="h3">점검일지</h3>
+                <ul>
+                    <li>
+                        <a href="#">점검일지 만들기</a>
+                    </li>
+                    <li>
+                        <a href="#">점검일지 목록</a>
+                    </li>
+                </ul>
+
+                <hr class="hr-sec">
+                <h3 class="h3">위험성평가</h3>
+                <ul>
+                    <li>
+                        <a href="#">위험작업 목록</a>
+                    </li>
+                    <li>
+                        <a href="#">작업중지 내역</a>
+                    </li>
+                    <li>
+                        <a href="#">작업허가서 작성</a>
+                    </li>
+                </ul>
+
+                <hr class="hr-sec">
+                <ul>
+                    <li>
+                        <a href="#">conTalk  바로가기</a>
+                    </li>
+                </ul>
+
+                <hr class="hr-sec">
+                <ul>
+                    <li>
+                        <a href="#">정보변경</a>
                     </li>
                 </ul>
                 
             </nav>
         </div>
+        <!--/관리자 메뉴-->
     </div>
 
     <div class="util">

@@ -13364,7 +13364,7 @@ div.specView:focus {
             margin: 0;
             padding:10px;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: flex-start;
             
         }
 
@@ -13656,7 +13656,7 @@ div.specView:focus {
             text-overflow: ellipsis;
             white-space: pre;
             color: #323232;
-            height: 16px;
+            height: auto;
             display: inline-block;
         }
 
@@ -32991,6 +32991,23 @@ div.specView:focus {
         #root-1:focus {
             outline: none
         }
+        .h3{padding:0 2rem; margin-top:4rem;}
+        button {text-align:left;}
+        div.artboardTitle-3qs0w{
+            text-overflow: initial;
+            white-space: initial;
+            font-size:12px;
+        }
+        .imageWrapper-GEZBB{
+            width:150px
+        }
+        div.titleWithoutConnectionsIcon-31eun {width:100%; box-sizing:border-box;}
+        div.card-15R5T{
+            height:auto;
+        }
+        .singleGridTile-3sBLh {margin:0 10px 10px 0; max-width:150px;}
+            
+
     </style>
 </head>
 
@@ -33003,6 +33020,8 @@ div.specView:focus {
                     <div class="gridViewContainer-23f3-" data-auto="gridViewContainer">
                         <div class="gridViewListWrapper-1JW4Y" data-auto="gridListContainer">
                             <a target="sk" href="./guide.html">Guide</a>
+
+                            <h3 class="h3">공통</h3>
                             <ol class="gridList-6kO-K" data-auto="gridList">
 
                                 <li class="singleGridTile-3sBLh" data-id="59425dd0-7813-4254-baa3-a3af85069c9f"
@@ -33220,6 +33239,49 @@ div.specView:focus {
                                         </div>
                                     </div></button>
                                 </li>
+                                <li class="singleGridTile-3sBLh" style="outline:1px solid blue;">
+                                    <button type="button" onclick="
+                                    $plugins.uiModalOpen({ 
+                                        id: 'modal_bioinfo', 
+                                        src: '../modal/modal_bioinfo.html', 
+                                        ps: 'bottom'
+                                    });">
+                                    <div class="card-15R5T" tabindex="0" data-id="2baab08b-2af1-4604-bac8-591cd444c2d2">
+                                        <div class="imageWrapper-GEZBB">
+                                            <div class="imageBlock-2im2e imageLoaded-2tjtu"></div>
+                                        </div>
+                                        <div class="artboardTitle-3qs0w titleWithoutConnectionsIcon-31eun"><span
+                                                class="title-2qG2p" data-auto="artboardTitleGridView">생체인증 안내</span>
+                                        </div>
+                                    </div></button>
+                                    </li>
+                                    <li class="singleGridTile-3sBLh" style="outline:1px solid blue;">
+                                        <button type="button" onclick="
+                                            $plugins.uiModalOpen({ 
+                                                id: 'modal_cbse', 
+                                                full:true,
+                                                src: '../modal/modal_cbse.html', 
+                                                ps: 'center', 
+                                                closeCallback: function(v) { 
+                                                    console.log('close callback', v); 
+                                                },
+                                                callback: function(v) { 
+                                                    console.log('callback', v); 
+                                                }
+                                        });">
+                                        <div class="card-15R5T" tabindex="0" data-id="2baab08b-2af1-4604-bac8-591cd444c2d2">
+                                            <div class="imageWrapper-GEZBB">
+                                                <div class="imageBlock-2im2e imageLoaded-2tjtu"></div>
+                                            </div>
+                                            <div class="artboardTitle-3qs0w titleWithoutConnectionsIcon-31eun"><span
+                                                    class="title-2qG2p" data-auto="artboardTitleGridView">기초안전교육 이수증</span>
+                                            </div>
+                                        </div></button>
+                                    </li>
+                            </ol>
+
+                            <h3 class="h3">근로자</h3>
+                            <ol class="gridList-6kO-K" data-auto="gridList">
                                 <li class="singleGridTile-3sBLh" data-id="51bf934e-1de6-4a43-8a9f-50977c03e8c3"
                                     id="51bf934e-1de6-4a43-8a9f-50977c03e8c3" data-auto="card-15-div">
                                     <a target="sk" href="../html/worker_profile_make.html">
@@ -33334,6 +33396,11 @@ div.specView:focus {
                                                 현황</span></div>
                                     </div></a>
                                 </li>
+
+                            </ol>
+                            
+                            <h3 class="h3">내현장 안전관리</h3>
+                            <ol class="gridList-6kO-K" data-auto="gridList">
                                 <li class="singleGridTile-3sBLh" data-id="e4f27ea5-7a21-4884-8926-bb2caad9a581"
                                     id="e4f27ea5-7a21-4884-8926-bb2caad9a581" data-auto="card-23-div">
                                     <a target="sk" href="../html/safety_management.html">
@@ -33352,7 +33419,7 @@ div.specView:focus {
 
 
 
-<li class="singleGridTile-3sBLh" data-id="89bc11c2-5acd-41f4-9ce7-519c203a86e8"
+<!-- <li class="singleGridTile-3sBLh" data-id="89bc11c2-5acd-41f4-9ce7-519c203a86e8"
     id="89bc11c2-5acd-41f4-9ce7-519c203a86e8" data-auto="card-24-div" >
 
     <div class="card-15R5T" tabindex="0" data-id="89bc11c2-5acd-41f4-9ce7-519c203a86e8">
@@ -33365,7 +33432,7 @@ div.specView:focus {
                 class="title-2qG2p"
                 data-auto="artboardTitleGridView">#공통_main_menu</span></div>
     </div>
-</li>
+</li> -->
 
 
 
@@ -33435,7 +33502,10 @@ div.specView:focus {
                                                 data-auto="artboardTitleGridView">05_안전점검일지_작성1</span></div>
                                     </div></a>
                                 </li>
-
+                            </ol>
+                            
+                            <h3 class="h3">Con Talk</h3>
+                            <ol class="gridList-6kO-K" data-auto="gridList">
                                 <li class="singleGridTile-3sBLh" data-id="781b3760-1b86-4c31-898d-778abd32724e"
                                     id="781b3760-1b86-4c31-898d-778abd32724e" data-auto="card-30-div">
                                     <a target="sk" href="../html/contalk_list.html">
@@ -33580,6 +33650,10 @@ div.specView:focus {
                                         </div>
                                     </div></button>
                                 </li>
+                            </ol>
+                            
+                            <h3 class="h3">안전교육</h3>
+                            <ol class="gridList-6kO-K" data-auto="gridList">
                                 <li class="singleGridTile-3sBLh" data-id="5a294cd8-a804-47dc-a4fd-91dd052e8eb4"
                                     id="5a294cd8-a804-47dc-a4fd-91dd052e8eb4" data-auto="card-38-div">
                                     <a target="sk" href="../html/safety_training.html">
@@ -33684,6 +33758,11 @@ div.specView:focus {
                                                 1</span></div>
                                     </div></a>
                                 </li>
+
+                            </ol>
+                            
+                            <h3 class="h3">알림</h3>
+                            <ol class="gridList-6kO-K" data-auto="gridList">
                                 <li class="singleGridTile-3sBLh" data-id="863c5f88-a2bf-4a91-8d84-dd0044f84ff5"
                                     id="863c5f88-a2bf-4a91-8d84-dd0044f84ff5" data-auto="card-43-div">
                                     <a target="sk" href="../html/alarm.html">
@@ -33713,7 +33792,10 @@ div.specView:focus {
                                                 설정</span></div>
                                     </div></a>
                                 </li>
-                                
+                            </ol>
+                            
+                            <h3 class="h3">내현장 - 관리자</h3>
+                            <ol class="gridList-6kO-K" data-auto="gridList">
                                 <li class="singleGridTile-3sBLh" data-id="bf565128-f589-439d-8ccc-35725a9f279c"
                                     id="bf565128-f589-439d-8ccc-35725a9f279c" data-auto="card-47-div">
                                     <a target="sk" href="../html/site_admin.html">
@@ -34055,6 +34137,10 @@ div.specView:focus {
                                         </div>
                                     </div></button>
                                 </li>
+                            </ol>
+                            
+                            <h3 class="h3">작업허가서</h3>
+                            <ol class="gridList-6kO-K" data-auto="gridList">
                                 <li class="singleGridTile-3sBLh" data-id="62b4a113-13d1-479b-be51-1dcbcd6bc03d"
                                     id="62b4a113-13d1-479b-be51-1dcbcd6bc03d" data-auto="card-64-div">
                                     <a target="sk" href="../html/workletter.html">
@@ -34099,7 +34185,10 @@ div.specView:focus {
                                         </div>
                                     </div></a>
                                 </li>
-
+                            </ol>
+                            
+                            <h3 class="h3">권한관리</h3>
+                            <ol class="gridList-6kO-K" data-auto="gridList">
                                 <li class="singleGridTile-3sBLh" data-id="62b4a113-13d1-479b-be51-1dcbcd6bc03d"
                                 id="62b4a113-13d1-479b-be51-1dcbcd6bc03d" data-auto="card-64-div">
                                     <a target="sk" href="../html/authority_list.html">
@@ -34120,47 +34209,12 @@ div.specView:focus {
 
 
 
-                                
+                            </ol>
+                            
+                            <h3 class="h3">ETC</h3>
+                            <ol class="gridList-6kO-K" data-auto="gridList">
 
-                                <li class="singleGridTile-3sBLh" style="outline:1px solid blue;">
-                                <button type="button" onclick="
-                                $plugins.uiModalOpen({ 
-                                    id: 'modal_bioinfo', 
-                                    src: '../modal/modal_bioinfo.html', 
-                                    ps: 'bottom'
-                                });">
-                                <div class="card-15R5T" tabindex="0" data-id="2baab08b-2af1-4604-bac8-591cd444c2d2">
-                                    <div class="imageWrapper-GEZBB">
-                                        <div class="imageBlock-2im2e imageLoaded-2tjtu"></div>
-                                    </div>
-                                    <div class="artboardTitle-3qs0w titleWithoutConnectionsIcon-31eun"><span
-                                            class="title-2qG2p" data-auto="artboardTitleGridView">생체인증 안내</span>
-                                    </div>
-                                </div></button>
-                                </li>
-                                <li class="singleGridTile-3sBLh" style="outline:1px solid blue;">
-                                    <button type="button" onclick="
-                                        $plugins.uiModalOpen({ 
-                                            id: 'modal_cbse', 
-                                            full:true,
-                                            src: '../modal/modal_cbse.html', 
-                                            ps: 'center', 
-                                            closeCallback: function(v) { 
-                                                console.log('close callback', v); 
-                                            },
-                                            callback: function(v) { 
-                                                console.log('callback', v); 
-                                            }
-                                    });">
-                                    <div class="card-15R5T" tabindex="0" data-id="2baab08b-2af1-4604-bac8-591cd444c2d2">
-                                        <div class="imageWrapper-GEZBB">
-                                            <div class="imageBlock-2im2e imageLoaded-2tjtu"></div>
-                                        </div>
-                                        <div class="artboardTitle-3qs0w titleWithoutConnectionsIcon-31eun"><span
-                                                class="title-2qG2p" data-auto="artboardTitleGridView">기초안전교육 이수증</span>
-                                        </div>
-                                    </div></button>
-                                </li>
+                               
                                 <li class="singleGridTile-3sBLh" style="outline:1px solid blue;">
                                     <a target="sk" href="../html/site_map.html">
                                     <div class="card-15R5T" tabindex="0" data-id="2baab08b-2af1-4604-bac8-591cd444c2d2">

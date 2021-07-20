@@ -146,6 +146,7 @@
 	position: relative
 }
 
+.type-normal .btn-contalk,
 .type-normal .util-qr,
 .type-normal .util-alarm,
 .type-normal .btn-back,
@@ -169,7 +170,7 @@
 .type-qr .btn-menu,
 .type-qr .page-title .sum-box,
 
-.type-sub .util,
+.type-sub .btn-contalk,
 .type-sub .util-qr,
 .type-sub .util-contalk,
 .type-sub .util-alarm,
@@ -988,6 +989,7 @@ input[type="date"].box:valid::before{
 	padding: 0;
 	bottom: 0;
 	left: 0;
+	z-index: 800;
 }
 
 .btn-area.stick .btn-base {
@@ -1246,7 +1248,7 @@ a.btn-base {
 	position: relative;
 	width: 3rem;
 	height: 3rem;
-	background: url(../img/icon_talk_b.svg) no-repeat 50% 50% / 1.8rem;
+	background: url(../img/icon_talk_b.svg) no-repeat 50% 53% / 1.8rem;
 }
 
 .btn-more {
@@ -1750,7 +1752,12 @@ a.btn-base {
 .ps-bottom .ui-modal-footer .btn-area .btn-base {
 	height: 5rem;
 }
-
+.ui-modal-footer{
+	z-index: 2;
+}
+.ui-modal-body{
+	z-index: 1;
+}
 .ps-bottom .ui-modal-body {
 	padding: 2rem;
 }
@@ -3860,11 +3867,14 @@ dl.list-base > div > *{
 dl.list-base > div,
 .list-base>li {
 	width: 100%;
-	padding: 1rem 0;
+	padding: 1rem 1rem;
 }
 
 .list-base>li+li {
 	border-top: 1px solid #F5F5F5;
+}
+.list-base>li.on {
+	border: 1px solid #008F84;
 }
 
 .list-base .tit {
@@ -4140,7 +4150,13 @@ dl.list-base > div,
 	margin-top: 1rem;
 
 }
-
+.list-network.ai-t li{
+	align-items: flex-start;
+}
+.list-network li > .group{
+	flex: 1;
+	margin-left:.4rem;
+}
 .list-network .box span {
 	display: inline-block;
 	position: relative;
@@ -5082,10 +5098,29 @@ dl.list-base > div,
 	box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.1);
 
 }
+.search-resultbox.type2 {
+	position: relative;
+	top: 0!important;
+	left: 0!important;
+	width: calc(100% + 0rem);
+	margin-left: 0rem;
+	background: #fff;
+	padding: 1rem 2rem 2.2rem;
+	z-index: 100;
+	box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.0);
 
+}
+.ui-modal .search-resultbox-scroll {
+	max-height: 62vh;
+}
 .search-resultbox-scroll {
 	max-height: 38vh;
 	overflow-y: auto;
+}
+.search-resultbox-scroll.type2 {
+	max-height: 68vh;
+    overflow-y: auto;
+    padding-bottom: 7rem;
 }
 
 .search-resultbox-map {
@@ -5416,11 +5451,14 @@ dl.list-base > div,
 }
 
 .search-risk{
+	position:sticky;
+	top:5.5rem;
 	width:100%;
 	padding:1.5rem 2rem;
 	background: linear-gradient(105deg, #167C99, #169C9D);
 	border-bottom-left-radius:3rem;
 	border-bottom-right-radius:3rem;
+	z-index:3;
 }
 .search-risk .type-searchbox {
 	background: #fff;

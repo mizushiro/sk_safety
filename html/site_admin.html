@@ -43,9 +43,27 @@
         <!-- content -->
         <main class="base-body" >
             <div class="titlebar">
-                <button type="button" class="btn-base line small ui-drop arrow-s" id="uiSiteSelect">
+                <!-- <button type="button" class="btn-base line small ui-drop arrow-s" id="uiSiteSelect">
+                    <span>현장 참여</span>
+                </button> -->
+
+                <button type="button" class="btn-base line small ui-drop arrow-s" onclick="
+                    $plugins.uiModalOpen({ 
+                        id: 'modal_siteSearch2', 
+                        src: '../modal/modal_siteSearch2.html', 
+                        ps: 'center', 
+                        full: true,
+                        closeCallback: function(v) { 
+                            console.log('close callback', v); 
+                            
+                        },
+                        callback: function(v) { 
+                            console.log('callback', v); 
+                        }
+                    });">
                     <span>현장 참여</span>
                 </button>
+                <!-- 
                 <div class="ui-drop-pnl search-resultbox" data-id="uiSiteSelect">
                     <div class="ui-drop-box">
                         <div class="section-item mgt-n pdtb-n">
@@ -124,7 +142,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> 
+                -->
                 <button type="button" class="btn-base line small icon-qr">
                     <span>현장생성</span>
                 </button>
