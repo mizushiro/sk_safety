@@ -404,7 +404,7 @@ if (!Object.keys){
 		show : function(opt) {
 			var opt = $.extend(true, {}, this.options, opt);
 			var delay = opt.delay;
-			var toast = '<div class="ui-toast toast '+ opt.classname +'">'+ opt.conts +'</div>';
+			var toast = '<div class="ui-toast toast '+ opt.classname +'">'+ opt.conts +'<button type="button" class="btn-close ui-toast-close"><span class="a11y-hidden">닫기</span></button></div>';
 			var $body = $('body');
 			var time = delay === 'short' ? 2000 : 3500;
 
@@ -428,10 +428,10 @@ if (!Object.keys){
 			var $shanckbar = $('.ui-toast');
 			
 			$body.addClass('ui-toast-ready');
-
+			$('.ui-toast-close').off('click.toast').on('click.toast', win[global].toast.hide);
 			setTimeout(function(){
 				$body.addClass('ui-toast-show');
-
+				
 				$shanckbar.off('transitionend.toasthide').on('transitionend.toastshow', function(){
 					$(this).off('transitionend.toastshow').addClass('on');
 					win[global].toast.timer = setTimeout(win[global].toast.hide, time);
