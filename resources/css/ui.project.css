@@ -3849,11 +3849,14 @@ dl.list-base > div > *{
 dl.list-base > div,
 .list-base>li {
 	width: 100%;
-	padding: 1rem 0;
+	padding: 1rem 1rem;
 }
 
 .list-base>li+li {
 	border-top: 1px solid #F5F5F5;
+}
+.list-base>li.on {
+	border: 1px solid #008F84;
 }
 
 .list-base .tit {
