@@ -211,7 +211,7 @@
                                             <span><b>안심건설, OO토건</b></span>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn-star">
+                                    <button type="button" class="btn-star ui-toggle">
                                         <span class="a11y-hidden">선택</span>
                                     </button>
                                 </li>
@@ -226,7 +226,7 @@
                                             <span><b>안심건설, OO토건</b></span>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn-star">
+                                    <button type="button" class="btn-star ui-toggle">
                                         <span class="a11y-hidden">선택</span>
                                     </button>
                                 </li>
@@ -241,7 +241,7 @@
                                             <span><b>안심건설, OO토건</b></span>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn-star">
+                                    <button type="button" class="btn-star ui-toggle">
                                         <span class="a11y-hidden">선택</span>
                                     </button>
                                 </li>
@@ -524,9 +524,7 @@
                     } 
                 });
 
-                $('.btn-star').off('click.star').on('click.star', function(){
-                    !$(this).hasClass('on') ? $(this).addClass('on') : $(this).removeClass('on');
-                });
+                
 
                 $plugins.map = {
                     name: {},

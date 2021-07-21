@@ -6347,6 +6347,11 @@ body.qrcode {
 .qrcode-inp .btn-base {
 	width:100%;
 }
+.type-authsrch .btn-add{
+	border-radius: 50%;
+}
+.type-authsrch .btn-add.on{
+	background:#008F84 url(../img/icon_add_w.svg) no-repeat 50% 50% / 1.4rem;
 
-
+}
 
