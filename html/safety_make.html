@@ -52,39 +52,133 @@
                     <div class="form-wrap">
                         <div class="form-dl mgt-n">
                             <div class="form-dt">
-                                <label class="form-tit" for="training1">교육종류</label>
+                                <label class="form-tit" for="edinfo1">현장</label>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="text" id="training1" class="inp-base" value="고덕 그라시움 신규 채용교육" placeholder="">
+                                    <select class="inp-select" id="edinfo1" title="현장 선택">
+                                        <option>선택</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
-
+    
                         <div class="form-dl">
                             <div class="form-dt">
-                                <label class="form-tit" for="training3">교육시간</label>
+                                <label class="form-tit" for="edinfo2">교육명</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <select class="inp-select" id="edinfo2" title="교육명 선택">
+                                        <option>교육명을 선택하세요</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <select class="inp-select" title="교육명 선택">
+                                        <option>1.고압실내 작업</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="edinfo3">교육일자</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <input type="date" id="edinfo3" class="inp-base" value="2021-12-14" placeholder="" >
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="edinfo4">교육시간</label>
                             </div>
       
                             <div class="form-dd col2-c">
                                 <div class="form-item">
-                                    <input type="tel" id="training3" class="inp-base" value="00:00" title="시작시간">
+                                    <input type="tel" id="edinfo4" class="inp-base" value="00:00" title="시작시간">
                                     <div class="form-div">~</div>
                                     <input type="tel" class="inp-base" value="00:00" title="종료시간">
                                 </div>
                             </div>
                         </div>
-
+    
                         <div class="form-dl">
                             <div class="form-dt">
-                                <label class="form-tit" for="training4">교육내용 (교육명)</label>
+                                <label class="form-tit" for="edinfo5">교육인정시간</label>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="text" id="training4" class="inp-base" value="고덕 그라시움 신규 채용 교육 내용" placeholder="">
+                                    <input type="text" id="edinfo5" class="inp-base" value="" placeholder="교육 인정 시간을 입력하세요" >
                                 </div>
                             </div>
                         </div>
+    
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="edinfo6">주관회사</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <input type="text" id="edinfo6" class="inp-base" value="주관회사명" placeholder="" disabled>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="edinfo7">교육장소</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <input type="text" id="edinfo7" class="inp-base" value="" placeholder="교육 장소를 입력하세요" >
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="edinfo8">시공사 교육담당자</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <input type="text" id="edinfo8" class="inp-base" value="" placeholder="교육 장소를 입력하세요" >
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="edinfo9">협력사 교육담당자</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <input type="text" id="edinfo9" class="inp-base" value="" placeholder="교육 장소를 입력하세요" >
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="edinfo9">교육추가내용</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <input type="text" id="edinfo9" class="inp-base" value="" placeholder="교육 장소를 입력하세요" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn-area">
+                        <button type="button" class="btn-base line">
+                            <span>교육정보저장</span>
+                        </button>
                     </div>
                 </section>
                 <!-- //시공물 종류 -->
@@ -118,121 +212,7 @@
                 </section>
                 <!-- //현장 대표사진 등록 -->
 
-                <div class="btn-area stick">
-                    <button type="button" class="btn-base large line">
-                        <span>교육정보 QR 생성</span>
-                    </button>
-                    <button type="button" class="btn-base large primary">
-                        <span>교육정보 저장</span>
-                    </button>
-                </div>
-
-                <!-- 안전교육정보 -->
-                <hr class="hr-sec">
-                <section class="section-item">
-                    <div class="tit-sec type-line mgb-n">
-                        <h3 class="tit">주간 교육현황</h3>
-                    </div>
-
-                    <div class="swiper-weekedu">
-                        <div>
-                            <div class="tbl-base type-b">
-                                <table>
-                                    <caption>교육종류, 교육일시, 인원, 주관 정보입니다.</caption>
-                                    <colgroup>
-                                        <col style="width:6rem">
-                                        <col style="width:auto">
-                                        <col style="width:6rem">
-                                        <col style="width:6rem">
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">교육종류</th>
-                                            <th scope="col">교육일시</th>
-                                            <th scope="col">인원</th>
-                                            <th scope="col">주관</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="ta-c">
-                                                <em class="flag new">신규</em>
-                                            </td>
-                                            <td>21.03.04 09:00~11:00</td>
-                                            <td class="ta-c">15명</td>
-                                            <td class="ta-c">김철수</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="ta-c">
-                                                <em class="flag spc">특별</em>
-                                            </td>
-                                            <td>21.03.04 09:00~11:00</td>
-                                            <td class="ta-c">15명</td>
-                                            <td class="ta-c">김철수</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="ta-c">
-                                                <em class="flag any">정기</em>
-                                            </td>
-                                            <td>21.03.04 09:00~11:00</td>
-                                            <td class="ta-c">15명</td>
-                                            <td class="ta-c">김철수</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="tbl-base type-b">
-                                <table>
-                                    <caption>교육종류, 교육일시, 인원, 주관 정보입니다.</caption>
-                                    <colgroup>
-                                        <col style="width:6rem">
-                                        <col style="width:auto">
-                                        <col style="width:6rem">
-                                        <col style="width:6rem">
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">교육종류</th>
-                                            <th scope="col">교육일시</th>
-                                            <th scope="col">인원</th>
-                                            <th scope="col">주관</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="ta-c">
-                                                <em class="flag new">신규</em>
-                                            </td>
-                                            <td>21.03.04 09:00~11:00</td>
-                                            <td class="ta-c">15명</td>
-                                            <td class="ta-c">김철수</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="ta-c">
-                                                <em class="flag spc">특별</em>
-                                            </td>
-                                            <td>21.03.04 09:00~11:00</td>
-                                            <td class="ta-c">15명</td>
-                                            <td class="ta-c">김철수</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="ta-c">
-                                                <em class="flag any">정기</em>
-                                            </td>
-                                            <td>21.03.04 09:00~11:00</td>
-                                            <td class="ta-c">15명</td>
-                                            <td class="ta-c">김철수</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- //안전교육정보 -->
-
+                
             </div>
            
         </main>
@@ -254,11 +234,6 @@
                     infinite: false
                 });
 
-                var currentSlide2 = $('.swiper-weekedu').slick({
-                    arrows: false,
-                    dots: true,
-                    infinite: false
-                });
 
             });
         })(jQuery, window, document);

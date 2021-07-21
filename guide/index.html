@@ -33354,6 +33354,38 @@ div.specView:focus {
                                                 class="title-2qG2p" data-auto="artboardTitleGridView">01_내 이력 보기 – 1</span></div>
                                     </div></a>
                                 </li>
+                                <li class="singleGridTile-3sBLh" data-id="b0c43a00-11b4-405d-9956-52689879eec7"
+                                    id="b0c43a00-11b4-405d-9956-52689879eec7" data-auto="card-18-div">
+                                    <button type="button" onclick="
+                                        $plugins.uiModalOpen({ 
+                                            id: 'modal_point', 
+                                            full:true,
+                                            src: '../modal/modal_point.html', 
+                                            ps: 'center', 
+                                            closeCallback: function(v) { 
+                                                console.log('close callback', v); 
+                                            },
+                                            callback: function(v) { 
+                                                console.log('callback', v); 
+                                                $plugins.uiTab({ 
+                                                    id:'exeWorkTab', 
+                                                    current:0, 
+                                                    callback:function(v){
+                                                        console.log(111111);
+                                                    } 
+                                                });
+                                            }
+                                    });">
+                                    <div class="card-15R5T" tabindex="0" data-id="b0c43a00-11b4-405d-9956-52689879eec7">
+                                        <div class="imageWrapper-GEZBB">
+                                            <div class="imageBlock-2im2e imageLoaded-2tjtu"><img crossorigin="anonymous"
+                                                    src=""
+                                                    class="image-iY65B"></div>
+                                        </div>
+                                        <div class="artboardTitle-3qs0w titleWithoutConnectionsIcon-31eun"><span
+                                                class="title-2qG2p" data-auto="artboardTitleGridView">안전왕 포인트 적립 내역</span></div>
+                                    </div></button>
+                                </li>
                                 <li class="singleGridTile-3sBLh" data-id="f39c6d42-8ed6-44e8-90c4-7d33f5bd7d76"
                                     id="f39c6d42-8ed6-44e8-90c4-7d33f5bd7d76" data-auto="card-19-div">
                                     <a target="sk" href="../html/worker_mypage.html">
@@ -33665,6 +33697,20 @@ div.specView:focus {
                                         </div>
                                         <div class="artboardTitle-3qs0w titleWithoutConnectionsIcon-31eun"><span
                                                 class="title-2qG2p" data-auto="artboardTitleGridView">07_안전교육</span>
+                                        </div>
+                                    </div></a>
+                                </li>
+                                <li class="singleGridTile-3sBLh" data-id="5a294cd8-a804-47dc-a4fd-91dd052e8eb4"
+                                    id="5a294cd8-a804-47dc-a4fd-91dd052e8eb4" data-auto="card-38-div">
+                                    <a target="sk" href="../html/safety_info.html">
+                                    <div class="card-15R5T" tabindex="0" data-id="5a294cd8-a804-47dc-a4fd-91dd052e8eb4">
+                                        <div class="imageWrapper-GEZBB">
+                                            <div class="imageBlock-2im2e imageLoaded-2tjtu"><img crossorigin="anonymous"
+                                                    src="../resources/dummy/list32.png"
+                                                    class="image-iY65B"></div>
+                                        </div>
+                                        <div class="artboardTitle-3qs0w titleWithoutConnectionsIcon-31eun"><span
+                                                class="title-2qG2p" data-auto="artboardTitleGridView">안전교육정보 - 소장권한</span>
                                         </div>
                                     </div></a>
                                 </li>
@@ -34717,6 +34763,9 @@ div.specView:focus {
 	<script src="../resources/js/ui.common.js"></script>
     <script
         src="https://wwwimages2.adobe.com/etc/beagle/public/globalnav/adobe-profile/latest/adobe-profile.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
         <script> 
         ;(function($, win, doc, undefined) {
