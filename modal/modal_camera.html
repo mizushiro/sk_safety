@@ -1,0 +1,22 @@
+<section class="ui-modal type-camera" id="modal_camera">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-body">
+            <div class="btns">
+                <button type="button" class="btn-base">
+                    <span>사진보관함</span>
+                </button>
+                <button type="button" class="btn-base">
+                    <span>사진 또는 동영상 찍기</span>
+                </button>
+            </div>
+            <button type="button" class="btn-base" onclick="
+            $plugins.uiModalClose({ 
+                id:'modal_camera', 
+                callback:function(v){ console.log(v); } 
+            });">
+                <span>취소</span>
+            </button>
+        </div>
+    </div>
+</section>
+
