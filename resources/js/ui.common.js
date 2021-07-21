@@ -129,6 +129,10 @@
 				$plugins.common.contentHeight();
 			});
 
+			$(document).on('click.tg', '.ui-toggle', function(){
+				!$(this).hasClass('on') ? $(this).addClass('on') : $(this).removeClass('on');
+			});
+
 		},
 		pageTop: function(v){
 			console.log(v);
