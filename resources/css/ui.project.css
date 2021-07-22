@@ -2746,6 +2746,11 @@ a.ui-acco-btn:after {
 	min-height:2.8rem;
 	padding:0;
 }
+.talk-search .talk-search-wrap .list-imgfile .group button{
+	flex: none;
+	min-height:2.8rem;
+	padding:0;
+}
 .talk-search-wrap>.group .btn-base+.btn-base {
 	margin-left: 0.7rem;
 }
