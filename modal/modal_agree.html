@@ -1,4 +1,4 @@
-<section class="ui-modal" id="modal_agree">
+<section class="ui-modal type-agree" id="modal_agree">
     <div class="ui-modal-wrap">
         <div class="ui-modal-header">
             <h2 class="ui-modal-tit">약관동의</h2>
@@ -27,18 +27,21 @@
                         <div class="ui-acco-tit-wrap">
                             <div class="inp-check">
                                 <input type="checkbox" id="agree1_1">
-                                <label for="agree1_1">현재위치 확인</label>
+                                <label for="agree1_1">서비스 이용약관</label>
                             </div>
                         </div>
-                        <button type="button" class="ui-acco-btn">
-                            <span>자세히보기</span>
+                        <button type="button" class="btn-arrow" onclick="
+                            $plugins.uiModalOpen({ 
+                                id: 'modal_term1', 
+                                src: '../modal/modal_term1.html', 
+                                ps: 'center', 
+                                full:true
+                            });
+                        ">
+                            <span class="a11y-hidden">서비스 이용약관 자세히보기</span>
                         </button>
                     </div>
-                    <div class="ui-acco-pnl">
-                        <div class="ui-acco-pnl-wrap">
-                            내용을 입력해주세요내용을 입력해주세요내용을 입력해 주세요 내용을 입력해주세요내용을 입력해주세요내용을 입력해주세요내용을 입력해주세요내용을 입력해 주세요 내용을 입력해주세요내용을 입력해주세요내용을 입력해주세요내용을 입력해주세요내용을 입력해 주세요 내용을 입력해주세요내용을 입력해주세요내용을 입력해주세요내용을 입력해주세요내용을 입력해 주세요 내용을 입력해주세요내용을 입력해주세요내용을 입력해주세요내용을 입력해주세요내용을 입력해 주세요 내용을 입력해주세요내용을 입력해주세요내용을 입력해주세요내용을 입력해주세요내용을 입력해 주세요 내용을 입력해주세요내용을 입력해주세요
-                        </div>
-                    </div>
+                  
                 </div>
                 
                 <div class="ui-acco-wrap">
@@ -49,13 +52,137 @@
                                 <label for="agree1_2">개인정보 수집동의</label>
                             </div>
                         </div>
-                        <button type="button" class="ui-acco-btn">
-                            <span>자세히보기</span>
+                        <button type="button" class="btn-arrow" onclick="
+                            $plugins.uiModalOpen({ 
+                                id: 'modal_term2', 
+                                src: '../modal/modal_term2.html', 
+                                ps: 'center', 
+                                full:true,
+                                callback: function(){
+                                    $plugins.scroll.move({ 
+                                        value: 0, 
+                                        target: $('#modal_term2'),
+                                        speed: 0
+                                    });
+                                }
+                            });
+                        ">
+                            <span class="a11y-hidden">개인정보 수집동의 자세히보기</span>
                         </button>
                     </div>
                     <div class="ui-acco-pnl">
                         <div class="ui-acco-pnl-wrap">
-                            내용을 입력해주세요내용을 입력해주세요내용을 입력해 주세요 내용을 입력해주세요내용을 입력해주세요
+                            <ul class="agree-sub">
+                                <li>
+                                    <div class="inp-check">
+                                        <input type="checkbox" id="agree2_1">
+                                        <label for="agree2_1">개인정보 접근·수집·이용 동의</label>
+                                    </div>
+                                    <button type="button" class="btn-arrow" onclick="
+                                    $plugins.uiModalOpen({ 
+                                        id: 'modal_term2', 
+                                        src: '../modal/modal_term2.html', 
+                                        ps: 'center', 
+                                        full:true,
+                                        callback: function(){
+                                            $plugins.scroll.move({ 
+                                                value: $('#trems2_1').position().top - 50, 
+                                                target: $('#modal_term2'),
+                                                speed: 0
+                                            });
+                                        }
+                                    });">
+                                        <span class="a11y-hidden">개인정보 접근·수집·이용 동의 자세히보기</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <div class="inp-check">
+                                        <input type="checkbox" id="agree2_2">
+                                        <label for="agree2_2">민감정보 접근·수집·이용·처리 동의</label>
+                                    </div>
+                                    <button type="button" class="btn-arrow" onclick="
+                                    $plugins.uiModalOpen({ 
+                                        id: 'modal_term2', 
+                                        src: '../modal/modal_term2.html', 
+                                        ps: 'center', 
+                                        full:true,
+                                        callback: function(){
+                                            $plugins.scroll.move({ 
+                                                value: $('#trems2_2').position().top - 50, 
+                                                target: $('#modal_term2'),
+                                                speed: 0
+                                            });
+                                        }
+                                    });">
+                                        <span class="a11y-hidden">민감정보 접근·수집·이용·처리 동의 자세히보기</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <div class="inp-check">
+                                        <input type="checkbox" id="agree2_3">
+                                        <label for="agree2_3">개인정보 제3자 제공 동의</label>
+                                    </div>
+                                    <button type="button" class="btn-arrow" onclick="
+                                    $plugins.uiModalOpen({ 
+                                        id: 'modal_term2', 
+                                        src: '../modal/modal_term2.html', 
+                                        ps: 'center', 
+                                        full:true,
+                                        callback: function(){
+                                            $plugins.scroll.move({ 
+                                                value: $('#trems2_3').position().top - 50, 
+                                                target: $('#modal_term2'),
+                                                speed: 0
+                                            });
+                                        }
+                                    });">
+                                        <span class="a11y-hidden">개인정보 제3자 제공 동의 자세히보기</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <div class="inp-check">
+                                        <input type="checkbox" id="agree2_4">
+                                        <label for="agree2_4">개인정보 취급업무 위탁 동의</label>
+                                    </div>
+                                    <button type="button" class="btn-arrow" onclick="
+                                    $plugins.uiModalOpen({ 
+                                        id: 'modal_term2', 
+                                        src: '../modal/modal_term2.html', 
+                                        ps: 'center', 
+                                        full:true,
+                                        callback: function(){
+                                            $plugins.scroll.move({ 
+                                                value: $('#trems2_4').position().top - 50, 
+                                                target: $('#modal_term2'),
+                                                speed: 0
+                                            });
+                                        }
+                                    });">
+                                        <span class="a11y-hidden">개인정보 취급업무 위탁 동의 자세히보기</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <div class="inp-check">
+                                        <input type="checkbox" id="agree2_5">
+                                        <label for="agree2_5">(선택) 마케팅, 프로모션, 광고목적의 개인정보 이용 동의</label>
+                                    </div>
+                                    <button type="button" class="btn-arrow" onclick="$plugins.uiModalOpen({ 
+                                        id: 'modal_term2', 
+                                        src: '../modal/modal_term2.html', 
+                                        ps: 'center', 
+                                        full:true,
+                                        callback: function(){
+                                            $plugins.scroll.move({ 
+                                                value: $('#trems2_5').position().top - 50, 
+                                                target: $('#modal_term2'),
+                                                speed: 0
+                                            });
+                                        }
+                                    });">
+                                        <span class="a11y-hidden">(선택) 마케팅, 프로모션, 광고목적의 개인정보 이용 동의 자세히보기</span>
+                                    </button>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -65,17 +192,18 @@
                         <div class="ui-acco-tit-wrap">
                             <div class="inp-check">
                                 <input type="checkbox" id="agree1_3">
-                                <label for="agree1_3">제3자 수집 동의</label>
+                                <label for="agree1_3">위치기반 서비스 이용약관</label>
                             </div>
                         </div>
-                        <button type="button" class="ui-acco-btn">
-                            <span>자세히보기</span>
+                        <button type="button" class="btn-arrow" onclick="
+                            $plugins.uiModalOpen({ 
+                                id: 'modal_term3', 
+                                src: '../modal/modal_term3.html', 
+                                ps: 'center', 
+                                full:true
+                            });">
+                            <span class="a11y-hidden">위치기반 서비스 이용약관 자세히보기</span>
                         </button>
-                    </div>
-                    <div class="ui-acco-pnl">
-                        <div class="ui-acco-pnl-wrap">
-                            내용을 입력해주세요내용을 입력해주세요내용을 입력해 주세요 내용을 입력해주세요내용을 입력해주세요
-                        </div>
                     </div>
                 </div>
             </div>

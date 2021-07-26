@@ -1870,10 +1870,9 @@ a.btn-base {
 	border-color: #F5F5F5;
 	border-bottom: 0;
 }
+.type-box .ui-acco-pnl{
+	padding:1rem 0 1rem 1.5rem;
 
-.type-box .ui-acco-pnl {
-	max-height: 10rem;
-	overflow-y: auto;
 }
 
 .type-box .ui-acco-tit-wrap {
@@ -1963,10 +1962,62 @@ a.ui-acco-btn .ui-acco-arrow {
 	transform: rotate(-90deg);
 }
 
+.btn-arrow{
+	position: absolute;
+    color: transparent;
+    overflow: hidden;
+    font-size: xx-small;
+    line-height: 0;
+	cursor: pointer;
+	z-index: 1;
+    top: 0;
+    right: 0;
+    width: 4rem;
+    height: 100%;
+    padding: 10px;
+    letter-spacing: 0;
+    text-align: left;
+}
+.btn-arrow:after{  
+	transform: rotate(-90deg);  
+	content: "";
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -10px;
+    width: 18px;
+    height: 20px;
+    float: right;
+    overflow: hidden;
+    color: #000;
+    font-size: 20px;
+    line-height: 1;
+    background: url(../img/icon_down.svg) no-repeat 50% 50% / 1.2rem;
+    opacity: 0.5;}
 a.ui-acco-btn:after {
 	content: "keyboard_arrow_right";
 }
+.type-agree .type-box .ui-acco-tit-wrap label{
+	width:100%;
+}
+.agree-sub li{
+	position:relative;
+	width:100%;
+	padding-right:4rem;
+	margin:.5rem 0;
+}
+.agree-sub li .btn-arrow{
+	padding:0; width:3rem;
+}
 
+.agree-sub .inp-check label::before{
+	background-color:transparent;
+	border:0;
+}
+/* .type-agree .type-box .ui-acco-tit-wrap{
+	width:calc(100% - 5rem);
+} */
 .ui-acco-pnl {
 	position: relative;
 	background: #f9f9f9;
@@ -6354,4 +6405,45 @@ body.qrcode {
 	background:#008F84 url(../img/icon_add_w.svg) no-repeat 50% 50% / 1.4rem;
 
 }
+
+.type-terms{line-height: 1.8;}
+.type-terms h2:first-child{margin-top:2rem}
+.type-terms h2{font-size:2rem; font-weight:500; margin:6.4rem 0 .4rem;}
+.type-terms h3{font-size:1.8rem; margin:4rem 0 .8rem; font-weight:500;}
+.type-terms h4{font-size:1.6rem; margin:1.2rem 0 .4rem; font-weight:500;}
+
+.type-terms div{font-size:1.5rem; color:#666;}
+.type-terms div + div{margin-top:1.2rem}
+.type-terms div > div{margin-left:1.2rem; margin-top:.8rem}
+.type-terms div > div + div{margin-top:.4rem}
+
+.type-terms dt{font-size:1.5rem; font-weight:500; margin:1.2rem 0 .4rem;}
+.type-terms dd{font-size: 1.3rem; color:#666; line-height: 1.8; margin-top:.4rem;}
+.type-terms dl > div + div{margin-top:3.2rem;}
+.type-terms em {color:#008F84 !important;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
