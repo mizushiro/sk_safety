@@ -4504,6 +4504,12 @@ dl.list-base > div,
 	text-align: center;
 	box-shadow:0 .6rem .6rem rgba(0, 0, 0, .1);
 }
+.safety-list>li.disable {	
+	background: #eeeeee;
+}
+.safety-list>li.disable a {	
+	opacity: 0.4;
+}
 
 .safety-list>li a {
 	display: inline-block;
