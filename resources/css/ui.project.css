@@ -1045,7 +1045,7 @@ input[type="date"].box:valid::before{
 	width: auto;
 	min-height: 4rem;
 	text-align: center;
-	font-size: 1.4rem;
+	font-size: 1.6rem;
 	font-weight: 500;
 	border: 1px solid #ddd;
 	padding: 0 1rem 0;
@@ -1060,7 +1060,7 @@ a.btn-base.small {
 }
 .btn-base.small {
 	min-height: 3rem;
-	font-size: 1.3rem;
+	font-size: 1.5rem;
 	padding: 0.3em 1rem 0.2rem ;
 	line-height: 1;
 }
@@ -1295,7 +1295,7 @@ a.btn-base {
 
 .form-dt {
 	width: 100%;
-	font-size: 1.3rem;
+	font-size: 1.5rem;
 	margin-bottom: 0.7rem;
 	font-weight: 500;
 	color: #666;
@@ -2177,6 +2177,7 @@ a.ui-acco-btn:after {
 	color:#fff;
 	padding:0 1rem 0 2rem ;
 	min-height:2.4rem;
+	font-size: 1.3rem;
 }
 .person-info-wrap .btn-wrap .btn-base + .btn-base{
 	margin-left:.5rem;
@@ -2681,8 +2682,9 @@ a.ui-acco-btn:after {
 	line-height: 1.4;
 	display: inline-block;
 	vertical-align: middle;
-	margin:.3rem .4rem 0;
+	margin:0rem 0.8rem 0;
 	position: relative;
+	font-size: 1.6rem;
 }
 .talk-noti .prev-day,
 .talk-noti .next-day {
@@ -2710,7 +2712,7 @@ a.ui-acco-btn:after {
 	color:transparent
 }
 .talk-noti .btn-date::after{
-	background: url(../img/calendar-range-w.svg) no-repeat 50% 50% / 1.5rem;
+	background: url(../img/calendar-range-w.svg) no-repeat 50% 50% / 1.8rem;
 }
 
 .talk-ctg {
@@ -2796,6 +2798,7 @@ a.ui-acco-btn:after {
 	flex:1 1 auto;
 	min-height:2.8rem;
 	padding:0;
+	font-size: 1.4rem;
 }
 .talk-search .talk-search-wrap .list-imgfile .group button{
 	flex: none;
@@ -3324,7 +3327,7 @@ right: 4rem;
 }
 
 .type-splash .slogan h1 {
-	font-size: 3.2rem;
+	font-size: 4.2rem;
 	font-weight: 900;
 	margin-bottom: 2rem;
 	opacity: 0.9
@@ -3332,12 +3335,13 @@ right: 4rem;
 
 .type-splash .slogan p {
 	opacity: 0.8;
+	font-size: 1.6rem;
 }
 
 .type-splash .slogan strong {
 	display: block;
 	width: 100%;
-	font-size: 1.6rem;
+	font-size: 1.9rem;
 	margin-bottom: 0.5rem;
 	font-weight: 700;
 }
@@ -4955,7 +4959,7 @@ dl.list-base > div,
 	width:auto;
 	height:3rem;
 	padding:0 1rem 0 3rem;
-	background:#fff url(../img/icon_qr_b.svg) no-repeat 1rem 50% / 1.6rem;
+	background:#fff url(../img/icon_qr_b.svg) no-repeat 50% 50% / 1.6rem;
 }
 .titlebar .btn-base.icon-qr2{
 	width:3rem;
