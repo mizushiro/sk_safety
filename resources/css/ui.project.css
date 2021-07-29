@@ -2458,12 +2458,14 @@ a.ui-acco-btn:after {
 .talk-item .photo-wrap{
 	display:flex;
 	justify-content: start;
+	flex-wrap: wrap;
 	margin-top:1rem;
 }
 .talk-item .photo-item{
-	width:8rem;
-	height:8rem;
-	margin-right:1rem;
+	width: 6rem;
+    height: 6rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 .talk-item .photo-item img{
 	width:100%;
