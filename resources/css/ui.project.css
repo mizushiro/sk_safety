@@ -4962,10 +4962,12 @@ dl.list-base > div,
 	background:#fff url(../img/icon_qr_b.svg) no-repeat 50% 50% / 1.6rem;
 }
 .titlebar .btn-base.icon-qr2{
-	width:3rem;
-	height:3rem;
-	padding:0;
-	background:#fff url(../img/icon_qr_b.svg) no-repeat 50% 50% / 2rem;
+	display: inline-block;
+    width: auto;
+    height: 3rem;
+    background: #fff url(../img/icon_qr_b.svg) no-repeat 1rem 50% / 2rem;
+    border: 1px solid #ddd;
+    padding: 0.4rem 0.9rem 0.4rem 3.7rem;
 }
 .qrwrap {
 	justify-content: flex-end; 
@@ -5319,6 +5321,14 @@ dl.list-base > div,
 	height:3rem;
 	background:url(../img/qrcode-scan.svg) no-repeat 50% 50% / 3rem;
 }
+.menu-qr .btn-qr{
+	display: inline-block;
+    width: 8rem;
+    height: 3rem;
+    background: #fff url(../img/qrcode-scan.svg) no-repeat 1rem 50% / 2rem;
+    border: 1px solid #ddd;
+    padding: 0.4rem 0.9rem 0.4rem 3.7rem;
+}
 
 .btn-mysite {
 	flex: 0 24rem;
@@ -5530,7 +5540,7 @@ dl.list-base > div,
 	border-radius:.5rem;
 	position:relative;
 	display: flex;
-	font-size:1.2rem;
+	font-size:1.4rem;
 	white-space: nowrap;
 	justify-content: center;
 	align-items: center;
