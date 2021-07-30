@@ -3309,6 +3309,19 @@ right: 4rem;
 .type-splash {
 	background: linear-gradient(#17789A, #0CAC9B);
 }
+.type-splash:after {
+	content: " ";
+    position: absolute;
+    bottom: 0rem;
+    width: 100%;
+    height: 15rem;
+    display: block;
+    background-image: url(../img/splash03.svg);
+    background-position: center bottom;
+    background-size: 82%;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
 
 .type-splash .logo {
 	position: absolute;
@@ -3354,12 +3367,13 @@ right: 4rem;
 
 .type-splash .loading {
 	position: fixed;
-	bottom: 8rem;
+	bottom: 16rem;
 	width: 70%;
 	height: 0.3rem;
 	left: 15%;
 	background: #fff;
 	box-shadow: 0 0 3rem rgba(0, 0, 0, 0.2);
+	z-index: 2;
 }
 
 .type-splash .loading .bar {
