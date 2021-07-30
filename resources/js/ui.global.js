@@ -405,6 +405,7 @@ if (!Object.keys){
 			var opt = $.extend(true, {}, this.options, opt);
 			var delay = opt.delay;
 			var toast = '<div class="ui-toast toast '+ opt.classname +'">'+ opt.conts +'<button type="button" class="btn-close ui-toast-close"><span class="a11y-hidden">닫기</span></button></div>';
+			var dim = '<div class="ui-toast-dim"></div>';
 			var $body = $('body');
 			var time = delay === 'short' ? 2000 : 3500;
 
@@ -421,7 +422,7 @@ if (!Object.keys){
 				$body.removeClass('ui-toast-show').removeClass('ui-toast-ready');
 				$('.ui-toast').off('transitionend.toastshow').remove();
 			} 
-
+			$body.append(dim);
 			$body.append(toast);
 			toast = null;
 			
@@ -447,6 +448,7 @@ if (!Object.keys){
 			$('.ui-toast').off('transitionend.toastshow').on('transitionend.toasthide', function(){
 				$(this).off('transitionend.toasthide').remove();
 				$body.removeClass('ui-toast-ready');
+				$('.ui-toast-dim').remove();
 			});
 		}
 	}

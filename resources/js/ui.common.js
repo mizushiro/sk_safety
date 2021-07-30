@@ -344,6 +344,16 @@
 			$body.addClass('nav-ready');
 			setTimeout(function(){
 				$body.addClass('nav-open');
+				$('a[disabled]').off('click.a').on('click.a', function(e){
+					e.preventDefault();
+					
+				});
+
+				$plugins.uiAccordion({
+                    id:'accoNav',
+                    current: null,
+                    autoclose:false
+                });
 			},0);
 		},
 		navClose: function(){

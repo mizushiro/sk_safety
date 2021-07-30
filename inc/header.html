@@ -18,49 +18,55 @@
                 </div>
                 <div class="my-info">
                     <div class="name">
-                        <span>근로자 홍길동</span>
-                        <span>작업반장</span>
+                        <span>홍길동</span>
                     </div>
                     <div class="place">
-                        [광명] sk view 신축공사광명] sk view 신축공사
+                        sk view 신축공사
+                        <span>서울 종로구 익선동 166-35 신축 건물</span>
                     </div>
                 </div>
 
                 <button type="button" class="btn-close" onclick="$plugins.common.navClose()"><span class="a11y-hidden">닫기</span></button>
             </div>
             <div class="menu-qr">
-                <button type="button" class="btn-qr">
-                    <span class="">QR</span>
+                <button type="button" class="btn-qr btn-base small line">
+                    <span>QR</span>
+                </button>
+                <button type="button" class="btn-base small arrow-s">
+                    <span>로그아웃</span>
                 </button>
             </div>
             <nav class="nav-list">
                 <ul>
-                    <li class="point">
-                        <a href="#">마이페이지</a>
-                    </li>
-                    <li class="point">
-                        <a href="#">내 이력 수정</a>
+                    <li>
+                        <a href="#">내현장</a>
                     </li>
                     <li>
-                        <a href="#">금일 내 현장 보기</a>
+                        <a href="#">내프로필</a>
                     </li>
                 </ul>
                 <hr class="hr-sec">
                 <ul>
                     <li>
-                        <a href="#">안전신문고 바로가기</a>
+                        <a href="#" disabled>안전신문고</a>
                     </li>
                     <li>
-                        <a href="#">인맥관리(함께 아는 사람) </a>
+                        <a href="#" disabled>SOS</a>
                     </li>
                     <li>
-                        <a href="#">안전교육정보</a>
+                        <a href="#" disabled>채용정보</a>
                     </li>
                     <li>
-                        <a href="#">구인구직</a>
+                        <a href="#" disabled>이벤트</a>
                     </li>
-                    <li>
-                        <a href="#">이벤트</a>
+                    <li class="nav-flex">
+                        <span>앱 알림설정</span>
+                        <div class="inp-check switch">
+                            <input type="checkbox" id="appalarm">
+                            <label for="appalarm">
+                                <span class="a11y-hidden">선택</span>
+                            </label>
+                        </div>
                     </li>
 
                 </ul>
@@ -79,69 +85,120 @@
                 </div>
                 <div class="my-info">
                     <div class="name">
-                        <span>관리자 홍길동</span>
+                        <span>홍길동</span>
+                        <span>시공사 소장님</span>
                     </div>
                     <div class="place">
-                        [광명] sk view 신축공사광명] sk view 신축공사
+                        sk view 신축공사
+                        <span>서울 종로구 익선동 166-35 신축 건물</span>
                     </div>
                 </div>
 
                 <button type="button" class="btn-close" onclick="$plugins.common.navClose()"><span class="a11y-hidden">닫기</span></button>
             </div>
+            <div class="menu-qr">
+                <button type="button" class="btn-qr btn-base small line">
+                    <span>QR</span>
+                </button>
+                <button type="button" class="btn-base small arrow-s">
+                    <span>로그아웃</span>
+                </button>
+            </div>
 
             <nav class="nav-list">
-                <h3 class="h3">금일 내 현장</h3>
-                <ul>
-                    <li>
-                        <a href="#">오늘 출석 현황보기</a>
-                    </li>
-                    <li>
-                        <a href="#">시정조치 현황보기</a>
-                    </li>
-                    <li>
-                        <a href="#">근로자 프로필보기</a>
-                    </li>
-                </ul>
-                <hr class="hr-sec">
-                <h3 class="h3">점검일지</h3>
-                <ul>
-                    <li>
-                        <a href="#">점검일지 만들기</a>
-                    </li>
-                    <li>
-                        <a href="#">점검일지 목록</a>
-                    </li>
-                </ul>
-
-                <hr class="hr-sec">
-                <h3 class="h3">위험성평가</h3>
-                <ul>
-                    <li>
-                        <a href="#">위험작업 목록</a>
-                    </li>
-                    <li>
-                        <a href="#">작업중지 내역</a>
-                    </li>
-                    <li>
-                        <a href="#">작업허가서 작성</a>
-                    </li>
-                </ul>
-
-                <hr class="hr-sec">
-                <ul>
-                    <li>
-                        <a href="#">conTalk  바로가기</a>
-                    </li>
-                </ul>
-
-                <hr class="hr-sec">
-                <ul>
-                    <li>
-                        <a href="#">정보변경</a>
-                    </li>
-                </ul>
-                
+                <div class="ui-acco" id="accoNav">
+                    <div class="ui-acco-wrap">
+                        <div class="ui-acco-tit">
+                            <button type="button" class="ui-acco-btn">
+                                <b>내현장</b>
+                            </button>
+                        </div>
+                        <div class="ui-acco-pnl">
+                            <div class="ui-acco-pnl-wrap">
+                                <ul>
+                                    <li>
+                                        <a href="#">내현장</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">근로자조회</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">현장참여</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">현장생성</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-acco-wrap">
+                        <div class="ui-acco-tit">
+                            <button type="button" class="ui-acco-btn">
+                                <b>안전관</b>
+                            </button>
+                        </div>
+                        <div class="ui-acco-pnl">
+                            <div class="ui-acco-pnl-wrap">
+                                <ul>
+                                    <li>
+                                        <a href="#">Con-Talk</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">안전교육</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" disabled>건강검진</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">작업허가서</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" disabled>위험성평가</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">점검일지</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-acco-wrap">
+                        <div class="ui-acco-tit">
+                            <button type="button" class="ui-acco-btn">
+                                <b>기타</b>
+                            </button>
+                        </div>
+                        <div class="ui-acco-pnl">
+                            <div class="ui-acco-pnl-wrap">
+                                <ul>
+                                    <li>
+                                        <a href="#" disabled>안전신문고</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" disabled>채용정보</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" disabled>이벤트</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </nav>
+
+            <div class="nav-bottom">
+                <a href="#">
+                    <span>정보변경</span>
+                </a>
+                <a href="#">
+                    <span>알림설정</span>
+                </a>
+                <a href="#">
+                    <span>권한관리</span>
+                </a>
+            </div>
         </div>
         <!--/관리자 메뉴-->
     </div>
