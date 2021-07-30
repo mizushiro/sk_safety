@@ -3319,31 +3319,35 @@ right: 4rem;
 
 .type-splash .slogan {
 	position: absolute;
-	top: 50%;
+	top: 15%;
 	left: 0;
 	margin-top: -6rem;
 	color: #fff;
 	padding: 0 3rem;
+	padding-top: 25rem;
 	text-align: center;
 	width: 100%;
+	background-image: url(../img/splash01.png);
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-size: 10rem;
 }
 
 .type-splash .slogan h1 {
 	font-size: 4.2rem;
 	font-weight: 900;
 	margin-bottom: 2rem;
-	opacity: 0.9
+	opacity: 0.0
 }
 
 .type-splash .slogan p {
-	opacity: 0.8;
-	font-size: 1.6rem;
+	opacity: 0.9;
+	font-size: 2.3rem;
 }
 
 .type-splash .slogan strong {
 	display: block;
 	width: 100%;
-	font-size: 1.9rem;
 	margin-bottom: 0.5rem;
 	font-weight: 700;
 }
