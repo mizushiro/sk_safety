@@ -368,7 +368,6 @@
 		},
 		tabBar: function(){
 			$('html').addClass('is-bar');
-			console.log('tab bar load');
 		},
 		checkButton: function() {
 			$('.btn-check').on('click', function(){
