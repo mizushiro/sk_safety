@@ -3241,7 +3241,7 @@ right: 4rem;
 	align-items:center;
 }
 a[disabled]{
-	opacity: .4;
+	opacity: .3;
 }
 .safety-list a[disabled]{
 	background-color:#c1c1c1;
@@ -4595,13 +4595,13 @@ dl.list-base > div,
 	background:url(../img/icon_menu01.svg) no-repeat 50% 50% / 7.1rem;
 }
 .safety-list>li.n1 a::before{
-	background:url(../img/icon_menu01.svg) no-repeat 50% 50% / 7.1rem;
+	background:url(../img/icon_menu03.svg) no-repeat 50% 50% / 7.1rem;
 }
 .safety-list>li.n2 a::before{
 	background:url(../img/icon_menu05.svg) no-repeat 50% 50% / 7.1rem;
 }
 .safety-list>li.n3 a::before{
-	background:url(../img/icon_menu03.svg) no-repeat 50% 50% / 7.1rem;
+	background:url(../img/icon_menu07.svg) no-repeat 50% 50% / 7.1rem;
 }
 .safety-list>li.n4 a::before{
 	background:url(../img/icon_menu04.svg) no-repeat 50% 50% / 7.1rem;
@@ -5068,13 +5068,21 @@ dl.list-base > div,
 .nav-bottom a::before{
 	content:"";
 	display: block;
-	width:1.8rem;
-	height:1.8rem;
-	background:#ccc;
-	margin:0 auto .4rem;
+	width:2rem;
+	height:2rem;
+	background:#fff;
+	margin:0 auto .3rem;
+	background-repeat: no-repeat;
 }
-
-
+.nav-bottom a.info-change::before{
+	background-image: url(../img/icon_myinfo.svg);
+}
+.nav-bottom a.alrams::before{
+	background-image: url(../img/icon_alrams.svg);
+}
+.nav-bottom a.authority::before{
+	background-image: url(../img/icon_authority.svg);
+}
 
 .titlebar {
 	position: sticky;
