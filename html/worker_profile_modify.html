@@ -336,15 +336,60 @@
 
                         <div class="form-dl mgt-n">
                             <div class="form-dd">
-                                <div class="form-item align-v">
-                                    <div class="inp-radio round">
-                                        <input type="radio" id="hckup1" name="hckup" checked>
-                                        <label for="hckup1">일반검진</label>
+                                <div class="form-item align-v type-c">
+                                    <div class="inp-radio-group">
+                                        <div class="inp-radio round">
+                                            <input type="radio" id="hckup1" name="hckup" checked>
+                                            <label for="hckup1">일반검진</label>
+                                        </div>
+                                        <div class="inp-radio round">
+                                            <input type="radio" id="hckup2" name="hckup">
+                                            <label for="hckup2">특수검진</label>
+                                        </div>
                                     </div>
-                                    <div class="inp-radio round">
-                                        <input type="radio" id="hckup2" name="hckup">
-                                        <label for="hckup2">특수검진</label>
+                                    <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-dl col2-b">
+                            <div class="col-item">
+                                <div class="form-dt">
+                                    <label for="form3_3" class="form-tit">병원</label>
+                                </div>
+                                <div class="form-dd">
+                                    <div class="form-item">
+                                        <input type="text" id="form3_3" class="inp-base" value="일산병원" placeholder="">
                                     </div>
+                                </div>
+                            </div>
+
+                            <div class="col-item">
+                                <div class="form-dt">
+                                    <label class="form-tit" for="form3_2">검진일자</label>
+                                </div>
+                                <div class="form-dd">
+                                    <div class="form-item">
+                                        <input type="date" id="form3_2" class="inp-base" value="2021-06-01" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-wrap">
+                        <div class="form-dl">
+                            <div class="form-dd">
+                                <div class="form-item align-v type-c">
+                                    <div class="inp-radio-group">
+                                        <div class="inp-radio round">
+                                            <input type="radio" id="hckup3" name="hckup2" checked>
+                                            <label for="hckup3">일반검진</label>
+                                        </div>
+                                        <div class="inp-radio round">
+                                            <input type="radio" id="hckup4" name="hckup2">
+                                            <label for="hckup4">특수검진</label>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
                                 </div>
                             </div>
                         </div>
@@ -397,6 +442,7 @@
                         <div class="form-dl">
                             <div class="form-dt">
                                 <label class="form-tit" for="form3_1">교육명</label>
+                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
@@ -431,9 +477,10 @@
                     </div>
 
                     <div class="form-wrap">
-                        <div class="form-dl">
+                        <div class="form-dl">                            
                             <div class="form-dt">
                                 <label class="form-tit" for="form3_1">교육명</label>
+                                <button type="button" class="btn-del"><span class="a11y-hidden">삭제</span></button>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">

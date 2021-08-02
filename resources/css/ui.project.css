@@ -1210,6 +1210,13 @@ a.btn-base {
 	border: 1px solid #ddd;
 	background: url(../img/icon_add.svg) no-repeat 50% 50% / 1.4rem;
 }
+.btn-del {
+	position: relative;
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	background: url(../img/icon_del.svg) no-repeat 50% 50% / 1.6rem;
+}
 
 .btn-back {
 	width: 3rem;
@@ -1330,6 +1337,10 @@ a.btn-base {
 	position: relative;
 	width: 100%;
 	display: flex;
+}
+.form-item.type-c {
+	display: flex;
+    justify-content: space-between;
 }
 
 .photo-2col{
