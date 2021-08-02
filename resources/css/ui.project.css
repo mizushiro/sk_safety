@@ -1013,7 +1013,7 @@ input[type="date"].box:valid::before{
 	margin-left: 0 !important;
 }
 .btn-area.stick .btn-base.primary{
-	min-width:50%;
+	/* min-width:50%; */
 }
 
 .btn-area .btn-base {
@@ -1082,7 +1082,7 @@ a.btn-base.small {
 }
 
 .ui-modal .btn-base.primary {
-	min-width: 50%;
+	/* min-width: 50%; */
 }
 
 .btn-base.line {
@@ -4421,6 +4421,28 @@ dl.list-base > div,
 .list-safe .n3::before {
 	background: #F5F4F4 url(../img/icon_write01.svg) no-repeat 50% 50% / 2.7rem;
 }
+
+
+.list-base.type-icon>li .icon-site1-0 {
+	background: url(../img/icon_weather01.svg) no-repeat 50% 50%;
+}
+.list-base.type-icon>li .icon-site1-1 {
+	background: url(../img/icon_weather03.svg) no-repeat 50% 50%;
+}
+.list-base.type-icon>li .icon-site1-2 {
+	background: url(../img/icon_weather02.svg) no-repeat 50% 50%;
+}
+
+.list-safe .n1-0::before {
+	background: #F5F4F4 url(../img/icon_weather01.svg) no-repeat 50% 50% / 2.7rem;
+}
+.list-safe .n1-1::before {
+	background: #F5F4F4 url(../img/icon_weather03.svg) no-repeat 50% 50% / 2.7rem;
+}
+.list-safe .n1-2::before {
+	background: #F5F4F4 url(../img/icon_weather02.svg) no-repeat 50% 50% / 2.7rem;
+}
+
 
 .nav-ready .menu-wrap,
 .nav-admin .menu-body.admin,
