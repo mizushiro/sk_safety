@@ -3308,15 +3308,15 @@ a[disabled]{
 }
 
 .nav-btn.n5::before {
-	background: #ccc;
+	background: url(../img/nav_6.svg) no-repeat 50% 50% / 1.8rem;
 }
 
 .nav-btn.n6::before {
-	background: #ccc;
+	background: url(../img/nav_5.svg) no-repeat 50% 50% / 1.8rem;
 }
 
 .nav-btn.n7::before {
-	background: #ccc;
+	background: url(../img/nav_7.svg) no-repeat 50% 50% / 1.8rem;
 }
 
 
