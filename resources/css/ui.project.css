@@ -170,6 +170,7 @@
 .type-qr .btn-menu,
 .type-qr .page-title .sum-box,
 
+.type-sub .util, /* 0803 정현욱 추가 */
 .type-sub .btn-contalk,
 .type-sub .util-qr,
 .type-sub .util-contalk,
@@ -1342,6 +1343,10 @@ a.btn-base {
 	display: flex;
     justify-content: space-between;
 }
+.form-item.type-d {
+	display: flex;
+    justify-content: flex-end;
+}
 
 .photo-2col{
 	width:100%;
@@ -1416,6 +1421,13 @@ a.btn-base {
 .col2-c .col-item {
 	position: relative;
 	flex: 1 auto;
+}
+.col2-c .col-item .d-time {
+	position: absolute;
+    right: 0;
+    top: 1.2rem;
+    color: #f00;
+    font-size: 1.3rem;
 }
 
 .col2-b {
@@ -3985,6 +3997,27 @@ a[disabled]{
 }
 
 .link-arrow::after {
+	content: "";
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -.5rem;
+	width: 1rem;
+	height: 1rem;
+	background: url(../img/icon_down_p.svg) no-repeat 100% 50% / 1rem;
+	transform: rotate(-90deg);
+}
+
+.link-arrow.type-b {
+	color: #333;
+	font-size: 1.3rem;
+	font-weight: 500;
+	padding-right: 1.3rem;
+	position: relative;
+}
+
+.link-arrow.type-b::after {
 	content: "";
 	display: block;
 	position: absolute;
