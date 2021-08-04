@@ -4882,15 +4882,26 @@ dl.list-base > div,
 
 .alarm-list .info {
 	width: 100%;
+	/* white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis; */
+}
+.alarm-list .info + .approval {
+	/* position:absolute;
+	right: 3rem;
+	bottom:1.5rem; */
+	color: #00695C;
+    background: #B2DFDB;
+	border: 0;
+	height: 2rem;
+	height: 2rem;
+    min-height: 2rem;
 }
 
 .alarm-list .tit {
 	font-size: 1.6rem;
 	font-weight: 500;
 	width: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
 }
 
 .alarm-list .state {
