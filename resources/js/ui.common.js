@@ -335,6 +335,12 @@
 					$tit.html('Con-Talk');
 
 					break;
+				case 'worker':
+					//뒤로가기,현장초대
+					$html.addClass('type-worker');
+					$tit.html(tit);
+
+					break;
 			} 
 			
 		},

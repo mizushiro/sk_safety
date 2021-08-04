@@ -224,6 +224,22 @@
     <div class="util-qr">
         <button type="button" class="btn-qr"><span class="a11y-hidden">qr생성</span></button>
     </div>
+
+    <div class="util-worker">
+        <button type="button" class="btn-header link-plus" onclick="
+        $plugins.uiModalOpen({ 
+            id: 'modal_authSrch', 
+            src: '../modal/modal_siteInvite.html', 
+            ps: 'center', 
+            full:true,
+            closeCallback: function(v) { 
+                console.log('close callback', v); 
+            },
+            callback: function(v) { 
+                console.log('callback', v); 
+            }
+        });"><span>현장초대</span></button>
+    </div>
 </div>
 
 
