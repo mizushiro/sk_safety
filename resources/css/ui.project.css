@@ -2426,6 +2426,12 @@ a.ui-acco-btn:after {
 	border-radius: 2rem;
 	background:linear-gradient(98deg, #008F84, #179C9E)
 }
+.talk-item.subject .box.type-b {
+	color:#fff;
+	padding:0;
+	border-radius: 2rem;
+	background:linear-gradient(98deg, #8f0000, #9e1767);
+}
 .talk-item.view .item .box-wrap,
 .talk-item.subject .item .box-wrap{
 	height:auto;
