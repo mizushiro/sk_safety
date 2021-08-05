@@ -5898,13 +5898,22 @@ dl.list-base > div,
 .today-risk td:nth-child(4) .btn-base {
 	background-color:#D84D56;
 }
-.today-risk tr:nth-child(2) th{
+/* .today-risk tr:nth-child(2) th{
 	color:#26A69A;
 }
 .today-risk tr:nth-child(3) th{
 	color:#D84D56;
 }
 .today-risk tr:nth-child(4) th{
+	color:#666;
+} */
+.today-risk tr:nth-child(1) th{
+	color:#D84D56;
+}
+.today-risk tr:nth-child(2) th{
+	color:#26A69A;
+}
+.today-risk tr:nth-child(3) th{
 	color:#666;
 }
 
@@ -6841,12 +6850,16 @@ body.qrcode {
 }
 .event-insentive {
 	padding: 1.2rem;
-	background-color: #2A9065;
+	background-color: #3AC1D6;	
+	background-image: url(../img/@banner_img05.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 17rem;
 	
 }
 .event-insentive ul {
 	display: flex;
-	background-color: #2A9065;
+	background-color: #3AC1D6;
 	width: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -6857,6 +6870,7 @@ body.qrcode {
     padding-left: 0.6rem;
     margin-bottom: 1rem;
 	font-weight: 600;
+	font-size: 1.5rem;
 }
 .event-insentive li {
 	position: relative;
@@ -6870,16 +6884,20 @@ body.qrcode {
 }
 .event-insentive li span {
 	margin-left: 4rem;
-	color: #2A9065;
+	color: #017168;
 }
 .event-insentive li span.prize {
 	color: #333;
     font-size: 1.2rem;
 }
+.event-insentive li.week-box span.prize em, .event-insentive li.year-box span.prize em {
+	color: #333;
+    font-size: 1.8rem;
+}
 .event-insentive li span em {
 	color: #FF9200;
 	font-weight:600;
-	font-size: 1.6rem;
+	font-size: 1.8rem;
 }
 .event-insentive li p {
 	text-align: center;
