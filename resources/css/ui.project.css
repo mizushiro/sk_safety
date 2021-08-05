@@ -2092,6 +2092,15 @@ a.ui-acco-btn:after {
 	right: 2rem;
 	top: 2rem;
 }
+.lang-select .lang-giude {
+    min-height: 2.8rem;
+    line-height: 2.0;
+	border:1PX solid #FFF;
+	color:#fff;
+	background-color: transparent;
+	font-size: 1.3rem;
+
+}
 
 .lang-select .inp-select {
 	height: 2.5rem;
@@ -2487,6 +2496,9 @@ a.ui-acco-btn:after {
 	font-size: 1.4rem;
 }
 
+.talk-item.subject .type-b .tit .flag{
+	color:#e7565f;
+}
 .talk-item.subject .tit .flag{
 	line-height:2.9rem;
 	color:#008F84;
