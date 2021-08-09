@@ -3296,7 +3296,7 @@ right: 4rem;
 	justify-content: space-between;
 	align-items:center;
 }
-a[disabled]{
+a[disabled], button[disabled] {
 	opacity: .3;
 }
 .safety-list a[disabled]{
@@ -3871,12 +3871,27 @@ a[disabled]{
 
 .icon-login1 {
 	background: url(../img/icon_lock.svg) no-repeat 50% 50% / 1.5rem;
+	display: inline-block;
+    width: 2rem;
+    height: 1.9rem;
+    vertical-align: middle;
+    margin-right: 0.6rem;
 }
 .icon-login2 {
 	background: url(../img/icon_fingerprint.svg) no-repeat 50% 50% / 1.8rem;
+	display: inline-block;
+    width: 2rem;
+    height: 1.9rem;
+    vertical-align: middle;
+    margin-right: 0.6rem;
 }
 .icon-login3 {
 	background: url(../img/icon_happy.svg) no-repeat 50% 50% / 2rem;
+	display: inline-block;
+    width: 2rem;
+    height: 1.9rem;
+    vertical-align: middle;
+    margin-right: 0.6rem;
 }
 
 
@@ -5779,6 +5794,8 @@ dl.list-base > div,
 .state-rectify-item dd b{
 	font-size: 2rem;
 	font-weight: 700;
+	width: 10vw;
+	text-align: right;
 }
 .state-rectify-item dd span{
 	display:inline-block;
