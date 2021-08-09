@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <g id="그룹_285" data-name="그룹 285" transform="translate(-135 -79)">
+    <path id="패스_84" data-name="패스 84" d="M50,0A50,50,0,1,1,0,50,50,50,0,0,1,50,0Z" transform="translate(135 79)" fill="#eee"/>
+    <path id="account" d="M23.3,4a9.649,9.649,0,1,1-9.649,9.649A9.646,9.646,0,0,1,23.3,4m0,24.122c10.662,0,19.3,4.318,19.3,9.649V42.6H4V37.771C4,32.44,12.636,28.122,23.3,28.122Z" transform="translate(162 106)" fill="#dadada"/>
+  </g>
+</svg>
