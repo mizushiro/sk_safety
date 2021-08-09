@@ -35,12 +35,10 @@
 	background: transparent;
 	z-index: 0;
 }
-
 .type-safety .base-header,
 .type-safety .base-header-wrap {
 	background-color: transparent;
 }
-
 .type-safety .btn-back {
 	background-image: url(../img/icon_back_w.svg);
 }
@@ -53,8 +51,9 @@
 
 .type-safety,
 .type-career {
-	background: linear-gradient(110deg, #17789A, #0CAC9B);
+	background: linear-gradient(90deg, #17789A, #0CAC9B);
 }
+
 .type-safety .tit-page .btn-base{
 	background:transparent;
 	border:1px solid #fff;
