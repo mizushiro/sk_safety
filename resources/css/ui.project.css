@@ -35,6 +35,10 @@
 	background: transparent;
 	z-index: 0;
 }
+.not-top .type-safety .base-header {
+	background: linear-gradient(90deg, #17789A, #0CAC9B), rgba(12,172,155,0.9);
+	box-shadow: 0 0 1rem rgba(23,120,154,0.9);
+}
 .type-safety .base-header,
 .type-safety .base-header-wrap {
 	background-color: transparent;
