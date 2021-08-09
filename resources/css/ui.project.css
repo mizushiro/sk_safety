@@ -48,7 +48,6 @@
 .type-none .base-header-wrap {
 	display: none;
 }
-
 .type-safety,
 .type-career {
 	background: linear-gradient(90deg, #17789A, #0CAC9B);
@@ -6945,7 +6944,6 @@ body.qrcode {
 	font-size: 0.8rem;
 	margin-top:0.8rem;
 }
-
 .type-terms{line-height: 1.8;}
 .type-terms h2:first-child{margin-top:2rem}
 .type-terms h2{font-size:2rem; font-weight:500; margin:6.4rem 0 .4rem;}
