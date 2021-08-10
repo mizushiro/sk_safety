@@ -6894,7 +6894,7 @@ body.qrcode {
 }
 .event-insentive {
 	padding: 1.2rem;
-	background-color: #3AC1D6;	
+	background-color: #5ab1a9;	
 	background-image: url(../img/@banner_img05.svg);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -6903,7 +6903,7 @@ body.qrcode {
 }
 .event-insentive ul {
 	display: flex;
-	background-color: #3AC1D6;
+	background-color: #5ab1a9;
 	width: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -6934,7 +6934,7 @@ body.qrcode {
 	color: #333;
     font-size: 1.2rem;
 }
-.event-insentive li.week-box span.prize em, .event-insentive li.year-box span.prize em {
+.event-insentive li.week-box span.prize em, .event-insentive li.year-box span.prize em, .event-insentive li.month-box span.prize em {
 	color: #333;
     font-size: 1.8rem;
 }
