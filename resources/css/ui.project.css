@@ -921,6 +921,19 @@ input[type="date"].box:valid::before{
 	padding: 0.6rem 0 0.4rem 3rem;
 	background: #fff;
 }
+.inp-radio.type-d {
+	display: block;
+	display: block;
+    width: 100%;
+}
+.inp-radio.type-d label {
+	display: block;
+	position: relative;
+	font-size: 1.5rem;
+	min-height: 2.2rem;
+	padding: 0.6rem 0 0.4rem 3rem;
+	background: #fff;
+}
 
 .inp-radio label::before {
 	content: "";
@@ -940,6 +953,31 @@ input[type="date"].box:valid::before{
 	display: block;
 	position: absolute;
 	top: 0.9rem;
+	left: 0.6rem;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	background: #fff;
+}
+
+.inp-radio.type-d label::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: calc(50% - 1rem);
+	left: 0;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+
+.inp-radio.type-d label::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: calc(50% - 0.4rem);
 	left: 0.6rem;
 	width: 1rem;
 	height: 1rem;
@@ -1434,7 +1472,11 @@ a.btn-base {
 	max-width : 12rem;
 	min-width : 12rem;
 }
-
+.col2-c.type-c .col-item+.col-item {
+	margin-left: 1.4rem;
+	max-width : 8rem;
+	min-width : 8rem;
+}
 .col2-c .col-item {
 	position: relative;
 	flex: 1 auto;
@@ -1701,6 +1743,11 @@ a.btn-base {
 	color: #000;
 	padding: 1.4rem 4rem 1rem 2rem;
 	border-bottom: 1px solid #ddd;
+}
+.ui-modal-header + .desc {	
+	background: #F7F7F7;
+	color: #000;
+	padding: 1.4rem 4rem 1rem 2rem;
 }
 
 .ui-modal-tit {
@@ -2540,6 +2587,7 @@ a.ui-acco-btn:after {
 }
 .talk-item .photo-item img{
 	width:100%;
+	border-radius: 0.6rem;
 
 }
 .photo-list + .photo-list{
@@ -4208,13 +4256,16 @@ dl.list-base > div,
 }
 .list-base.type-icon>li .icon-site3,
 .list-base.type-icon>li .icon-site2,
-.list-base.type-icon>li .icon-site1 {
-	display: inline-block;
-	min-width: 4.2rem;
-	width: 4.2rem;
-	height: 4.2rem;
-	vertical-align: middle;
-	margin-right: .5rem;
+.list-base.type-icon>li .icon-site1,
+.list-base.type-icon>li .icon-site1-0,
+.list-base.type-icon>li .icon-site1-1,
+.list-base.type-icon>li .icon-site1-2{
+display: inline-block;
+min-width: 4.2rem;
+width: 4.2rem;
+height: 4.2rem;
+vertical-align: middle;
+margin-right: .5rem;
 }
 
 .list-base.type-icon>li .icon-site1 {
@@ -5020,7 +5071,10 @@ dl.list-base > div,
 	border-radius: 50%;
 	margin-right: 1.3rem;
 }
-
+.menu-header .photo img {
+	width: 100%;
+	height: 100%;
+}
 .menu-header .my-info {
 	flex: 1;
 	max-width: calc(100% - 7rem);
@@ -6028,6 +6082,17 @@ dl.list-base > div,
     border: 1px solid #ddd;
     padding:0 2.9rem 0 1.9rem;
 }
+.inp-select.no-b{
+	width: auto;
+    height: 3rem;
+	font-size: 1.3rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    color: #666;
+    border: 0px solid #ddd;
+    padding:0 2.9rem 0 1.9rem;
+}
 .inp-select.box{
 	width: 100%;
     border: 1px solid #ddd;
@@ -6050,6 +6115,9 @@ dl.list-base > div,
 	font-weight: 700;
 	margin-bottom:.5rem;
 	padding-right:4rem;
+}
+.list-card .item .tit2{
+	margin-bottom:.0rem;
 }
 .list-card .item .etc span {
 	display:inline-block;
@@ -6986,4 +7054,117 @@ body.qrcode {
     position: relative;
     width: 100%;
     background: #2a9065;
+}
+
+
+.danger-list {
+	width: 100%;
+}
+
+.danger-list .item {
+	width: 100%;
+	position: relative;
+	margin: 0rem 0;
+	display: block;
+}
+
+.danger-list .item+.item {
+	margin-top: 2rem;
+}
+
+.danger-list .item+.item::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: -1.5rem;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #EEEEEE;
+}
+
+.danger-list .item-del {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 5rem;
+	height: 100%;
+	background: #888;
+	box-shadow: inset 5px 0 3px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	border-top-right-radius: 0.4rem;
+	border-bottom-right-radius: 0.4rem;
+}
+.danger-list.type-newest{
+	margin-bottom:2.5rem;
+}
+.danger-list.type-newest .item-wrap {
+	background: #fff;
+}
+
+.danger-list .item-wrap {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	background: #F7F7F7;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.danger-list .item-wrap .status{
+	min-width:6rem;
+	display:block;
+	text-align: right;
+}
+.danger-list .item-wrap .status .flag {
+	width: auto;
+	padding: 0.2rem 1rem;
+	font-weight: 500;
+}
+.danger-list .type {
+    border-radius: 50%;
+	width: 5rem;
+	height: 5rem;
+	margin-right: 1.5rem;
+	margin-top: -2.8rem;
+	border: 1px solid #008f84;
+	color: #008f84;
+	display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.danger-list .type.first {
+	border: 1px solid #D84D56;
+	color: #D84D56;
+}
+.danger-list .info {
+    flex: 1 auto;
+    padding: .8rem 0;
+}
+.danger-list .photo {
+    flex: 0 8rem;
+    min-width: 8rem;
+    width: 8rem;
+    height: 8rem;
+    overflow: hidden;
+    border-radius: .4rem;
+    margin-right: 1.5rem;
+}
+.danger-list .photo [class*="flag-"] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0.2rem .4rem;
+	color: #fff;
+	font-size: 1.4rem;
+	border-bottom-right-radius: .4rem;
+}
+.danger-list .company, .danger-list .tit {
+    font-size: 1.6rem;
+    font-weight: 700;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

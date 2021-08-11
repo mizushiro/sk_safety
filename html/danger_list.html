@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index, follow" />
+
+    <meta name="subject" content="SK건설 안전관리 시스템">
+    <meta name="author" content="SK건설">
+    <meta name="title" content="SK건설 세이프티" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="SK건설, SK, SK ecoplant, safety platform, 안전, 관리, 건축" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SK건설 세이프티" />
+    <meta property="og:url" content="http://www.skecoplant.com/" />
+    
+    <title>위험성평가 목록 | SK건설 세이프티</title>
+
+    <link rel="alternate" hreflang="ko" href="http://www.skecoplant.com/" />
+    <link rel="canonical" href="http://www.skecoplant.com/" />
+    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <link rel="apple-touch-icon" href="../resources/img/common/ico_app.png" >
+
+	<link rel="stylesheet" href="../resources/css/ui.base.css">
+	<script src="../resources/js/lib/jquery-3.2.1.min.js"></script>
+	<script src="../resources/js/ui.global.js"></script>
+	<script src="../resources/js/ui.common.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <style>
+    </style>
+</head>
+<body>
+    <div class="base-wrap">
+        <header class="base-header" 
+        data-type="sub" 
+        data-title="위험성평가 목록" 
+        ></header>
+        <!-- content -->
+        <main class="base-body">
+            <div class="section-wrap">
+                <!-- 시공물 종류 -->
+                <section class="section-item mgt-n">
+                    <h3 class="tit-sec a11y-hidden">위험성평가 목록</h3>
+                    <div class="form-wrap">
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="현장">현장</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item col2-c type-c">
+                                    <div class="col-item">
+                                        <input type="tel" id="현장" class="inp-base" value="" placeholder="현장" disabled>
+                                    </div>
+                                    <div class="col-item">
+                                        <button type="button" class="btn-base line" onclick="
+                                        $plugins.uiModalOpen({ 
+                                            id: 'modal_partnerSelect', 
+                                            src: '../modal/modal_partnerSelect.html', 
+                                            ps: 'bottom'
+                                        });">
+                                            <span>변경</span>
+                                        </button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="협력사">협력사</label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item col2-c type-c">
+                                    <div class="col-item">
+                                        <input type="tel" id="협력사" class="inp-base" value="" placeholder="협력사">
+                                    </div>
+                                    <div class="col-item">
+                                        <button type="button" class="btn-base line" onclick="
+                                        $plugins.uiModalOpen({ 
+                                            id: 'modal_siteSelect', 
+                                            src: '../modal/modal_siteSelect.html', 
+                                            ps: 'bottom'
+                                        });">
+                                            <span>변경</span>
+                                        </button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <!-- //시공물 종류 -->
+
+                <hr class="hr-sec">
+                <section class="section-item">
+                    <div class="mgb-xs">
+                        <div class="form-item align-v">
+                            <div class="inp-radio round">
+                                <input type="radio" id="전체" name="radio1" checked="">
+                                <label for="전체">전체</label>
+                            </div>
+                            <div class="inp-radio round">
+                                <input type="radio" id="최신개정" name="radio1">
+                                <label for="최신개정">최신개정</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tit-sec type-line mgt-l">
+                        <div class="tit-util">
+                            <div class="total">
+                                <em>작업중지 10건</em> / 38건
+                            </div>
+                        </div>
+                        <select class="inp-select no-b" id="테스트21" title="최신순">
+                            <option>최신순</option>
+                            <option>가나다순</option>
+                        </select>
+                    </div>
+                    
+
+                    <div class="tbl-base type-c">
+                        <div class="danger-list type-newest">
+                            <ul>
+                                <li class="item">
+                                    <a href="#">
+                                        <div class="item-wrap">
+                                            <div class="type">
+                                                <span>3차</span>
+                                            </div>
+                                            <div class="info">
+                                                <div class="company">일우건설</div>
+                                                <div class="opt-div">
+                                                    <span>업종 외 1개</span>
+                                                    <span>2021.06.30</span>
+                                                </div>
+                                                <div class="status">
+                                                    <em class="flag st-4">1차 검토 대기</em>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <div class="item-wrap">
+                                            <div class="type">
+                                                <span>1차</span>
+                                            </div>
+                                            <div class="info">
+                                                <div class="company">일우건설</div>
+                                                <div class="opt-div">
+                                                    <span>업종 외 1개</span>
+                                                    <span>2021.06.30</span>
+                                                </div>
+                                                <div class="status">
+                                                    <em class="flag st-2">1차 검토 대기</em>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <div class="item-wrap">
+                                            <div class="type first">
+                                                <span>2차</span>
+                                            </div>
+                                            <div class="info">
+                                                <div class="company">일우건설</div>
+                                                <div class="opt-div">
+                                                    <span>업종업종업종업종 외 1개</span>
+                                                    <span>2021.06.30</span>
+                                                </div>
+                                                <div class="status">
+                                                    <em class="flag st-1">승인완료</em>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <div class="item-wrap">
+                                            <div class="type">
+                                                <span>최초</span>
+                                            </div>
+                                            <div class="info">
+                                                <div class="company">일우건설</div>
+                                                <div class="opt-div">
+                                                    <span>업종 외 1개</span>
+                                                    <span>2021.06.30</span>
+                                                </div>
+                                                <div class="status">
+                                                    <em class="flag st-3">승인대기</em>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    
+                </section>
+
+            </div>
+           
+        </main>
+        <!-- //content -->
+        
+    </div>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9906c009f8e9c9a1a36542d2c08c1361&libraries=services"></script>
+    <script> 
+        ;(function($, win, doc, undefined) {
+            $(doc).ready(function() {
+               
+                //기본 실행
+                $plugins.common.init();
+
+                var currentSlide = $('.swiper-week').slick({
+                    arrows: false,
+                    dots: true,
+                    infinite: false
+                });
+
+                var currentSlide2 = $('.swiper-weekedu').slick({
+                    arrows: false,
+                    dots: true,
+                    infinite: false
+                });
+
+
+                $('.btn-prev').on('click', function(){
+                    currentSlide.slick('slickPrev');
+                });
+                $('.btn-next').on('click', function(){
+                    currentSlide.slick('slickNext');
+                });
+                
+            });
+        })(jQuery, window, document);
+    </script>
+    
+</body>
+</html>
