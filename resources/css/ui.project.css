@@ -1020,7 +1020,9 @@ input[type="date"].box:valid::before{
 .section-item .btn-area {
 	padding: 2rem 0 0;
 }
-
+.section-item .btn-area.type-3 .btn-base {
+	width:33.3%;
+}
 .section-item:last-child .btn-area {
 	padding: 2rem 0 7rem;
 }
