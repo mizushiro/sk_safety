@@ -5232,16 +5232,13 @@ margin-right: .5rem;
 	justify-content: space-between;
 	align-items: center;
 }
-.menu-body.normal .nav-list{
-	min-height:calc(100vh - 15.2rem);
-	max-height:calc(100vh - 15.2rem);
-}
+
 .nav-list {
 	position: relative;
 	width: 100%;
 	background: #fff;
-	min-height:calc(100vh - 21.7rem);
-	max-height:calc(100vh - 21.7rem);
+	/* min-height:calc(100vh - 21.7rem);
+	max-height:calc(100vh - 21.7rem); */
 	overflow-y: auto;
 }
 

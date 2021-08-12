@@ -361,7 +361,23 @@
                     current: null,
                     autoclose:false
                 });
+				for (var i = 0, len = $('.menu-body').length; i < len; i++) {
+					
+					var $mbody = $('.menu-body').eq(i);
+					var w = $(win).outerHeight();
+					var h = $mbody.find('.menu-header').outerHeight();
+					var q = $mbody.find('.menu-qr').outerHeight();
+					console.log($mbody.find('.nav-bottom').length)
+					var f = $mbody.find('.nav-bottom').length > 0 ? $mbody.find('.nav-bottom').outerHeight() : 0;
 
+					console.log(h,q,f);
+
+					$mbody.find('.nav-list').css({
+						'min-height': w - (h+q+f) + 'px',
+						'max-height': w - (h+q+f) + 'px'
+					})
+				}
+				
 			},0);
 
 			$plugins.common.dragDel({
