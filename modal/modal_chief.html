@@ -1,0 +1,77 @@
+<section class="ui-modal" id="modal_chief">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit">작업반장을 지정하세요</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_chief', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">            
+            <div class="type-ts">
+                <div class="form-item">
+                    <div class="inp-wrap">
+                        <input type="text" class="inp-base" value="" placeholder="">
+                        
+                    </div>
+                    <button type="button" class="btn-search">
+                        <span class="a11y-hidden">검색</span>
+                    </button>
+                </div>
+            </div>
+            <ul class="list-base type-insp">
+                <li>
+                    <div class="inp-radio">
+                        <input type="radio" id="insp1" name="insp">
+                        <label for="insp1" class="fx-sb">
+                            <span>시공관리자1</span>
+                            <span>건영엘리베이터</span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="inp-radio">
+                        <input type="radio" id="insp2" name="insp">
+                        <label for="insp2" class="fx-sb">
+                            <span>시공관리자1</span>
+                            <span>건영엘리베이터</span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="inp-radio">
+                        <input type="radio" id="insp3" name="insp">
+                        <label for="insp3" class="fx-sb">
+                            <span>시공관리자1</span>
+                            <span>건영엘리베이터</span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="inp-radio">
+                        <input type="radio" id="insp4" name="insp">
+                        <label for="insp4" class="fx-sb">
+                            <span>시공관리자1</span>
+                            <span>건영엘리베이터</span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="ui-modal-footer">
+            <div class="btn-area stick">
+                <button type="button" class="btn-base ">
+                    <span>취소</span>
+                </button>
+                <button type="button" class="btn-base primary">
+                    <span>확인</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
