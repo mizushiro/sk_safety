@@ -4262,14 +4262,12 @@ dl.list-base > div,
 }
 .list-base>li>ul.list-base.type-2 {
 	margin-top: 1rem;
-	border-bottom: 1px solid #ddd;
 }
 .list-base>li>ul.list-base.type-2 li{
 	display: flex;
 	justify-content: space-between;
 	padding: 0.3rem 0rem 0.6rem 0.8rem;
     border-top: 0px solid #F5F5F5;
-
 }
 
 .list-base.type-2 .tit {
@@ -4354,7 +4352,6 @@ margin-right: .5rem;
 .list-base.type-icon>li .icon-site1 {
 	background: url(../img/icon_weather01.svg) no-repeat 50% 50%;
 }
-
 .list-base.type-icon>li .icon-site2 {
 	background: url(../img/icon_write01.svg) no-repeat 50% 50%;
 }
@@ -5453,6 +5450,9 @@ margin-right: .5rem;
 	margin-top:2rem;
 	padding-top:1rem;
 }
+.list-base.type-bottom-line{
+	border-bottom:1px solid #EEEEEE;
+}
 .list-base.fx-sa-li li,
 .fx-sa {
 	justify-content: space-around;
@@ -6143,11 +6143,16 @@ margin-right: .5rem;
    align-items: center;
    margin-bottom:.8rem;
 }
-.tit-util .total{
+.tit-util .total, .tbl-list .total{
 	font-size:1.4rem;
 	padding-top:.5rem;
 }
+.tbl-list .total{
+	padding-bottom:.5rem;
+	padding-left: 1rem;
+}
 .tit-util .total em,
+.tbl-list .total em,
 .tbl-header .total em{
 	color:#E7565F;
 	font-weight: 700;
@@ -7293,19 +7298,21 @@ body.qrcode {
 }
 .dl-type-info {
 	text-align: center;
-	padding: 1.2rem 0;
+	padding: 1.4rem 0;
     border-bottom: 1px solid #ddd;
 }
 .dl-type-info dt {
-	font-size: 1.2rem;
-	margin-bottom: 0.8rem;
+	font-size: 1.3rem;
+	margin-bottom: 0.6rem;
+	font-weight: 500;
+	color: #666;
 }
 .dl-type-info dd {
 	font-weight: 600;
 	font-size: 1.7rem;
 }
 .dl-type-info.type-2 dd {
-	font-weight: 600;
+	font-weight: 500;
 	font-size: 1.5rem;
 }
 .dl-type-info dd .primary {
@@ -7331,6 +7338,6 @@ body.qrcode {
 .inp-radio-group.type-2 .inp-radio.round {
 	margin-bottom:0.4rem;
 	margin-left: 0!important;
-	margin-right: 0.7rem;
+	margin-right: 0.4rem;
 
 }
