@@ -135,7 +135,6 @@
 
 		},
 		pageTop: function(v){
-			console.log(v);
 			var current = v;
 
 			if (v > 50) {
@@ -169,13 +168,14 @@
 				});
 			});
 		},
-		dragDel: function(){
+		dragDel: function(opt){
 			var $item = $('.ui-drag > .item');
 			var s = 0;
 			var n = 0;
 			var maxMove = 50;
 			var j = 50; 
 			var state = false;
+			var callback = opt.callback;
 
 			$item.off('touchstart.d').on('touchstart.d', function(e){
 				s = e.originalEvent.touches[0].pageX;
@@ -207,6 +207,7 @@
 						$wrap.css('transform','translateX(0)');
 					} else {
 						$this.addClass('open');
+						!!callback && callback();
 						$wrap.css('transform','translateX(-'+ maxMove +'px)');
 					}
 					s = 0;
@@ -360,17 +361,33 @@
                     current: null,
                     autoclose:false
                 });
-			},0);
-		},
-		navClose: function(){
-			var $body = $('body');
 
+			},0);
+
+			$plugins.common.dragDel({
+                callback:function(){
+                    $plugins.common.navClose({
+						callback: function(){
+							$('.menu-wrap .item-wrap').removeAttr('style');
+						}
+					});
+                   
+                }
+            });
+
+		},
+		navClose: function(opt){
+			var $body = $('body');
+			var callback = opt && opt.callback && opt.callback;
 			$body.removeClass('nav-open');
 
 			$('.menu-body').on('transitionend.menu', function(){
 				$body.removeClass('nav-ready');
+				callback && callback();
 			});
 		
+
+			
 		},
 		tabBar: function(){
 			$('html').addClass('is-bar');

@@ -4579,11 +4579,16 @@ dl.list-base > div,
 	background: #fff;
 	transition: left .2s ease-out;
 }
-
+.menu-wrap .item-wrap{
+	transform: translateX(0) !important;
+	height:100%;
+}
 .nav-open .menu-wrap {
 	background-color: rgba(0, 0, 0, 0.7);
 }
-
+/* .nav-open .menu-wrap.open .menu-body {
+	left:-100vw;
+} */
 .nav-open .menu-wrap .menu-body {
 	left: 0;
 }
@@ -5091,7 +5096,10 @@ dl.list-base > div,
 	justify-content: space-between;
 	align-items: center;
 }
-
+.menu-body.normal .nav-list{
+	min-height:calc(100vh - 15.2rem);
+	max-height:calc(100vh - 15.2rem);
+}
 .nav-list {
 	position: relative;
 	width: 100%;
