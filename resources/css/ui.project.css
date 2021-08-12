@@ -4649,12 +4649,20 @@ margin-right: .5rem;
 
 .list-base.type-icon>li .icon-site1-0 {
 	background: url(../img/icon_weather01.svg) no-repeat 50% 50%;
+	background-size: 4rem;
 }
 .list-base.type-icon>li .icon-site1-1 {
 	background: url(../img/icon_weather03.svg) no-repeat 50% 50%;
+	background-size: 4rem;
 }
 .list-base.type-icon>li .icon-site1-2 {
 	background: url(../img/icon_weather02.svg) no-repeat 50% 50%;
+	background-size: 4rem;
+}
+.list-base.type-icon>li .icon-site1-default {
+	background: #f9f9f9;
+	background-size: 4rem;
+	width: 4.8rem;
 }
 
 .list-safe .n1-0::before {
