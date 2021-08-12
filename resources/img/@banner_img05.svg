@@ -1,15 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="360" height="442" viewBox="0 0 360 442">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="364" height="442" viewBox="0 0 364 442">
   <defs>
     <clipPath id="clip-path">
       <circle id="타원_123" data-name="타원 123" cx="15.552" cy="15.552" r="15.552" transform="matrix(1, -0.012, 0.012, 1, 0, 0.388)" fill="none"/>
     </clipPath>
   </defs>
-  <g id="그룹_1112" data-name="그룹 1112" transform="translate(0 -55)">
+  <g id="그룹_1112" data-name="그룹 1112" transform="translate(2 -55)">
     <g id="banner_img">
       <rect id="사각형_518" data-name="사각형 518" width="360" height="70" transform="translate(0 55)" fill="#3ac1d6"/>
       <rect id="사각형_521" data-name="사각형 521" width="360" height="70" transform="translate(0 55)" fill="#3ac1d6"/>
       <path id="패스_610" data-name="패스 610" d="M0,0H360V439.733H0Z" transform="translate(0 55)" fill="#82cbc4"/>
     </g>
+    <path id="패스_1535" data-name="패스 1535" d="M0,0H364V299H0Z" transform="translate(-2 198)" fill="#5ab1a9"/>
     <g id="그룹_1026" data-name="그룹 1026" transform="translate(286.742 150.088)" clip-path="url(#clip-path)">
       <g id="그룹_1025" data-name="그룹 1025" transform="translate(-0.452 0.878)">
         <g id="그룹_1014" data-name="그룹 1014">
@@ -120,8 +121,7 @@
       </g>
     </g>
     <text id="_안심人_이_되어가는_여정_" data-name="&quot;안심人&quot;이 되어가는 여정!" transform="translate(50 114)" fill="#fff" font-size="24" font-family="NotoSansCJKkr-Bold, Noto Sans CJK KR" font-weight="700" letter-spacing="-0.03em"><tspan x="0" y="0">&quot;안심人&quot;이 되어가는 여정!</tspan></text>
-    <text id="_3만원_10만원_50만원_1000만원_" data-name="3만원 / 10만원 / 50만원 / 1000만원 " transform="translate(176 140)" fill="#fff" font-size="16" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-weight="500" letter-spacing="-0.03em" opacity="0.39"><tspan x="-115.64" y="0">3만원 / 10만원 / 50만원 / 1000만원 </tspan></text>
-    <path id="패스_1535" data-name="패스 1535" d="M0,0H360V299H0Z" transform="translate(0 198)" fill="#5ab1a9"/>
+    <text id="_3만원_10만원_50만원_상상_" data-name="3만원 / 10만원 / 50만원 / 상상↑" transform="translate(176 140)" fill="#fff" font-size="16" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-weight="500" letter-spacing="-0.03em" opacity="0.39"><tspan x="-104.56" y="0">3만원 / 10만원 / 50만원 / 상상↑</tspan></text>
     <g id="그룹_1103" data-name="그룹 1103" transform="translate(-290.496 -586.165)">
       <g id="그룹_1100" data-name="그룹 1100" transform="translate(605.47 762.393)">
         <g id="그룹_1091" data-name="그룹 1091" transform="translate(3.77 15.816)">
@@ -205,6 +205,6 @@
       <path id="패스_1539" data-name="패스 1539" d="M1301,830.138l-4.314-2.783-4.314,2.783v-25.95H1301Z" transform="translate(-166.178 -40.75)" fill="#9e2d2d"/>
     </g>
     <text id="상품에_도전해보세요_" data-name="상품에 도전해보세요!" transform="translate(100 145)" fill="#fff" font-size="18" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR"><tspan x="0" y="21">상품에 도전해보세요!</tspan></text>
-    <text id="_3만원" data-name="3만원" transform="translate(79 140)" fill="#fff" font-size="16" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-weight="500" letter-spacing="-0.03em"><tspan x="-18.8" y="0">3만원</tspan></text>
+    <text id="_3만원" data-name="3만원" transform="translate(90 140)" fill="#fff" font-size="16" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-weight="500" letter-spacing="-0.03em"><tspan x="-18.8" y="0">3만원</tspan></text>
   </g>
 </svg>

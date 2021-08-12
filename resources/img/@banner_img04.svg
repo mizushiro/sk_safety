@@ -62,8 +62,8 @@
         <text id="P" transform="translate(7.775 17.575) rotate(19.343)" fill="#fff" font-size="17" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">P</tspan></text>
       </g>
     </g>
-    <text id="_3만원_10만원_50만원_1000만원" data-name="3만원 / 10만원 / 50만원 / 1000만원" transform="translate(180 118)" fill="#fff" font-size="14" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-weight="500" letter-spacing="-0.03em" opacity="0.4"><tspan x="-99.82" y="0">3만원 / 10만원 / 50만원 / 1000만원</tspan></text>
-    <text id="_3만원" data-name="3만원" transform="translate(97 118)" fill="#fff" font-size="14" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-weight="500" letter-spacing="-0.03em"><tspan x="-16.45" y="0">3만원</tspan></text>
+    <text id="_3만원_10만원_50만원_상상_" data-name="3만원 / 10만원 / 50만원 / 상상↑" transform="translate(180 118)" fill="#fff" font-size="14" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-weight="500" letter-spacing="-0.03em" opacity="0.4"><tspan x="-91.49" y="0">3만원 / 10만원 / 50만원 / 상상↑</tspan></text>
+    <text id="_3만원" data-name="3만원" transform="translate(105 118)" fill="#fff" font-size="14" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-weight="500" letter-spacing="-0.03em"><tspan x="-16.45" y="0">3만원</tspan></text>
     <path id="패스_1533" data-name="패스 1533" d="M1283.624,461.9s-4.385,1.619-6.414,3.517-3.949,7.789-3.949,7.789-1.648-4.94-3.643-7.2-6.721-3.8-6.721-3.8,4.626-1.24,6.59-3.464,3.391-7.2,3.391-7.2,1.452,5.371,3.677,7.139S1283.624,461.9,1283.624,461.9Z" transform="translate(-1252.896 -378.368)" fill="#fff"/>
   </g>
 </svg>
