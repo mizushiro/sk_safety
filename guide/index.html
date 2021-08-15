@@ -33416,6 +33416,38 @@ div.specView:focus {
                                                 class="title-2qG2p" data-auto="artboardTitleGridView">직종선택2</span></div>
                                     </div></button>
                                 </li>
+                                <li class="singleGridTile-3sBLh" data-id="27bf8dee-2434-4e6f-87ff-ff0dcf376121"
+                                    id="27bf8dee-2434-4e6f-87ff-ff0dcf376121" data-auto="card-17-div">
+                                    <button type="button" onclick="
+                                        $plugins.uiModalOpen({ 
+                                            id: 'modal_process', 
+                                            full:true,
+                                            src: '../modal/modal_process.html', 
+                                            ps: 'center', 
+                                            closeCallback: function(v) { 
+                                                console.log('close callback', v); 
+                                            },
+                                            callback: function(v) { 
+                                                console.log('callback', v); 
+                                                $plugins.uiTab({ 
+                                                    id:'exeWorkTab', 
+                                                    current:0, 
+                                                    callback:function(v){
+                                                        console.log(111111);
+                                                    } 
+                                                });
+                                            }
+                                    });">
+                                    <div class="card-15R5T" tabindex="0" data-id="27bf8dee-2434-4e6f-87ff-ff0dcf376121">
+                                        <div class="imageWrapper-GEZBB">
+                                            <div class="imageBlock-2im2e imageLoaded-2tjtu"><img crossorigin="anonymous"
+                                                    src="../resources/dummy/list13.png"
+                                                    class="image-iY65B"></div>
+                                        </div>
+                                        <div class="artboardTitle-3qs0w titleWithoutConnectionsIcon-31eun"><span
+                                                class="title-2qG2p" data-auto="artboardTitleGridView">공정선택</span></div>
+                                    </div></button>
+                                </li>
                                 <li class="singleGridTile-3sBLh" data-id="b0c43a00-11b4-405d-9956-52689879eec7"
                                     id="b0c43a00-11b4-405d-9956-52689879eec7" data-auto="card-18-div">
                                     <a target="sk" href="../html/worker_profile_view.html">

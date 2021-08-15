@@ -168,6 +168,29 @@
 				});
 			});
 		},
+		processSelect: function() {
+			$plugins.uiDropdown({ 
+				id:'uiProcessSelect',
+				ps: 'BR',
+				openback:function() { console.log('open callback'); },
+				closeback:function() { console.log('close callback'); } 
+			});
+
+			$('[data-id="uiProcessSelect"] .list-base button').off('click.site').on('click.site', function(){
+				//var v = $(this).data('tit');
+
+				//if ($('.ui-siteselect-result').prop('tagName') === 'INPUT') {
+				//	$('.ui-siteselect-result').val(v);
+				//} else {
+				//	$('.ui-siteselect-result').text(v);
+				//}
+				
+				$plugins.uiDropdownToggle({ 
+					id:'uiProcessSelect',
+					state: 'close' 
+				});
+			});
+		},
 		dragDel: function(opt){
 			var $item = $('.ui-drag > .item');
 			var s = 0;

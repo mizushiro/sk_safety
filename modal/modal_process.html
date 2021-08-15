@@ -1,0 +1,307 @@
+<section class="ui-modal" id="modal_process">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit">공정선택</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_process', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+
+            <!-- <div class="type-ts">
+                <div class="form-item">
+                    <div class="inp-wrap">
+                        <input type="text" class="inp-base" value="" placeholder="공정 검색">
+                        
+                    </div>
+                    <button type="button" class="btn-search">
+                        <span class="a11y-hidden">검색</span>
+                    </button>
+                </div>
+            </div> -->
+
+            <div class="form-item">
+                <div class="inp-wrap type-searchbox process">
+                    <input type="search" class="inp-base ui-siteselect-result process12" value="" placeholder="내용을 입력하세요.">
+                    <button type="button" class="btn-search ui-drop" id="uiProcessSelect">
+                        <span class="a11y-hidden">검색열기</span>
+                    </button>
+                    
+                </div>
+                <div class="ui-drop-pnl search-resultbox" data-id="uiProcessSelect">
+                    <div class="ui-drop-box">
+                        
+                        <ul class="list-base">
+                            <li>
+                                <div class="data-no type-map">
+                                    관련 공정이 없습니다.
+                                </div>
+                            </li>
+                            <li>
+                                <button type="button" data-tit="가설공사1 (컨테이너, 휀스 등)">
+                                    <div class="tit">가설공사1 (컨테이너, 휀스 등)</div>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" data-tit="가설공사2 (컨테이너, 휀스 등)">
+                                    <div class="tit">가설공사2 (컨테이너, 휀스 등)</div>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" data-tit="가설공사3 (컨테이너, 휀스 등)">
+                                    <div class="tit">가설공사3 (컨테이너, 휀스 등)</div>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" data-tit="가설공사4 (컨테이너, 휀스 등)">
+                                    <div class="tit">가설공사4 (컨테이너, 휀스 등)</div>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="search-resultbox recent-search">
+                    <div class="ui-drop-box">
+                        
+                        <ul class="list-base time">
+                            <!-- <li>
+                                <div class="data-no type-list">
+                                    관련 공정이 없습니다.
+                                </div>
+                            </li> -->
+                            <li>
+                                <button type="button" data-tit="비계작업" class="btn-wrap1">
+                                    <div class="tit">비계작업</div>
+                                    <div class="date">08.11</div>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" data-tit="비계작업2" class="btn-wrap1">
+                                    <div class="tit">비계작업2</div>
+                                    <div class="date">08.11</div>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" data-tit="비계작업3" class="btn-wrap1">
+                                    <div class="tit">비계작업3</div>
+                                    <div class="date">08.11</div>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" data-tit="비계작업4" class="btn-wrap1">
+                                    <div class="tit">비계작업4</div>
+                                    <div class="date">08.11</div>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <div class="ui-tab" id="ProcessTab">
+                <div class="ui-tab-btns">
+                    <div class="btn-wrap pdt-n">
+                        <button type="button" class="ui-tab-btn"><i>공정선택입력</i></button>
+                        <button type="button" class="ui-tab-btn"><i>공정직접입력</i></button>
+                    </div>
+                </div>
+                <div class="ui-tab-pnls">
+                    <section class="ui-tab-pnl">
+                        <div class="tbl-list type-full mgt-l entry2">
+
+                            <div class="total mgt-s">
+                                총 <em>10</em>건
+                            </div>
+                            <ul class="list-base type-arrow type-process mgt-s">
+                                <li>
+                                    <a href="#">
+                                        공정 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정공정공정공정
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정공정 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        공정
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="ui-tab-pnl">
+                        <section class="section-item mgt-n entry"><!-- 공정명 직접입력 -->
+                            <div class="form-wrap">
+                                <div class="form-dl mgt-n">
+                                    <div class="form-dt">
+                                        <label class="form-tit" for="공정명">공정명</label>
+                                    </div>
+                                    <div class="form-dd">
+                                        <div class="form-item">
+                                            <input type="text" id="공정명" class="inp-base" value="" placeholder="공정명 입력">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="btn-area">
+                                <button type="button" class="btn-base large primary" id="a1">
+                                    <span>공정 등록</span>
+                                </button>
+                            </div>
+                        </section>
+
+                    </section>
+                </div>
+            </div>
+
+        </div>
+        <!-- <div class="ui-modal-footer">
+            <div class="btn-area stick">
+                <button type="button" class="btn-base primary">
+                    <span>다음</span>
+                </button>
+            </div>
+        </div> -->
+    </div>
+</section>
+
+<script> 
+    ;(function($, win, doc, undefined) {
+        $(doc).ready(function() {
+           
+            //기본 실행
+            $plugins.common.init();
+
+            //현장 검색
+            $plugins.common.processSelect();
+
+            //현장 검색
+            $plugins.common.siteSelect();
+                $plugins.uiTab({ 
+                    id:'ProcessTab', 
+                    current:0, 
+                    callback:function(v){
+                        console.log(v);
+                    } 
+                });
+
+            $(".process12").on('focus blur', function(){
+                $(".recent-search").toggleClass('on');
+            })
+
+        });
+    })(jQuery, window, document);
+</script>
+
