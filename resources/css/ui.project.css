@@ -7224,10 +7224,10 @@ body.qrcode {
     background-size: 100%;
     background-image: url(../img/event_01.svg);
 }
-.event-insentive li.week-box, .event-insentive li.year-box {
+.event-insentive li.week-box, .event-insentive li.year-box, .event-insentive li.month-box {
 	background-color: #DFDFDF;
 }
-.event-insentive li.week-box:before, .event-insentive li.year-box:before {
+.event-insentive li.week-box:before, .event-insentive li.year-box:before, .event-insentive li.month-box:before {
     background-image: url(../img/event_02.svg);
     height: 2.8rem;
     margin-top: 0.4rem;
