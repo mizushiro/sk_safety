@@ -198,7 +198,7 @@
 			var maxMove = 50;
 			var j = 50; 
 			var state = false;
-			var callback = opt.callback;
+			var callback = opt === undefined || opt.callback === undefined ? false : opt.callback;
 
 			$item.off('touchstart.d').on('touchstart.d', function(e){
 				s = e.originalEvent.touches[0].pageX;
