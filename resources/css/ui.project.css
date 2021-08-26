@@ -4604,6 +4604,7 @@ margin-right: .5rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	
 }
 .list-network .btn-del::before{
 	content: "";
@@ -5375,7 +5376,21 @@ margin-right: .5rem;
     width: 100%;
     padding: 0.4rem 0 0.4rem;
 }
-
+.work-lst .list-network li .w-type {
+    position: relative;
+    width: 100%;
+    padding: 0.4rem 0 0.4rem;
+	display: flex;
+	justify-content: space-between;
+}
+.work-lst .list-network li .w-type .w-name {
+	min-width: 8rem;
+}
+.work-lst .list-network li .w-type .w-comp {
+	min-width: 13rem;
+    text-align: right;
+    padding-right: 1rem;
+}
 .menu-header {
 	width: 100%;
 	background: linear-gradient(118deg, #008F84, #0DA79B);
