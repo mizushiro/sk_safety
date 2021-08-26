@@ -1,0 +1,32 @@
+<section class="ui-modal" id="modal_signup">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit">회원가입</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_signup', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+            <ul class="list-base type-arrow">
+                <li>
+                    <a href="#">
+                        <span class="icon-user1"></span>
+                        <span>근로자 회원가입</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon-user2"></span>
+                        <span>관리자 회원가입</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+

@@ -96,7 +96,12 @@
                     </div>
 
                     <div class="btn-area mgt-m">
-                        <button type="button" class="btn-base large primary">
+                        <button type="button" class="btn-base large primary" onclick="
+                        $plugins.uiModalOpen({ 
+                        id: 'modal_signup', 
+                        src: '../modal/modal_signup.html', 
+                        ps: 'bottom'
+                    });">
                             <span>로그인</span>
                         </button>
                     </div>
@@ -109,10 +114,32 @@
 
                 <div class="section-item">
                     <div class="btn-area">
-                        <button type="button" class="btn-base line">
+                        <button type="button" class="btn-base line txt-lg" onclick="
+                        $plugins.uiModalOpen({ 
+                            id: 'modal_worker_info', 
+                            src: '../modal/modal_worker_info.html', 
+                            ps: 'center', 
+                            closeCallback: function(v) { 
+                                console.log('close callback', v); 
+                            },
+                            callback: function(v) { 
+                                console.log('callback', v); 
+                            }
+                        });">
                             <span>근로자등록</span>
                         </button>
-                        <button type="button" class="btn-base line">
+                        <button type="button" class="btn-base line txt-lg" onclick="
+                        $plugins.uiModalOpen({ 
+                            id: 'modal_manager_info', 
+                            src: '../modal/modal_manager_info.html', 
+                            ps: 'center', 
+                            closeCallback: function(v) { 
+                                console.log('close callback', v); 
+                            },
+                            callback: function(v) { 
+                                console.log('callback', v); 
+                            }
+                        });">
                             <span>관리자등록</span>
                         </button>
                     </div>

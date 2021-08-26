@@ -493,6 +493,20 @@ dl.bul-num dd::before,
 	flex: 0 auto;
 	margin-right: .6rem;
 }
+.bul-num.type2>li .wrap:before {
+	content: counter(section) '.';
+	font-weight: 700;
+	font-size: 1.5rem;
+	/* position: absolute;
+	left: 0.2rem;
+	top: 0; */
+	line-height: 1.2;
+	flex: 0 auto;
+	margin-right: .6rem;
+}
+.bul-num.type2>li:before {
+	display:none;
+}
 dl.bul-num dd {
 	padding:1rem 0 .5rem;
 }
@@ -654,6 +668,36 @@ dl[class*="bul-"]>dt {
 	margin-top: 2.3rem;
 }
 
+.res-status {
+	background-color: #ddd;
+	border-radius: 0.4rem;
+	padding: 0.7rem 1rem;
+	font-size:1.4rem;
+}
+.res-status .txt {
+	background-color: #fff;
+	border-radius: 2rem;
+	padding: 0.2rem 1rem;
+	margin-left:0.4rem;
+}
+.res-status.type-1 {
+	background-color: #B2DFDB;
+}
+.res-status.type-1 .txt {
+	color: #1872A2;
+}
+.res-status.type-2 {
+	background-color: #DCEDC8;
+}
+.res-status.type-2 .txt {
+	color: #41791A;
+}
+.res-status.type-3 {
+	background-color: #FFCDD2;
+}
+.res-status.type-3 .txt {
+	color: #C61B17;
+}
 .section-item>.tit-cont:first-child {
 	margin-top: 0.3rem;
 }
@@ -1102,6 +1146,30 @@ input[type="date"].box:valid::before{
 	background: url(../img/icon_down_p.svg) no-repeat 100% 50% / 1rem;
 	transform: rotate(-90deg);
 }
+.btn-base.plus::after{
+	content:"";
+	display:inline-block;
+	margin-left: 0.4rem;
+	position: relative;
+	top: 0;
+	width: 1rem;
+	height: 1rem;
+	background: url(../img/icon_plus01.svg) no-repeat 100% 50% / 1rem;
+	transform: rotate(-90deg);
+}
+.btn-base.add2 {
+	width:5rem;
+}
+.btn-base.add2::after{
+	content:"";
+	display:inline-block;
+	position: relative;
+	top: 0;
+	width: 1rem;
+	height: 1rem;
+	background: url(../img/icon_add.svg) no-repeat 100% 50% / 1rem;
+	transform: rotate(-90deg);
+}
 .btn-base {
 	width: auto;
 	min-height: 4rem;
@@ -1125,6 +1193,9 @@ a.btn-base.small {
 	padding: 0.3em 1rem 0.2rem ;
 	line-height: 1;
 }
+.btn-base.txt-lg {
+	font-size: 1.7rem;
+}
 
 .btn-base.large {
 	min-height: 5rem;
@@ -1146,6 +1217,10 @@ a.btn-base.small {
 .btn-base.line {
 	border-color: #008F84 !important;
 	color: #008F84 !important;
+}
+.btn-base em.txt { 
+	color:#999;
+	margin-left:0.4rem;
 }
 
 .btn-base.weak {
@@ -1268,12 +1343,20 @@ a.btn-base {
 	border: 1px solid #ddd;
 	background: url(../img/icon_add.svg) no-repeat 50% 50% / 1.4rem;
 }
+
 .btn-del {
 	position: relative;
 	display: block;
 	width: 3rem;
 	height: 3rem;
 	background: url(../img/icon_del.svg) no-repeat 50% 50% / 1.6rem;
+}
+.btn-minus02 {
+	position: relative;
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	background: url(../img/icon_minus02.svg) no-repeat 50% 50% / 1.6rem;
 }
 
 .btn-back {
@@ -2596,6 +2679,29 @@ a.ui-acco-btn:after {
 	opacity: .8;
 	margin-bottom:1.2rem;
 }
+.talk-item .check-point{
+	opacity: .8;
+	margin-bottom:1.2rem;
+}
+.talk-item .check-point li {
+	padding-left: 0.8rem;
+	position: relative;
+}
+.talk-item .check-point li:before{
+	content:"";
+	position:absolute;
+	left:0;
+	top:0.8rem;
+	display: inline-block;
+	width:0.2rem;
+	height: 0.2rem;
+	background-color: #fff;
+	border-radius:50%;
+}
+.talk-item .check-point li span{
+	font-weight: 600;
+	padding-right: 0.4rem;
+}
 .talk-item .cont{
 	width:100%;
 	margin-bottom:1.8rem;
@@ -2851,7 +2957,7 @@ a.ui-acco-btn:after {
 }
 .talk-noti .btn-date{
 	position: absolute;
-	top:.5rem; right:2rem;
+	top:.5rem; left:2rem;
 	overflow: hidden;
 	width:2rem;
 	height:2rem;
@@ -2859,6 +2965,13 @@ a.ui-acco-btn:after {
 	border:0;
 	padding-left:3rem;
 	color:transparent
+}
+.talk-noti .btn-picture-view{
+	position: absolute;
+	top:.5rem; right:2rem;
+	width:2rem;
+	height:2rem;
+	padding-left:3rem;
 }
 .talk-noti .btn-date::after{
 	background: url(../img/calendar-range-w.svg) no-repeat 50% 50% / 1.8rem;
@@ -2872,6 +2985,14 @@ a.ui-acco-btn:after {
 }
 .talk-ctg .inp-radio{
 	margin:0 .3rem;
+}
+.talk-ctg + .btn-refresh {
+	position: absolute;
+	top: 1.0rem;
+	right: 2rem;
+	border: 1px solid #ddd;
+	border-radius:0.4rem;
+	background: url(../img/icon_refresh.svg) no-repeat 50% 50% / 1.4rem;
 }
 
 .talk-search-open .talk-search.type-a,
@@ -2925,6 +3046,7 @@ a.ui-acco-btn:after {
 }
 .talk-search-wrap.type-ts {
 	padding: .8rem 2rem;
+	display: flex;
 }
 .talk-search-wrap.type-pts {
 	padding: 2rem 2rem 2.5rem;
@@ -3012,6 +3134,21 @@ right: 4rem;
 	height: 3rem;
 	background: url(../img/icon_search.svg) no-repeat 50% 50% / 1.8rem;
 }
+.btn-refresh {
+	width: 3rem;
+	height: 3rem;
+	background: url(../img/icon_refresh.svg) no-repeat 50% 50% / 1.8rem;
+}
+.btn-refresh.box {
+	border: 1px solid #ddd;
+	border-radius: 0.4rem;;
+	background: url(../img/icon_refresh.svg) no-repeat 50% 50% / 1.4rem;
+}
+.btn-picture-view {
+	width: 3rem;
+	height: 3rem;
+	background: url(../img/icon_images.svg) no-repeat 50% 50% / 1.8rem;
+}
 
 .btn-filter {
 	width: 3rem;
@@ -3030,7 +3167,13 @@ right: 4rem;
 	width: 4.5rem;
 	height: 4.5rem;
 }
-
+.talk-search-wrap.type-ts .btn-refresh {
+	flex: 1 auto;
+	width: 4.5rem;
+	height: 4.5rem;
+	border: 1px solid #ddd;
+	border-left:0;
+}
 
 
 .type-ts .btn-close {
@@ -3985,7 +4128,26 @@ a[disabled], button[disabled] {
     vertical-align: middle;
     margin-right: 0.6rem;
 }
-
+.icon-user1 {
+	background: url(../img/icon_user01.svg) no-repeat 50% 50% / 1.8rem;
+	display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    vertical-align: middle;
+    margin-right: 0.6rem;
+	background-color: #F7F7F7;
+    border-radius: 50%;
+}
+.icon-user2 {
+	background: url(../img/icon_user02.svg) no-repeat 50% 50% / 1.8rem;
+	display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    vertical-align: middle;
+    margin-right: 0.6rem;
+	background-color: #F7F7F7;
+    border-radius: 50%;
+}
 
 .tit-sec .btns {
 	position: relative;
@@ -4434,11 +4596,26 @@ margin-right: .5rem;
 	justify-content: center;
 	align-items: center;
 }
+.list-network .btn-minus02{
+	width:3rem;
+	height:3rem;
+	border-radius:50%;
+	background:#F7F7F7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .list-network .btn-del::before{
 	content: "";
 	background-color: #222222;
 	width:1.2rem;
 	height: 0.2rem;
+}
+.list-network .btn-minus02::before{
+	content: "";
+	background: url(../img/icon_minus01.svg) no-repeat 50% 50% / 1.2rem;
+	width:1.2rem;
+	height: 1.2rem;
 }
 .list-network.type-b {
 	border-top:1px solid #EEE;
@@ -5185,6 +5362,18 @@ margin-right: .5rem;
 
 .alarm-none p {
 	width: 100%;
+}
+
+.work-lst {
+	width: 100%;
+	background: #f2f2f2;
+	padding: 0.4rem 1rem;
+	border-radius: 0rem;
+}
+.work-lst .list-network li {
+    position: relative;
+    width: 100%;
+    padding: 0.4rem 0 0.4rem;
 }
 
 .menu-header {
@@ -6634,6 +6823,14 @@ margin-right: .5rem;
 	background:#F7F7F7;
 	padding:0.5rem 1rem .5rem 2rem;
 }
+.type-workletter .ui-acco-tit.type-2 {
+	background:#fff;
+	padding:0.5rem 1rem .5rem 0rem;
+}
+.type-workletter .ui-acco-tit.type-2 .ui-acco-btn:after{
+	right: 0.4rem;
+	background-size: 1.4rem;
+}
 .type-workletter .ui-acco-btn{
 	display: flex;
 	justify-content: space-between;
@@ -6677,6 +6874,60 @@ margin-right: .5rem;
 	border-top:1px solid #F8F8F8;
 	padding:1rem 0;
 	margin:0;
+}
+.work-checklist02 {
+
+}
+.incon-info {
+	font-size: 1.4rem;
+	color: #666;
+	font-weight: 400;
+	align-items: center;
+    display: flex;
+}
+.incon-info:before {
+	content: "";
+	display: inline-block;
+	background-image: url(../img/icon_check_red.svg);
+	background-size: 100%;
+	width: 1.6rem;
+	height: 1.6rem;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	margin-right: 0.4rem;
+}
+.work-checklist02 li {
+	display: block;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.work-checklist02 li .wrap {
+	position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.work-checklist02 li span.rew {
+	flex: 1 auto;
+}
+.work-checklist02 li span.incon {
+	background-color: #FFCDD2;
+	color: #C61B17;
+	text-align: center;
+	padding: 0 0.6rem;
+	border-radius: 3rem;
+	align-items: center;
+    display: flex;
+}
+.work-checklist02 li span.incon:before {
+	content: "";
+	display: inline-block;
+	background-image: url(../img/icon_check_red.svg);
+	background-size: 100%;
+	width: 1.4rem;
+	height: 1.4rem;
+	margin-right: 0.4rem;;
+	background-repeat: no-repeat;
+	vertical-align: middle;
 }
 .modal-contalk .ui-modal-header {
 	background: transparent;

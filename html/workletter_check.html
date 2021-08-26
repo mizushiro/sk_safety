@@ -48,6 +48,15 @@
             <section class="section-item mgt-n">
                 <div class="tit-sec type-line mgb-n">
                     <h3 class="tit">기본정보</h3>
+                    <div class="res-status type-1">
+                        점검결과 <span class="txt">양호</span>
+                    </div>
+                    <!-- <div class="res-status type-2">
+                        점검결과 <span class="txt">보완요청</span>
+                    </div> -->
+                    <!-- <div class="res-status type-3">
+                        점검결과 <span class="txt">작업중지</span>
+                    </div> -->
                 </div>
 
                 <div class="tbl-base type-b">
@@ -127,12 +136,77 @@
                             </tr>
                             <tr>
                                 <th scope="row">
-                                    작업인원
+                                    계획인원
                                 </th>
                                 <td colspan="2">
                                     5명(고령 1명, 신규 1명)
                                 </td>
                             </tr>
+                            <tr>
+                                <th scope="row">
+                                    계획 투입인원
+                                </th>
+                                <td>
+                                    5명 / 2명
+                                </td>
+                                <td class="ta-r">
+                                    <button type="button" class="btn-refresh box">
+                                        <span class="a11y-hidden">새로고침</span>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="3">
+                                    <div class="ui-acco type-workletter" id="worklstAcco">
+                                        <div class="ui-acco-wrap">
+                                            <div class="ui-acco-tit type-2">
+                                                <button type="button" class="ui-acco-btn">
+                                                    <span>투입인원 명단</span>
+                                                </button>
+                                            </div>
+                                            <div class="ui-acco-pnl">
+                                                <div class="ui-acco-pnl-wrap">
+                                                    <div class="work-lst">
+                                                        <ul class="list-network">
+                                                            <li>
+                                                                <div class="name">
+                                                                    홍길동
+                                                                </div>
+                                                                <div class="opt">
+                                                                    <span>일우건설</span>
+                                                                </div>
+                                                                <button type="button" class="btn-minus02">
+                                                                    <span class="a11y-hidden">삭제</span>
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <div class="name">
+                                                                    홍길동
+                                                                </div>
+                                                                <div class="opt">
+                                                                    <span>일우건설</span>
+                                                                </div>
+                                                                <button type="button" class="btn-minus02">
+                                                                    <span class="a11y-hidden">삭제</span>
+                                                                </button>
+                                                            </li>
+                                                            
+                                                        </ul>
+                                                    </div>
+                                                    <div class="form-item type-d mgt-m">
+                                                        <button type="button" class="btn-base line small plus">
+                                                            <span>근로자 추가하기</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+
                             <tr>
                                 <th scope="row">
                                     투입장비
@@ -173,6 +247,7 @@
                         <div class="form-item">
                             <input type="text" id="workleter_b9" class="inp-base" value="" placeholder="대책을 작성하세요.">
                         </div>
+                        <p class="txt-info mgt-xs">홍길동  21.08.24 15:00</p>
                     </div>
                 </div>
             </div>
@@ -180,48 +255,75 @@
             <hr class="hr-sec">
             <section class="section-item">
                 <div class="tit-sec type-line mgb-n">
-                    <h3 class="tit">점검항목</h3>
+                    <h3 class="tit">점검필요항목</h3>
+                    <div class="incon-info">
+                        <span>부적합사항</span>
+                    </div>
                 </div>
 
                 <div class="work-check">
                     <h4 class="work-check-tit">대상작업 - 101동 지하3층 밀폐공간작업</h4>
 
-                    <ul class="bul-num work-checklist">
-                            <li>
-                                <div class="inp-check">
-                                    <input type="checkbox" id="ch_checklist1">
-                                    <label for="ch_checklist1">밀폐공간 무단 출입 동의</label>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="inp-check">
-                                    <input type="checkbox" id="ch_checklist2">
-                                    <label for="ch_checklist2">환기시설 설치 적정성 확인</label>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="inp-check">
-                                    <input type="checkbox" id="ch_checklist3">
-                                    <label for="ch_checklist3">적정 환기설비 미배치 / 미작동</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="inp-check">
-                                    <input type="checkbox" id="ch_checklist4">
-                                    <label for="ch_checklist4">출입통제 조치<br>
-                                        <span class="txt-adddesc">(경고 표식, 감시자, 출입기록 대장)</span>
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="inp-check">
-                                    <input type="checkbox" id="ch_checklist5">
-                                    <label for="ch_checklist5">적정보호구 지급 및 착용<br>
-                                        <span class="txt-adddesc">(송기마스크 등)</span>
-                                    </label>
-                                </div>
-                            </li>
+                    <ul class="bul-num type2 work-checklist02">
+                        <li>
+                            <div class="wrap">
+                                <span class="rew">밀폐공간 무단 출입 동의</span>
+                                <span class="incon">부적합</span>
+                            </div>
+                            
+                        </li>
+                        <li>
+                            <div class="wrap">
+                                <span class="rew">밀폐공간 무단 출입 동의</span>
+                                <span class="incon">부적합</span>
+                            </div>
+                            
+                        </li>
                     </ul>
+
+                    <!-- <ul class="bul-num work-checklist">
+                        <li>
+                            <div class="inp-check">
+                                <input type="checkbox" id="ch_checklist1">
+                                <label for="ch_checklist1">밀폐공간 무단 출입 동의</label>
+                            </div> 
+                        </li>
+                        <li>
+                            <div class="inp-check">
+                                <input type="checkbox" id="ch_checklist1">
+                                <label for="ch_checklist1">밀폐공간 무단 출입 동의</label>
+                            </div> 
+                        </li>
+                        <li>
+                            <div class="inp-check">
+                                <input type="checkbox" id="ch_checklist2">
+                                <label for="ch_checklist2">환기시설 설치 적정성 확인</label>
+                            </div> 
+                        </li>
+                        <li>
+                            <div class="inp-check">
+                                <input type="checkbox" id="ch_checklist3">
+                                <label for="ch_checklist3">적정 환기설비 미배치 / 미작동</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="inp-check">
+                                <input type="checkbox" id="ch_checklist4">
+                                <label for="ch_checklist4">출입통제 조치<br>
+                                    <span class="txt-adddesc">(경고 표식, 감시자, 출입기록 대장)</span>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="inp-check">
+                                <input type="checkbox" id="ch_checklist5">
+                                <label for="ch_checklist5">적정보호구 지급 및 착용<br>
+                                    <span class="txt-adddesc">(송기마스크 등)</span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul> -->
+
                 </div>
             </section>
 
@@ -258,6 +360,11 @@
                 //기본 실행
                 $plugins.common.init();
                 $plugins.table.caption();
+                $plugins.uiAccordion({
+                    id:'worklstAcco',
+                    current:[0],
+                    autoclose:true
+                })
                 
             });
         })(jQuery, window, document);
