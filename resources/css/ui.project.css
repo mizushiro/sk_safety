@@ -4882,6 +4882,17 @@ margin-right: .5rem;
 	background-repeat: no-repeat;
 }
 
+.list-safe .n1-default::before {
+	background: #F5F4F4 no-repeat 50% 50% / 2.7rem;
+}
+.type-week .st-default {
+	display: block;
+	width:100%;
+	height:2.5rem;
+	background:no-repeat 50% 50% / 2.5rem;
+	margin:.5rem 0;
+}
+
 .acom.type1 {
 	position: absolute;
 	width:100%;
