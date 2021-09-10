@@ -82,7 +82,7 @@
                         </div>
                     </div>
 
-                    <div class="form-item align-v mgt-s">
+                    <div class="form-item type-e align-v mgt-s">
                         <div class="inp-check">
                             <input type="checkbox" id="아이디저장">
                             <label for="아이디저장">아이디저장</label>
@@ -105,7 +105,7 @@
                             <span>로그인</span>
                         </button>
                     </div>
-                    <div class="form-item type-d mgt-m">
+                    <div class="form-item type-f mgt-xl">
                         <button type="button" class="link-arrow type-b">
                             <span>비밀번호 찾기</span>
                         </button>
@@ -114,7 +114,7 @@
 
                 <div class="section-item">
                     <div class="btn-area">
-                        <button type="button" class="btn-base line txt-lg" onclick="
+                        <button type="button" class="btn-base primary2 type-2" onclick="
                         $plugins.uiModalOpen({ 
                             id: 'modal_worker_info', 
                             src: '../modal/modal_worker_info.html', 
@@ -126,9 +126,9 @@
                                 console.log('callback', v); 
                             }
                         });">
-                            <span>근로자등록</span>
+                            <span><em>근로자</em>회원가입</span>
                         </button>
-                        <button type="button" class="btn-base line txt-lg" onclick="
+                        <button type="button" class="btn-base primary type-2" onclick="
                         $plugins.uiModalOpen({ 
                             id: 'modal_manager_info', 
                             src: '../modal/modal_manager_info.html', 
@@ -140,18 +140,18 @@
                                 console.log('callback', v); 
                             }
                         });">
-                            <span>관리자등록</span>
+                            <span><em>관리자</em>회원가입</span>
                         </button>
                     </div>
-                    <button type="button" class="link-line mgt-s" onclick="
+                    <!-- <button type="button" class="link-line mgt-s" onclick="
                         $plugins.uiModalOpen({ 
                         id: 'modal_logintype', 
                         src: '../modal/modal_logintype.html', 
                         ps: 'bottom'
-                    });"><span>다른방법으로 로그인</span></button>
+                    });"><span>다른방법으로 로그인</span></button> -->
                 </div>
 
-                <section class="section-item simple-login">
+                <!-- <section class="section-item simple-login">
                     <h3 class="tit">
                         <span>간편로그인</span>
                     </h3>
@@ -170,7 +170,7 @@
                         </button>
                         
                     </div>
-                </section>
+                </section> -->
             </div>
         </main>
         <!-- //content -->
