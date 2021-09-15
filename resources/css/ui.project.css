@@ -94,7 +94,7 @@
 }
 .type-safety.type1 .tit-page {
 	color: #fff;
-	padding: 2rem 2rem 2rem;
+	padding: 2rem 2rem 3rem;
 	margin: 0;
 	font-size:3rem;
 	display: flex;
@@ -1427,7 +1427,21 @@ a.btn-base {
 	display: block;
 	width: 3rem;
 	height: 3rem;
-	background: url(../img/icon_del.svg) no-repeat 50% 50% / 1.6rem;
+	background: url(../img/icon_del.svg) no-repeat 50% 50% / .6rem;
+}
+.btn-plusBig {
+	position: relative;
+	display: block;
+	width: 5rem;
+	height: 5rem;
+	background: url(../img/icon_plusBig.svg) no-repeat 50% 50% / 3.8rem;
+}
+.btn-arrow01 {
+	position: relative;
+	display: block;
+	width: 1rem;
+	height: 2.6rem;
+	background: url(../img/icon_arrow.svg) no-repeat 50% 50% / 0.6rem;
 }
 .btn-minus02 {
 	position: relative;
@@ -4588,7 +4602,7 @@ dl.list-base > div,
 	font-size: 1.6rem;
 	font-weight: 500;
 	color: #333;
-	width: 84%;
+	width: 83%;
 }
 .list-base.list-checkups .ctg .date {
 	font-size: 1.4rem;
@@ -4617,7 +4631,7 @@ dl.list-base > div,
     border:0;
     margin-left: 0.3rem;
 	font-weight: 500;
-	font-size: 1.4rem;
+	font-size: 1.6rem;
 }
 .list-base.list-checkups .tit .flag.dan {
     color: #E7565F;
@@ -6455,12 +6469,13 @@ margin-right: .5rem;
 	margin-left: 1rem;
 	text-align: left;
 	padding: 2rem 2rem 2rem 3.5rem;
+	padding: 1.6rem 2rem 1.6rem 2rem;
 	position: relative;
 }
 
 .btn-mysite::before {
 	content: "";
-	display: block;
+	display: none;
 	width: 2rem;
 	height: 2rem;
 	position: absolute;
@@ -6470,12 +6485,12 @@ margin-right: .5rem;
 }
 
 .btn-mysite .tit {
-	font-size: 1.7rem;
+	font-size: 2.0rem;
 	font-weight: 700;
 	margin-bottom: .5rem;
-	white-space: nowrap;
+	/* white-space: nowrap;
 	overflow: hidden;
-	text-overflow: ellipsis;
+	text-overflow: ellipsis; */
 
 }
 
@@ -8110,6 +8125,7 @@ body.qrcode {
 	font-size: 1.9rem;
 	font-weight: 500;
 }
+
 .list-step {
     position: relative;
     width: 100%;
@@ -8153,8 +8169,96 @@ body.qrcode {
 .list-step li .counter ~ .btn-base {
 	padding: 0 2rem;
 	font-weight: 600;
-
 }
+
+.list-step.type-b {
+    position: relative;
+    width: 100%;
+    display: block;
+	background-color: transparent;
+    margin-top: 1.4rem;
+	padding: 0rem;
+}
+.list-step.type-b li {
+	display: flex;
+    justify-content: space-between;
+	align-items: center;
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 500;
+	background-color: #fff;
+	margin-bottom: 1.4rem;
+	border-radius: 1.6rem;
+	padding: 1.6rem 2rem;
+	height: 8rem;
+}
+.list-step.type-b li .ttl {
+	display: flex;
+    justify-content: space-between;
+	align-items: center;
+    font-size: 2.4rem;
+    text-align: left;
+    font-weight: 600;
+}
+.list-step.type-b li .ttl:after {
+	content: "";
+	width:3.0rem;
+	height:3.4rem;
+	background: url(../img/icon_down01.svg) no-repeat center;
+}
+.list-step.type-b li.n1 .ttl:before {
+	content: "";
+	margin-right:1.2rem;
+	width:4.2rem;
+	height:4.4rem;
+	background: url(../img/icon_work.svg) no-repeat;
+}
+.list-step.type-b li.n2 .ttl:before {
+	content: "";
+	margin-right:1.2rem;
+	width:4.4rem;
+	height:3.6rem;
+	background: url(../img/icon_ansim.svg) no-repeat;
+}
+.list-step.type-b li.n3 .ttl:before {
+	content: "";
+	margin-right:1.2rem;
+	width:4.4rem;
+	height:4.2rem;
+	background: url(../img/icon_dailychk.svg) no-repeat;
+}
+.list-step.type-c {
+	display: flex;
+    justify-content: space-between;
+	align-items: center;
+    position: relative;
+    width: 100%;
+	background-color: transparent;
+    margin-top: 1.4rem;
+	padding: 0rem;
+}
+.list-step.type-c li {
+	display: flex;
+    justify-content: space-between;
+	flex: 1 50%;
+    max-width: calc(50% - 0.6rem);
+    min-width: calc(50% - 0.6rem);
+    font-size: 1.4rem;
+    font-weight: 500;
+	background-color: #fff;
+	margin-bottom: 1.4rem;
+	border-radius: 1.6rem;
+	padding: 1.6rem 1.6rem;
+}
+.list-step.type-c li .ttl {
+	display: flex;
+    justify-content: space-between;
+	align-items: center;
+    font-size: 2.0rem;
+    text-align: left;
+    font-weight: 600;
+}
+
 .ansim-mng {
     position: relative;
     width: 100%;
@@ -8229,7 +8333,10 @@ body.qrcode {
 }
 .list-mywork li .work-info {
 	position: relative;
-	padding-right: 5rem;
+	padding-right: 6.5rem;
+	font-size: 1.5rem;
+	color: #333;
+	font-weight: 500;
 }
 .list-mywork li .work-info .status{
 	position: absolute;
@@ -8241,6 +8348,7 @@ body.qrcode {
 }
 .list-mywork li.possible {
 	background-color: #E3F1F5;
+	border: 1px solid #64C2DC;
 }
 .list-mywork li.possible .status {
 	background-color: #26A69A;
@@ -8248,6 +8356,7 @@ body.qrcode {
 }
 .list-mywork li.impossible {
 	background-color: #FCF4F4;
+	border: 1px solid #E39292;
 }
 .list-mywork li.impossible .status {
 	background-color: #D84D56;
