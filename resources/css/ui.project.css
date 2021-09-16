@@ -1243,6 +1243,11 @@ a.btn-base.small {
 	border-color: #008F84;
 	color: #fff;
 }
+.ui-modal-footer .btn-base.primary2 {
+	background-color: #1872A2;
+	border-color: #1872A2;
+	color: #fff;
+}
 .btn-base.primary2.type-2 {
 	background-color: #1872A2;
 	background-color: rgba(24 114 162 / 0.9);
