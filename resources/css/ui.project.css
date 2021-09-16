@@ -2624,7 +2624,29 @@ a.ui-acco-btn:after {
 	display: inline-block;
 	margin-top: 0.5rem;
 }
-
+.person-info .opt-div {
+	color: #fff;
+	font-size: 1.2rem;
+	font-weight: 400;
+	width: 100%;
+	text-align: left;
+	display: inline-block;
+	margin-top: 1.2rem;
+	opacity:.9;
+}
+.person-info .opt-div>*+* {
+    padding-left: 1.5rem;
+}
+.person-info .opt-div>*+*::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 1rem;
+    background: #fff;
+    position: absolute;
+    top: 0.3rem;
+    left: 0.6rem;
+}
 .person-info .btn-photo {
 	position: absolute;
 	bottom: 0;
@@ -2635,21 +2657,40 @@ a.ui-acco-btn:after {
 	margin-left: 2rem;
 	background: #333 url(../img/icon_photo_w.svg) no-repeat 50% 50% / 1.8rem;
 }
-
+.person-info .opt-div + .btn-wrap{
+	padding-top:1rem;
+}
 .person-info .box {
 	width: 100%;
-	height: 3.8rem;
+	height: 4.0rem;
 	border-radius: 1.9rem;
-	background: rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.2);
 	color: #fff;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	font-weight: 500;
-	padding: 0.9rem 1.8rem 0;
+	padding: 0.9rem 2.2rem;
 	display: inline-block;
 	margin-top: 2rem;
-
 }
-
+.person-info .box.point-wrap .point{
+	width: 100%;
+	display: flex;    
+	justify-content: space-between;
+    align-items: center;
+}
+.person-info .box.point-wrap .point span:first-child::before {
+    content: "P";
+    display: inline-block;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    /* font-weight: 700; */
+    text-align: center;
+    line-height: 2.1rem;
+    font-size: 1.5rem;
+    margin-right: .5rem;
+}
 .person-info .box span {
 	display: inline-block;
 	position: relative;
