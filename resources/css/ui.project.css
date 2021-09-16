@@ -1134,7 +1134,7 @@ input[type="date"].box:valid::before{
 }
 
 .btn-area.stick .btn-base {
-	margin-left: 0 !important;
+	margin-left: -1px !important;
 }
 .btn-area.stick .btn-base.primary{
 	/* min-width:50%; */
@@ -1205,6 +1205,9 @@ input[type="date"].box:valid::before{
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
+}
+.btn-base.txt2 {
+	color:#E86169;
 }
 a.btn-base.small {
 	padding:0.7em .8rem .6rem 0.5rem;
@@ -1986,7 +1989,6 @@ a.btn-base {
 	position: relative;
 	margin-top: 0;
 	padding: 0rem 2rem 1.5rem;
-	top: -1px;
 }
 .ui-modal-footer .btn-wrap,
 .ui-modal-footer .btn-area {
@@ -4826,9 +4828,10 @@ margin-right: .5rem;
 }
 .list-edu .type.normal  div{
     background-color: #42ACA3;
+	justify-content: center;
 }
 .list-edu .type.special div{
-    background-color: #FFD11A;
+    background-color: #E7565F;
 }
 .list-edu .type div{
     flex:1;
