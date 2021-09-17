@@ -7169,6 +7169,11 @@ margin-right: .5rem;
 	text-align: center;
 	padding-top:0.1rem;
 }
+.swiper-week td div:nth-child(2) span{	
+	color: #17799a;
+	line-height: 2.3;
+	font-size: 1.4rem;
+}
 .btn-check{
 	background:#E3F1F5;
 	width:100%;
