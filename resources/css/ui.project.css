@@ -2792,6 +2792,7 @@ a.ui-acco-btn:after {
 	color:#fff;
 	padding:0;
 	border-radius: 2rem;
+	border-top-left-radius: 0;
 	background:linear-gradient(98deg, #D84D56, #bf3a43);
 }
 .talk-item.subject .box.type-c {
