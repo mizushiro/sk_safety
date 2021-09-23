@@ -4934,13 +4934,13 @@ margin-right: .5rem;
 }
 .list-edu .date {
     display: block;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 500;
-    color: #777;
+    
 }
 .list-edu .tit {
 	display: block;
-	font-size: 1.4rem;
+	font-size: 1.3rem;
 	font-weight: 500;
     color: #777;
 }
