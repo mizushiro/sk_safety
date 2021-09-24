@@ -1330,7 +1330,14 @@ a.btn-base.small {
 	border-color: #008F84 !important;
 	color: #008F84 !important;
 	border-radius:2.4rem;
-	min-height: 2.4rem;	
+	min-height: 2.6rem;	
+    font-size: 1.3rem;
+}
+.btn-base.line3 {
+	border-color: #D84D56 !important;
+	color: #D84D56 !important;
+	border-radius:2.4rem;
+	min-height: 2.6rem;	
     font-size: 1.3rem;
 }
 .btn-base em.txt { 
@@ -1647,6 +1654,7 @@ a.btn-base {
 }
 .read .form-dd div.inp-base {
 	border-bottom:0;
+	font-weight: 500;
 }
 .form-div{
 	margin:0 1rem;
@@ -4426,6 +4434,7 @@ a[disabled], button[disabled] {
 	border: 1px solid #ddd;
 	border-radius: 50%;
 	background: #fff url(../img/icon_top.svg) no-repeat 50% 50% / 1.1rem;
+	background-color: rgba(255, 255, 255, 0.3);
 	opacity: 0;
 	transition: all .2s ease-out;
 	z-index: 890;
@@ -4702,6 +4711,11 @@ a[disabled], button[disabled] {
 .tbl-list tbody+tbody,
 .tbl-list tbody.line-t {
 	border-top: 1px solid #c5c5c5;
+}
+.tbl-list table>tbody>tr>td span.txt-low{
+	color:#afafaf;
+	font-size: 1.3rem;
+	margin-left:0.5rem;
 }
 
 /* list */
@@ -8890,6 +8904,14 @@ body.qrcode {
 	font-size:1.2rem;
 	margin-left:0.4rem;
 }
+.answer-detail .name em.type1 {
+	background-color: #1872A2;
+	color:#fff;
+}
+.answer-detail .name em.type2 {
+	background-color: #008F84;
+	color:#fff;
+}
 .answer-list-wrap .contents {
 	background-color: #E3F1F5;
 	padding:1rem;
@@ -8901,6 +8923,77 @@ body.qrcode {
 	color: #666;
 	padding:0.4rem 0;
 	display: block;
+}
+.answer-write-wrap {
+	background-color: rgba(0 0 0 / 0.6);
+}
+.answer-write-wrap .photo-list2{
+	padding: 0.4rem;
+}
+.answer-write {
+	display: flex;
+    justify-content: space-between;
+	/* align-items: baseline; */
+	border: 1px solid #ddd;
+	margin-bottom: 6rem;
+	background-color: #fff;
+}
+.answer-write .inp-wrap {
+	flex: 1;
+}
+.answer-write textarea.inp-base {
+	border:0;
+	min-height: 4.5rem;
+    height: 4.5rem;
+	resize: none;
+	padding-top: 1.4rem;
+	font-size: 1.4rem;
+}
+.answer-write textarea.inp-base:focus { 
+	min-height: 10rem;
+}
+.answer-write .btn{
+	width: 4.5rem;
+    height: 4.5rem;
+    border-left: 1px solid #ddd;
+}
+.answer-write .btn-photo{
+	width: 4.5rem;
+    height: 4.5rem;
+	background: url(../img/icon_photo.svg) no-repeat 50% 50% / 1.8rem;
+}
+.answer-write .btn-base{
+	min-height: 100%;
+    height: 4.5rem;
+	border-bottom: 0;
+	border-right: 0;
+	border-top: 0;
+	padding-bottom: 1.4rem;
+	align-items: end;
+}
+.answer-write .btn-wrap {
+	display: flex;
+    justify-content: flex-end;
+	align-items: flex-end;
+	width: auto;
+	padding: 0;
+}
+.read-ttl {
+	display: flex;
+    justify-content: space-between;
+	align-items: baseline;
+	font-weight: 600;
+	border-bottom: 2px solid #666;
+}
+.read-ttl .inp-radio {
+	margin-right:0.6rem;
+}
+.read-ttl span.date {
+	display: block;
+	margin-top: 0.6rem;
+	font-weight: normal;
+	font-size:1.2rem;
+
 }
 
 /* 시정초치현황 */
