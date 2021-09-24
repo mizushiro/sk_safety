@@ -8947,7 +8947,7 @@ body.qrcode {
     height: 4.5rem;
 	resize: none;
 	padding-top: 1.4rem;
-	font-size: 1.4rem;
+	font-size: 1.3rem;
 }
 .answer-write textarea.inp-base:focus { 
 	min-height: 10rem;
