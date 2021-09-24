@@ -1457,7 +1457,7 @@ a.btn-base {
 .btn-base.danger:before {
 	content:"";
 	width: 2.6rem;
-	height: 1.3rem;
+	height: 1.5rem;
 	background: url(../img/icon_danger.svg) no-repeat 50% 50% / 1.5rem;
 }
 
@@ -9298,4 +9298,9 @@ body.photo-viewer .base-body {
 }
 .slick-prev:before {
     content: 'w';
+}
+.btn-base.type-w.danger span {
+	padding-top:0.3rem;
+	color:#333;
+	font-weight: 500;;
 }
