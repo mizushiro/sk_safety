@@ -970,7 +970,7 @@ input[type="date"].box:valid::before{
 	font-size: 1.3rem;
 	min-height: 2.2rem;
 	padding: 0.6rem 0 0.4rem 3rem;
-	color: #777;
+	color: #333;
 	font-weight: 500;
 	vertical-align: middle;
 }
@@ -1817,7 +1817,7 @@ a.btn-base {
 	height: 1.6rem;
 	position: relative;
 	top: 0.3rem;
-	margin-right: 0.3rem;
+	margin-right: 0.6rem;
 }
 
 .txt-info.error {
@@ -3750,21 +3750,21 @@ right: 4rem;
 	margin-right: 0.6rem;
 }
 .sinmungo-list .photo {
-    flex: 0 4rem;
-    min-width: 4rem;
-    width: 4rem;
-    height: 4rem;
+    flex: 0 4.4rem;
+    min-width: 4.4rem;
+    width: 4.4rem;
+    height: 4.4rem;
     overflow: hidden;
     border-radius: .4rem;
     margin-right: 0.8rem;
 }
 .sinmungo-list .answer {
-    background-color: rgba(0 113 132 / 0.6);
+    background-color: rgba(66 172 163 / 0.8);
 	border:0;
 	text-align: center;
 	color:#fff;
 	font-size:1.2rem;
-	padding: 0 1.6rem;
+	padding: 0.8rem 1.6rem;
 	border-radius: 0.4rem;;
 }
 .sinmungo-list .answer em {
@@ -3777,7 +3777,7 @@ right: 4rem;
 .sinmungo-head {
     width: 100%;
     text-align: right;
-    padding: 1rem 0 2rem;
+    padding: 1rem 0 2.4rem;
 	display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7651,7 +7651,7 @@ margin-right: .5rem;
 	color:#E7565F;
 	border-radius: 5rem;
 	margin-left: 0.6rem;
-	line-height: 1.6;
+	line-height: 1.8;
 }
 .nec{
 	color:#E7565F !important;

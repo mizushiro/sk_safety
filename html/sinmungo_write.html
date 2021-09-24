@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index, follow" />
+
+    <meta name="subject" content="SK건설 안전관리 시스템">
+    <meta name="author" content="SK건설">
+    <meta name="title" content="SK건설 세이프티" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="SK건설, SK, SK ecoplant, safety platform, 안전, 관리, 건축" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SK건설 세이프티" />
+    <meta property="og:url" content="http://www.skecoplant.com/" />
+    
+    <title>신문고 제보하기 | SK건설 세이프티</title>
+
+    <link rel="alternate" hreflang="ko" href="http://www.skecoplant.com/" />
+    <link rel="canonical" href="http://www.skecoplant.com/" />
+    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <link rel="apple-touch-icon" href="../resources/img/common/ico_app.png" >
+
+	<link rel="stylesheet" href="../resources/css/ui.base.css">
+	<script src="../resources/js/lib/jquery-3.2.1.min.js"></script>
+	<script src="../resources/js/ui.global.js"></script>
+	<script src="../resources/js/ui.common.js"></script>
+
+    <style>
+    </style>
+</head>
+<body>
+    <div class="base-wrap">
+        <header class="base-header"         
+        data-type="sub" 
+        data-title="제보하기" 
+        data-nav="none"
+        ></header>
+        <!-- content -->
+        <main class="base-body ui-height">
+            <h2 class="a11y-hidden"> </h2>
+
+            <div class="section-wrap">
+                <!-- <div class="tip-wrap">
+                    <p class="txt-info">관리자님! 본 제보는 미처리 상태입니다. 내용을 확인 후 처리해주세요.</p>
+                </div> -->
+
+                <div class="ui-acco type-sinmungo" id="informer">
+                    <div class="ui-acco-wrap">
+                        <div class="ui-acco-tit">
+                            <button type="button" class="ui-acco-btn">
+                                <span>제보자 정보</span>
+                            </button>
+                        </div>
+                        <div class="ui-acco-pnl">
+                            <div class="ui-acco-pnl-wrap">
+                                
+                                <div class="section-item">
+                                    <div class="informant dl-type">
+                                        <dl>
+                                            <dt>현장</dt>
+                                            <dd>과천시 지식산업센터 000 신축공사</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>소속</dt>
+                                            <dd>000 건축</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>공정</dt>
+                                            <dd>거푸집작업</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>성명</dt>
+                                            <dd><span class="name">홍길동</span>(40세/남))</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+
+                <div class="section-item">
+                    <div class="form-wrap read">
+
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <div class="form-tit">구분<em class="nec" aria-label="필수입력">*</em></div>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item align-v">
+                                    <div class="inp-radio round">
+                                        <input type="radio" id="sinmungo_type_1" name="sinmungo_type">
+                                        <label for="sinmungo_type_1">안전</label>
+                                    </div>
+                                    <div class="inp-radio round">
+                                        <input type="radio" id="sinmungo_type_2" name="sinmungo_type">
+                                        <label for="sinmungo_type_2">보건</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="sinmungo_b0">제목
+                                    <em class="nec" aria-label="필수입력">*</em>
+                                </label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <input type="text" id="sinmungo_b1" class="inp-base" value="" placeholder="제목을 입력해 주세요">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="sinmungo_b2">제보 대상 위치
+                                    <em class="nec" aria-label="필수입력">*</em>
+                                </label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <input type="text" id="sinmungo_b3" class="inp-base" value="" placeholder="제보 대상 위치를 입력해 주세요">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit" for="sinmungo_b4">제보 내용 
+                                    <em class="nec" aria-label="필수입력">*</em>
+                                </label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <textarea class="inp-base" id="sinmungo_b5" placeholder="제보내용을 입력해 주세요"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-dl">
+                            <div class="form-dt">
+                                <label class="form-tit">제보 대상 사진 등록
+                                    <em class="nec" aria-label="필수입력">*</em>
+                                </label>
+                            </div>
+                            <div class="form-dd">
+                                <div class="form-item">
+                                    <div class="photo-list2 type-4 mgt-s">
+                                            <button type="button" class="btn-base cols-full line camera">
+                                                <span>사진 촬영 또는 앨범에서 선택하기</span>
+                                            </button>
+                                        <ul class="photo-list2-wrap mgt-s">
+                                            <li>
+                                                <img src="../resources/img/translation_manual.png" alt="">
+                                                <button type="button" class="btn-del">
+                                                    <span class="a11y-hidden">삭제</span>
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/@img1.png" alt="">
+                                                <button type="button" class="btn-del">
+                                                    <span class="a11y-hidden">삭제</span>
+                                                </button>
+                                            </li><li>
+                                                <img src="../resources/img/@img1.png" alt="">
+                                                <button type="button" class="btn-del">
+                                                    <span class="a11y-hidden">삭제</span>
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/@img1.png" alt="">
+                                                <button type="button" class="btn-del">
+                                                    <span class="a11y-hidden">삭제</span>
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/@img1.png" alt="">
+                                                <button type="button" class="btn-del">
+                                                    <span class="a11y-hidden">삭제</span>
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <img src="../resources/img/@img1.png" alt="">
+                                                <button type="button" class="btn-del">
+                                                    <span class="a11y-hidden">삭제</span>
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button type="button" class="btn-base box-btn line camera">
+                                                    <span class="">추가</span>
+                                                </button>
+                                            </li>
+            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="btn-area stick">
+                    <button type="button" class="btn-base large primary">
+                        <span>제보하기</span>
+                    </button>
+                </div>
+                
+            </div>
+        </main>
+        <!-- //content -->
+
+        
+    </div>
+
+    <script> 
+        ;(function($, win, doc, undefined) {
+            $(doc).ready(function() {
+               
+                //기본 실행
+                $plugins.common.init();
+                $plugins.uiAccordion({
+                    id:'informer',
+                    current:[0],
+                    autoclose:true
+                })
+            });
+        })(jQuery, window, document);
+    </script>
+    
+</body>
+</html>
