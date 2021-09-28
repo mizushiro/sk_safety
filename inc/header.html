@@ -246,6 +246,21 @@
     <div class="util-details">
         <button type="button" class="btn-header link-line"><span>편집</span></button>
     </div>
+    <div class="util-list">
+        <button type="button" class="btn-write" onclick="
+        $plugins.uiModalOpen({ 
+            id: 'modal_notice_write', 
+            full:true,
+            src: '../modal/modal_notice_write.html', 
+            ps: 'center', 
+            closeCallback: function(v) { 
+                console.log('close callback', v); 
+            },
+            callback: function(v) { 
+                console.log('callback', v); 
+            }
+    });"><span class="a11y-hidden">작성</span></button>
+    </div>
 </div>
 
 

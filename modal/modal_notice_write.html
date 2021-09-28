@@ -1,0 +1,121 @@
+<section class="ui-modal" id="modal_notice_write">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit">공지</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_notice_write', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+
+            <section class="section">
+                <div class="form-wrap">
+
+                    <div class="form-dl">
+                        <div class="form-dt">
+                            <div class="form-tit">상단공지<em class="nec" aria-label="필수입력">*</em></div>
+                        </div>
+                        <div class="form-dd">
+                            <div class="form-item align-v">
+                                <div class="inp-check">
+                                    <input type="checkbox" id="check002">
+                                    <label for="check002">등록</label>    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tip-wrap mgt-m">
+                            <p class="txt-info">1건만 등록 가능하며, 이미 등록되어 있는 <br>
+                                경우 대체됩니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-dl">
+                        <div class="form-dt">
+                            <label class="form-tit">내용 
+                                <em class="nec" aria-label="필수입력">*</em>
+                            </label>
+                        </div>
+                        <div class="form-dd">
+                            <div class="form-item">
+                                <textarea class="inp-base" id="sinmungo_b5" placeholder="공지 내용을 입력해 주세요"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-dl">
+                        <div class="form-dt">
+                            <label class="form-tit">사진 등록</label>
+                        </div>
+                        <div class="form-dd">
+                            <div class="form-item">
+                                <div class="photo-list2 type-4 mgt-s">
+                                        <button type="button" class="btn-base cols-full line camera">
+                                            <span>사진 촬영 또는 앨범에서 선택하기</span>
+                                        </button>
+                                    <ul class="photo-list2-wrap mgt-s">
+                                        <li>
+                                            <img src="../resources/img/translation_manual.png" alt="">
+                                            <button type="button" class="btn-del">
+                                                <span class="a11y-hidden">삭제</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <img src="../resources/img/@img1.png" alt="">
+                                            <button type="button" class="btn-del">
+                                                <span class="a11y-hidden">삭제</span>
+                                            </button>
+                                        </li><li>
+                                            <img src="../resources/img/@img1.png" alt="">
+                                            <button type="button" class="btn-del">
+                                                <span class="a11y-hidden">삭제</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <img src="../resources/img/@img1.png" alt="">
+                                            <button type="button" class="btn-del">
+                                                <span class="a11y-hidden">삭제</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <img src="../resources/img/@img1.png" alt="">
+                                            <button type="button" class="btn-del">
+                                                <span class="a11y-hidden">삭제</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <img src="../resources/img/@img1.png" alt="">
+                                            <button type="button" class="btn-del">
+                                                <span class="a11y-hidden">삭제</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="btn-base box-btn line camera">
+                                                <span class="">추가</span>
+                                            </button>
+                                        </li>
+        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="ui-modal-footer">
+            <div class="btn-area stick">
+                <button type="button" class="btn-base ">
+                    <span>취소</span>
+                </button>
+                <button type="button" class="btn-base primary">
+                    <span>작성하기</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

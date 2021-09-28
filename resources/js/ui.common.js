@@ -115,6 +115,17 @@
 				}
 			});
 
+			$('.ui-notiview').off('click.talk').on('click.talk', function(){
+				var $this = $(this);
+				var $item = $(this).closest('.noti-wrap');
+
+				if (!$item.hasClass('view')) {
+					$item.addClass('view');
+				} else {
+					$item.removeClass('view');
+				}
+			});
+
 			$('.ui-reply').off('click.reply').on('click.reply', function(){
 				var $reply = $('.ui-talkreply');
 
@@ -371,6 +382,12 @@
 					$tit.html(tit);
 
 					break;
+				case 'list':
+						//뒤로가기,작성
+						$html.addClass('type-list');
+						$tit.html(tit);
+	
+						break;
 			} 
 			
 		},
