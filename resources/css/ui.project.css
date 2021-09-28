@@ -9204,13 +9204,19 @@ body.qrcode {
 	background: url(../img/icon_photo.svg) no-repeat 50% 50% / 1.8rem;
 }
 .answer-write .btn-base{
+	position: relative;
 	min-height: 100%;
     height: 4.5rem;
 	border-bottom: 0;
 	border-right: 0;
 	border-top: 0;
 	padding-bottom: 1.4rem;
-	align-items: end;
+	display: flex;
+    align-items: flex-end;
+}
+.answer-write .btn-base span {
+	position: relative;
+	display: inline-block;
 }
 .answer-write .btn-wrap {
 	display: flex;
@@ -9218,6 +9224,16 @@ body.qrcode {
 	align-items: flex-end;
 	width: auto;
 	padding: 0;
+	vertical-align:bottom
+}
+.answer-write .btn-wrap .btn-base:after {
+	content:"";
+	position:absolute;
+	left: -1px;
+	top:0;
+	height: 100%;
+	width: 1px;
+	background-color: #ddd;;
 }
 
 .reply-list-wrap {
