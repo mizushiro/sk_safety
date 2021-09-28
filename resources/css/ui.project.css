@@ -198,7 +198,7 @@ input, textarea, select {
 .type-auth .btn-menu,
 .type-auth .util-worker,
 .type-auth .util-details,
-.type-normal .util-list,
+.type-auth .util-list,
 .type-auth .page-title .sum-box,
 
 .type-alarm .util-qr,
@@ -206,7 +206,7 @@ input, textarea, select {
 .type-alarm .util,
 .type-alarm .util-worker,
 .type-alarm .util-details,
-.type-normal .util-list,
+.type-alarm .util-list,
 .type-alarm .btn-menu,
 
 .type-qr .util,
@@ -215,7 +215,7 @@ input, textarea, select {
 .type-qr .btn-menu,
 .type-qr .util-worker,
 .type-qr .util-details,
-.type-normal .util-list,
+.type-qr .util-list,
 .type-qr .page-title .sum-box,
 
 .type-sub .util, /* 0803 정현욱 추가 */
@@ -226,7 +226,7 @@ input, textarea, select {
 .type-sub .btn-menu,
 .type-sub .util-worker,
 .type-sub .util-details,
-.type-normal .util-list,
+.type-sub .util-list,
 .type-sub .page-title .sum-box,
 
 .type-worker .util, /* 0803 정현욱 추가 */
@@ -236,7 +236,7 @@ input, textarea, select {
 .type-worker .util-alarm,
 .type-worker .btn-menu,
 .type-worker .btn-details,
-.type-normal .util-list,
+.type-worker .util-list,
 .type-worker .page-title .sum-box,
 
 .type-list .util, /* 0928 정현욱 추가 */
@@ -5894,6 +5894,7 @@ margin-right: .5rem;
 	color: #008F84;
 	text-indent: -2.2rem;
 	padding-left: 4.0rem;
+	padding-right: 2rem;
 	width: calc(100% - 2.2rem);
 	/* max-height: 4rem; */
 	overflow: hidden;
