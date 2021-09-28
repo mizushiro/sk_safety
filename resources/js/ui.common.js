@@ -365,6 +365,12 @@
 					$tit.html(tit);
 
 					break;
+				case 'details':
+					//뒤로가기,편집
+					$html.addClass('type-details');
+					$tit.html(tit);
+
+					break;
 			} 
 			
 		},

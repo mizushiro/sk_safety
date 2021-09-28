@@ -38,7 +38,7 @@
     <div class="base-wrap">
         <header class="base-header" 
         
-        data-type="sub" 
+        data-type="details" 
         data-title="제보상세" 
         data-nav="none"
         ></header>
@@ -293,7 +293,7 @@
                     <div class="form-wrap">
 
                         <div class="answer-write-wrap">
-                            <div class="photo-list2 type-4 mgt-s">
+                            <div class="photo-list2 type-4 mgt-s" style="display:none;">
                                 <ul class="photo-list2-wrap mgt-s">
                                     <li>
                                         <img src="../resources/img/translation_manual.png" alt="">
@@ -335,7 +335,9 @@
                             </div>
                             <div class="form-item answer-write">
                                 <div class="inp-wrap">
-                                    <textarea class="inp-base" value="" placeholder="답변을 작성해 보세요." id="textarea"></textarea>
+                                    <div class="answer-form" >
+                                        <textarea class="inp-base autoHeight" rows="1" value="" placeholder="답변을 작성해 보세요." id="answer"></textarea>
+                                    </div>
                                 </div>
                                 <div class="btn-wrap">
                                     <button type="button" class="btn-photo">
@@ -395,17 +397,19 @@
                     current:[0],
                     autoclose:true
                 })
-                
 
-                $plugins.uiTab({ 
-                    id:'alarmTab', 
-                    current:0, 
-                    onePanel: true,
-                    align : 'center',
-                    callback:function(v){
-                        console.log(1111);
-                    } 
-                });
+                $('.answer-form').on( 'change keydown keyup paste cut blur', 'textarea', function () {  
+                    $(this).height(0).height(this.scrollHeight+2);
+                    if ($(this).height() >= 74) {
+                        $('textarea.autoHeight').css("overflow", "auto");
+                    }
+                    else {
+                        $('textarea.autoHeight').css("overflow", "hidden");
+                    }
+                }).find('textarea.autoHeight').change();
+                $(".autoHeight").on('focus blur', function(){
+                    $('html').toggleClass('is-FAB');
+                })
             });
         })(jQuery, window, document);
     </script>

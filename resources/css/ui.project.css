@@ -188,6 +188,7 @@ input, textarea, select {
 .type-normal .btn-back,
 .type-normal .util-contalk,
 .type-normal .util-worker,
+.type-normal .util-details,
 .type-normal .page-title .sum-box,
 
 .type-auth .util-qr,
@@ -195,12 +196,14 @@ input, textarea, select {
 .type-auth .util-alarm,
 .type-auth .btn-menu,
 .type-auth .util-worker,
+.type-auth .util-details,
 .type-auth .page-title .sum-box,
 
 .type-alarm .util-qr,
 .type-alarm .util-contalk,
 .type-alarm .util,
 .type-alarm .util-worker,
+.type-alarm .util-details,
 .type-alarm .btn-menu,
 
 .type-qr .util,
@@ -208,6 +211,7 @@ input, textarea, select {
 .type-qr .util-alarm,
 .type-qr .btn-menu,
 .type-qr .util-worker,
+.type-qr .util-details,
 .type-qr .page-title .sum-box,
 
 .type-sub .util, /* 0803 정현욱 추가 */
@@ -217,6 +221,7 @@ input, textarea, select {
 .type-sub .util-alarm,
 .type-sub .btn-menu,
 .type-sub .util-worker,
+.type-sub .util-details,
 .type-sub .page-title .sum-box,
 
 .type-worker .util, /* 0803 정현욱 추가 */
@@ -225,13 +230,24 @@ input, textarea, select {
 .type-worker .util-contalk,
 .type-worker .util-alarm,
 .type-worker .btn-menu,
+.type-worker .btn-details,
 .type-worker .page-title .sum-box,
+
+.type-details .util, /* 0928 정현욱 추가 */
+.type-details .btn-contalk,
+.type-details .util-qr,
+.type-details .util-contalk,
+.type-details .util-alarm,
+.type-details .btn-menu,
+.type-details .util-worker,
+.type-details .page-title .sum-box,
 
 .type-contalk .util-qr,
 .type-contalk .util,
 .type-contalk .util-alarm,
 .type-contalk .btn-menu,
 .type-contalk .util-worker,
+.type-contalk .util-details,
 .base-header-wrap .page-title .sum-box {
 	display: none !important;
 }
@@ -300,17 +316,14 @@ input, textarea, select {
 	top: 1.25rem;
 }
 
-.base-header-wrap .util-qr,
-.base-header-wrap .util-alarm,
-.base-header-wrap .util-contalk,
-.base-header-wrap .util-worker,
-.base-header-wrap .util {
+.base-header-wrap [class*='util'] {
 	position: absolute;
 	right: 1rem;
 	top: 1.25rem;
 	display: flex;
 	justify-content: flex-end;
 }
+
 
 .type-career .section-wrap {
 	border-top-left-radius: 3rem;
@@ -3566,10 +3579,12 @@ right: 4rem;
 
 .inp-wrap.type-search .btn-search {
 	position: absolute;
-	right: 0;
+	right: 0.6rem;
 	top: 0.5rem;
 }
-
+.inp-wrap.type-search .btn-search + .btn-clear{
+	right: 4rem;
+}
 
 .latest-list {
 	width: 100%;
@@ -6718,11 +6733,13 @@ margin-right: .5rem;
     width: 1rem;
     height: 1rem;
     background: url(../img/icon_down_p.svg) no-repeat 100% 50% / 1rem;
-    transform: rotate(
--90deg
-);
+    transform: rotate(-90deg);
 }
-
+.btn-header.link-line {
+	padding: 0 1.4rem 0 1.4rem;
+	color: #008f84;
+	border-radius: 3rem;
+}
 .menu-qr .btn-qr{
 	display: inline-block;
     width: 7rem;
@@ -8947,15 +8964,30 @@ body.qrcode {
 }
 .answer-write textarea.inp-base {
 	border:0;
-	min-height: 4.5rem;
-    height: 4.5rem;
+	min-height: 30px;
+    height: 30px;
 	resize: none;
 	padding-top: 1.4rem;
 	font-size: 1.3rem;
 }
 .answer-write textarea.inp-base:focus { 
-	min-height: 10rem;
+	/* min-height: 10rem; */
 }
+
+.answer-form {
+	padding:1rem
+}
+.answer-form textarea.autoHeight {
+	border: 0 none;
+	overflow: hidden; /*overflow is set to auto at max height using JS */
+	min-height:18px;
+	max-height:56px;
+	height: auto;
+	resize: none;
+	width:100%;
+	padding:0;
+}
+
 .answer-write .btn{
 	width: 4.5rem;
     height: 4.5rem;
