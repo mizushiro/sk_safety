@@ -9411,18 +9411,25 @@ body.qrcode {
 	font-size:1.2rem;
 }
 .read-ttl {
-	display: flex;
-    justify-content: space-between;
-	align-items: baseline;
 	font-weight: 600;
 	border-bottom: 2px solid #666;
+}
+.read-ttl .work-type{
+	display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.read-ttl .subject {
+	padding-bottom:1rem;
+	font-size: 1.5rem;
 }
 .read-ttl .inp-radio {
 	margin-right:0.6rem;
 }
 .read-ttl .inp-radio label {
-	padding: 0.45rem 1.2rem 0;
-	height: 2.6rem;
+	padding: 0.30rem 1rem 0;
+    height: 2.2rem;
+    font-size: 1.2rem;
 }
 .read-ttl span.date {
 	display: block;
@@ -9432,7 +9439,6 @@ body.qrcode {
 }
 .read-ttl span.work {
 	display: block;
-	margin-bottom: 0.6rem;
 	font-weight: 500;
 	font-size:1.4rem;
 }
