@@ -8723,6 +8723,9 @@ body.qrcode {
 	background: #fff;
 	padding: 1.4rem 2rem;
 }
+.safety-top + .section-item {
+	padding:1rem 2rem 0rem 2rem;
+}
 .safety-top .label{
 	display: flex;
 	justify-content: flex-start;
@@ -8878,6 +8881,7 @@ body.qrcode {
 	padding: 1.6rem 2rem;
 	height: 8rem;
 }
+
 .list-step.type-b li .ttl {
 	display: flex;
     justify-content: space-between;
@@ -8932,7 +8936,7 @@ body.qrcode {
     font-size: 1.4rem;
     font-weight: 500;
 	background-color: #fff;
-	margin-bottom: 1.4rem;
+	/* margin-bottom: 1.4rem; */
 	border-radius: 1.6rem;
 	padding: 1.6rem 1.6rem;
 }
@@ -8943,6 +8947,18 @@ body.qrcode {
     font-size: 2.0rem;
     text-align: left;
     font-weight: 600;
+}
+@media (min-height: 640px) { 
+	.list-step.type-b li {height: 8rem;	}
+	.list-step.type-c li {padding:1.6rem 1.6rem;}
+}
+@media (min-height: 750px) { 
+	.list-step.type-b li {height: 10rem; }
+	.list-step.type-c li {padding:2.0rem 1.6rem;}
+}
+@media (min-height: 880px) { 
+	.list-step.type-b li {height: 12rem; }
+	.list-step.type-c li {padding:2.6rem 1.6rem;}
 }
 
 
