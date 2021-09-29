@@ -3185,6 +3185,10 @@ a.ui-acco-btn:after {
 	padding: 0.9rem 0 0.5rem;
 }
 
+.talk-item .name button {
+	margin-right: 0.4rem;
+}
+
 .talk-item.me .box {
 	background: rgba(239, 166, 170, 0.5);
 	background: rgba(206, 206, 206, 0.5);
