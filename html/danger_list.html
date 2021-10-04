@@ -31,95 +31,54 @@
 	<script src="../resources/js/ui.global.js"></script>
 	<script src="../resources/js/ui.common.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <style>
     </style>
 </head>
-<body>
+<body class="type-safety sinmungo">
     <div class="base-wrap">
         <header class="base-header" 
         data-type="sub" 
-        data-title="위험성평가 목록" 
         ></header>
         <!-- content -->
         <main class="base-body">
+            
+            <div class="tit-page ">
+                <h1>위험성 평가서 목록</h1>
+                <div class="form-wrap">
+                    <div class="form-dl">
+                        <div class="form-dt">
+                            <label class="form-tit" for="현장">현장</label>
+                        </div>
+                        <div class="form-dd">
+                            <div class="form-item">
+                                <input type="text" id="현장" class="inp-base" value="" placeholder="현장">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-dl">
+                        <div class="form-dt">
+                            <label class="form-tit" for="협력사">협력사</label>
+                        </div>
+                        <div class="form-dd">
+                            <div class="form-item">
+                                <input type="text" id="협력사" class="inp-base" value="" placeholder="협력사">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-base type-w cols-full mgt-m">
+                    <span class="">검색</span>
+                </button>
+            </div>
             <div class="section-wrap">
-                <!-- 시공물 종류 -->
-                <section class="section-item mgt-n">
-                    <h3 class="tit-sec a11y-hidden">위험성평가 목록</h3>
-                    <div class="form-wrap">
-                        <div class="form-dl">
-                            <div class="form-dt">
-                                <label class="form-tit" for="현장">현장</label>
-                            </div>
-                            <div class="form-dd">
-                                <div class="form-item col2-c type-c">
-                                    <div class="col-item">
-                                        <input type="tel" id="현장" class="inp-base" value="" placeholder="현장" disabled>
-                                    </div>
-                                    <div class="col-item">
-                                        <button type="button" class="btn-base line" onclick="
-                                        $plugins.uiModalOpen({ 
-                                            id: 'modal_partnerSelect', 
-                                            src: '../modal/modal_partnerSelect.html', 
-                                            ps: 'bottom'
-                                        });">
-                                            <span>변경</span>
-                                        </button>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-dl">
-                            <div class="form-dt">
-                                <label class="form-tit" for="협력사">협력사</label>
-                            </div>
-                            <div class="form-dd">
-                                <div class="form-item col2-c type-c">
-                                    <div class="col-item">
-                                        <input type="tel" id="협력사" class="inp-base" value="" placeholder="협력사">
-                                    </div>
-                                    <div class="col-item">
-                                        <button type="button" class="btn-base line" onclick="
-                                        $plugins.uiModalOpen({ 
-                                            id: 'modal_siteSelect', 
-                                            src: '../modal/modal_siteSelect.html', 
-                                            ps: 'bottom'
-                                        });">
-                                            <span>변경</span>
-                                        </button>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                </section>
-                <!-- //시공물 종류 -->
-
-                <hr class="hr-sec">
                 <section class="section-item">
-                    <div class="mgb-xs">
-                        <div class="form-item align-v">
-                            <div class="inp-radio round">
-                                <input type="radio" id="전체" name="radio1" checked="">
-                                <label for="전체">전체</label>
-                            </div>
-                            <div class="inp-radio round">
-                                <input type="radio" id="최신개정" name="radio1">
-                                <label for="최신개정">최신개정</label>
-                            </div>
-                        </div>
-                    </div>
                     
-                    <div class="tit-sec type-line mgt-l">
+                    <div class="tit-sec type-line mgt-s">
                         <div class="tit-util">
                             <div class="total">
-                                <em>작업중지 10건</em> / 38건
+                                총 <em>10개</em> 의 문서가 있습니다.
                             </div>
                         </div>
                         <select class="inp-select no-b" id="테스트21" title="최신순">
@@ -140,10 +99,8 @@
                                             </div>
                                             <div class="info">
                                                 <div class="company">일우건설</div>
-                                                <div class="opt-div">
-                                                    <span>업종 외 1개</span>
-                                                    <span>2021.06.30</span>
-                                                </div>
+                                                <span class="biz">업종 외 1개</span>
+                                                <span class="date">2021.06.30</span>
                                                 <div class="status">
                                                     <em class="flag st-4">1차 검토 대기</em>
                                                 </div>
@@ -159,12 +116,10 @@
                                             </div>
                                             <div class="info">
                                                 <div class="company">일우건설</div>
-                                                <div class="opt-div">
-                                                    <span>업종 외 1개</span>
-                                                    <span>2021.06.30</span>
-                                                </div>
+                                                <span class="biz">업종 외 1개</span>
+                                                <span class="date">2021.06.30</span>
                                                 <div class="status">
-                                                    <em class="flag st-2">1차 검토 대기</em>
+                                                    <em class="flag st-1">승인완료</em>
                                                 </div>
                                             </div>
                                         </div>
@@ -178,12 +133,10 @@
                                             </div>
                                             <div class="info">
                                                 <div class="company">일우건설</div>
-                                                <div class="opt-div">
-                                                    <span>업종업종업종업종 외 1개</span>
-                                                    <span>2021.06.30</span>
-                                                </div>
+                                                <span class="biz">업종 외 1개</span>
+                                                <span class="date">2021.06.30</span>
                                                 <div class="status">
-                                                    <em class="flag st-1">승인완료</em>
+                                                    <em class="flag st-3">승인대기</em>
                                                 </div>
                                             </div>
                                         </div>
@@ -197,12 +150,10 @@
                                             </div>
                                             <div class="info">
                                                 <div class="company">일우건설</div>
-                                                <div class="opt-div">
-                                                    <span>업종 외 1개</span>
-                                                    <span>2021.06.30</span>
-                                                </div>
+                                                <span class="biz">업종 외 1개</span>
+                                                <span class="date">2021.06.30</span>
                                                 <div class="status">
-                                                    <em class="flag st-3">승인대기</em>
+                                                    <em class="flag st-1">승인완료</em>
                                                 </div>
                                             </div>
                                         </div>
@@ -221,34 +172,13 @@
         <!-- //content -->
         
     </div>
-
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9906c009f8e9c9a1a36542d2c08c1361&libraries=services"></script>
+    
     <script> 
         ;(function($, win, doc, undefined) {
             $(doc).ready(function() {
                
                 //기본 실행
                 $plugins.common.init();
-
-                var currentSlide = $('.swiper-week').slick({
-                    arrows: false,
-                    dots: true,
-                    infinite: false
-                });
-
-                var currentSlide2 = $('.swiper-weekedu').slick({
-                    arrows: false,
-                    dots: true,
-                    infinite: false
-                });
-
-
-                $('.btn-prev').on('click', function(){
-                    currentSlide.slick('slickPrev');
-                });
-                $('.btn-next').on('click', function(){
-                    currentSlide.slick('slickNext');
-                });
                 
             });
         })(jQuery, window, document);

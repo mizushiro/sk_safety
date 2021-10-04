@@ -35,6 +35,26 @@ input, textarea, select {
 	width: 100%;
 	padding: 5.5rem 0 0;
 }
+.base-body .body-header{
+	position: relative;
+    width: 100%;
+    padding: 2.5rem;
+    text-align: left;
+	color:#fff;
+	background: linear-gradient(90deg, #17789A, #0CAC9B);
+}
+.base-body .body-header .addr {
+	font-size: 1.4rem;
+	opacity: 0.7;
+}
+.base-body .body-header .site {
+	font-size: 1.8rem;
+	padding: 0.6rem 0;
+}
+.base-body .body-header .comp {
+	font-size: 1.4rem;
+	opacity: 0.7;
+}
 
 .is-bar .base-body {
 	width: 100%;
@@ -76,11 +96,12 @@ input, textarea, select {
 .type-safety .tit-page .btn-base{
 	background:transparent;
 	border:1px solid #fff;
-	color:#fff;
+	color:#008F84!important;
+	font-weight:600;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 0.6rem;
+	/* border-radius: 0.6rem; */
 }
 .type-safety .tit-page .btn-base::after{
 	content:"";
@@ -94,7 +115,7 @@ input, textarea, select {
 	margin-left:.4rem;
 }
 .type-safety .tit-page .btn-base span{
-	opacity: 1;
+	opacity: 1;font-weight:500;
 }
 .type-safety .tit-page {
 	color: #fff;
@@ -109,6 +130,21 @@ input, textarea, select {
 	margin: 0;
 	font-size:3rem;
 	align-items:center
+}
+.type-safety.sinmungo .tit-page .form-dt{
+	color: #fff;
+	opacity:0.7
+}
+.type-safety.sinmungo .tit-page .form-dd .inp-base, .type-safety.sinmungo .tit-page .form-dd .inp-base {
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    height: 4rem;
+    font-size: 1.5rem;
+    padding: 0;
+    position: relative;
+	color:#fff;
+    background-color: transparent;
 }
 .type-safety.type1 .tit-page {
 	color: #fff;
@@ -1265,6 +1301,9 @@ input[type="date"].box:valid::before{
 	background-color: #fff!important;
 	color:#333!important;
 }
+.btn-base.border-n {
+	border:0;
+}
 .btn-base.txt2 {
 	color:#E86169;
 }
@@ -1321,6 +1360,19 @@ a.btn-base.small {
 	background-color: rgba(0 113 132 / 0.8);
 	color: #fff;
 	border-radius: 10px;
+}
+.btn-base .badge {
+	min-width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.6rem;
+    background-color: #008F84;
+    border-radius: 3rem;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.3rem;
 }
 
 .ui-modal .btn-base.primary {
@@ -7878,6 +7930,54 @@ margin-right: .5rem;
 	font-weight: 700 !important;
 }
 
+
+.type-danger .ui-acco-tit {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: -1px 0 0;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+	padding: 0.5rem 1rem .5rem 2rem;
+    background: #fff;
+}
+.type-danger .ui-acco-btn {
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0rem;
+    letter-spacing: 0;
+    text-align: left;
+    color: #000;
+    font-size: 1.6rem;
+	font-weight:600;
+}
+.type-danger .ui-acco-btn .badge{
+    position: absolute;
+    top: 0.8rem;
+    right: 4rem;
+    min-width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 1rem; */
+    background-color: #D84D56;
+    border-radius: 3rem;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+.type-danger .section-item {
+    padding: 0rem 0rem;
+    width: 100%;
+}
+
+
 .work-check-tit{
 	width:100%;
 	text-align: left;
@@ -8603,6 +8703,18 @@ body.qrcode {
 	display:block;
 	text-align: right;
 }
+.danger-list .item-wrap .date{
+	position:absolute;
+	right:0;
+	top:0.9rem;
+	font-size: 1.3rem;
+}
+.danger-list .item-wrap .biz{
+	color: #777;
+    font-size: 1.3rem;
+	margin-top: .4rem;
+	display: inherit;
+}
 .danger-list .item-wrap .status .flag {
 	width: auto;
 	padding: 0.2rem 1rem;
@@ -8655,9 +8767,74 @@ body.qrcode {
     text-overflow: ellipsis;
 }
 
+.danger-summary ul {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.danger-summary ul li {
+	position: relative;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	padding: 1rem 2rem;
+    font-size: 1.5rem;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 5rem;
+	color:#333;
+	font-weight:500;
+}
+.danger-summary ul li em {
+	min-width:3.6rem;
+	text-align:right;
+	color: #D84D56;
+	font-size: 1.7rem;
+	font-weight:600;
+}
+.danger-summary ul li .badge{
+	position: absolute;
+	right:-0.4rem;
+	top:-1rem;
+	min-width: 2.6rem;
+    height: 2.6rem;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	/* padding: 1rem; */
+	background-color: #D84D56;
+	border-radius: 3rem;
+	color:#fff;
+	font-weight:500;
+}
+
 
 .dl-type-info-wrap {
-	border: 1px solid #ddd;;
+	border: 1px solid #ddd;
+	background: #fff;
+	margin-bottom: 1.4rem;
+}
+.dl-type-info-wrap.type2 {
+	border: 0px solid #ddd;
+}
+.dl-type-info-wrap.type2 .dl-type-info.type1{
+	background: rgba(0 143 132 / 0.08);
+	border-bottom: 0px solid #ddd;
+}
+.dl-type-info-wrap:last-child {
+	margin-bottom: 0rem;
+}
+.dl-type-info-wrap  .tit-sec {
+	font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+	padding:2rem 0 0rem;
+    display: block;
+    justify-content: center;
+    align-items: baseline;
+	text-align: center;;
+}
+.dl-type-info.type1 {
+	background: #fff;
 }
 .dl-type-info li {
 	display: flex;
@@ -8674,32 +8851,35 @@ body.qrcode {
 	font-weight: 500;
 	color: #666;
 }
+.dl-type-info dt span {
+	display: block;
+}
 .dl-type-info dd {
 	font-weight: 600;
 	font-size: 1.7rem;
 }
 .dl-type-info.type-2 dd {
-	font-weight: 500;
+	font-weight: 600;
 	font-size: 1.5rem;
 }
 .dl-type-info dd .primary {
 	color:#008f84;
 }
 .dl-type-info.type-2 {
-	padding-bottom:0;
 	border-bottom: 0px solid #ddd;
+	padding: 0;
 }
+
 .dl-type-info.type-2 li {
 	display: flex;
     justify-content: inherit;
 	text-align: left;
-	margin-bottom: 1rem;
-	padding: 0.8rem 2.2rem;
+	padding: 1.6rem 1.0rem;
 	border-bottom: 1px solid #ddd;
 }
 .dl-type-info.type-2 li:last-child {
 	margin-bottom:0.6rem;
-	border-bottom: 0px solid #ddd;
+	border-bottom: 1px solid #ddd;
 }
 
 .inp-radio-group.type-2 .inp-radio.round {
