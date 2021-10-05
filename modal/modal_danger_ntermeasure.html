@@ -1,0 +1,52 @@
+<section class="ui-modal" id="modal_danger_ntermeasure">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit">위험성 감소 대책</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_danger_ntermeasure', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+
+            <div class="form-wrap read">
+                <div class="form-dl">
+                    <div class="form-dt">
+                        <label class="form-tit" for="workleter_b2">개선 후 위험성
+                        </label>
+                    </div>
+                    <div class="form-dd">
+                        <div class="form-item">
+                            <div class="inp-base read"><span class="riskiness">B</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-dl">
+                    <div class="form-dt">
+                        <label class="form-tit" for="workleter_b2">위험성 감소대책
+                        </label>
+                    </div>
+                    <div class="form-dd">
+                        <div class="form-item">
+                            <div class="inp-base read">관리 감독을 수행할 수 있는 추가인력 배치하여 관리 계획</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+        <div class="ui-modal-footer">
+            <div class="btn-area stick">
+                <button type="button" class="btn-base primary">
+                    <span>확인</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+

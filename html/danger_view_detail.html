@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index, follow" />
+
+    <meta name="subject" content="SK건설 안전관리 시스템">
+    <meta name="author" content="SK건설">
+    <meta name="title" content="SK건설 세이프티" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="SK건설, SK, SK ecoplant, safety platform, 안전, 관리, 건축" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SK건설 세이프티" />
+    <meta property="og:url" content="http://www.skecoplant.com/" />
+    
+    <title>위험성 평가서 단위작업 상세 | SK건설 세이프티</title>
+
+    <link rel="alternate" hreflang="ko" href="http://www.skecoplant.com/" />
+    <link rel="canonical" href="http://www.skecoplant.com/" />
+    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <link rel="apple-touch-icon" href="../resources/img/common/ico_app.png" >
+
+	<link rel="stylesheet" href="../resources/css/ui.base.css">
+	<script src="../resources/js/lib/jquery-3.2.1.min.js"></script>
+	<script src="../resources/js/ui.global.js"></script>
+	<script src="../resources/js/ui.common.js"></script>
+
+    <style>
+    </style>
+</head>
+<body>
+    <div class="base-wrap">
+        <header class="base-header" 
+        
+        data-type="sub" 
+        data-title="위험성 평가서 상세" 
+        data-nav="normal"
+        ></header>
+        <!-- content -->
+        <main class="base-body">
+
+            <div class="titlebar h-type">
+                <button type="button" class="btn-base" onclick="
+                $plugins.uiModalOpen({ 
+                    id: 'modal_disasteSelect', 
+                    src: '../modal/modal_disasteSelect.html', 
+                    ps: 'bottom', 
+                    closeCallback: function(v) { 
+                        console.log('close callback', v); 
+                    },
+                    callback: function(v) { 
+                        console.log('callback', v); 
+                    }
+                });">
+                    <span class="">재해유형</span>
+                </button>
+                <button type="button" class="btn-base" onclick="
+                $plugins.uiModalOpen({ 
+                    id: 'modal_causeSelect', 
+                    src: '../modal/modal_causeSelect.html', 
+                    ps: 'bottom', 
+                    closeCallback: function(v) { 
+                        console.log('close callback', v); 
+                    },
+                    callback: function(v) { 
+                        console.log('callback', v); 
+                    }
+                });">
+                    <span class="">기인물/가해물</span>
+                </button>
+            </div>
+
+            <div class="section-wrap ui-height">
+                <section class="section-item mgb-xxl">
+                    <div class="tbl-header type-line">
+                        <div class="tit-util">
+                            <div class="total">
+                                총 <em>10</em> 건
+                            </div>
+                        </div>
+                        <!-- <select class="inp-select no-b" id="테스트21" title="최신순">
+                            <option>최신순</option>
+                            <option>가나다순</option>
+                        </select> -->
+                        <button type="button" class="link-arrow type-c" onclick="
+                        $plugins.uiModalOpen({ 
+                            id: 'modal_sortSelect', 
+                            src: '../modal/modal_sortSelect.html', 
+                            ps: 'bottom', 
+                            closeCallback: function(v) { 
+                                console.log('close callback', v); 
+                            },
+                            callback: function(v) { 
+                                console.log('callback', v); 
+                            }
+                        });">
+                            <span>정렬조건</span>
+                        </button>
+                    </div>
+                    <div class="dl-type-info-wrap type2 mgt-s">
+                        <ul class="dl-type-info type1">
+                            <li>
+                                <dl>
+                                    <dt>기안물/설비</dt>
+                                    <dd>연약지반</dd>
+                                </dl>
+                                <dl>
+                                    <dt>기안물/설비</dt>
+                                    <dd>붕괴</dd>
+                                </dl>
+                                <dl>
+                                    <dt>기안물/설비</dt>
+                                    <dd><span class="primary">12건</span></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                        <ul class="dl-type-info type-2">
+                            <li>
+                                <dl>
+                                    <dt>유해 위험요인</dt>
+                                    <dd>연약지반 등 지반 불량으로 인한 파일 무너짐 위험 파일 무너짐 위험</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>규칙393조[화물의적재]</dt>
+                                    <dd>지반 지내력 확보 및 3단이상 야적 금지 관리</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>규칙393조[화물의적재]</dt>
+                                    <dd>지반 지내력 확보 및 3단이상 야적 금지 관리</dd>
+                                </dl>
+                            </li>
+                        </ul>
+
+                        <ul class="dl-type-info type3 mgt-m">
+                            <li>
+                                <dl class="level">
+                                    <dt><span class="primary">A</span></dt>
+                                    <dd>등급</dd>
+                                </dl>
+                                <dl>
+                                    <dt>가능성(빈도)</dt>
+                                    <dd><span class="primary">2<em>(아주 낮음)</em></span></dd>
+                                </dl>
+                                <dl>
+                                    <dt>중대성(강도)</dt>
+                                    <dd><span class="primary">2<em>(아주 낮음)</em></span></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="">
+                        <button type="button" class="btn-base large primary cols-full" onclick="
+                        $plugins.uiModalOpen({ 
+                            id: 'modal_danger_ntermeasure', 
+                            src: '../modal/modal_danger_ntermeasure.html', 
+                            ps: 'center', 
+                            closeCallback: function(v) { 
+                                console.log('close callback', v); 
+                            },
+                            callback: function(v) { 
+                                console.log('callback', v); 
+                            }
+                        });">
+                            <span>위험성 감소 대책 확인</span>
+                        </button>
+                        <div class="charge-info">
+                            <span>담당자</span> <em>홍길동</em>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+        </main>
+        <!-- //content -->
+
+        <!-- <div class="tab-bar type-a"></div> -->
+    </div>
+
+    <script> 
+        ;(function($, win, doc, undefined) {
+            $(doc).ready(function() {
+               
+                //기본 실행
+                $plugins.common.init();
+                
+            });
+        })(jQuery, window, document);
+    </script>
+    
+</body>
+</html>

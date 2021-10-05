@@ -1,0 +1,61 @@
+<section class="ui-modal" id="modal_sortSelect">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit">정렬</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_sortSelect', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+            
+            <ul class="list-base type-insp">
+                <li>
+                    <div class="inp-radio">
+                        <input type="radio" id="sort1" name="sort">
+                        <label for="sort1" class="fx-sb">
+                            <span>높은 등급 순</span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="inp-radio">
+                        <input type="radio" id="sort2" name="sort">
+                        <label for="sort2" class="fx-sb">
+                            <span>낮은 등급 순</span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="inp-radio">
+                        <input type="radio" id="sort3" name="sort">
+                        <label for="sort3" class="fx-sb">
+                            <span>재해 건수 많은 순</span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="inp-radio">
+                        <input type="radio" id="sort4" name="sort">
+                        <label for="sort4" class="fx-sb">
+                            <span>재해 건수 적은 순</span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+        <div class="ui-modal-footer">
+            <div class="btn-area stick">
+                <button type="button" class="btn-base primary">
+                    <span>적용</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+

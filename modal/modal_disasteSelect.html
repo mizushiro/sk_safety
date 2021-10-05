@@ -1,0 +1,64 @@
+<section class="ui-modal" id="modal_disasteSelect">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit">재해 유형</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_disasteSelect', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+            
+            <ul class="list-base type-insp">
+                <li>
+                    <div class="inp-check">
+                        <input type="checkbox" id="disaster1" name="disaster">
+                        <label for="disaster1" class="fx-sb">
+                            <span>붕괴</span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="inp-check">
+                        <input type="checkbox" id="disaster2" name="disaster">
+                        <label for="disaster2" class="fx-sb">
+                            <span>붕괴1</span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="inp-check">
+                        <input type="checkbox" id="disaster3" name="disaster">
+                        <label for="disaster3" class="fx-sb">
+                            <span>붕괴2</span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="inp-check">
+                        <input type="checkbox" id="disaster4" name="disaster">
+                        <label for="disaster4" class="fx-sb">
+                            <span>붕괴3</span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+        <div class="ui-modal-footer">
+            <div class="btn-area stick">
+                <button type="button" class="btn-base ">
+                    <span>필터 초기화</span>
+                </button>
+                <button type="button" class="btn-base primary">
+                    <span>적용</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
