@@ -273,6 +273,7 @@ input, textarea, select {
 .type-worker .btn-menu,
 .type-worker .btn-details,
 .type-worker .util-list,
+.type-worker .util-details,
 .type-worker .page-title .sum-box,
 
 .type-list .util, /* 0928 정현욱 추가 */
@@ -8863,6 +8864,7 @@ body.qrcode {
 
 .work-summary  {
 	padding: 0rem 1rem;
+	background: #fff;
 }
 .work-summary ul {
 	display: flex;
