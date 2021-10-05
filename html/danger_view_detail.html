@@ -59,6 +59,7 @@
                     }
                 });">
                     <span class="">재해유형</span>
+                    <span class="badge"><span>3</span></span>
                 </button>
                 <button type="button" class="btn-base" onclick="
                 $plugins.uiModalOpen({ 
@@ -81,7 +82,7 @@
                     <div class="tbl-header type-line">
                         <div class="tit-util">
                             <div class="total">
-                                총 <em>10</em> 건
+                                총 <em>10</em>
                             </div>
                         </div>
                         <!-- <select class="inp-select no-b" id="테스트21" title="최신순">
@@ -103,79 +104,161 @@
                             <span>정렬조건</span>
                         </button>
                     </div>
-                    <div class="dl-type-info-wrap type2 mgt-s">
-                        <ul class="dl-type-info type1">
-                            <li>
-                                <dl>
-                                    <dt>기안물/설비</dt>
-                                    <dd>연약지반</dd>
-                                </dl>
-                                <dl>
-                                    <dt>기안물/설비</dt>
-                                    <dd>붕괴</dd>
-                                </dl>
-                                <dl>
-                                    <dt>기안물/설비</dt>
-                                    <dd><span class="primary">12건</span></dd>
-                                </dl>
-                            </li>
-                        </ul>
-                        <ul class="dl-type-info type-2">
-                            <li>
-                                <dl>
-                                    <dt>유해 위험요인</dt>
-                                    <dd>연약지반 등 지반 불량으로 인한 파일 무너짐 위험 파일 무너짐 위험</dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl>
-                                    <dt>규칙393조[화물의적재]</dt>
-                                    <dd>지반 지내력 확보 및 3단이상 야적 금지 관리</dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl>
-                                    <dt>규칙393조[화물의적재]</dt>
-                                    <dd>지반 지내력 확보 및 3단이상 야적 금지 관리</dd>
-                                </dl>
-                            </li>
-                        </ul>
+                    <div class="danger-detail-wrap">
+                        <ul>
+                            <li class="">
+                                <div class="dl-type-info-wrap type2 mgt-s">
+                                    <ul class="dl-type-info type1">
+                                        <li>
+                                            <dl>
+                                                <dt>기안물/설비</dt>
+                                                <dd>연약지반</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>기안물/설비</dt>
+                                                <dd>붕괴</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>중대재해(건)</dt>
+                                                <dd><span class="primary">12</span></dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                    <ul class="dl-type-info type-2">
+                                        <li>
+                                            <dl>
+                                                <dt>유해 위험요인</dt>
+                                                <dd>연약지반 등 지반 불량으로 인한 파일 무너짐 위험 파일 무너짐 위험</dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>규칙393조[화물의적재]</dt>
+                                                <dd>지반 지내력 확보 및 3단이상 야적 금지 관리</dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>규칙393조[화물의적재]</dt>
+                                                <dd>지반 지내력 확보 및 3단이상 야적 금지 관리</dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
 
-                        <ul class="dl-type-info type3 mgt-m">
-                            <li>
-                                <dl class="level">
-                                    <dt><span class="primary">A</span></dt>
-                                    <dd>등급</dd>
-                                </dl>
-                                <dl>
-                                    <dt>가능성(빈도)</dt>
-                                    <dd><span class="primary">2<em>(아주 낮음)</em></span></dd>
-                                </dl>
-                                <dl>
-                                    <dt>중대성(강도)</dt>
-                                    <dd><span class="primary">2<em>(아주 낮음)</em></span></dd>
-                                </dl>
+                                    <ul class="dl-type-info type3 mgt-m">
+                                        <li>
+                                            <dl class="level">
+                                                <dt><span class="primary">A</span></dt>
+                                                <dd>등급</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>가능성(빈도)</dt>
+                                                <dd><span class="primary">2<em>(아주 낮음)</em></span></dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>중대성(강도)</dt>
+                                                <dd><span class="primary">2<em>(아주 낮음)</em></span></dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="">
+                                    <button type="button" class="btn-base large primary cols-full" onclick="
+                                    $plugins.uiModalOpen({ 
+                                        id: 'modal_danger_ntermeasure', 
+                                        src: '../modal/modal_danger_ntermeasure.html', 
+                                        ps: 'center', 
+                                        closeCallback: function(v) { 
+                                            console.log('close callback', v); 
+                                        },
+                                        callback: function(v) { 
+                                            console.log('callback', v); 
+                                        }
+                                    });">
+                                        <span>위험성 감소 대책 확인</span>
+                                    </button>
+                                    <div class="charge-info">
+                                        <span>담당자</span> <em>홍길동</em>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="dl-type-info-wrap type2 mgt-s">
+                                    <ul class="dl-type-info type1">
+                                        <li>
+                                            <dl>
+                                                <dt>기안물/설비</dt>
+                                                <dd>연약지반</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>기안물/설비</dt>
+                                                <dd>붕괴</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>중대재해(건)</dt>
+                                                <dd><span class="primary">12</span></dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                    <ul class="dl-type-info type-2">
+                                        <li>
+                                            <dl>
+                                                <dt>유해 위험요인</dt>
+                                                <dd>연약지반 등 지반 불량으로 인한 파일 무너짐 위험 파일 무너짐 위험</dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>규칙393조[화물의적재]</dt>
+                                                <dd>지반 지내력 확보 및 3단이상 야적 금지 관리</dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>규칙393조[화물의적재]</dt>
+                                                <dd>지반 지내력 확보 및 3단이상 야적 금지 관리</dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="dl-type-info type3 mgt-m">
+                                        <li>
+                                            <dl class="level">
+                                                <dt><span class="primary">A</span></dt>
+                                                <dd>등급</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>가능성(빈도)</dt>
+                                                <dd><span class="primary">2<em>(아주 낮음)</em></span></dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>중대성(강도)</dt>
+                                                <dd><span class="primary">2<em>(아주 낮음)</em></span></dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="">
+                                    <button type="button" class="btn-base large primary cols-full" onclick="
+                                    $plugins.uiModalOpen({ 
+                                        id: 'modal_danger_ntermeasure', 
+                                        src: '../modal/modal_danger_ntermeasure.html', 
+                                        ps: 'center', 
+                                        closeCallback: function(v) { 
+                                            console.log('close callback', v); 
+                                        },
+                                        callback: function(v) { 
+                                            console.log('callback', v); 
+                                        }
+                                    });">
+                                        <span>위험성 감소 대책 확인</span>
+                                    </button>
+                                    <div class="charge-info">
+                                        <span>담당자</span> <em>홍길동</em>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
-                    </div>
-                    <div class="">
-                        <button type="button" class="btn-base large primary cols-full" onclick="
-                        $plugins.uiModalOpen({ 
-                            id: 'modal_danger_ntermeasure', 
-                            src: '../modal/modal_danger_ntermeasure.html', 
-                            ps: 'center', 
-                            closeCallback: function(v) { 
-                                console.log('close callback', v); 
-                            },
-                            callback: function(v) { 
-                                console.log('callback', v); 
-                            }
-                        });">
-                            <span>위험성 감소 대책 확인</span>
-                        </button>
-                        <div class="charge-info">
-                            <span>담당자</span> <em>홍길동</em>
-                        </div>
                     </div>
                 </section>
                 
