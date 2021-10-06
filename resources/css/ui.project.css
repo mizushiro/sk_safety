@@ -32,6 +32,7 @@ input, textarea, select {
 }
 .sticky {
 	position: sticky;
+	position: -webkit-sticky;
 	top:5.5rem;
 	z-index: 999;
 }
@@ -100,12 +101,15 @@ input, textarea, select {
 .type-safety .tit-page .btn-base{
 	background:transparent;
 	border:1px solid #fff;
-	color:#008F84!important;
+	/* color:#008F84!important; */
 	font-weight:600;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	/* border-radius: 0.6rem; */
+}
+.type-safety.sinmungo .tit-page .btn-base{
+	color:#008F84!important;
 }
 .type-safety .tit-page .btn-base::after{
 	content:"";
@@ -119,7 +123,7 @@ input, textarea, select {
 	margin-left:.4rem;
 }
 .type-safety .tit-page .btn-base span{
-	opacity: 1;font-weight:500;
+	opacity: 1;font-weight:500; 
 }
 .type-safety .tit-page {
 	color: #fff;
@@ -155,7 +159,7 @@ input, textarea, select {
 	padding: 2rem 2rem 3rem;
 	margin: 0;
 	font-size:3rem;
-	display: flex;
+	/* display: flex; */
     justify-content: space-between;
 	align-items:center
 }
@@ -8902,6 +8906,7 @@ body.qrcode {
 	color:#999;
 	font-weight:500;
 	white-space: nowrap;
+	border-bottom: 3px solid #ffffff;
 }
 .work-summary ul li.current a {
 	border-bottom: 3px solid #008F84;
