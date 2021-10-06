@@ -31,10 +31,10 @@ input, textarea, select {
 	z-index: 900;
 }
 .sticky {
-	position: sticky;
+	position: sticky!important;
 	position: -webkit-sticky;
 	top:5.5rem;
-	z-index: 999;
+	z-index: 999!important;
 }
 .base-body {
 	width: 100%;
@@ -4438,7 +4438,8 @@ a[disabled], button[disabled] {
 .ui-tab-btns {
 	position: relative;
 	overflow: hidden;
-	z-index: 1
+	z-index: 99;
+	background: #fff;
 }
 
 .ui-tab-btns:after {
@@ -6104,6 +6105,67 @@ margin-right: .5rem;
 	display: block;
 	background: #0AAA99;
 }
+
+.danger-tab .ui-tab-btns:after {
+	display: none;
+}
+
+.danger-tab .ui-tab-pnl {
+	padding-top: 0;
+	padding: 0rem;
+}
+
+.danger-tab .btn-wrap {
+	width: max-content;
+	padding: 0rem 0 0rem 2rem;
+	border-bottom: 1px solid #ddd;
+}
+
+.danger-tab .ui-tab-btn+.ui-tab-btn {
+	/* margin-left: 0.6rem; */
+	margin: 0 1.4rem;
+}
+
+.danger-tab .ui-tab-btn:last-child {
+	margin-right: 2rem;
+}
+
+.danger-tab .ui-tab-btn {
+	min-width: 0;
+	flex: 1 auto;
+	white-space: nowrap;
+	width: auto;
+	height: 5rem;
+	border-radius: 0rem;
+	text-align: center;
+	color: #999;
+	border: px solid #ddd;
+	padding: 1.2rem 0rem 1.2rem;
+	font-size: 1.4rem;
+	font-weight: 500;
+	background: #fff;
+	box-sizing: border-box;
+}
+.danger-tab .ui-tab-btn .badge {
+	color:#D84D56;
+	margin-left: 0.6rem;
+}
+.danger-tab .ui-tab-btn.selected {
+	color: #000;
+    font-weight: 600;
+	border-bottom: 0px solid #008F84ff;
+}
+.danger-tab .ui-tab-btn.selected span {
+	color: #000;
+    font-weight: 600;
+	border-bottom: 3px solid #008F84ff;
+	padding: 1.2rem 0rem 1.2rem;
+}
+.danger-tab .ui-tab-btn.selected .badge{
+	color: #D84D56;
+	background: #fff;
+}
+
 
 .alarm-tab .ui-tab-btns:after {
 	display: none;

@@ -64,44 +64,16 @@
             </div>
 
             <div class="section-wrap mgb-xxxl">
-                <div class="work-summary action sticky">
-                    <ul>
-                        <li class="current">
-                            <a href="#a" data-tab="1" class="toggle-acco">
-                                <span class="label">기초파일 작업</span> <em>35</em>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#a" data-tab="2" class="toggle-acco">
-                                <span class="label">가설전기 작업</span> <em>3</em>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#a" data-tab="3" class="toggle-acco">
-                                <span class="label">강교 작업</span> <em>3</em>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#a" data-tab="4" class="toggle-acco">
-                                <span class="label">가설전기 작업</span> <em>3</em>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#a" data-tab="5" class="toggle-acco">
-                                <span class="label">강교 작업</span> <em>3</em>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#a" data-tab="6" class="toggle-acco">
-                                <span class="label">가설전기 작업</span> <em>3</em>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#a" data-tab="7" class="toggle-acco">
-                                <span class="label">강교 작업</span> <em>3</em>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="ui-tab type-scroll danger-tab" id="dangerTab">
+                    <div class="ui-tab-btns sticky">
+                        <div class="btn-wrap">
+                            <button type="button" class="ui-tab-btn"><span>기초파일 작업<em class="badge">3</em></span></button>
+                            <button type="button" class="ui-tab-btn"><span>가설전기 작업<em class="badge">3</em></span></button>
+                            <button type="button" class="ui-tab-btn"><span>강교 작업<em class="badge">3</em></span></button>
+                            <button type="button" class="ui-tab-btn"><span>기초파일 작업<em class="badge">3</em></span></button>
+                            <button type="button" class="ui-tab-btn"><span>가설전기 작업<em class="badge">3</em></span></button>
+                        </div>
+                    </div>
                 </div>
                 <div class="ui-acco type-danger" id="dangerAcco">
                     
@@ -347,10 +319,16 @@
                     autoclose:true
                 })
 
-                $('.toggle-acco').on('click', function(){
-                    $('.toggle-acco').closest('li').removeClass('current');
-                    $(this).closest('li').addClass('current');
+                $plugins.uiTab({ 
+                    id:'dangerTab', 
+                    current:0, 
+                    onePanel: true,
+                    align : 'center',
+                    callback:function(v){
+                        console.log(1111);
+                    } 
                 });
+
                 
             });
         })(jQuery, window, document);
