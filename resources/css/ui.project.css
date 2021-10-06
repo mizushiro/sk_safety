@@ -92,6 +92,13 @@ input, textarea, select {
 .type-career {
 	background: linear-gradient(90deg, #17789A, #0CAC9B);
 }
+
+.type-career.login {
+	background: #fff;
+}
+.type-career.login .base-wrap{
+	background: linear-gradient(90deg, #17789A, #0CAC9B);
+}
 .type-safety.sinmungo {
 	background: #fff;
 }
@@ -1191,6 +1198,9 @@ input[type="date"].box:valid::before{
 }
 .section-item:last-child .btn-area {
 	padding: 2rem 0 7rem;
+}
+.login-wrap .section-item:last-child .btn-area {
+	padding: 0rem 0 2rem;
 }
 .btn-wrap.type-more{
 	font-size:1.5rem;
@@ -4570,6 +4580,9 @@ a[disabled], button[disabled] {
 	font-weight: 500;
 	border-bottom: 1px solid #008F84;
 }
+.login-wrap .link-line {
+	font-size: 1.6rem;
+}
 .flag.st-1{
 	background:#DEDEDE;
 	color:#333;
@@ -4954,7 +4967,7 @@ a[disabled], button[disabled] {
 
 .link-arrow.type-b {
 	color: #333;
-	font-size: 1.3rem;
+	font-size: 1.6rem;
 	font-weight: 500;
 	padding-right: 1.3rem;
 	position: relative;
@@ -4969,7 +4982,7 @@ a[disabled], button[disabled] {
 	margin-top: -.5rem;
 	width: 1rem;
 	height: 1rem;
-	background: url(../img/icon_down_p.svg) no-repeat 100% 50% / 1rem;
+	background: url(../img/icon_down.svg) no-repeat 100% 50% / 1rem;
 	transform: rotate(-90deg);
 }
 .link-arrow.type-c {
@@ -5081,20 +5094,59 @@ dl.list-base > div,
 	font-size: 1.6rem;
 	font-weight: 500;
 	color: #333;
-	width: 83%;
+	width: 100%;
 }
-.list-base.list-checkups .ctg .date {
-	font-size: 1.4rem;
+.list-base.list-checkups .ctg .checkup-type{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	margin-bottom:1.2rem;
+}
+.list-base.list-checkups .ctg .checkup-de{
+	display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.list-base.list-checkups .ctg .checkup-de .date {
+	font-size: 1.3rem;
 	font-weight: 400;
-	color: #999;
 	margin-left: 0.4rem;
 }
-.list-base.list-checkups .ctg .type {
-	color:#fff;
-	padding: 0.4rem 1rem;
-	border-radius: 3rem;
+.list-base.list-checkups .ctg .checkup-de .date em {
+	margin-right: 1.0rem;
+}
+.list-base.list-checkups .ctg .checkup-de .d-date {
+	display: inline-flex;
+    align-items: unset;
+    justify-content: center;
+	font-size: 1.4rem;
+    font-weight: 400;
+	margin-left:1rem;
 	font-size: 1.3rem;
-	margin-right:0.6rem;
+}
+
+.list-base.list-checkups .ctg .checkup-de .d-date::before {
+	content: "";
+    width: 2.6rem;
+    height: 1.5rem;
+    background: url(../img/icon_danger_g.svg) no-repeat 50% 50% / 1.8rem;
+}
+.list-base.list-checkups .ctg .checkup-de .d-date.type1 {
+	color: #E7565F;
+	font-weight:500;
+}
+.list-base.list-checkups .ctg .checkup-de .d-date.type1::before {
+	background: url(../img/icon_danger.svg) no-repeat 50% 50% / 1.8rem;
+}
+.list-base.list-checkups .ctg .type {
+	color: #fff;
+    padding: 0.4rem 0.6rem;
+    border-radius: 3rem;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    min-width: 4.8rem;
+    text-align: center;
+	display: inline-block;
 }
 .list-base.list-checkups .ctg .normal {
 	background-color: #1872A2;
@@ -5102,8 +5154,25 @@ dl.list-base > div,
 .list-base.list-checkups .ctg .special {
 	background-color: #E7565F;
 }
+.list-base.list-checkups .ctg .before {
+	background-color: #F2B500;
+}
+.list-base.list-checkups .ctg .temp {
+	background-color: #89929B;
+}
+.list-base.list-checkups .ctg .anytime {
+	background-color: #26A69A;
+}
 .list-base.list-checkups .tit {
 	width:auto;
+}
+.list-base.list-checkups .open {
+    color: #008F84;
+    border:1px solid #008F84;
+	font-weight: 500;
+	font-size: 1.2rem;
+	border-radius: 3rem;
+	padding: 0.4rem 0.8rem
 }
 .list-base.list-checkups .tit .flag {
     color: #333;
@@ -9125,7 +9194,7 @@ body.qrcode {
 	display: flex;
 	justify-content: space-between;
 	background: #fff;
-	padding: 1.4rem 2rem;
+	padding: 2rem 2rem;
 }
 .safety-top + .section-item {
 	padding:1rem 2rem 0rem 2rem;
