@@ -1403,26 +1403,34 @@ a.btn-base.small {
 .btn-circle.sinmungo {
 	position: fixed;
 	bottom:8.5rem;
-	right: 2rem;
-	width: 7.6rem;
-    height: 7.6rem;
+	left: calc(50% - 6rem);
+	left: 50%;
+    transform: translateX(-50%);
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	width: auto;
+    height: 4.5rem;
+	padding: 0 2.4rem;
 	font-size: 1.2rem;	
-	background: #FFE013 url(../img/icon_sinmungo.svg) no-repeat 100% 100% / 2rem;
+	background: #FBCF6B;
 	background-repeat: no-repeat;
 	background-position: center 1.6rem;
 	background-size: auto;
 	box-shadow:0 7px 11px rgb(0 0 0 / 15%);
+	border-radius: 3rem;
 	z-index: 891;
 }
 .btn-circle.sinmungo span{
-	padding-top: 2.5rem;
 	font-weight: 600;
 }
 .btn-circle.sinmungo:before {
 	content: "";
 	display: inline-block;
     height:3.8rem;
-	background: #FFE013 url(../img/icon_sinmungo.svg) no-repeat 50% 50% / 1.1rem;
+	width: 2.5rem;
+	margin-right: 0.4rem;;
+	background: #FBCF6B url(../img/icon_sinmungo.svg) no-repeat 50% 50% / 1.4rem;
 }
 .btn-base.line {
 	border-color: #008F84 !important;
@@ -2171,7 +2179,7 @@ a.btn-base {
 	border: 0;
 	width: 3rem;
 	height: 3rem;
-	background: url(../img/icon_popup_close_w.svg) no-repeat 50% 50% / 1.5rem;
+	background: url(../img/icon_popup_close_w.svg) no-repeat 50% 50% / 1.2rem;
 }
 
 .type-system .ui-modal-body {
