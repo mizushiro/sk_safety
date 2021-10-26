@@ -439,6 +439,10 @@ input, textarea, select {
 	padding: 2rem 0;
 	width: 100%;
 }
+.ui-modal-body.type-b .section-item {
+	padding: 2rem 2rem;
+	width: 100%;
+}
 
 /* gap */
 .pdt-n {
@@ -1254,7 +1258,7 @@ input[type="date"].box:valid::before{
 
 .btn-area.fix {
 	position: fixed;
-	padding: 0;
+	padding: 0!important;
 	bottom: 0;
 	left: 0;
 	z-index: 800;
@@ -2228,6 +2232,9 @@ a.btn-base {
 	position: relative;
 	margin-top: 0;
 	padding: 1.5rem 2rem;
+}
+.ui-modal-body.type-b {
+	padding: 1.5rem 0rem;
 }
 
 .type-2 .ui-modal-body {
@@ -3931,6 +3938,105 @@ right: 4rem;
     height: auto;
 }
 
+
+.sos-list {
+	width: 100%;
+	border-top: 0px solid #666;
+}
+
+.sos-list .item {
+	width: 100%;
+	position: relative;
+	margin: 1rem 0;
+	display: block;
+}
+
+.sos-list .item+.item {
+	margin-top: 3rem;
+}
+
+.sos-list .item+.item::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: -1.5rem;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #EEEEEE;
+}
+.sos-list .item a {
+	width: 100%;
+	display: block;
+}
+.sos-list .item-del {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 5rem;
+	height: 100%;
+	background: #888;
+	box-shadow: inset 5px 0 3px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	border-top-right-radius: 0.4rem;
+	border-bottom-right-radius: 0.4rem;
+}
+.sos-list .item-wrap {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.sos-list .info {
+    flex: 1 auto;
+    padding: .4rem 1rem;
+}
+.sos-list .item-wrap .site {
+	font-size: 1.4rem;
+    font-weight: 500;
+	margin-bottom: 0.4rem;
+	color: #777;
+}
+.sos-list .item-wrap .comp {
+	font-size: 1.6rem;
+    font-weight: 500;
+	margin-bottom: 0.4rem;
+}
+.sos-list .item-wrap .date {
+	font-size: 1.4rem;
+	margin-top: 0.4rem;
+	color: #777;
+}
+.sos-list .item-wrap .date em {
+	margin-right: 0.6rem;
+
+}
+.sos-list .status, .status {
+    flex: 0 4.4rem;
+    min-width: 4.4rem;
+    background-color: #ddd;
+	text-align: center;
+	font-size:1.2rem;
+    border-radius: 1.4rem;
+	padding: 0.2rem 0;
+	font-weight: 500;
+}
+.sos-list .status.complate, .status.complate {
+    background-color: #B2DFDB;
+	color:#00695C;
+}
+.sos-list .status.ready, .status.ready {
+    background-color: #FFCDD2;
+	color:#C61B17;
+}
+.contents.large {
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
 .sinmungo-list {
 	width: 100%;
 	border-top: 2px solid #666;
@@ -4576,6 +4682,10 @@ a[disabled], button[disabled] {
 	padding: 2rem;
 	border-top: 0
 }
+.ui-tab-pnl .tip-wrap {
+	margin: -2rem -2rem 0;
+	width:auto;
+}
 .ui-modal-body .ui-tab-pnl {
 	width: 100%;
 	top: 0;
@@ -4739,6 +4849,18 @@ a[disabled], button[disabled] {
 	display: block;
 	width: 100%;
 	height: 100%;
+}
+.event-img-wrap {
+	background-color: #f4f4f4;
+	min-height:15rem;
+}
+.event-img-wrap img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.event-de {
+	font-size: 1.5rem;
 }
 
 .icon-safe::before {
@@ -5622,7 +5744,27 @@ margin-right: .5rem;
 	font-weight: 500;
 	color: #777;
 }
-
+.flag-new{
+	color:#00695C;
+	background:#B2DFDB;
+}
+	.flag-old{
+	color:#C61B17;
+	background:#FFCDD2;
+}
+.flag-int{
+	color:#41791A;
+	background:#DCEDC8;
+}
+	
+[class*="flag-"] {
+	height:2rem;
+	border-radius:1rem;
+	font-size:1.2rem;
+	position:relative;
+	padding:0 1rem;
+	font-weight:400;
+}
 .list-network .box {
 	height: 2.6rem;
 	border-radius: 1.3rem;
@@ -10068,8 +10210,14 @@ body.qrcode {
 	font-size:1.2rem;
 }
 .read-ttl {
+	position: relative;
 	font-weight: 600;
 	border-bottom: 2px solid #666;
+}
+.read-ttl .status {
+	position: absolute;
+	right:0;
+	top:50%;
 }
 .read-ttl .work-type{
 	display: flex;
@@ -10093,6 +10241,16 @@ body.qrcode {
 	margin-top: 0.6rem;
 	font-weight: normal;
 	font-size:1.2rem;
+}
+.read-ttl span.date em {
+	color:#f00;
+	font-weight: normal;
+	font-size:1.2rem;
+	margin-left: 0.6rem;
+}
+.read-ttl span.date .label {
+	margin-right: 0.6rem;
+	color:#666
 }
 .read-ttl span.work {
 	display: block;

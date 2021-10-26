@@ -194,6 +194,21 @@
                                 <button type="button" class="ui-reply">
                                     <span>답글달기</span>
                                 </button>
+                                <button type="button" class="ui-detail" onclick="
+                                        $plugins.uiModalOpen({ 
+                                            id: 'modal_contalk_reply', 
+                                            full:true,
+                                            src: '../modal/modal_contalk_reply.html', 
+                                            ps: 'center', 
+                                            closeCallback: function(v) { 
+                                                console.log('close callback', v); 
+                                            },
+                                            callback: function(v) { 
+                                                console.log('callback', v); 
+                                            }
+                                    });">
+                                    <span>상세보기</span>
+                                </button>
                                 <button type="button" class="ui-talkview">
                                     <span>펼쳐보기</span>
                                 </button>
