@@ -4598,6 +4598,9 @@ a[disabled], button[disabled] {
 	height: 1px;
 	background: #EEE;
 }
+.ui-tab-btns .btn-wrap.type-2 {
+	justify-content: space-evenly;
+}
 
 .inp-radio.tab label {
 	border-bottom: 0.2rem solid #fff;
@@ -7390,6 +7393,12 @@ margin-right: .5rem;
 	height:3rem;
 	background:url(../img/qrcode-scan.svg) no-repeat 50% 50% / 3rem;
 }
+.btn-sign{
+	display:inline-block;
+	width:3rem;
+	height:3rem;
+	background:url(../img/icon_pencil_g.svg) no-repeat 50% 50% / 3rem;
+}
 .btn-header{
 	width: auto;
     min-height: 3rem;
@@ -7429,8 +7438,15 @@ margin-right: .5rem;
 	display: inline-block;
     width: 7rem;
     height: 3rem;
-
     background: #fff url(../img/icon_qr_b.svg) no-repeat 1rem 50% / 1.8rem;
+    border: 1px solid #ddd;
+    padding: 0.4rem 0.9rem 0.4rem 3.7rem;
+}
+.menu-qr .btn-sign{
+	display: inline-block;
+    width: auto;
+    height: 3rem;
+    background: #fff url(../img/icon_draw_p.svg) no-repeat 1rem 50% / 1.8rem;
     border: 1px solid #ddd;
     padding: 0.4rem 0.9rem 0.4rem 3.7rem;
 }
