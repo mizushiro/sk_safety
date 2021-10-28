@@ -1487,7 +1487,7 @@ a.btn-base.small {
 }
 
 .btn-base:active {
-	background: #F5F5F5;
+	background-color: #F5F5F5;
 	border-color: #626262;
 }
 
@@ -1498,12 +1498,12 @@ a.btn-base.small {
 }
 
 .btn-base.line:active {
-	background: #F5F5F5;
+	background-color: #F5F5F5;
 	border-color: #017168;
 }
 
 .btn-base.weak:active {
-	background: #626262;
+	background-color: #626262;
 	border-color: #626262;
 }
 .btn-base.round-s {
@@ -9820,6 +9820,7 @@ body.qrcode {
 .list-status li .status {
 	font-size: 1.4rem;
 	color:#E7565F;
+	background-color: transparent;
 }
 
 .ansim-mng {
