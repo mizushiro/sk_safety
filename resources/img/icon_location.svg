@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="42" viewBox="0 0 30 42">
+  <g id="icon_location" transform="translate(-59.588 -353.667)">
+    <rect id="사각형_944" data-name="사각형 944" width="30" height="42" transform="translate(59.588 353.667)" fill="#fff" opacity="0"/>
+    <g id="그룹_1228" data-name="그룹 1228" transform="translate(62.431 356.431)">
+      <path id="map-marker-outline" d="M17.157,2A12.157,12.157,0,0,1,29.314,14.157c0,9.118-12.157,23.1-12.157,23.1S5,23.275,5,14.157A12.157,12.157,0,0,1,17.157,2" transform="translate(-5 -2)" fill="#e7565f"/>
+      <circle id="타원_131" data-name="타원 131" cx="7.779" cy="7.779" r="7.779" transform="translate(4.378 3.894)" fill="#fff"/>
+      <circle id="타원_132" data-name="타원 132" cx="4.132" cy="4.132" r="4.132" transform="translate(8.025 7.541)" fill="#e1545c"/>
+    </g>
+  </g>
+</svg>

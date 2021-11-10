@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index, follow" />
+
+    <meta name="subject" content="SK건설 안전관리 시스템">
+    <meta name="author" content="SK건설">
+    <meta name="title" content="SK건설 세이프티" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="SK건설, SK, SK ecoplant, safety platform, 안전, 관리, 건축" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SK건설 세이프티" />
+    <meta property="og:url" content="http://www.skecoplant.com/" />
+    
+    <title>내 현장 | SK건설 세이프티</title>
+
+    <link rel="alternate" hreflang="ko" href="http://www.skecoplant.com/" />
+    <link rel="canonical" href="http://www.skecoplant.com/" />
+    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <link rel="apple-touch-icon" href="../resources/img/common/ico_app.png" >
+
+	<link rel="stylesheet" href="../resources/css/ui.base.css">
+	<script src="../resources/js/lib/jquery-3.2.1.min.js"></script>
+	<script src="../resources/js/ui.global.js"></script>
+	<script src="../resources/js/ui.common.js"></script>
+
+    
+
+    <style>
+    </style>
+</head>
+<body>
+    <div class="base-wrap">
+        <header class="base-header" 
+        data-type="sub" 
+        data-title="채용 공고" 
+        ></header>
+        <!-- content -->
+        <main class="base-body">
+            
+            <div class="map-area ">
+                <div id="map" class="map ui-height">
+                    <div class="search-risk">
+                        <div class="form-item">
+                            <div class="inp-wrap type-searchbox">
+                                <input type="search" class="inp-base ui-siteselect-result" value="" placeholder="현장 이름">
+                                <button type="button" class="btn-search ui-drop" id="uiSiteSelect">
+                                    <span class="a11y-hidden">검색열기</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="section-item pdt-n">
+
+                        <div class="align-v mgt-s">
+                            <button type="button" class="btn-base type-3 round primary" onclick="
+                            $plugins.uiModalOpen({ 
+                                id: 'modal_workType',
+                                src: '../modal/modal_workType.html', 
+                                ps: 'bottom', 
+                                closeCallback: function(v) { 
+                                    console.log('close callback', v); 
+                                },
+                                callback: function(v) { 
+                                    console.log('callback', v); 
+                                }
+                            });"><span>직종<em class="badge">전체</em></span></button>
+                            <div class="inp-check round">
+                                <input type="checkbox" id="내가 지원한 현장">
+                                <label for="내가 지원한 현장">내가 지원한 현장</label>
+                            </div>
+                            
+                            <div class="inp-check round">
+                                <input type="checkbox" id="즐겨찾기">
+                                <label for="즐겨찾기">즐겨찾기</label>
+                            </div>
+                        </div>
+                    </section>
+
+
+                </div>
+
+                <button type="button" class="recruit-btn favorites" style="top:45%; left:10%;"><span class="a11y-hidden">즐겨찾기 선택</span></button>
+                <button type="button" class="recruit-btn apply" style="top:25%; left:70%;"><span class="a11y-hidden">지원함 선택</span></button>
+                <button type="button" class="recruit-btn apply-no" style="top:80%; left:46%;"><span class="a11y-hidden">지원안함 선택</span></button>
+
+                <button type="button" class="recruit-btn location"><span class="a11y-hidden">현위치</span></button>
+
+
+                
+
+
+                
+
+               
+
+                <!-- 지도 확대, 축소 컨트롤 div 입니다
+                <div class="custom_zoomcontrol"> 
+                    <button type="button" class="" onclick="$plugins.map.zoomIn();">
+                        <span class="a11y-hidden">확대</span>
+                    </button>
+                    <button type="button" class="" onclick="$plugins.map.zoomOut();">
+                        <span class="a11y-hidden">축소</span>
+                    </button>
+                </div>
+                 -->
+            </div>
+
+            <div class="site-list">
+                <ul class="list-base">
+                    <li>
+                        <button type="button" data-tit="광명 SK VIEW 신축공사">
+                            <div class="tit">광명 SK VIEW 신축공사</div>
+                            <div class="desc">매장/공구리작업</div>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" data-tit="광명 SK VIEW 신축공사2">
+                            <div class="tit">광명 SK VIEW 신축공사2</div>
+                            <div class="desc">매장/공구리작업</div>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" data-tit="광명 SK VIEW 신축공사">
+                            <div class="tit">광명 SK VIEW 신축공사</div>
+                            <div class="desc">매장/공구리작업</div>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" data-tit="광명 SK VIEW 신축공사2">
+                            <div class="tit">광명 SK VIEW 신축공사2</div>
+                            <div class="desc">매장/공구리작업</div>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+           
+        </main>
+        <!-- //content -->
+        
+    </div>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9906c009f8e9c9a1a36542d2c08c1361"></script>
+    <script> 
+        ;(function($, win, doc, undefined) {
+            $(doc).ready(function() {
+               
+                //기본 실행
+                $plugins.common.init();
+
+                $plugins.map = {
+                    name: {},
+                    init: function(){
+                        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                            mapOption = { 
+                                center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                level: 3 // 지도의 확대 레벨
+                            };  
+
+                        $plugins.map.name = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+                            
+                        // 지도타입 컨트롤의 지도 또는 스카이뷰 버튼을 클릭하면 호출되어 지도타입을 바꾸는 함수입니다
+                        function setMapType(maptype) { 
+                            var roadmapControl = document.getElementById('btnRoadmap');
+                            var skyviewControl = document.getElementById('btnSkyview'); 
+                            if (maptype === 'roadmap') {
+                                $plugins.map.name.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);    
+                                roadmapControl.className = 'selected_btn';
+                                skyviewControl.className = 'btn';
+                            } else {
+                                $plugins.map.name.setMapTypeId(kakao.maps.MapTypeId.HYBRID);    
+                                skyviewControl.className = 'selected_btn';
+                                roadmapControl.className = 'btn';
+                            }
+                        }
+
+                    },
+                    zoomIn: function(){
+                        $plugins.map.name.setLevel($plugins.map.name.getLevel() - 1);
+                    },
+                    zoomOut: function(){
+                        $plugins.map.name.setLevel($plugins.map.name.getLevel() + 1);
+                    }
+                }
+                $plugins.map.init();
+  
+                
+                
+            });
+        })(jQuery, window, document);
+    </script>
+    
+</body>
+</html>

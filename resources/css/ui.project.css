@@ -1077,6 +1077,7 @@ input[type="date"].box:valid::before{
 	font-weight: 500;
 	color: #666;
 	border: 1px solid #ddd;
+	background-color: #fff;;
 	padding: 0.65rem 1.9rem 0;
 }
 
@@ -1461,6 +1462,30 @@ input[type="date"].box:valid::before{
 .btn-base.type-w {
 	background-color: #fff!important;
 	color:#333!important;
+}
+.btn-base.type-3 {
+	width: auto;
+    height: 3rem;
+	min-height: 3rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    color: #666;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 0.15rem 1.8rem;
+	font-size: 1.3rem;
+}
+.btn-base.type-3 span {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-base.type-3 .badge {
+	display: inline-block;
+	background-color: transparent;
+    color: #FEDD7B;
+	height: auto;
 }
 .btn-base.border-n {
 	border:0;
@@ -7424,6 +7449,35 @@ margin-right: .5rem;
 	;
 }
 
+.recruit-btn {
+	position: absolute;
+	width: 4rem;
+	height: 4rem;;
+	box-shadow: 0 .3rem .6rem rgba(0, 0, 0, 0.1);
+	z-index: 10;
+	transform: translate(-50%, -100%);
+	margin-top: -1rem;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	z-index: 2;
+}
+.recruit-btn.favorites {
+	background-image: url(../img/icon_favorites.svg);
+}
+.recruit-btn.apply {
+	background-image: url(../img/icon_apply.svg);
+}
+.recruit-btn.apply-no {
+	background-image: url(../img/icon_apply_no.svg);
+}
+.recruit-btn.location {
+	background-image: url(../img/icon_location.svg);
+	box-shadow: 0 .3rem .6rem rgba(0, 0, 0, 0.0);
+	width: 3rem;
+	top:50%;
+	left:50%;
+}
+
 .photo-repes {
 	position: relative;
 	width: 100%;
@@ -10114,6 +10168,15 @@ body.qrcode {
 	color: #fff;
 }
 
+
+.site-list {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: white;
+	z-index: 3;
+}
+
 .answer-list-wrap {
 	padding-bottom: 6rem;
 }
@@ -10543,6 +10606,7 @@ body.qrcode {
     color:#D84D56;
 }
 /* 시정조치현황 */
+
 
 
 /*USE CSS for Slider*/

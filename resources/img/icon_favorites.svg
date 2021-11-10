@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="icon_favorites" transform="translate(-172 -254)">
+    <circle id="타원_133" data-name="타원 133" cx="20" cy="20" r="20" transform="translate(172 254)" fill="#ffc006"/>
+    <g id="star" transform="translate(181 262)">
+      <rect id="사각형_947" data-name="사각형 947" width="22" height="22" transform="translate(22) rotate(90)" fill="#fff" opacity="0"/>
+      <path id="패스_1970" data-name="패스 1970" d="M17.593,21.991a.964.964,0,0,1-.461-.116l-5.111-2.809L6.91,21.875a.963.963,0,0,1-1.058-.082,1.078,1.078,0,0,1-.4-1.033l1-5.923L2.331,10.628A1.089,1.089,0,0,1,2.08,9.576a1.017,1.017,0,0,1,.812-.715L8.6,7.987l2.515-5.4a.982.982,0,0,1,1.8,0l2.545,5.387,5.712.873a1.017,1.017,0,0,1,.812.715,1.089,1.089,0,0,1-.251,1.052l-4.129,4.209,1,5.924a1.078,1.078,0,0,1-.4,1.052A.968.968,0,0,1,17.593,21.991Z" transform="translate(-1.036 -0.996)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
