@@ -377,6 +377,16 @@ input, textarea, select {
 	display: none !important;
 }
 
+.type-myworker .edit-mode .btn-back {
+	display: none !important;
+}
+.type-myworker .edit-mode .btn-cancel, .type-myworker .edit-mode .fn-clear {
+	display: flex !important;
+}
+.type-myworker .btn-cance, .type-myworker .fn-clear {
+	display: none !important;
+}
+
 .util button+button,
 .util-contalk button+button,
 .util-alarm button+button {
@@ -7991,6 +8001,20 @@ margin-right: .5rem;
 	color:#666;
 }
 
+.type-myworker .edit-mode .search-risk,
+.type-myworker .edit-mode .fn-out,
+.type-myworker .list-network.type-b .inp-check,
+.type-myworker .btn-area {
+	display: none;
+}
+.type-myworker .edit-mode .list-network.type-b .inp-check, 
+.type-myworker .fn-out {
+	display: inline-block;
+}
+.type-myworker .edit-mode .btn-area {
+	display: flex;
+}
+
 .search-risk{
 	position:sticky;
 	top:5.5rem;
@@ -10173,8 +10197,24 @@ body.qrcode {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	background-color: white;
 	z-index: 3;
+}
+.site-list .list-base {
+	background-color: white;
+	max-height: 30rem;
+	overflow-y: auto;
+}
+.site-list .map-area2 {
+	display: flex;
+	margin: 0 3rem 1rem;
+	background-color: #fff;
+	text-align: center;
+	box-shadow: 0 0.3rem 0.6rem rgb(0 0 0 / 10%);
+}
+.site-list .map-area2 .map-2{
+	margin-bottom: 1rem;
+	background-color: #fff;
+	border-radius: 10rem;
 }
 
 .answer-list-wrap {

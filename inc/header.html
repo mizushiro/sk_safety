@@ -6,7 +6,7 @@
 
     <button type="button" class="btn-back"><span class="a11y-hidden">뒤로가기</span></button>
     <button type="button" class="btn-menu" onclick="$plugins.common.navOpen();"><span class="a11y-hidden">전체메뉴</span></button>
-    <button type="button" class="btn-header link-line btn-cancel"><span>취소</span></button>
+    <button type="button" class="btn-header link-line btn-cancel fn-cancel"><span>취소</span></button>
     
     <div class="menu-wrap item">
         <div class="item-wrap">
@@ -255,7 +255,8 @@
     </div>
 
     <div class="util-myworker">
-        <button type="button" class="btn-header link-line"><span>내보내기</span></button>
+        <button type="button" class="btn-header link-line fn-out"><span>내보내기</span></button>
+        <button type="button" class="btn-header link-line fn-clear" disabled><span><em class="badge">2</em>선택해제</span></button>
     </div>
 
     <div class="util-out">
@@ -282,4 +283,20 @@
     </div>
 </div>
 
+
+<script> 
+    ;(function($, win, doc, undefined) {
+        $(doc).ready(function() {
+           
+            //기본 실행
+            //$plugins.common.init();
+            $('.fn-out').click(function(){
+                !$('body').hasClass('edit-mode') ? $('body').addClass('edit-mode') : $('body').removeClass('edit-mode');
+            });
+            $('.fn-clear, .fn-cancel').click(function(){
+                !$('body').hasClass('edit-mode') ? $('body').addClass('edit-mode') : $('body').removeClass('edit-mode');
+            });
+        });
+    })(jQuery, window, document);
+</script>
 
