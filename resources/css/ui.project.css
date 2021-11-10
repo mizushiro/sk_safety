@@ -377,7 +377,7 @@ input, textarea, select {
 	display: none !important;
 }
 
-.type-myworker .edit-mode .btn-back {
+.type-myworker .edit-mode .btn-back, .type-myworker .edit-mode .btn-star {
 	display: none !important;
 }
 .type-myworker .edit-mode .btn-cancel, .type-myworker .edit-mode .fn-clear {
