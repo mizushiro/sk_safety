@@ -237,10 +237,13 @@ input, textarea, select {
 .type-normal .util-qr,
 .type-normal .util-alarm,
 .type-normal .btn-back,
+.type-normal .btn-cancel,
 .type-normal .util-contalk,
 .type-normal .util-worker,
 .type-normal .util-details,
 .type-normal .util-list,
+.type-normal .util-myworker, /* 1110 정현욱 추가 */
+.type-normal .util-out, /* 1110 정현욱 추가 */
 .type-normal .page-title .sum-box,
 
 .type-auth .util-qr,
@@ -250,6 +253,9 @@ input, textarea, select {
 .type-auth .util-worker,
 .type-auth .util-details,
 .type-auth .util-list,
+.type-auth .util-myworker, /* 1110 정현욱 추가 */
+.type-auth .util-out, /* 1110 정현욱 추가 */
+.type-auth .btn-cancel,
 .type-auth .page-title .sum-box,
 
 .type-alarm .util-qr,
@@ -258,6 +264,9 @@ input, textarea, select {
 .type-alarm .util-worker,
 .type-alarm .util-details,
 .type-alarm .util-list,
+.type-alarm .util-myworker, /* 1110 정현욱 추가 */
+.type-alarm .util-out, /* 1110 정현욱 추가 */
+.type-alarm .btn-cancel,
 .type-alarm .btn-menu,
 
 .type-qr .util,
@@ -267,6 +276,9 @@ input, textarea, select {
 .type-qr .util-worker,
 .type-qr .util-details,
 .type-qr .util-list,
+.type-qr .util-myworker, /* 1110 정현욱 추가 */
+.type-qr .util-out, /* 1110 정현욱 추가 */
+.type-qr .btn-cancel,
 .type-qr .page-title .sum-box,
 
 .type-sub .util, /* 0803 정현욱 추가 */
@@ -278,6 +290,9 @@ input, textarea, select {
 .type-sub .util-worker,
 .type-sub .util-details,
 .type-sub .util-list,
+.type-sub .util-myworker, /* 1110 정현욱 추가 */
+.type-sub .util-out, /* 1110 정현욱 추가 */
+.type-sub .btn-cancel,
 .type-sub .page-title .sum-box,
 
 .type-worker .util, /* 0803 정현욱 추가 */
@@ -289,7 +304,38 @@ input, textarea, select {
 .type-worker .btn-details,
 .type-worker .util-list,
 .type-worker .util-details,
+.type-worker .util-myworker, /* 1110 정현욱 추가 */
+.type-worker .util-out, /* 1110 정현욱 추가 */
+.type-worker .btn-cancel,
 .type-worker .page-title .sum-box,
+
+.type-myworker .util, /* 0803 정현욱 추가 */
+.type-myworker .btn-contalk,
+.type-myworker .util-qr,
+.type-myworker .util-contalk,
+.type-myworker .util-alarm,
+.type-myworker .btn-menu,
+.type-myworker .util-worker,
+.type-myworker .btn-details,
+.type-myworker .util-list,
+.type-myworker .util-details,
+.type-myworker .util-out,
+.type-myworker .btn-cancel,
+.type-myworker .page-title .sum-box,
+
+.type-out .util, /* 1110 정현욱 추가 */
+.type-out .btn-contalk,
+.type-out .util-qr,
+.type-out .util-contalk,
+.type-out .util-alarm,
+.type-out .btn-menu,
+.type-out .btn-back,
+.type-out .util-worker,
+.type-out .util-myworker, /* 1110 정현욱 추가 */
+.type-out .btn-details,
+.type-out .util-list,
+.type-out .util-details,
+.type-out .page-title .sum-box,
 
 .type-list .util, /* 0928 정현욱 추가 */
 .type-list .btn-contalk,
@@ -298,6 +344,9 @@ input, textarea, select {
 .type-list .util-alarm,
 .type-list .btn-menu,
 .type-list .util-worker,
+.type-list .util-myworker, /* 1110 정현욱 추가 */
+.type-list .util-out, /* 1110 정현욱 추가 */
+.type-list .btn-cancel,
 .type-list .util-details,
 .type-list .page-title .sum-box,
 
@@ -308,6 +357,9 @@ input, textarea, select {
 .type-details .util-alarm,
 .type-details .btn-menu,
 .type-details .util-worker,
+.type-details .util-myworker, /* 1110 정현욱 추가 */
+.type-details .util-out, /* 1110 정현욱 추가 */
+.type-details .btn-cancel,
 .type-details .util-list,
 .type-details .page-title .sum-box,
 
@@ -316,6 +368,9 @@ input, textarea, select {
 .type-contalk .util-alarm,
 .type-contalk .btn-menu,
 .type-contalk .util-worker,
+.type-contalk .util-myworker, /* 1110 정현욱 추가 */
+.type-contalk .util-out, /* 1110 정현욱 추가 */
+.type-contalk .btn-cancel,
 .type-contalk .util-details,
 .type-contalk .util-list,
 .base-header-wrap .page-title .sum-box {
@@ -383,6 +438,12 @@ input, textarea, select {
 .base-header-wrap .btn-menu {
 	position: absolute;
 	left: 1rem;
+	top: 1.25rem;
+}
+
+.base-header-wrap .btn-cancel {
+	position: absolute;
+	left: 1.5rem;
 	top: 1.25rem;
 }
 
@@ -1040,6 +1101,66 @@ input[type="date"].box:valid::before{
 	position: relative;
 	border-radius: 1.3rem;
 	transition: all 0.2s ease-out;
+}
+.inp-check.switch.type-b label {
+	position: relative;
+	width: auto;
+	height: auto;
+	border: none;
+	top:0.2rem;
+	padding: 0.4rem 0 0.4rem 2.7rem;
+	background: transparent;
+	position: relative;
+	border-radius: 1.3rem;
+	transition: all 0.2s ease-out;
+	
+}
+.inp-check.switch.type-b label::before {
+	box-sizing: border-box;
+	content: "";
+	display: block;
+	position: absolute;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	top: 0.2rem;
+	left: 0.3rem;
+	transition: all 0.2s ease-out;
+	background: #E0E0E0;
+	border: 0;
+}
+.inp-check.switch.type-b :checked+label::before {
+    background: #fff;
+    left: 1.4rem;
+	top:0.2rem;
+    border: 0;
+}
+.inp-check.switch.type-b :checked+label {
+	background: transparent;
+	border-color: transparent;
+}
+.inp-check.switch.type-b :checked+label::after {
+	background: #008F84;
+	border-color: #008F84;
+}
+.inp-check.switch.type-b label:after {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 3.2rem;
+	height: 2.0rem;
+	border: 0.2rem solid #ddd;
+	background: #fff;
+	border-radius: 1.3rem;
+	transition: all 0.2s ease-out;
+	z-index: -1;
+}   
+
+.inp-check.switch.type-b label span {
+	padding-left: 1.4rem;
+	font-size: 1.5rem;
 }
 
 .inp-check.switch :checked+label {
@@ -2520,6 +2641,16 @@ a.btn-base {
 	padding: 0;
 	background: #fff;
 }
+.ui-acco.type-worker .ui-acco-tit {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: -1px 0 0;
+	border-bottom: 0px solid #ccc;
+	border-top: 1px solid #ccc;
+	padding: 0;
+	background: #fff;
+}
 
 .ui-acco-btn {
 	cursor: pointer;
@@ -2534,6 +2665,35 @@ a.btn-base {
 	text-align: left;
 	color: #000;
 	font-size: 14px;
+}
+.ui-acco.type-worker .ui-acco-btn {
+	cursor: pointer;
+	position: relative;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	padding: 10px 40px 10px 10px;
+	letter-spacing: 0;
+	text-align: left;
+	color: #000;
+	font-size: 18px;
+	font-weight:500;
+	display: flex;
+    justify-content: space-between;
+	align-items: center;
+}
+.ui-acco.type-worker .ui-acco-btn .comp{
+	font-size: 14px;
+	font-weight:400;
+	color:#666;
+	
+}
+.ui-acco.type-worker .ui-acco-btn span em {
+	color:#E7565F;
+	font-size: 1.6rem;
+	margin-left:0.6rem;
 }
 
 a.ui-acco-btn {
@@ -2643,7 +2803,12 @@ a.ui-acco-btn:after {
 	margin: 0;
 	padding: 20px;
 }
-
+.ui-acco.type-worker .ui-acco-pnl {
+	position: relative;
+	background: #fff;
+	margin: 0;
+	padding: 0px;
+}
 .ui-acco-tit-wrap {
 	position: relative;
 	display: inline-block;
@@ -4782,6 +4947,10 @@ a[disabled], button[disabled] {
 	font-size: 1.4rem;
 	color: #999;
 }
+.data-no em {
+	
+	color: #000;
+}
 .data-no.type-map::before{
 	background: #F7F7F7 url(../img/icon_navi_p.svg) no-repeat 50% 50% / 1.7rem;
 }
@@ -5709,10 +5878,10 @@ margin-right: .5rem;
 .list-network li .photo {
 	position:relative;
 	flex:0;
-	min-width:5rem;
+	min-width:5.5rem;
 	display:block;
-	width:5rem;
-	height:5rem;
+	width:5.5rem;
+	height:5.5rem;
 	border-radius:50%;
 	margin-right:1rem;
 	background:#EEE url(../img/icon_person.svg) no-repeat 50% 50% / 2.5rem;
@@ -5725,6 +5894,18 @@ margin-right: .5rem;
 	height:100%;
 	overflow: hidden;
 	border-radius:50%;
+	position: relative;
+}
+.list-network li .photo .img.work{
+	border: 1px solid #008f84;
+}
+.list-network li .photo .img .work{
+	position: absolute;
+	bottom:0;
+	background-color: #008f84;
+	color:#fff;
+	text-align: center;
+	width: 100%;;
 }
 .list-network li .photo .img img{
 	width:100%;
@@ -5740,6 +5921,7 @@ margin-right: .5rem;
 .list-network .tit span{
 	color:#777;
 	font-weight: 400;
+	margin: 0 0.2rem;
 }
 .list-network .date {
 	display: block;
@@ -7434,6 +7616,10 @@ margin-right: .5rem;
 	color: #008f84;
 	border-radius: 3rem;
 }
+.btn-header.link-line span em.badge {
+	color: #E7565F;
+	padding: 0 0.4rem;
+}
 .menu-qr .btn-qr{
 	display: inline-block;
     width: 7rem;
@@ -7759,7 +7945,7 @@ margin-right: .5rem;
 	background: linear-gradient(105deg, #167C99, #169C9D);
 	border-bottom-left-radius:3rem;
 	border-bottom-right-radius:3rem;
-	z-index:3;
+	z-index:991;
 }
 .search-risk .type-searchbox {
 	background: #fff;
@@ -9176,6 +9362,7 @@ body.qrcode {
 	min-width:6rem;
 	display:block;
 	text-align: right;
+	background-color: transparent;
 }
 .danger-list .item-wrap .date{
 	position:absolute;

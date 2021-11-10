@@ -6,6 +6,7 @@
 
     <button type="button" class="btn-back"><span class="a11y-hidden">뒤로가기</span></button>
     <button type="button" class="btn-menu" onclick="$plugins.common.navOpen();"><span class="a11y-hidden">전체메뉴</span></button>
+    <button type="button" class="btn-header link-line btn-cancel"><span>취소</span></button>
     
     <div class="menu-wrap item">
         <div class="item-wrap">
@@ -103,9 +104,14 @@
                     <button type="button" class="btn-close" onclick="$plugins.common.navClose()"><span class="a11y-hidden">닫기</span></button>
                 </div>
                 <div class="menu-qr">
-                    <button type="button" class="btn-qr btn-base small line">
-                        <span>QR</span>
-                    </button>
+                    <div class="">
+                        <button type="button" class="btn-qr btn-base small line">
+                            <span>QR</span>
+                        </button>
+                        <button type="button" class="btn-sign btn-base small line">
+                            <span>전자서명</span>
+                        </button>
+                    </div>
                     <button type="button" class="btn-base small arrow-s">
                         <span>로그아웃</span>
                     </button>
@@ -246,6 +252,14 @@
                 console.log('callback', v); 
             }
         });"><span>현장초대</span></button>
+    </div>
+
+    <div class="util-myworker">
+        <button type="button" class="btn-header link-line"><span>내보내기</span></button>
+    </div>
+
+    <div class="util-out">
+        <button type="button" class="btn-header link-line" disabled><span><em class="badge">2</em>선택해제</span></button>
     </div>
 
     <div class="util-details">

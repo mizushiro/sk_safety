@@ -376,6 +376,18 @@
 					$tit.html(tit);
 
 					break;
+				case 'myworker':
+						//뒤로가기,내보내기
+						$html.addClass('type-myworker');
+						$tit.html(tit);
+	
+						break;
+				case 'out':
+						//뒤로가기,선택해제
+						$html.addClass('type-out');
+						$tit.html(tit);
+	
+						break;
 				case 'details':
 					//뒤로가기,편집
 					$html.addClass('type-details');
@@ -463,7 +475,8 @@
 					$(this).addClass('on');
 				}
 			});
-		}
+		},
+		
 	};
 
 
