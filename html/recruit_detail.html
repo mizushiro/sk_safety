@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index, follow" />
+
+    <meta name="subject" content="SK건설 안전관리 시스템">
+    <meta name="author" content="SK건설">
+    <meta name="title" content="SK건설 세이프티" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="SK건설, SK, SK ecoplant, safety platform, 안전, 관리, 건축" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SK건설 세이프티" />
+    <meta property="og:url" content="http://www.skecoplant.com/" />
+    
+    <title>채용공고 내용 | SK건설 세이프티</title>
+
+    <link rel="alternate" hreflang="ko" href="http://www.skecoplant.com/" />
+    <link rel="canonical" href="http://www.skecoplant.com/" />
+    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <link rel="apple-touch-icon" href="../resources/img/common/ico_app.png" >
+
+	<link rel="stylesheet" href="../resources/css/ui.base.css">
+	<script src="../resources/js/lib/jquery-3.2.1.min.js"></script>
+	<script src="../resources/js/ui.global.js"></script>
+	<script src="../resources/js/ui.common.js"></script>
+
+    <style>
+    </style>
+</head>
+<body>
+    <div class="base-wrap">
+        <header class="base-header" 
+        data-type="sub" 
+        data-title="공고 내용" 
+        ></header>
+        <!-- content -->
+        <main class="base-body ui-height" >
+
+            <div class="section-wrap">
+                
+                <div class="section-item mgt-l pdt-n">
+                    <section class="">
+                        <div class="recruit-site-ttl">
+                            <div class="tit">광명 SK VIEW 신축공사2</div>
+                            <div class="desc">매장/공구리작업</div>
+                            <button type="button" class="btn-star">
+                                <span class="a11y-hidden">선택</span>
+                            </button>
+                        </div>
+
+                        <div class="informant dl-type mgt-s">
+                            <dl>
+                                <dt>사업주</dt>
+                                <dd>SK건설 </dd>
+                            </dl>
+                            <dl>
+                                <dt>모집 직종</dt>
+                                <dd>플랜트 용접</dd>
+                            </dl>
+                            <dl>
+                                <dt>모집 기간</dt>
+                                <dd>2021.09.12 ~ 2021.10.12 <em class="color1">(D-17)</em></dd>
+                            </dl>
+                            <dl>
+                                <dt>현장 주소</dt>
+                                <dd>경기도 화성시 영천동 98-3 1번 게이트</dd>
+                            </dl>
+                            <dl>
+                                <dt>근무 기간</dt>
+                                <dd>2021.09.12 ~ 2021.10.12</dd>
+                            </dl>
+                            <dl>
+                                <dt>급여</dt>
+                                <dd>190 만원</dd>
+                            </dl>
+                            <dl>
+                                <dt>담당자</dt>
+                                <dd>010-1234-5678</dd>
+                            </dl>
+                        </div>
+                        <div class="pnl-wide-type">
+                            <div class="recruit-desc">
+                            공고내용 입력 공고내용 입력 공고내용 입력 공고내용 입력 공고내용 입력 공고내용 입력 공고내용 입력 공고내용 입력 공고내용 입력 공고내용 입력 공고내용 입력 공고내용 입력
+공고내용 입력 공고내용 입력 공고내용 입력
+공고내용 입력 공고내용 입력 공고내용 입력
+                            </div>
+                        </div>
+                        <div class="map-area sm mgt-s mgb-l">
+                            <div id="map3" class="map-area">
+                                <button type="button" class="recruit-btn apply-no" style="top:80%; left:46%;"><span class="a11y-hidden">지원안함 선택</span></button>
+                            </div>
+                        </div>
+                        <div class="btn-area stick fix">
+                            <button type="button" class="btn-base large primary">
+                                <span>현장에 지원하기</span>
+                            </button>
+                        </div>
+                        <!-- <div class="btn-area stick fix">
+                            <button type="button" class="btn-base large">
+                                <span>지원 취소하기</span>
+                            </button>
+                        </div> -->
+                    </section>
+                            
+                    
+                </div>
+            </div>
+
+            
+
+        </main>
+        <!-- //content -->
+
+        
+    </div>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9906c009f8e9c9a1a36542d2c08c1361"></script>
+
+    <script> 
+        ;(function($, win, doc, undefined) {
+            $(doc).ready(function() {
+               
+                //기본 실행
+                $plugins.common.init();
+                $('.btn-star').off('click.star').on('click.star', function(){
+                    !$(this).hasClass('on') ? $(this).addClass('on') : $(this).removeClass('on');
+                });
+
+
+                $plugins.uiTab({ 
+                    id:'recruitTab', 
+                    current:0, 
+                    callback:function(v){
+                        console.log(v);
+                    } 
+                });
+
+                $plugins.map = {
+                    name: {},
+                    init: function(){
+                        var mapContainer = document.getElementById('map3'), // 지도를 표시할 div 
+                            mapOption = { 
+                                center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                level: 3 // 지도의 확대 레벨
+                            };  
+
+                        $plugins.map.name = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+                            
+                        // 지도타입 컨트롤의 지도 또는 스카이뷰 버튼을 클릭하면 호출되어 지도타입을 바꾸는 함수입니다
+                        function setMapType(maptype) { 
+                            var roadmapControl = document.getElementById('btnRoadmap');
+                            var skyviewControl = document.getElementById('btnSkyview'); 
+                            if (maptype === 'roadmap') {
+                                $plugins.map.name.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);    
+                                roadmapControl.className = 'selected_btn';
+                                skyviewControl.className = 'btn';
+                            } else {
+                                $plugins.map.name.setMapTypeId(kakao.maps.MapTypeId.HYBRID);    
+                                skyviewControl.className = 'selected_btn';
+                                roadmapControl.className = 'btn';
+                            }
+                        }
+
+                    },
+                    zoomIn: function(){
+                        $plugins.map.name.setLevel($plugins.map.name.getLevel() - 1);
+                    },
+                    zoomOut: function(){
+                        $plugins.map.name.setLevel($plugins.map.name.getLevel() + 1);
+                    }
+                }
+                $plugins.map.init();
+
+            });
+        })(jQuery, window, document);
+    </script>
+    
+</body>
+</html>

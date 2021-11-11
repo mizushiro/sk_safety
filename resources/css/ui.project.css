@@ -15,6 +15,10 @@ input, textarea, select {
 	text-align: left;
 }
 
+.color1{
+	color: #E7565F;
+}
+
 .base-wrap {
 	width: 100%;
 	/* overflow: hidden; */
@@ -245,6 +249,7 @@ input, textarea, select {
 .type-normal .util-myworker, /* 1110 정현욱 추가 */
 .type-normal .util-out, /* 1110 정현욱 추가 */
 .type-normal .util-lists, /* 1111 정현욱 추가 */
+.type-normal .util-modify, /* 1111 정현욱 추가 */
 .type-normal .page-title .sum-box,
 
 .type-auth .util-qr,
@@ -257,6 +262,7 @@ input, textarea, select {
 .type-auth .util-myworker, /* 1110 정현욱 추가 */
 .type-auth .util-out, /* 1110 정현욱 추가 */
 .type-auth .util-lists, /* 1111 정현욱 추가 */
+.type-auth .util-modify, /* 1111 정현욱 추가 */
 .type-auth .btn-cancel,
 .type-auth .page-title .sum-box,
 
@@ -269,6 +275,7 @@ input, textarea, select {
 .type-alarm .util-myworker, /* 1110 정현욱 추가 */
 .type-alarm .util-out, /* 1110 정현욱 추가 */
 .type-alarm .util-lists, /* 1111 정현욱 추가 */
+.type-alarm .util-modify, /* 1111 정현욱 추가 */
 .type-alarm .btn-cancel,
 .type-alarm .btn-menu,
 
@@ -282,6 +289,7 @@ input, textarea, select {
 .type-qr .util-myworker, /* 1110 정현욱 추가 */
 .type-qr .util-out, /* 1110 정현욱 추가 */
 .type-qr .util-lists, /* 1111 정현욱 추가 */
+.type-qr .util-modify, /* 1111 정현욱 추가 */
 .type-qr .btn-cancel,
 .type-qr .page-title .sum-box,
 
@@ -297,6 +305,7 @@ input, textarea, select {
 .type-sub .util-myworker, /* 1110 정현욱 추가 */
 .type-sub .util-out, /* 1110 정현욱 추가 */
 .type-sub .util-lists, /* 1111 정현욱 추가 */
+.type-sub .util-modify, /* 1111 정현욱 추가 */
 .type-sub .btn-cancel,
 .type-sub .page-title .sum-box,
 
@@ -312,6 +321,7 @@ input, textarea, select {
 .type-worker .util-myworker, /* 1110 정현욱 추가 */
 .type-worker .util-out, /* 1110 정현욱 추가 */
 .type-worker .util-lists, /* 1111 정현욱 추가 */
+.type-worker .util-modify, /* 1111 정현욱 추가 */
 .type-worker .btn-cancel,
 .type-worker .page-title .sum-box,
 
@@ -327,8 +337,24 @@ input, textarea, select {
 .type-myworker .util-details,
 .type-myworker .util-out,
 .type-myworker .util-lists, /* 1111 정현욱 추가 */
+.type-myworker .util-modify, /* 1111 정현욱 추가 */
 .type-myworker .btn-cancel,
 .type-myworker .page-title .sum-box,
+
+.type-modify .util, /* 0803 정현욱 추가 */
+.type-modify .btn-contalk,
+.type-modify .util-qr,
+.type-modify .util-contalk,
+.type-modify .util-alarm,
+.type-modify .btn-menu,
+.type-modify .util-worker,
+.type-modify .util-myworker,
+.type-modify .btn-detailds,
+.type-modify .util-list,
+.type-modify .util-details,
+.type-modify .util-out,
+.type-modify .util-lists, /* 1111 정현욱 추가 */
+.type-modify .page-title .sum-box,
 
 .type-out .util, /* 1110 정현욱 추가 */
 .type-out .btn-contalk,
@@ -343,6 +369,7 @@ input, textarea, select {
 .type-out .util-list,
 .type-out .util-details,
 .type-out .util-lists, /* 1111 정현욱 추가 */
+.type-out .util-modify, /* 1111 정현욱 추가 */
 .type-out .page-title .sum-box,
 
 .type-lists .util, /* 0803 정현욱 추가 */
@@ -358,6 +385,7 @@ input, textarea, select {
 .type-lists .util-details,
 .type-lists .util-out,
 .type-lists .btn-cancel,
+.type-lists .util-modify, /* 1111 정현욱 추가 */
 .type-lists .page-title .sum-box,
 
 .type-list .util, /* 0928 정현욱 추가 */
@@ -370,6 +398,7 @@ input, textarea, select {
 .type-list .util-myworker, /* 1110 정현욱 추가 */
 .type-list .util-out, /* 1110 정현욱 추가 */
 .type-list .util-lists, /* 1111 정현욱 추가 */
+.type-list .util-modify, /* 1111 정현욱 추가 */
 .type-list .btn-cancel,
 .type-list .util-details,
 .type-list .page-title .sum-box,
@@ -384,6 +413,7 @@ input, textarea, select {
 .type-details .util-myworker, /* 1110 정현욱 추가 */
 .type-details .util-out, /* 1110 정현욱 추가 */
 .type-details .util-lists, /* 1111 정현욱 추가 */
+.type-details .util-modify, /* 1111 정현욱 추가 */
 .type-details .btn-cancel,
 .type-details .util-list,
 .type-details .page-title .sum-box,
@@ -396,6 +426,7 @@ input, textarea, select {
 .type-contalk .util-myworker, /* 1110 정현욱 추가 */
 .type-contalk .util-out, /* 1110 정현욱 추가 */
 .type-contalk .util-lists, /* 1111 정현욱 추가 */
+.type-contalk .util-modify, /* 1111 정현욱 추가 */
 .type-contalk .btn-cancel,
 .type-contalk .util-details,
 .type-contalk .util-list,
@@ -4939,7 +4970,7 @@ a[disabled], button[disabled] {
 	padding: 2rem;
 	border-top: 0
 }
-.ui-tab-pnl .pnl-wide-type{
+.ui-tab-pnl .pnl-wide-type, .pnl-wide-type{
 	margin: 0 -2rem;
 }
 .ui-tab-pnl .tip-wrap {

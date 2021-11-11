@@ -394,6 +394,12 @@
 					$tit.html(tit);
 
 					break;
+				case 'modify':
+						//취소,삭제
+						$html.addClass('type-modify');
+						$tit.html(tit);
+	
+						break;
 				case 'list':
 						//뒤로가기,작성
 						$html.addClass('type-list');
