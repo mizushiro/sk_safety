@@ -400,6 +400,12 @@
 						$tit.html(tit);
 	
 						break;
+				case 'lists':
+						//뒤로가기,작성
+						$html.addClass('type-lists');
+						$tit.html(tit);
+	
+						break;
 			} 
 			
 		},
