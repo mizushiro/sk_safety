@@ -7413,6 +7413,12 @@ margin-right: .5rem;
 	min-height: 16.3rem;
 	background: #ccc;
 }
+.map-area.sm {
+	position: relative;
+	width: 100%;
+	min-height: 10rem;
+	background: #ccc;
+}
 
 .map-area .map {
 	width: 100%;
