@@ -7417,7 +7417,9 @@ margin-right: .5rem;
 	position: relative;
 	width: 100%;
 	min-height: 10rem;
+	max-height: 5rem;
 	background: #ccc;
+	margin: 0 -2rem;
 }
 
 .map-area .map {
