@@ -7391,7 +7391,6 @@ margin-right: .5rem;
 	width: calc(100% + 4rem);
 	margin-left: -2rem;
 }
-
 .map-guide {
 	position: absolute;
 	top: 1rem;
@@ -7408,6 +7407,16 @@ margin-right: .5rem;
 	padding: 1rem 1rem;
 }
 
+.map-area .search-risk.search-map {
+	position: absolute;
+	top: 0rem;
+	left: 0rem;
+}
+.map-area .recruit-sorting {
+	position: absolute;
+	top: 7rem;
+	left: 0rem;
+}
 .map-address {
 	position: absolute;
 	bottom: 1rem;

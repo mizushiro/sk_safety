@@ -45,47 +45,44 @@
         <!-- content -->
         <main class="base-body">
             
-            <div class="map-area ">
-                <div id="map" class="map ui-height">
-                    <div class="search-risk">
-                        <div class="form-item">
-                            <div class="inp-wrap type-searchbox">
-                                <input type="search" class="inp-base ui-siteselect-result" value="" placeholder="현장 이름">
-                                <button type="button" class="btn-search ui-drop" id="uiSiteSelect">
-                                    <span class="a11y-hidden">검색열기</span>
-                                </button>
-                            </div>
+            <div class="map-area">
+                <div id="map" class="map ui-height"></div>
+                <div class="search-risk search-map">
+                    <div class="form-item">
+                        <div class="inp-wrap type-searchbox">
+                            <input type="search" class="inp-base ui-siteselect-result" value="" placeholder="현장 이름">
+                            <button type="button" class="btn-search ui-drop" id="uiSiteSelect">
+                                <span class="a11y-hidden">검색열기</span>
+                            </button>
                         </div>
                     </div>
-                    <section class="section-item pdt-n">
-
-                        <div class="wrap type-2 mgt-s">
-                            <button type="button" class="btn-base type-3 round primary" onclick="
-                            $plugins.uiModalOpen({ 
-                                id: 'modal_workType',
-                                src: '../modal/modal_workType.html', 
-                                ps: 'bottom', 
-                                closeCallback: function(v) { 
-                                    console.log('close callback', v); 
-                                },
-                                callback: function(v) { 
-                                    console.log('callback', v); 
-                                }
-                            });"><span>직종<em class="badge">전체</em></span></button>
-                            <div class="inp-check type-3 round">
-                                <input type="checkbox" id="내가 지원한 현장">
-                                <label for="내가 지원한 현장">내가 지원한 현장</label>
-                            </div>
-                            
-                            <div class="inp-check type-3 round">
-                                <input type="checkbox" id="즐겨찾기">
-                                <label for="즐겨찾기" class="icon-star">즐겨찾기</label>
-                            </div>
-                        </div>
-                    </section>
-
-
                 </div>
+                <section class="section-item pdt-n recruit-sorting">
+
+                    <div class="wrap type-2 mgt-s">
+                        <button type="button" class="btn-base type-3 round primary" onclick="
+                        $plugins.uiModalOpen({ 
+                            id: 'modal_workType',
+                            src: '../modal/modal_workType.html', 
+                            ps: 'bottom', 
+                            closeCallback: function(v) { 
+                                console.log('close callback', v); 
+                            },
+                            callback: function(v) { 
+                                console.log('callback', v); 
+                            }
+                        });"><span>직종<em class="badge">전체</em></span></button>
+                        <div class="inp-check type-3 round">
+                            <input type="checkbox" id="내가 지원한 현장">
+                            <label for="내가 지원한 현장">내가 지원한 현장</label>
+                        </div>
+                        
+                        <div class="inp-check type-3 round">
+                            <input type="checkbox" id="즐겨찾기">
+                            <label for="즐겨찾기" class="icon-star">즐겨찾기</label>
+                        </div>
+                    </div>
+                </section>
 
                 <button type="button" class="recruit-btn favorites" style="top:45%; left:10%;"><span class="a11y-hidden">즐겨찾기 선택</span></button>
                 <button type="button" class="recruit-btn apply" style="top:25%; left:70%;" onclick="
