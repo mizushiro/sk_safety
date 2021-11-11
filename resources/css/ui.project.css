@@ -612,6 +612,12 @@ input, textarea, select {
 	margin-bottom: 1rem !important;
 }
 
+.mgb-l {
+	margin-bottom: 2rem !important;
+}
+.mgb-xl {
+	margin-bottom: 3rem !important;
+}
 .mgb-xxl {
 	margin-bottom: 4rem !important;
 }
