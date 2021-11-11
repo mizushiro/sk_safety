@@ -244,6 +244,7 @@ input, textarea, select {
 .type-normal .util-list,
 .type-normal .util-myworker, /* 1110 정현욱 추가 */
 .type-normal .util-out, /* 1110 정현욱 추가 */
+.type-normal .util-lists, /* 1111 정현욱 추가 */
 .type-normal .page-title .sum-box,
 
 .type-auth .util-qr,
@@ -255,6 +256,7 @@ input, textarea, select {
 .type-auth .util-list,
 .type-auth .util-myworker, /* 1110 정현욱 추가 */
 .type-auth .util-out, /* 1110 정현욱 추가 */
+.type-auth .util-lists, /* 1111 정현욱 추가 */
 .type-auth .btn-cancel,
 .type-auth .page-title .sum-box,
 
@@ -266,6 +268,7 @@ input, textarea, select {
 .type-alarm .util-list,
 .type-alarm .util-myworker, /* 1110 정현욱 추가 */
 .type-alarm .util-out, /* 1110 정현욱 추가 */
+.type-alarm .util-lists, /* 1111 정현욱 추가 */
 .type-alarm .btn-cancel,
 .type-alarm .btn-menu,
 
@@ -278,6 +281,7 @@ input, textarea, select {
 .type-qr .util-list,
 .type-qr .util-myworker, /* 1110 정현욱 추가 */
 .type-qr .util-out, /* 1110 정현욱 추가 */
+.type-qr .util-lists, /* 1111 정현욱 추가 */
 .type-qr .btn-cancel,
 .type-qr .page-title .sum-box,
 
@@ -292,6 +296,7 @@ input, textarea, select {
 .type-sub .util-list,
 .type-sub .util-myworker, /* 1110 정현욱 추가 */
 .type-sub .util-out, /* 1110 정현욱 추가 */
+.type-sub .util-lists, /* 1111 정현욱 추가 */
 .type-sub .btn-cancel,
 .type-sub .page-title .sum-box,
 
@@ -306,6 +311,7 @@ input, textarea, select {
 .type-worker .util-details,
 .type-worker .util-myworker, /* 1110 정현욱 추가 */
 .type-worker .util-out, /* 1110 정현욱 추가 */
+.type-worker .util-lists, /* 1111 정현욱 추가 */
 .type-worker .btn-cancel,
 .type-worker .page-title .sum-box,
 
@@ -320,6 +326,7 @@ input, textarea, select {
 .type-myworker .util-list,
 .type-myworker .util-details,
 .type-myworker .util-out,
+.type-myworker .util-lists, /* 1111 정현욱 추가 */
 .type-myworker .btn-cancel,
 .type-myworker .page-title .sum-box,
 
@@ -335,7 +342,23 @@ input, textarea, select {
 .type-out .btn-details,
 .type-out .util-list,
 .type-out .util-details,
+.type-out .util-lists, /* 1111 정현욱 추가 */
 .type-out .page-title .sum-box,
+
+.type-lists .util, /* 0803 정현욱 추가 */
+.type-lists .btn-contalk,
+.type-lists .util-qr,
+.type-lists .util-contalk,
+.type-lists .util-alarm,
+.type-lists .btn-menu,
+.type-lists .util-worker,
+.type-lists .util-myworker,
+.type-lists .btn-details,
+.type-lists .util-list,
+.type-lists .util-details,
+.type-lists .util-out,
+.type-lists .btn-cancel,
+.type-lists .page-title .sum-box,
 
 .type-list .util, /* 0928 정현욱 추가 */
 .type-list .btn-contalk,
@@ -346,6 +369,7 @@ input, textarea, select {
 .type-list .util-worker,
 .type-list .util-myworker, /* 1110 정현욱 추가 */
 .type-list .util-out, /* 1110 정현욱 추가 */
+.type-list .util-lists, /* 1111 정현욱 추가 */
 .type-list .btn-cancel,
 .type-list .util-details,
 .type-list .page-title .sum-box,
@@ -359,6 +383,7 @@ input, textarea, select {
 .type-details .util-worker,
 .type-details .util-myworker, /* 1110 정현욱 추가 */
 .type-details .util-out, /* 1110 정현욱 추가 */
+.type-details .util-lists, /* 1111 정현욱 추가 */
 .type-details .btn-cancel,
 .type-details .util-list,
 .type-details .page-title .sum-box,
@@ -370,6 +395,7 @@ input, textarea, select {
 .type-contalk .util-worker,
 .type-contalk .util-myworker, /* 1110 정현욱 추가 */
 .type-contalk .util-out, /* 1110 정현욱 추가 */
+.type-contalk .util-lists, /* 1111 정현욱 추가 */
 .type-contalk .btn-cancel,
 .type-contalk .util-details,
 .type-contalk .util-list,
