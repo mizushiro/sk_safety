@@ -1090,6 +1090,24 @@ input[type="date"].box:valid::before{
 	background-color: #fff;;
 	padding: 0.65rem 1.9rem 0;
 }
+.inp-radio.type-3.round label,
+.inp-check.type-3.round label {
+	width: auto;
+	height: 3.5rem;
+	border-radius: 2.5rem;
+	text-align: center;
+	font-weight: 500;
+	font-size: 1.4rem;
+	color: #666;
+	border: 1px solid #ccc;
+	background-color: #fff;;
+	padding: 0.85rem 1.6rem 0;
+}
+.inp-check.round label.icon-star {
+    background: url(../img/icon_star2_on.svg) no-repeat 1.6rem 50% / 1.3rem;
+	background-color: #fff;
+	padding-left: 3.4rem;
+}
 
 .inp-radio.round label::before,
 .inp-radio.round label::after,
@@ -1475,15 +1493,16 @@ input[type="date"].box:valid::before{
 }
 .btn-base.type-3 {
 	width: auto;
-    height: 3rem;
+    height: 3.5rem;
 	min-height: 3rem;
     border-radius: 1.5rem;
     text-align: center;
     font-weight: 500;
+	font-size: 1.4rem;
     color: #666;
     border: 1px solid #ddd;
     background-color: #fff;
-    padding: 0.15rem 1.8rem;
+    padding: 0.15rem 1.6rem;
 	font-size: 1.3rem;
 }
 .btn-base.type-3 span {
@@ -5405,7 +5424,10 @@ dl.list-base > div,
 	width: 100%;
 	padding: 1rem 1rem;
 }
-
+.list-base.type-3>li {
+	width: 100%;
+	padding: 1rem 2rem;
+}
 .list-base>li+li {
 	border-top: 1px solid #F5F5F5;
 }
@@ -5418,6 +5440,11 @@ dl.list-base > div,
 	display: inline-block;
 	font-size: 1.5rem;
 	font-weight: 500;
+	text-align: left;
+}
+.list-base.type-3 .tit {
+	font-size: 1.7rem;
+	font-weight: 600;
 	text-align: left;
 }
 .list-base .tit3 {
@@ -5576,6 +5603,39 @@ dl.list-base > div,
 .list-base button {
 	text-align: left;
 	width: 100%;
+}
+.list-base.type-3 button {
+	position: relative;
+}
+.list-base.type-3 button .site-apply{
+	position: absolute;
+	right:0;
+	top:0rem;
+}
+.site-apply{
+	position: absolute;
+	right:0;
+	top:0rem;
+}
+.site-apply{
+	background-color: #26A69A;
+	color:#fff;
+	border-radius: 0.4rem;
+	padding: 0.4rem 0.4rem;
+	font-size:1.2rem;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.site-apply span{
+	padding: 0 0.4rem;
+	height: 1.6rem;
+}
+.site-apply .star{
+	background: url(../img/icon_state_favorites.svg) no-repeat 50% 50% / 1.3rem;
+	width: 2rem;
+	display: inline-block;
+	margin-top: -1px;
 }
 .list-base>li>ul.list-base.type-2 {
 	margin-top: 1rem;
@@ -7486,6 +7546,24 @@ margin-right: .5rem;
 	width: 3rem;
 	top:50%;
 	left:50%;
+}
+
+.recruit-site-ttl {
+	position: relative;
+	border-bottom: 3px solid #666;
+	padding-bottom: 1rem;
+}
+.recruit-site-ttl .tit{
+	font-size: 1.7rem;
+    font-weight: 600;
+    text-align: left;
+}
+.recruit-site-ttl .desc{
+	display: block;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #777;
+    margin-top: 0.6rem;
 }
 
 .photo-repes {
@@ -9865,6 +9943,15 @@ body.qrcode {
     padding-bottom: 1.2rem;
     border-bottom: 1px solid #F1F1F1;
 }
+.informant.dl-type.type-5 dl {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 0px solid #F1F1F1;
+}
 .informant.dl-type dl:last-child {
     border-bottom: 0px solid #F1F1F1;	
     padding-bottom: 0;
@@ -10192,6 +10279,16 @@ body.qrcode {
 	color: #fff;
 }
 
+.wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.wrap.type-2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
 .site-list {
 	position: absolute;
@@ -10205,16 +10302,55 @@ body.qrcode {
 	overflow-y: auto;
 }
 .site-list .map-area2 {
-	display: flex;
-	margin: 0 3rem 1rem;
-	background-color: #fff;
+	position: relative;
+	display: table;
+	width:auto;
+	margin: 0 auto 1rem;
 	text-align: center;
+	border-radius: 10rem;
+    justify-content: center;
+    align-items: center;
+	border-radius: 10rem;
+	border: 1px solid #ccc;
 	box-shadow: 0 0.3rem 0.6rem rgb(0 0 0 / 10%);
+}
+.site-list .map-area2 button:after{
+	content: "";
+	display: inline-block;
+	width:1px;
+	height:1rem;
+	position: absolute;
+	top: 1rem;
+	left:50%;
+	background-color: #ccc;
+
 }
 .site-list .map-area2 .map-2{
 	margin-bottom: 1rem;
 	background-color: #fff;
 	border-radius: 10rem;
+}
+.btn-currentLocation {
+	display: inline-block;
+    width: auto;
+    height: 3rem;
+	background: #fff url(../img/icon_crosshair.svg) no-repeat 1.6rem 50% / 1.6rem;
+    border: none;
+	padding: 0.4rem 1.4rem 0.4rem 3.6rem;
+	font-size: 1.3rem;
+	font-weight: 500;
+	border-radius: 10rem 0 0 10rem;
+}
+.btn-currentSearch {
+	display: inline-block;
+    width: auto;
+    height: 3rem;
+	background: #fff url(../img/icon_rotate.svg) no-repeat 1.6rem 50% / 1.6rem;
+    border: none;
+	padding: 0.4rem 1.4rem 0.4rem 3.8rem;
+	font-size: 1.3rem;
+	font-weight: 500;
+	border-radius: 0 10rem 10rem 0;
 }
 
 .answer-list-wrap {

@@ -1,0 +1,63 @@
+<section class="ui-modal" id="modal_workType">
+    <div class="ui-modal-wrap">
+        <div class="ui-modal-header">
+            <h2 class="ui-modal-tit">직종</h2>
+            <button type="button" class="btn-close" aria-label="close" 
+            onclick="
+                $plugins.uiModalClose({ 
+                    id:'modal_workType', 
+                    callback:function(v){ console.log(v); } 
+                });">
+                <span class="hide">close</span>
+            </button>
+        </div>
+        <div class="ui-modal-body">
+            <ul class="list-base type-insp">
+                <li>
+                    <div class="inp-check">
+                        <input type="checkbox" id="insp1" name="insp">
+                        <label for="insp1" class="fx-sb">
+                            <span>강구조</span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="inp-check">
+                        <input type="checkbox" id="insp2" name="insp">
+                        <label for="insp2" class="fx-sb">
+                            <span>건설기계</span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="inp-check">
+                        <input type="checkbox" id="insp3" name="insp">
+                        <label for="insp3" class="fx-sb">
+                            <span>건축기계설비</span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="inp-check">
+                        <input type="checkbox" id="insp4" name="insp">
+                        <label for="insp4" class="fx-sb">
+                            <span>건축목공</span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+        <div class="ui-modal-footer">
+            <div class="btn-area stick">
+                <button type="button" class="btn-base ">
+                    <span>필터초기화</span>
+                </button>
+                <button type="button" class="btn-base primary">
+                    <span>적용</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+

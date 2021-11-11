@@ -19,7 +19,7 @@
     <meta property="og:site_name" content="SK건설 세이프티" />
     <meta property="og:url" content="http://www.skecoplant.com/" />
     
-    <title>내 현장 | SK건설 세이프티</title>
+    <title>채용공고 | SK건설 세이프티</title>
 
     <link rel="alternate" hreflang="ko" href="http://www.skecoplant.com/" />
     <link rel="canonical" href="http://www.skecoplant.com/" />
@@ -39,7 +39,7 @@
 <body>
     <div class="base-wrap">
         <header class="base-header" 
-        data-type="sub" 
+        data-type="list" 
         data-title="채용 공고" 
         ></header>
         <!-- content -->
@@ -59,7 +59,7 @@
                     </div>
                     <section class="section-item pdt-n">
 
-                        <div class="align-v mgt-s">
+                        <div class="wrap type-2 mgt-s">
                             <button type="button" class="btn-base type-3 round primary" onclick="
                             $plugins.uiModalOpen({ 
                                 id: 'modal_workType',
@@ -72,14 +72,14 @@
                                     console.log('callback', v); 
                                 }
                             });"><span>직종<em class="badge">전체</em></span></button>
-                            <div class="inp-check round">
+                            <div class="inp-check type-3 round">
                                 <input type="checkbox" id="내가 지원한 현장">
                                 <label for="내가 지원한 현장">내가 지원한 현장</label>
                             </div>
                             
-                            <div class="inp-check round">
+                            <div class="inp-check type-3 round">
                                 <input type="checkbox" id="즐겨찾기">
-                                <label for="즐겨찾기">즐겨찾기</label>
+                                <label for="즐겨찾기" class="icon-star">즐겨찾기</label>
                             </div>
                         </div>
                     </section>
@@ -88,7 +88,18 @@
                 </div>
 
                 <button type="button" class="recruit-btn favorites" style="top:45%; left:10%;"><span class="a11y-hidden">즐겨찾기 선택</span></button>
-                <button type="button" class="recruit-btn apply" style="top:25%; left:70%;"><span class="a11y-hidden">지원함 선택</span></button>
+                <button type="button" class="recruit-btn apply" style="top:25%; left:70%;" onclick="
+                $plugins.uiModalOpen({ 
+                    id: 'modal_site_summary',
+                    src: '../modal/modal_site_summary.html', 
+                    ps: 'bottom', 
+                    closeCallback: function(v) { 
+                        console.log('close callback', v); 
+                    },
+                    callback: function(v) { 
+                        console.log('callback', v); 
+                    }
+                });"><span class="a11y-hidden">지원함 선택</span></button>
                 <button type="button" class="recruit-btn apply-no" style="top:80%; left:46%;"><span class="a11y-hidden">지원안함 선택</span></button>
 
                 <button type="button" class="recruit-btn location"><span class="a11y-hidden">현위치</span></button>
@@ -114,29 +125,42 @@
             </div>
 
             <div class="site-list">
-                <ul class="list-base">
+                <div class="map-area2">
+                    <button type="button" class="btn-currentLocation"><span>현재 위치로 이동</span></button>
+                    <button type="button" class="btn-currentSearch"><span>이 지역에서 검색</span></button>
+                </div>
+                <ul class="list-base type-3">
+                    <li>
+                        <div class="data-no">
+                            해당하는 현장이 없습니다.
+                        </div>
+                    </li>
+                    <li>
+                        <button type="button" data-tit="광명 SK VIEW 신축공사2">
+                            <div class="tit">광명 SK VIEW 신축공사2</div>
+                            <div class="desc">매장/공구리작업</div>
+                            <div class="site-apply">
+                                <span class="star"></span>
+                                <span>지원</span>
+                            </div>
+                        </button>
+                    </li>
                     <li>
                         <button type="button" data-tit="광명 SK VIEW 신축공사">
                             <div class="tit">광명 SK VIEW 신축공사</div>
                             <div class="desc">매장/공구리작업</div>
+                            <div class="site-apply">
+                                <span>지원</span>
+                            </div>
                         </button>
                     </li>
                     <li>
                         <button type="button" data-tit="광명 SK VIEW 신축공사2">
                             <div class="tit">광명 SK VIEW 신축공사2</div>
                             <div class="desc">매장/공구리작업</div>
-                        </button>
-                    </li>
-                    <li>
-                        <button type="button" data-tit="광명 SK VIEW 신축공사">
-                            <div class="tit">광명 SK VIEW 신축공사</div>
-                            <div class="desc">매장/공구리작업</div>
-                        </button>
-                    </li>
-                    <li>
-                        <button type="button" data-tit="광명 SK VIEW 신축공사2">
-                            <div class="tit">광명 SK VIEW 신축공사2</div>
-                            <div class="desc">매장/공구리작업</div>
+                            <div class="site-apply">
+                                <span class="star"></span>
+                            </div>
                         </button>
                     </li>
                 </ul>

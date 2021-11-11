@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="btn_write" transform="translate(-320 -18)">
+    <rect id="사각형_950" data-name="사각형 950" width="20" height="20" transform="translate(320 18)" fill="#fff" opacity="0"/>
+    <path id="icon_pencil_g" d="M22.675,7.489a1.106,1.106,0,0,0,0-1.566l-2.6-2.6a1.106,1.106,0,0,0-1.566,0L16.465,5.356l4.166,4.166M3,18.831V23H7.166L19.453,10.7,15.287,6.533Z" transform="translate(317 15.002)" fill="#333"/>
+  </g>
+</svg>
