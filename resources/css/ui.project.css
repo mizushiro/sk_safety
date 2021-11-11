@@ -633,6 +633,9 @@ input, textarea, select {
 .ta-r {
 	text-align: right !important;
 }
+.bt0 {
+	border:none !important;
+}
 
 /* hr */
 .hr-sec {
@@ -4930,6 +4933,9 @@ a[disabled], button[disabled] {
 	padding: 2rem;
 	border-top: 0
 }
+.ui-tab-pnl .pnl-wide-type{
+	margin: 0 -2rem;
+}
 .ui-tab-pnl .tip-wrap {
 	margin: -2rem -2rem 0;
 	width:auto;
@@ -7600,6 +7606,16 @@ margin-right: .5rem;
     font-weight: 500;
     color: #777;
     margin-top: 0.6rem;
+}
+.recruit-site-ttl .btn-star{
+	position: absolute;
+	right:0;
+	top:0;
+}
+.recruit-desc {
+	padding:3rem;
+	background-color: #f2f2f2;
+	font-size: 1.5rem;
 }
 
 .photo-repes {
