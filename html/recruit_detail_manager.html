@@ -96,7 +96,9 @@
                                     </div>
                                 </div>
                                 <div class="map-area sm mgt-s">
-                                    <div id="map2" class="map"></div>
+                                    <div id="map2" class="map-area">
+                                        <button type="button" class="recruit-btn apply-no" style="top:80%; left:46%;"><span class="a11y-hidden">지원안함 선택</span></button>
+                                    </div>
                                 </div>
                                 <div class="btn-area stick fix">
                                     <button type="button" class="btn-base large primary">
@@ -214,10 +216,19 @@
                     !$(this).hasClass('on') ? $(this).addClass('on') : $(this).removeClass('on');
                 });
 
+
+                $plugins.uiTab({ 
+                    id:'recruitTab', 
+                    current:0, 
+                    callback:function(v){
+                        console.log(v);
+                    } 
+                });
+
                 $plugins.map = {
                     name: {},
                     init: function(){
-                        var mapContainer = document.getElementById('map2'), // 지도를 표시할 div 
+                        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
                             mapOption = { 
                                 center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
                                 level: 3 // 지도의 확대 레벨
@@ -249,15 +260,6 @@
                     }
                 }
                 $plugins.map.init();
-
-
-                $plugins.uiTab({ 
-                    id:'recruitTab', 
-                    current:0, 
-                    callback:function(v){
-                        console.log(v);
-                    } 
-                });
 
             });
         })(jQuery, window, document);

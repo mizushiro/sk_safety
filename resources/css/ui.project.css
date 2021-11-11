@@ -7414,14 +7414,10 @@ margin-right: .5rem;
 	background: #ccc;
 }
 .map-area.sm {
-	position: relative;
-	width: 100%;
 	width: calc(100% + 4rem);
-	min-height: 16.5rem;
-	max-height: 16.5rem;
-	background: #ccc;
+	min-height: 16.3rem;
+	max-height: 16.3rem;
 	margin: 0 -2rem;
-	overflow: hidden;
 }
 
 .map-area .map {
