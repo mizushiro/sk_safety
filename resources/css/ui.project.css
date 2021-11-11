@@ -7416,6 +7416,7 @@ margin-right: .5rem;
 	position: absolute;
 	top: 7rem;
 	left: 0rem;
+	z-index: 1;
 }
 .map-address {
 	position: absolute;
