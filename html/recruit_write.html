@@ -27,12 +27,18 @@
     <link rel="apple-touch-icon" href="../resources/img/common/ico_app.png" >
 
 	<link rel="stylesheet" href="../resources/css/ui.base.css">
+
+    <link rel="stylesheet" href="../resources/css/lightpick.css">
+
+
 	<script src="../resources/js/lib/jquery-3.2.1.min.js"></script>
 	<script src="../resources/js/ui.global.js"></script>
 	<script src="../resources/js/ui.common.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="../resources/js/lib/moment.min.js"></script>
+    <script src="../resources/js/lib/lightpick.js"></script>
+
+
 
     <style>
     </style>
@@ -108,13 +114,14 @@
 
                         <div class="form-dl">
                             <div class="form-dt">
-                                <label class="form-tit" for="contalkInp2">모집기간
+                                <label class="form-tit" for="datepicker">모집기간
                                     <em class="nec" aria-label="필수입력">*</em>
                                 </label>
                             </div>
                             <div class="form-dd">
                                 <div class="form-item">
-                                    <input type="date" id="contalkInp2" class="inp-base" value="" placeholder="">
+                                    <!-- <p id="result-2">&nbsp;</p> -->
+                                    <input type="text" id="datepicker" class="inp-base" value="" placeholder="">
                                 </div>
                             </div>
                         </div>
@@ -169,6 +176,18 @@
         <!-- //content -->
         
     </div>
+
+    <script>
+        //https://wakirin.github.io/Lightpick/
+        var picker = new Lightpick({ 
+            field: document.getElementById('datepicker'),
+            singleDate: false,
+            firstDay: 0,
+            lang: 'auto',
+            format: 'YYYY.MM.DD',
+            separator: ' ~ ',
+        });
+    </script>
 
     <script> 
         ;(function($, win, doc, undefined) {
