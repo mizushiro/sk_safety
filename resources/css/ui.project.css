@@ -1832,6 +1832,12 @@ a.btn-base {
 	height: 1.5rem;
 	background: url(../img/icon_danger.svg) no-repeat 50% 50% / 1.5rem;
 }
+.btn-base.invite:before {
+	content:"";
+	width: 2.6rem;
+	height: 1.5rem;
+	background: url(../img/icon_userplus.svg) no-repeat 50% 50% / 2.1rem;
+}
 
 .ico-talkgo {
 	display: block;
