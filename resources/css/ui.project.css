@@ -683,6 +683,10 @@ input, textarea, select {
 	margin: 0.5rem 0;
 }
 
+.hr-sec.w100-ty1 {
+	width: calc(100% + 40px);
+    margin-left: -20px;
+}
 
 .hr-cont {
 	width: 100%;
@@ -929,6 +933,40 @@ dl[class*="bul-"]>dt {
 	font-weight: 700;
 	margin-bottom: 0.8rem;
 }
+.tit-cont .tit.ty1 {
+	display: flex;
+    justify-content: space-between;
+}
+
+.tit-cont .tit.ty1 .btn-date {
+	width: 2rem;
+    height: 2rem;
+	margin-left: 5px;
+    background: transparent;
+    border: 0;
+    color: transparent;
+}
+.tit-cont .tit.ty1 .btn-date::after {
+	content: "";
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 36%;
+    margin-top: -10px;
+    width: 22px;
+    height: 22px;
+    float: right;
+    overflow: hidden;
+    color: #000;
+    font-size: 20px;
+    line-height: 1;
+    background: #fff url(../img/icon_down.svg) no-repeat 50% 50% / 1.2rem;
+}
+
+.tit-cont .tit.ty1 > div {
+	position: relative;
+}
+
 
 .tit-cont .tit .total{
 	font-size: 1.4rem;
@@ -7282,6 +7320,12 @@ margin-right: .5rem;
 	padding:0 1rem 0 3rem;
 	background:#fff url(../img/icon_qr_b.svg) no-repeat 1rem 50% / 1.6rem;
 }
+.tit.ty1 .btn-base.icon-qr{
+	width:auto;
+	height:3rem;
+	padding:0 1rem 0 3rem;
+	background:#fff url(../img/icon_qr_b.svg) no-repeat 1rem 50% / 1.6rem;
+}
 .titlebar .btn-base.icon-qr2{
 	display: inline-block;
     width: auto;
@@ -7314,6 +7358,11 @@ margin-right: .5rem;
 
 .h-type .btn-base:last-child{
 	border-right: 0px solid #ccc;
+}
+.qrwrap1.end{
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
 }
 
 .qrwrap2 {
@@ -7882,7 +7931,8 @@ margin-right: .5rem;
 
 .btn-mysite {
 	flex: 0 4rem;
-	background: linear-gradient(110deg, #EEEEEE9A, #EEEEEE4E);
+	/* background: linear-gradient(110deg, #EEEEEE9A, #EEEEEE4E); */
+	background: #e9e9e9;
 	border-radius: 1rem;
 	min-height: 10rem;
 	min-width: 24rem;
@@ -7929,6 +7979,63 @@ margin-right: .5rem;
 }
 
 .btn-mysite.on::before {
+	background: url(../img/icon_navi_w.svg) no-repeat 50% 50% / 1.3rem;
+}
+
+.btn-mysite.ty1 {
+	flex: 0 4rem;
+	background: #fff;
+	border: 1px solid #008F84;
+	border-radius: 1rem;
+	min-height: 10rem;
+	min-width: 24rem;
+	margin-left: 1rem;
+	text-align: left;
+	padding: 2rem 2rem 2rem 3.5rem;
+	padding: 1.6rem 2rem 1.6rem 2rem;
+	position: relative;
+}
+
+.btn-mysite.ty1::before {
+	content: "";
+	display: none;
+	width: 2rem;
+	height: 2rem;
+	position: absolute;
+	top: 2rem;
+	left: 1rem;
+	background: url(../img/icon_navi.svg) no-repeat 50% 50% / 1.3rem;
+}
+
+.btn-mysite.ty1 .tit {
+	font-size: 2.0rem;
+	font-weight: 700;
+	margin-bottom: .5rem;
+	color: #008F84;
+	/* white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis; */
+
+}
+
+.btn-mysite.ty1 .desc {
+	font-size: 1.4rem;
+	font-weight: 500;
+	opacity: .8;
+	white-space: normal;
+	overflow: auto;
+	text-overflow: ellipsis;
+}
+
+.btn-mysite.ty1.on {
+	background: linear-gradient(110deg, #008F8486, #008F84);
+	color: #fff;
+}
+.btn-mysite.ty1.on .tit {
+	color: #fff;
+}
+
+.btn-mysite.ty1.on::before {
 	background: url(../img/icon_navi_w.svg) no-repeat 50% 50% / 1.3rem;
 }
 
